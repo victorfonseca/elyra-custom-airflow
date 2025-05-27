@@ -83,12 +83,12 @@ class AirflowPipelineProcessor(RuntimePipelineProcessor):
     available_airflow_operators = ListTrait(
         CUnicode(),
         [
-            "airflow.operators.slack_operator.SlackAPIPostOperator",
-            "airflow.operators.bash_operator.BashOperator",
-            "airflow.operators.email_operator.EmailOperator",
-            "airflow.operators.http_operator.SimpleHttpOperator",
-            "airflow.contrib.operators.spark_sql_operator.SparkSqlOperator",
-            "airflow.contrib.operators.spark_submit_operator.SparkSubmitOperator",
+            "airflow.providers.slack.operators.slack.SlackAPIPostOperator",
+            "airflow.operators.bash.BashOperator",
+            "airflow.operators.email.EmailOperator",
+            "airflow.providers.http.operators.http.SimpleHttpOperator",
+            "airflow.providers.apache.spark.operators.spark_sql.SparkSqlOperator",
+            "airflow.providers.apache.spark.operators.spark_submit.SparkSubmitOperator",
         ],
         help="""List of available Apache Airflow operator names.
 

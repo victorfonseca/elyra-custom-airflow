@@ -116,10 +116,7 @@
           "name": "@elyra/ui-components",
           "library": {
             "type": "var",
-            "name": [
-              "_JUPYTERLAB",
-              "@elyra/ui-components"
-            ]
+            "name": ["_JUPYTERLAB", "@elyra/ui-components"]
           },
           "filename": "remoteEntry.[contenthash].js",
           "exposes": {

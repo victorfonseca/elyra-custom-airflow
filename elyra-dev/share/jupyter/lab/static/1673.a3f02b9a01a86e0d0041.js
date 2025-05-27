@@ -1,5687 +1,6584 @@
-"use strict";
-(self["webpackChunk_jupyterlab_application_top"] = self["webpackChunk_jupyterlab_application_top"] || []).push([[1673],{
-
-/***/ 92952:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
+'use strict';
+(self['webpackChunk_jupyterlab_application_top'] =
+  self['webpackChunk_jupyterlab_application_top'] || []).push([
+  [1673],
+  {
+    /***/ 92952: /***/ function (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) {
+      var __extends =
+        (this && this.__extends) ||
+        (function () {
+          var extendStatics = function (d, b) {
+            extendStatics =
+              Object.setPrototypeOf ||
+              ({ __proto__: [] } instanceof Array &&
+                function (d, b) {
+                  d.__proto__ = b;
+                }) ||
+              function (d, b) {
+                for (var p in b)
+                  if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+              };
+            return extendStatics(d, b);
+          };
+          return function (d, b) {
+            if (typeof b !== 'function' && b !== null)
+              throw new TypeError(
+                'Class extends value ' +
+                  String(b) +
+                  ' is not a constructor or null'
+              );
+            extendStatics(d, b);
+            function __() {
+              this.constructor = d;
+            }
+            d.prototype =
+              b === null
+                ? Object.create(b)
+                : ((__.prototype = b.prototype), new __());
+          };
+        })();
+      var __assign =
+        (this && this.__assign) ||
+        function () {
+          __assign =
+            Object.assign ||
+            function (t) {
+              for (var s, i = 1, n = arguments.length; i < n; i++) {
+                s = arguments[i];
+                for (var p in s)
+                  if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+              }
+              return t;
+            };
+          return __assign.apply(this, arguments);
+        };
+      var __createBinding =
+        (this && this.__createBinding) ||
+        (Object.create
+          ? function (o, m, k, k2) {
+              if (k2 === undefined) k2 = k;
+              var desc = Object.getOwnPropertyDescriptor(m, k);
+              if (
+                !desc ||
+                ('get' in desc
+                  ? !m.__esModule
+                  : desc.writable || desc.configurable)
+              ) {
+                desc = {
+                  enumerable: true,
+                  get: function () {
+                    return m[k];
+                  }
+                };
+              }
+              Object.defineProperty(o, k2, desc);
+            }
+          : function (o, m, k, k2) {
+              if (k2 === undefined) k2 = k;
+              o[k2] = m[k];
+            });
+      var __exportStar =
+        (this && this.__exportStar) ||
+        function (m, exports) {
+          for (var p in m)
+            if (
+              p !== 'default' &&
+              !Object.prototype.hasOwnProperty.call(exports, p)
+            )
+              __createBinding(exports, m, p);
+        };
+      var __values =
+        (this && this.__values) ||
+        function (o) {
+          var s = typeof Symbol === 'function' && Symbol.iterator,
+            m = s && o[s],
+            i = 0;
+          if (m) return m.call(o);
+          if (o && typeof o.length === 'number')
+            return {
+              next: function () {
+                if (o && i >= o.length) o = void 0;
+                return { value: o && o[i++], done: !o };
+              }
+            };
+          throw new TypeError(
+            s ? 'Object is not iterable.' : 'Symbol.iterator is not defined.'
+          );
+        };
+      var __read =
+        (this && this.__read) ||
+        function (o, n) {
+          var m = typeof Symbol === 'function' && o[Symbol.iterator];
+          if (!m) return o;
+          var i = m.call(o),
+            r,
+            ar = [],
+            e;
+          try {
+            while ((n === void 0 || n-- > 0) && !(r = i.next()).done)
+              ar.push(r.value);
+          } catch (error) {
+            e = { error: error };
+          } finally {
+            try {
+              if (r && !r.done && (m = i['return'])) m.call(i);
+            } finally {
+              if (e) throw e.error;
+            }
+          }
+          return ar;
+        };
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.AddCSS = exports.CHTMLFontData = void 0;
+      var FontData_js_1 = __webpack_require__(30861);
+      var Usage_js_1 = __webpack_require__(60854);
+      var lengths_js_1 = __webpack_require__(86810);
+      __exportStar(__webpack_require__(30861), exports);
+      var CHTMLFontData = (function (_super) {
+        __extends(CHTMLFontData, _super);
+        function CHTMLFontData() {
+          var _this =
+            (_super !== null && _super.apply(this, arguments)) || this;
+          _this.charUsage = new Usage_js_1.Usage();
+          _this.delimUsage = new Usage_js_1.Usage();
+          return _this;
         }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
-var __values = (this && this.__values) || function(o) {
-    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-    if (m) return m.call(o);
-    if (o && typeof o.length === "number") return {
-        next: function () {
-            if (o && i >= o.length) o = void 0;
-            return { value: o && o[i++], done: !o };
-        }
-    };
-    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-};
-var __read = (this && this.__read) || function (o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.AddCSS = exports.CHTMLFontData = void 0;
-var FontData_js_1 = __webpack_require__(30861);
-var Usage_js_1 = __webpack_require__(60854);
-var lengths_js_1 = __webpack_require__(86810);
-__exportStar(__webpack_require__(30861), exports);
-var CHTMLFontData = (function (_super) {
-    __extends(CHTMLFontData, _super);
-    function CHTMLFontData() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.charUsage = new Usage_js_1.Usage();
-        _this.delimUsage = new Usage_js_1.Usage();
-        return _this;
-    }
-    CHTMLFontData.charOptions = function (font, n) {
-        return _super.charOptions.call(this, font, n);
-    };
-    CHTMLFontData.prototype.adaptiveCSS = function (adapt) {
-        this.options.adaptiveCSS = adapt;
-    };
-    CHTMLFontData.prototype.clearCache = function () {
-        if (this.options.adaptiveCSS) {
+        CHTMLFontData.charOptions = function (font, n) {
+          return _super.charOptions.call(this, font, n);
+        };
+        CHTMLFontData.prototype.adaptiveCSS = function (adapt) {
+          this.options.adaptiveCSS = adapt;
+        };
+        CHTMLFontData.prototype.clearCache = function () {
+          if (this.options.adaptiveCSS) {
             this.charUsage.clear();
             this.delimUsage.clear();
-        }
-    };
-    CHTMLFontData.prototype.createVariant = function (name, inherit, link) {
-        if (inherit === void 0) { inherit = null; }
-        if (link === void 0) { link = null; }
-        _super.prototype.createVariant.call(this, name, inherit, link);
-        var CLASS = this.constructor;
-        this.variant[name].classes = CLASS.defaultVariantClasses[name];
-        this.variant[name].letter = CLASS.defaultVariantLetters[name];
-    };
-    CHTMLFontData.prototype.defineChars = function (name, chars) {
-        var e_1, _a;
-        _super.prototype.defineChars.call(this, name, chars);
-        var letter = this.variant[name].letter;
-        try {
-            for (var _b = __values(Object.keys(chars)), _c = _b.next(); !_c.done; _c = _b.next()) {
-                var n = _c.value;
-                var options = CHTMLFontData.charOptions(chars, parseInt(n));
-                if (options.f === undefined) {
-                    options.f = letter;
-                }
+          }
+        };
+        CHTMLFontData.prototype.createVariant = function (name, inherit, link) {
+          if (inherit === void 0) {
+            inherit = null;
+          }
+          if (link === void 0) {
+            link = null;
+          }
+          _super.prototype.createVariant.call(this, name, inherit, link);
+          var CLASS = this.constructor;
+          this.variant[name].classes = CLASS.defaultVariantClasses[name];
+          this.variant[name].letter = CLASS.defaultVariantLetters[name];
+        };
+        CHTMLFontData.prototype.defineChars = function (name, chars) {
+          var e_1, _a;
+          _super.prototype.defineChars.call(this, name, chars);
+          var letter = this.variant[name].letter;
+          try {
+            for (
+              var _b = __values(Object.keys(chars)), _c = _b.next();
+              !_c.done;
+              _c = _b.next()
+            ) {
+              var n = _c.value;
+              var options = CHTMLFontData.charOptions(chars, parseInt(n));
+              if (options.f === undefined) {
+                options.f = letter;
+              }
             }
-        }
-        catch (e_1_1) { e_1 = { error: e_1_1 }; }
-        finally {
+          } catch (e_1_1) {
+            e_1 = { error: e_1_1 };
+          } finally {
             try {
-                if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+              if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+            } finally {
+              if (e_1) throw e_1.error;
             }
-            finally { if (e_1) throw e_1.error; }
-        }
-    };
-    Object.defineProperty(CHTMLFontData.prototype, "styles", {
-        get: function () {
+          }
+        };
+        Object.defineProperty(CHTMLFontData.prototype, 'styles', {
+          get: function () {
             var CLASS = this.constructor;
             var styles = __assign({}, CLASS.defaultStyles);
             this.addFontURLs(styles, CLASS.defaultFonts, this.options.fontURL);
             if (this.options.adaptiveCSS) {
-                this.updateStyles(styles);
-            }
-            else {
-                this.allStyles(styles);
+              this.updateStyles(styles);
+            } else {
+              this.allStyles(styles);
             }
             return styles;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    CHTMLFontData.prototype.updateStyles = function (styles) {
-        var e_2, _a, e_3, _b;
-        try {
-            for (var _c = __values(this.delimUsage.update()), _d = _c.next(); !_d.done; _d = _c.next()) {
-                var N = _d.value;
-                this.addDelimiterStyles(styles, N, this.delimiters[N]);
+          },
+          enumerable: false,
+          configurable: true
+        });
+        CHTMLFontData.prototype.updateStyles = function (styles) {
+          var e_2, _a, e_3, _b;
+          try {
+            for (
+              var _c = __values(this.delimUsage.update()), _d = _c.next();
+              !_d.done;
+              _d = _c.next()
+            ) {
+              var N = _d.value;
+              this.addDelimiterStyles(styles, N, this.delimiters[N]);
             }
-        }
-        catch (e_2_1) { e_2 = { error: e_2_1 }; }
-        finally {
+          } catch (e_2_1) {
+            e_2 = { error: e_2_1 };
+          } finally {
             try {
-                if (_d && !_d.done && (_a = _c.return)) _a.call(_c);
+              if (_d && !_d.done && (_a = _c.return)) _a.call(_c);
+            } finally {
+              if (e_2) throw e_2.error;
             }
-            finally { if (e_2) throw e_2.error; }
-        }
-        try {
-            for (var _e = __values(this.charUsage.update()), _f = _e.next(); !_f.done; _f = _e.next()) {
-                var _g = __read(_f.value, 2), name_1 = _g[0], N = _g[1];
-                var variant = this.variant[name_1];
-                this.addCharStyles(styles, variant.letter, N, variant.chars[N]);
+          }
+          try {
+            for (
+              var _e = __values(this.charUsage.update()), _f = _e.next();
+              !_f.done;
+              _f = _e.next()
+            ) {
+              var _g = __read(_f.value, 2),
+                name_1 = _g[0],
+                N = _g[1];
+              var variant = this.variant[name_1];
+              this.addCharStyles(styles, variant.letter, N, variant.chars[N]);
             }
-        }
-        catch (e_3_1) { e_3 = { error: e_3_1 }; }
-        finally {
+          } catch (e_3_1) {
+            e_3 = { error: e_3_1 };
+          } finally {
             try {
-                if (_f && !_f.done && (_b = _e.return)) _b.call(_e);
+              if (_f && !_f.done && (_b = _e.return)) _b.call(_e);
+            } finally {
+              if (e_3) throw e_3.error;
             }
-            finally { if (e_3) throw e_3.error; }
-        }
-        return styles;
-    };
-    CHTMLFontData.prototype.allStyles = function (styles) {
-        var e_4, _a, e_5, _b, e_6, _c;
-        try {
-            for (var _d = __values(Object.keys(this.delimiters)), _e = _d.next(); !_e.done; _e = _d.next()) {
-                var n = _e.value;
-                var N = parseInt(n);
-                this.addDelimiterStyles(styles, N, this.delimiters[N]);
+          }
+          return styles;
+        };
+        CHTMLFontData.prototype.allStyles = function (styles) {
+          var e_4, _a, e_5, _b, e_6, _c;
+          try {
+            for (
+              var _d = __values(Object.keys(this.delimiters)), _e = _d.next();
+              !_e.done;
+              _e = _d.next()
+            ) {
+              var n = _e.value;
+              var N = parseInt(n);
+              this.addDelimiterStyles(styles, N, this.delimiters[N]);
             }
-        }
-        catch (e_4_1) { e_4 = { error: e_4_1 }; }
-        finally {
+          } catch (e_4_1) {
+            e_4 = { error: e_4_1 };
+          } finally {
             try {
-                if (_e && !_e.done && (_a = _d.return)) _a.call(_d);
+              if (_e && !_e.done && (_a = _d.return)) _a.call(_d);
+            } finally {
+              if (e_4) throw e_4.error;
             }
-            finally { if (e_4) throw e_4.error; }
-        }
-        try {
-            for (var _f = __values(Object.keys(this.variant)), _g = _f.next(); !_g.done; _g = _f.next()) {
-                var name_2 = _g.value;
-                var variant = this.variant[name_2];
-                var vletter = variant.letter;
+          }
+          try {
+            for (
+              var _f = __values(Object.keys(this.variant)), _g = _f.next();
+              !_g.done;
+              _g = _f.next()
+            ) {
+              var name_2 = _g.value;
+              var variant = this.variant[name_2];
+              var vletter = variant.letter;
+              try {
+                for (
+                  var _h =
+                      ((e_6 = void 0), __values(Object.keys(variant.chars))),
+                    _j = _h.next();
+                  !_j.done;
+                  _j = _h.next()
+                ) {
+                  var n = _j.value;
+                  var N = parseInt(n);
+                  var char = variant.chars[N];
+                  if ((char[3] || {}).smp) continue;
+                  if (char.length < 4) {
+                    char[3] = {};
+                  }
+                  this.addCharStyles(styles, vletter, N, char);
+                }
+              } catch (e_6_1) {
+                e_6 = { error: e_6_1 };
+              } finally {
                 try {
-                    for (var _h = (e_6 = void 0, __values(Object.keys(variant.chars))), _j = _h.next(); !_j.done; _j = _h.next()) {
-                        var n = _j.value;
-                        var N = parseInt(n);
-                        var char = variant.chars[N];
-                        if ((char[3] || {}).smp)
-                            continue;
-                        if (char.length < 4) {
-                            char[3] = {};
-                        }
-                        this.addCharStyles(styles, vletter, N, char);
-                    }
+                  if (_j && !_j.done && (_c = _h.return)) _c.call(_h);
+                } finally {
+                  if (e_6) throw e_6.error;
                 }
-                catch (e_6_1) { e_6 = { error: e_6_1 }; }
-                finally {
-                    try {
-                        if (_j && !_j.done && (_c = _h.return)) _c.call(_h);
-                    }
-                    finally { if (e_6) throw e_6.error; }
-                }
+              }
             }
-        }
-        catch (e_5_1) { e_5 = { error: e_5_1 }; }
-        finally {
+          } catch (e_5_1) {
+            e_5 = { error: e_5_1 };
+          } finally {
             try {
-                if (_g && !_g.done && (_b = _f.return)) _b.call(_f);
+              if (_g && !_g.done && (_b = _f.return)) _b.call(_f);
+            } finally {
+              if (e_5) throw e_5.error;
             }
-            finally { if (e_5) throw e_5.error; }
-        }
-    };
-    CHTMLFontData.prototype.addFontURLs = function (styles, fonts, url) {
-        var e_7, _a;
-        try {
-            for (var _b = __values(Object.keys(fonts)), _c = _b.next(); !_c.done; _c = _b.next()) {
-                var name_3 = _c.value;
-                var font = __assign({}, fonts[name_3]);
-                font.src = font.src.replace(/%%URL%%/, url);
-                styles[name_3] = font;
+          }
+        };
+        CHTMLFontData.prototype.addFontURLs = function (styles, fonts, url) {
+          var e_7, _a;
+          try {
+            for (
+              var _b = __values(Object.keys(fonts)), _c = _b.next();
+              !_c.done;
+              _c = _b.next()
+            ) {
+              var name_3 = _c.value;
+              var font = __assign({}, fonts[name_3]);
+              font.src = font.src.replace(/%%URL%%/, url);
+              styles[name_3] = font;
             }
-        }
-        catch (e_7_1) { e_7 = { error: e_7_1 }; }
-        finally {
+          } catch (e_7_1) {
+            e_7 = { error: e_7_1 };
+          } finally {
             try {
-                if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+              if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+            } finally {
+              if (e_7) throw e_7.error;
             }
-            finally { if (e_7) throw e_7.error; }
-        }
-    };
-    CHTMLFontData.prototype.addDelimiterStyles = function (styles, n, data) {
-        var c = this.charSelector(n);
-        if (data.c && data.c !== n) {
+          }
+        };
+        CHTMLFontData.prototype.addDelimiterStyles = function (
+          styles,
+          n,
+          data
+        ) {
+          var c = this.charSelector(n);
+          if (data.c && data.c !== n) {
             c = this.charSelector(data.c);
             styles['.mjx-stretched mjx-c' + c + '::before'] = {
-                content: this.charContent(data.c)
+              content: this.charContent(data.c)
             };
-        }
-        if (!data.stretch)
-            return;
-        if (data.dir === 1) {
+          }
+          if (!data.stretch) return;
+          if (data.dir === 1) {
             this.addDelimiterVStyles(styles, c, data);
-        }
-        else {
+          } else {
             this.addDelimiterHStyles(styles, c, data);
-        }
-    };
-    CHTMLFontData.prototype.addDelimiterVStyles = function (styles, c, data) {
-        var HDW = data.HDW;
-        var _a = __read(data.stretch, 4), beg = _a[0], ext = _a[1], end = _a[2], mid = _a[3];
-        var Hb = this.addDelimiterVPart(styles, c, 'beg', beg, HDW);
-        this.addDelimiterVPart(styles, c, 'ext', ext, HDW);
-        var He = this.addDelimiterVPart(styles, c, 'end', end, HDW);
-        var css = {};
-        if (mid) {
+          }
+        };
+        CHTMLFontData.prototype.addDelimiterVStyles = function (
+          styles,
+          c,
+          data
+        ) {
+          var HDW = data.HDW;
+          var _a = __read(data.stretch, 4),
+            beg = _a[0],
+            ext = _a[1],
+            end = _a[2],
+            mid = _a[3];
+          var Hb = this.addDelimiterVPart(styles, c, 'beg', beg, HDW);
+          this.addDelimiterVPart(styles, c, 'ext', ext, HDW);
+          var He = this.addDelimiterVPart(styles, c, 'end', end, HDW);
+          var css = {};
+          if (mid) {
             var Hm = this.addDelimiterVPart(styles, c, 'mid', mid, HDW);
             css.height = '50%';
             styles['mjx-stretchy-v' + c + ' > mjx-mid'] = {
-                'margin-top': this.em(-Hm / 2),
-                'margin-bottom': this.em(-Hm / 2)
+              'margin-top': this.em(-Hm / 2),
+              'margin-bottom': this.em(-Hm / 2)
             };
-        }
-        if (Hb) {
-            css['border-top-width'] = this.em0(Hb - .03);
-        }
-        if (He) {
-            css['border-bottom-width'] = this.em0(He - .03);
-            styles['mjx-stretchy-v' + c + ' > mjx-end'] = { 'margin-top': this.em(-He) };
-        }
-        if (Object.keys(css).length) {
+          }
+          if (Hb) {
+            css['border-top-width'] = this.em0(Hb - 0.03);
+          }
+          if (He) {
+            css['border-bottom-width'] = this.em0(He - 0.03);
+            styles['mjx-stretchy-v' + c + ' > mjx-end'] = {
+              'margin-top': this.em(-He)
+            };
+          }
+          if (Object.keys(css).length) {
             styles['mjx-stretchy-v' + c + ' > mjx-ext'] = css;
-        }
-    };
-    CHTMLFontData.prototype.addDelimiterVPart = function (styles, c, part, n, HDW) {
-        if (!n)
-            return 0;
-        var data = this.getDelimiterData(n);
-        var dw = (HDW[2] - data[2]) / 2;
-        var css = { content: this.charContent(n) };
-        if (part !== 'ext') {
+          }
+        };
+        CHTMLFontData.prototype.addDelimiterVPart = function (
+          styles,
+          c,
+          part,
+          n,
+          HDW
+        ) {
+          if (!n) return 0;
+          var data = this.getDelimiterData(n);
+          var dw = (HDW[2] - data[2]) / 2;
+          var css = { content: this.charContent(n) };
+          if (part !== 'ext') {
             css.padding = this.padding(data, dw);
-        }
-        else {
+          } else {
             css.width = this.em0(HDW[2]);
             if (dw) {
-                css['padding-left'] = this.em0(dw);
+              css['padding-left'] = this.em0(dw);
             }
-        }
-        styles['mjx-stretchy-v' + c + ' mjx-' + part + ' mjx-c::before'] = css;
-        return data[0] + data[1];
-    };
-    CHTMLFontData.prototype.addDelimiterHStyles = function (styles, c, data) {
-        var _a = __read(data.stretch, 4), beg = _a[0], ext = _a[1], end = _a[2], mid = _a[3];
-        var HDW = data.HDW;
-        this.addDelimiterHPart(styles, c, 'beg', beg, HDW);
-        this.addDelimiterHPart(styles, c, 'ext', ext, HDW);
-        this.addDelimiterHPart(styles, c, 'end', end, HDW);
-        if (mid) {
+          }
+          styles['mjx-stretchy-v' + c + ' mjx-' + part + ' mjx-c::before'] =
+            css;
+          return data[0] + data[1];
+        };
+        CHTMLFontData.prototype.addDelimiterHStyles = function (
+          styles,
+          c,
+          data
+        ) {
+          var _a = __read(data.stretch, 4),
+            beg = _a[0],
+            ext = _a[1],
+            end = _a[2],
+            mid = _a[3];
+          var HDW = data.HDW;
+          this.addDelimiterHPart(styles, c, 'beg', beg, HDW);
+          this.addDelimiterHPart(styles, c, 'ext', ext, HDW);
+          this.addDelimiterHPart(styles, c, 'end', end, HDW);
+          if (mid) {
             this.addDelimiterHPart(styles, c, 'mid', mid, HDW);
             styles['mjx-stretchy-h' + c + ' > mjx-ext'] = { width: '50%' };
-        }
-    };
-    CHTMLFontData.prototype.addDelimiterHPart = function (styles, c, part, n, HDW) {
-        if (!n)
-            return;
-        var data = this.getDelimiterData(n);
-        var options = data[3];
-        var css = { content: (options && options.c ? '"' + options.c + '"' : this.charContent(n)) };
-        css.padding = this.padding(HDW, 0, -HDW[2]);
-        styles['mjx-stretchy-h' + c + ' mjx-' + part + ' mjx-c::before'] = css;
-    };
-    CHTMLFontData.prototype.addCharStyles = function (styles, vletter, n, data) {
-        var options = data[3];
-        var letter = (options.f !== undefined ? options.f : vletter);
-        var selector = 'mjx-c' + this.charSelector(n) + (letter ? '.TEX-' + letter : '');
-        styles[selector + '::before'] = {
-            padding: this.padding(data, 0, options.ic || 0),
-            content: (options.c != null ? '"' + options.c + '"' : this.charContent(n))
+          }
         };
-    };
-    CHTMLFontData.prototype.getDelimiterData = function (n) {
-        return this.getChar('-smallop', n);
-    };
-    CHTMLFontData.prototype.em = function (n) {
-        return (0, lengths_js_1.em)(n);
-    };
-    CHTMLFontData.prototype.em0 = function (n) {
-        return (0, lengths_js_1.em)(Math.max(0, n));
-    };
-    CHTMLFontData.prototype.padding = function (_a, dw, ic) {
-        var _b = __read(_a, 3), h = _b[0], d = _b[1], w = _b[2];
-        if (dw === void 0) { dw = 0; }
-        if (ic === void 0) { ic = 0; }
-        return [h, w + ic, d, dw].map(this.em0).join(' ');
-    };
-    CHTMLFontData.prototype.charContent = function (n) {
-        return '"' + (n >= 0x20 && n <= 0x7E && n !== 0x22 && n !== 0x27 && n !== 0x5C ?
-            String.fromCharCode(n) : '\\' + n.toString(16).toUpperCase()) + '"';
-    };
-    CHTMLFontData.prototype.charSelector = function (n) {
-        return '.mjx-c' + n.toString(16).toUpperCase();
-    };
-    CHTMLFontData.OPTIONS = __assign(__assign({}, FontData_js_1.FontData.OPTIONS), { fontURL: 'js/output/chtml/fonts/tex-woff-v2' });
-    CHTMLFontData.JAX = 'CHTML';
-    CHTMLFontData.defaultVariantClasses = {};
-    CHTMLFontData.defaultVariantLetters = {};
-    CHTMLFontData.defaultStyles = {
-        'mjx-c::before': {
+        CHTMLFontData.prototype.addDelimiterHPart = function (
+          styles,
+          c,
+          part,
+          n,
+          HDW
+        ) {
+          if (!n) return;
+          var data = this.getDelimiterData(n);
+          var options = data[3];
+          var css = {
+            content:
+              options && options.c ? '"' + options.c + '"' : this.charContent(n)
+          };
+          css.padding = this.padding(HDW, 0, -HDW[2]);
+          styles['mjx-stretchy-h' + c + ' mjx-' + part + ' mjx-c::before'] =
+            css;
+        };
+        CHTMLFontData.prototype.addCharStyles = function (
+          styles,
+          vletter,
+          n,
+          data
+        ) {
+          var options = data[3];
+          var letter = options.f !== undefined ? options.f : vletter;
+          var selector =
+            'mjx-c' + this.charSelector(n) + (letter ? '.TEX-' + letter : '');
+          styles[selector + '::before'] = {
+            padding: this.padding(data, 0, options.ic || 0),
+            content:
+              options.c != null ? '"' + options.c + '"' : this.charContent(n)
+          };
+        };
+        CHTMLFontData.prototype.getDelimiterData = function (n) {
+          return this.getChar('-smallop', n);
+        };
+        CHTMLFontData.prototype.em = function (n) {
+          return (0, lengths_js_1.em)(n);
+        };
+        CHTMLFontData.prototype.em0 = function (n) {
+          return (0, lengths_js_1.em)(Math.max(0, n));
+        };
+        CHTMLFontData.prototype.padding = function (_a, dw, ic) {
+          var _b = __read(_a, 3),
+            h = _b[0],
+            d = _b[1],
+            w = _b[2];
+          if (dw === void 0) {
+            dw = 0;
+          }
+          if (ic === void 0) {
+            ic = 0;
+          }
+          return [h, w + ic, d, dw].map(this.em0).join(' ');
+        };
+        CHTMLFontData.prototype.charContent = function (n) {
+          return (
+            '"' +
+            (n >= 0x20 && n <= 0x7e && n !== 0x22 && n !== 0x27 && n !== 0x5c
+              ? String.fromCharCode(n)
+              : '\\' + n.toString(16).toUpperCase()) +
+            '"'
+          );
+        };
+        CHTMLFontData.prototype.charSelector = function (n) {
+          return '.mjx-c' + n.toString(16).toUpperCase();
+        };
+        CHTMLFontData.OPTIONS = __assign(
+          __assign({}, FontData_js_1.FontData.OPTIONS),
+          { fontURL: 'js/output/chtml/fonts/tex-woff-v2' }
+        );
+        CHTMLFontData.JAX = 'CHTML';
+        CHTMLFontData.defaultVariantClasses = {};
+        CHTMLFontData.defaultVariantLetters = {};
+        CHTMLFontData.defaultStyles = {
+          'mjx-c::before': {
             display: 'block',
             width: 0
-        }
-    };
-    CHTMLFontData.defaultFonts = {
-        '@font-face /* 0 */': {
+          }
+        };
+        CHTMLFontData.defaultFonts = {
+          '@font-face /* 0 */': {
             'font-family': 'MJXZERO',
             src: 'url("%%URL%%/MathJax_Zero.woff") format("woff")'
-        }
-    };
-    return CHTMLFontData;
-}(FontData_js_1.FontData));
-exports.CHTMLFontData = CHTMLFontData;
-function AddCSS(font, options) {
-    var e_8, _a;
-    try {
-        for (var _b = __values(Object.keys(options)), _c = _b.next(); !_c.done; _c = _b.next()) {
+          }
+        };
+        return CHTMLFontData;
+      })(FontData_js_1.FontData);
+      exports.CHTMLFontData = CHTMLFontData;
+      function AddCSS(font, options) {
+        var e_8, _a;
+        try {
+          for (
+            var _b = __values(Object.keys(options)), _c = _b.next();
+            !_c.done;
+            _c = _b.next()
+          ) {
             var c = _c.value;
             var n = parseInt(c);
-            Object.assign(FontData_js_1.FontData.charOptions(font, n), options[n]);
-        }
-    }
-    catch (e_8_1) { e_8 = { error: e_8_1 }; }
-    finally {
-        try {
+            Object.assign(
+              FontData_js_1.FontData.charOptions(font, n),
+              options[n]
+            );
+          }
+        } catch (e_8_1) {
+          e_8 = { error: e_8_1 };
+        } finally {
+          try {
             if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+          } finally {
+            if (e_8) throw e_8.error;
+          }
         }
-        finally { if (e_8) throw e_8.error; }
-    }
-    return font;
-}
-exports.AddCSS = AddCSS;
-//# sourceMappingURL=FontData.js.map
+        return font;
+      }
+      exports.AddCSS = AddCSS;
+      //# sourceMappingURL=FontData.js.map
 
-/***/ }),
+      /***/
+    },
 
-/***/ 60854:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.Usage = void 0;
-var Usage = (function () {
-    function Usage() {
-        this.used = new Set();
-        this.needsUpdate = [];
-    }
-    Usage.prototype.add = function (item) {
-        var name = JSON.stringify(item);
-        if (!this.used.has(name)) {
+    /***/ 60854: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.Usage = void 0;
+      var Usage = (function () {
+        function Usage() {
+          this.used = new Set();
+          this.needsUpdate = [];
+        }
+        Usage.prototype.add = function (item) {
+          var name = JSON.stringify(item);
+          if (!this.used.has(name)) {
             this.needsUpdate.push(item);
-        }
-        this.used.add(name);
-    };
-    Usage.prototype.has = function (item) {
-        return this.used.has(JSON.stringify(item));
-    };
-    Usage.prototype.clear = function () {
-        this.used.clear();
-        this.needsUpdate = [];
-    };
-    Usage.prototype.update = function () {
-        var update = this.needsUpdate;
-        this.needsUpdate = [];
-        return update;
-    };
-    return Usage;
-}());
-exports.Usage = Usage;
-//# sourceMappingURL=Usage.js.map
-
-/***/ }),
-
-/***/ 1673:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.TeXFont = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var tex_js_1 = __webpack_require__(6382);
-var bold_italic_js_1 = __webpack_require__(59316);
-var bold_js_1 = __webpack_require__(78451);
-var double_struck_js_1 = __webpack_require__(18018);
-var fraktur_bold_js_1 = __webpack_require__(74141);
-var fraktur_js_1 = __webpack_require__(3785);
-var italic_js_1 = __webpack_require__(74868);
-var largeop_js_1 = __webpack_require__(87434);
-var monospace_js_1 = __webpack_require__(82621);
-var normal_js_1 = __webpack_require__(56979);
-var sans_serif_bold_italic_js_1 = __webpack_require__(83356);
-var sans_serif_bold_js_1 = __webpack_require__(11211);
-var sans_serif_italic_js_1 = __webpack_require__(76316);
-var sans_serif_js_1 = __webpack_require__(16651);
-var script_bold_js_1 = __webpack_require__(56755);
-var script_js_1 = __webpack_require__(45491);
-var smallop_js_1 = __webpack_require__(7598);
-var tex_calligraphic_bold_js_1 = __webpack_require__(83085);
-var tex_calligraphic_js_1 = __webpack_require__(74681);
-var tex_mathit_js_1 = __webpack_require__(91611);
-var tex_oldstyle_bold_js_1 = __webpack_require__(56848);
-var tex_oldstyle_js_1 = __webpack_require__(74878);
-var tex_size3_js_1 = __webpack_require__(99652);
-var tex_size4_js_1 = __webpack_require__(39729);
-var tex_variant_js_1 = __webpack_require__(82599);
-var delimiters_js_1 = __webpack_require__(6987);
-var TeXFont = (function (_super) {
-    __extends(TeXFont, _super);
-    function TeXFont() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    TeXFont.defaultCssFamilyPrefix = 'MJXZERO';
-    TeXFont.defaultVariantClasses = {
-        'normal': 'mjx-n',
-        'bold': 'mjx-b',
-        'italic': 'mjx-i',
-        'bold-italic': 'mjx-b mjx-i',
-        'double-struck': 'mjx-ds mjx-b',
-        'fraktur': 'mjx-fr',
-        'bold-fraktur': 'mjx-fr mjx-b',
-        'script': 'mjx-sc mjx-i',
-        'bold-script': 'mjx-sc mjx-b mjx-i',
-        'sans-serif': 'mjx-ss',
-        'bold-sans-serif': 'mjx-ss mjx-b',
-        'sans-serif-italic': 'mjx-ss mjx-i',
-        'sans-serif-bold-italic': 'mjx-ss mjx-b mjx-i',
-        'monospace': 'mjx-ty',
-        '-smallop': 'mjx-sop',
-        '-largeop': 'mjx-lop',
-        '-size3': 'mjx-s3',
-        '-size4': 'mjx-s4',
-        '-tex-calligraphic': 'mjx-cal mjx-i',
-        '-tex-bold-calligraphic': 'mjx-cal mjx-b',
-        '-tex-mathit': 'mjx-mit mjx-i',
-        '-tex-oldstyle': 'mjx-os',
-        '-tex-bold-oldstyle': 'mjx-os mjx-b',
-        '-tex-variant': 'mjx-var'
-    };
-    TeXFont.defaultVariantLetters = {
-        'normal': '',
-        'bold': 'B',
-        'italic': 'MI',
-        'bold-italic': 'BI',
-        'double-struck': 'A',
-        'fraktur': 'FR',
-        'bold-fraktur': 'FRB',
-        'script': 'SC',
-        'bold-script': 'SCB',
-        'sans-serif': 'SS',
-        'bold-sans-serif': 'SSB',
-        'sans-serif-italic': 'SSI',
-        'sans-serif-bold-italic': 'SSBI',
-        'monospace': 'T',
-        '-smallop': 'S1',
-        '-largeop': 'S2',
-        '-size3': 'S3',
-        '-size4': 'S4',
-        '-tex-calligraphic': 'C',
-        '-tex-bold-calligraphic': 'CB',
-        '-tex-mathit': 'MI',
-        '-tex-oldstyle': 'C',
-        '-tex-bold-oldstyle': 'CB',
-        '-tex-variant': 'A'
-    };
-    TeXFont.defaultDelimiters = delimiters_js_1.delimiters;
-    TeXFont.defaultChars = {
-        'normal': normal_js_1.normal,
-        'bold': bold_js_1.bold,
-        'italic': italic_js_1.italic,
-        'bold-italic': bold_italic_js_1.boldItalic,
-        'double-struck': double_struck_js_1.doubleStruck,
-        'fraktur': fraktur_js_1.fraktur,
-        'bold-fraktur': fraktur_bold_js_1.frakturBold,
-        'script': script_js_1.script,
-        'bold-script': script_bold_js_1.scriptBold,
-        'sans-serif': sans_serif_js_1.sansSerif,
-        'bold-sans-serif': sans_serif_bold_js_1.sansSerifBold,
-        'sans-serif-italic': sans_serif_italic_js_1.sansSerifItalic,
-        'sans-serif-bold-italic': sans_serif_bold_italic_js_1.sansSerifBoldItalic,
-        'monospace': monospace_js_1.monospace,
-        '-smallop': smallop_js_1.smallop,
-        '-largeop': largeop_js_1.largeop,
-        '-size3': tex_size3_js_1.texSize3,
-        '-size4': tex_size4_js_1.texSize4,
-        '-tex-calligraphic': tex_calligraphic_js_1.texCalligraphic,
-        '-tex-bold-calligraphic': tex_calligraphic_bold_js_1.texCalligraphicBold,
-        '-tex-mathit': tex_mathit_js_1.texMathit,
-        '-tex-oldstyle': tex_oldstyle_js_1.texOldstyle,
-        '-tex-bold-oldstyle': tex_oldstyle_bold_js_1.texOldstyleBold,
-        '-tex-variant': tex_variant_js_1.texVariant
-    };
-    TeXFont.defaultStyles = __assign(__assign({}, FontData_js_1.CHTMLFontData.defaultStyles), { '.MJX-TEX': {
-            'font-family': 'MJXZERO, MJXTEX'
-        }, '.TEX-B': {
-            'font-family': 'MJXZERO, MJXTEX-B'
-        }, '.TEX-I': {
-            'font-family': 'MJXZERO, MJXTEX-I'
-        }, '.TEX-MI': {
-            'font-family': 'MJXZERO, MJXTEX-MI'
-        }, '.TEX-BI': {
-            'font-family': 'MJXZERO, MJXTEX-BI'
-        }, '.TEX-S1': {
-            'font-family': 'MJXZERO, MJXTEX-S1'
-        }, '.TEX-S2': {
-            'font-family': 'MJXZERO, MJXTEX-S2'
-        }, '.TEX-S3': {
-            'font-family': 'MJXZERO, MJXTEX-S3'
-        }, '.TEX-S4': {
-            'font-family': 'MJXZERO, MJXTEX-S4'
-        }, '.TEX-A': {
-            'font-family': 'MJXZERO, MJXTEX-A'
-        }, '.TEX-C': {
-            'font-family': 'MJXZERO, MJXTEX-C'
-        }, '.TEX-CB': {
-            'font-family': 'MJXZERO, MJXTEX-CB'
-        }, '.TEX-FR': {
-            'font-family': 'MJXZERO, MJXTEX-FR'
-        }, '.TEX-FRB': {
-            'font-family': 'MJXZERO, MJXTEX-FRB'
-        }, '.TEX-SS': {
-            'font-family': 'MJXZERO, MJXTEX-SS'
-        }, '.TEX-SSB': {
-            'font-family': 'MJXZERO, MJXTEX-SSB'
-        }, '.TEX-SSI': {
-            'font-family': 'MJXZERO, MJXTEX-SSI'
-        }, '.TEX-SC': {
-            'font-family': 'MJXZERO, MJXTEX-SC'
-        }, '.TEX-T': {
-            'font-family': 'MJXZERO, MJXTEX-T'
-        }, '.TEX-V': {
-            'font-family': 'MJXZERO, MJXTEX-V'
-        }, '.TEX-VB': {
-            'font-family': 'MJXZERO, MJXTEX-VB'
-        }, 'mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c': {
-            'font-family': 'MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important'
-        } });
-    TeXFont.defaultFonts = __assign(__assign({}, FontData_js_1.CHTMLFontData.defaultFonts), { '@font-face /* 1 */': {
-            'font-family': 'MJXTEX',
-            src: 'url("%%URL%%/MathJax_Main-Regular.woff") format("woff")'
-        }, '@font-face /* 2 */': {
-            'font-family': 'MJXTEX-B',
-            src: 'url("%%URL%%/MathJax_Main-Bold.woff") format("woff")'
-        }, '@font-face /* 3 */': {
-            'font-family': 'MJXTEX-I',
-            src: 'url("%%URL%%/MathJax_Math-Italic.woff") format("woff")'
-        }, '@font-face /* 4 */': {
-            'font-family': 'MJXTEX-MI',
-            src: 'url("%%URL%%/MathJax_Main-Italic.woff") format("woff")'
-        }, '@font-face /* 5 */': {
-            'font-family': 'MJXTEX-BI',
-            src: 'url("%%URL%%/MathJax_Math-BoldItalic.woff") format("woff")'
-        }, '@font-face /* 6 */': {
-            'font-family': 'MJXTEX-S1',
-            src: 'url("%%URL%%/MathJax_Size1-Regular.woff") format("woff")'
-        }, '@font-face /* 7 */': {
-            'font-family': 'MJXTEX-S2',
-            src: 'url("%%URL%%/MathJax_Size2-Regular.woff") format("woff")'
-        }, '@font-face /* 8 */': {
-            'font-family': 'MJXTEX-S3',
-            src: 'url("%%URL%%/MathJax_Size3-Regular.woff") format("woff")'
-        }, '@font-face /* 9 */': {
-            'font-family': 'MJXTEX-S4',
-            src: 'url("%%URL%%/MathJax_Size4-Regular.woff") format("woff")'
-        }, '@font-face /* 10 */': {
-            'font-family': 'MJXTEX-A',
-            src: 'url("%%URL%%/MathJax_AMS-Regular.woff") format("woff")'
-        }, '@font-face /* 11 */': {
-            'font-family': 'MJXTEX-C',
-            src: 'url("%%URL%%/MathJax_Calligraphic-Regular.woff") format("woff")'
-        }, '@font-face /* 12 */': {
-            'font-family': 'MJXTEX-CB',
-            src: 'url("%%URL%%/MathJax_Calligraphic-Bold.woff") format("woff")'
-        }, '@font-face /* 13 */': {
-            'font-family': 'MJXTEX-FR',
-            src: 'url("%%URL%%/MathJax_Fraktur-Regular.woff") format("woff")'
-        }, '@font-face /* 14 */': {
-            'font-family': 'MJXTEX-FRB',
-            src: 'url("%%URL%%/MathJax_Fraktur-Bold.woff") format("woff")'
-        }, '@font-face /* 15 */': {
-            'font-family': 'MJXTEX-SS',
-            src: 'url("%%URL%%/MathJax_SansSerif-Regular.woff") format("woff")'
-        }, '@font-face /* 16 */': {
-            'font-family': 'MJXTEX-SSB',
-            src: 'url("%%URL%%/MathJax_SansSerif-Bold.woff") format("woff")'
-        }, '@font-face /* 17 */': {
-            'font-family': 'MJXTEX-SSI',
-            src: 'url("%%URL%%/MathJax_SansSerif-Italic.woff") format("woff")'
-        }, '@font-face /* 18 */': {
-            'font-family': 'MJXTEX-SC',
-            src: 'url("%%URL%%/MathJax_Script-Regular.woff") format("woff")'
-        }, '@font-face /* 19 */': {
-            'font-family': 'MJXTEX-T',
-            src: 'url("%%URL%%/MathJax_Typewriter-Regular.woff") format("woff")'
-        }, '@font-face /* 20 */': {
-            'font-family': 'MJXTEX-V',
-            src: 'url("%%URL%%/MathJax_Vector-Regular.woff") format("woff")'
-        }, '@font-face /* 21 */': {
-            'font-family': 'MJXTEX-VB',
-            src: 'url("%%URL%%/MathJax_Vector-Bold.woff") format("woff")'
-        } });
-    return TeXFont;
-}((0, tex_js_1.CommonTeXFontMixin)(FontData_js_1.CHTMLFontData)));
-exports.TeXFont = TeXFont;
-//# sourceMappingURL=tex.js.map
-
-/***/ }),
-
-/***/ 59316:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.boldItalic = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var bold_italic_js_1 = __webpack_require__(51091);
-exports.boldItalic = (0, FontData_js_1.AddCSS)(bold_italic_js_1.boldItalic, {
-    0x131: { f: 'B' },
-    0x237: { f: 'B' },
-    0x2044: { c: '/' },
-    0x2206: { c: '\\394' },
-    0x29F8: { c: '/' },
-});
-//# sourceMappingURL=bold-italic.js.map
-
-/***/ }),
-
-/***/ 78451:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.bold = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var bold_js_1 = __webpack_require__(95746);
-exports.bold = (0, FontData_js_1.AddCSS)(bold_js_1.bold, {
-    0xB7: { c: '\\22C5' },
-    0x131: { f: '' },
-    0x237: { f: '' },
-    0x2B9: { c: '\\2032' },
-    0x2002: { c: '' },
-    0x2003: { c: '' },
-    0x2004: { c: '' },
-    0x2005: { c: '' },
-    0x2006: { c: '' },
-    0x2009: { c: '' },
-    0x200A: { c: '' },
-    0x2015: { c: '\\2014' },
-    0x2016: { c: '\\2225' },
-    0x2017: { c: '_' },
-    0x2022: { c: '\\2219' },
-    0x2033: { c: '\\2032\\2032' },
-    0x2034: { c: '\\2032\\2032\\2032' },
-    0x203E: { c: '\\2C9' },
-    0x2044: { c: '/' },
-    0x2057: { c: '\\2032\\2032\\2032\\2032' },
-    0x20D7: { c: '\\2192', f: 'VB' },
-    0x219A: { c: '\\2190\\338' },
-    0x219B: { c: '\\2192\\338' },
-    0x21AE: { c: '\\2194\\338' },
-    0x21CD: { c: '\\21D0\\338' },
-    0x21CE: { c: '\\21D4\\338' },
-    0x21CF: { c: '\\21D2\\338' },
-    0x2204: { c: '\\2203\\338' },
-    0x2206: { c: '\\394' },
-    0x220C: { c: '\\220B\\338' },
-    0x2224: { c: '\\2223\\338' },
-    0x2226: { c: '\\2225\\338' },
-    0x2241: { c: '\\223C\\338' },
-    0x2244: { c: '\\2243\\338' },
-    0x2247: { c: '\\2245\\338' },
-    0x2249: { c: '\\2248\\338' },
-    0x2262: { c: '\\2261\\338' },
-    0x226D: { c: '\\224D\\338' },
-    0x226E: { c: '<\\338' },
-    0x226F: { c: '>\\338' },
-    0x2270: { c: '\\2264\\338' },
-    0x2271: { c: '\\2265\\338' },
-    0x2280: { c: '\\227A\\338' },
-    0x2281: { c: '\\227B\\338' },
-    0x2284: { c: '\\2282\\338' },
-    0x2285: { c: '\\2283\\338' },
-    0x2288: { c: '\\2286\\338' },
-    0x2289: { c: '\\2287\\338' },
-    0x22AC: { c: '\\22A2\\338' },
-    0x22AD: { c: '\\22A8\\338' },
-    0x22E2: { c: '\\2291\\338' },
-    0x22E3: { c: '\\2292\\338' },
-    0x2329: { c: '\\27E8' },
-    0x232A: { c: '\\27E9' },
-    0x25B5: { c: '\\25B3' },
-    0x25BF: { c: '\\25BD' },
-    0x2758: { c: '\\2223' },
-    0x29F8: { c: '/', f: 'BI' },
-    0x2A2F: { c: '\\D7' },
-    0x3008: { c: '\\27E8' },
-    0x3009: { c: '\\27E9' },
-});
-//# sourceMappingURL=bold.js.map
-
-/***/ }),
-
-/***/ 18018:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.doubleStruck = void 0;
-var double_struck_js_1 = __webpack_require__(32249);
-Object.defineProperty(exports, "doubleStruck", ({ enumerable: true, get: function () { return double_struck_js_1.doubleStruck; } }));
-//# sourceMappingURL=double-struck.js.map
-
-/***/ }),
-
-/***/ 74141:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.frakturBold = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var fraktur_bold_js_1 = __webpack_require__(45600);
-exports.frakturBold = (0, FontData_js_1.AddCSS)(fraktur_bold_js_1.frakturBold, {
-    0x2044: { c: '/' },
-});
-//# sourceMappingURL=fraktur-bold.js.map
-
-/***/ }),
-
-/***/ 3785:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.fraktur = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var fraktur_js_1 = __webpack_require__(59534);
-exports.fraktur = (0, FontData_js_1.AddCSS)(fraktur_js_1.fraktur, {
-    0x2044: { c: '/' },
-});
-//# sourceMappingURL=fraktur.js.map
-
-/***/ }),
-
-/***/ 74868:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.italic = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var italic_js_1 = __webpack_require__(14141);
-exports.italic = (0, FontData_js_1.AddCSS)(italic_js_1.italic, {
-    0x2F: { f: 'I' },
-    0x3DD: { c: '\\E008', f: 'A' },
-    0x2015: { c: '\\2014' },
-    0x2017: { c: '_' },
-    0x2044: { c: '/', f: 'I' },
-    0x2206: { c: '\\394', f: 'I' },
-    0x29F8: { c: '/', f: 'I' },
-});
-//# sourceMappingURL=italic.js.map
-
-/***/ }),
-
-/***/ 87434:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.largeop = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var largeop_js_1 = __webpack_require__(63969);
-exports.largeop = (0, FontData_js_1.AddCSS)(largeop_js_1.largeop, {
-    0x2016: { f: 'S1' },
-    0x2044: { c: '/' },
-    0x2191: { f: 'S1' },
-    0x2193: { f: 'S1' },
-    0x21D1: { f: 'S1' },
-    0x21D3: { f: 'S1' },
-    0x2223: { f: 'S1' },
-    0x2225: { f: 'S1' },
-    0x2329: { c: '\\27E8' },
-    0x232A: { c: '\\27E9' },
-    0x23D0: { f: 'S1' },
-    0x2758: { c: '\\2223', f: 'S1' },
-    0x2A0C: { c: '\\222C\\222C' },
-    0x3008: { c: '\\27E8' },
-    0x3009: { c: '\\27E9' },
-});
-//# sourceMappingURL=largeop.js.map
-
-/***/ }),
-
-/***/ 82621:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.monospace = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var monospace_js_1 = __webpack_require__(58626);
-exports.monospace = (0, FontData_js_1.AddCSS)(monospace_js_1.monospace, {
-    0x2B9: { c: '\\2032' },
-    0x391: { c: 'A' },
-    0x392: { c: 'B' },
-    0x395: { c: 'E' },
-    0x396: { c: 'Z' },
-    0x397: { c: 'H' },
-    0x399: { c: 'I' },
-    0x39A: { c: 'K' },
-    0x39C: { c: 'M' },
-    0x39D: { c: 'N' },
-    0x39F: { c: 'O' },
-    0x3A1: { c: 'P' },
-    0x3A4: { c: 'T' },
-    0x3A7: { c: 'X' },
-    0x2017: { c: '_' },
-    0x2033: { c: '\\2032\\2032' },
-    0x2034: { c: '\\2032\\2032\\2032' },
-    0x2044: { c: '/' },
-    0x2057: { c: '\\2032\\2032\\2032\\2032' },
-    0x2206: { c: '\\394' },
-});
-//# sourceMappingURL=monospace.js.map
-
-/***/ }),
-
-/***/ 56979:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.normal = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var normal_js_1 = __webpack_require__(25190);
-exports.normal = (0, FontData_js_1.AddCSS)(normal_js_1.normal, {
-    0xA3: { f: 'MI' },
-    0xA5: { f: 'A' },
-    0xAE: { f: 'A' },
-    0xB7: { c: '\\22C5' },
-    0xF0: { f: 'A' },
-    0x2B9: { c: '\\2032' },
-    0x391: { c: 'A' },
-    0x392: { c: 'B' },
-    0x395: { c: 'E' },
-    0x396: { c: 'Z' },
-    0x397: { c: 'H' },
-    0x399: { c: 'I' },
-    0x39A: { c: 'K' },
-    0x39C: { c: 'M' },
-    0x39D: { c: 'N' },
-    0x39F: { c: 'O' },
-    0x3A1: { c: 'P' },
-    0x3A4: { c: 'T' },
-    0x3A7: { c: 'X' },
-    0x2000: { c: '' },
-    0x2001: { c: '' },
-    0x2002: { c: '' },
-    0x2003: { c: '' },
-    0x2004: { c: '' },
-    0x2005: { c: '' },
-    0x2006: { c: '' },
-    0x2009: { c: '' },
-    0x200A: { c: '' },
-    0x200B: { c: '' },
-    0x200C: { c: '' },
-    0x2015: { c: '\\2014' },
-    0x2016: { c: '\\2225' },
-    0x2017: { c: '_' },
-    0x2022: { c: '\\2219' },
-    0x2033: { c: '\\2032\\2032' },
-    0x2034: { c: '\\2032\\2032\\2032' },
-    0x2035: { f: 'A' },
-    0x2036: { c: '\\2035\\2035', f: 'A' },
-    0x2037: { c: '\\2035\\2035\\2035', f: 'A' },
-    0x203E: { c: '\\2C9' },
-    0x2044: { c: '/' },
-    0x2057: { c: '\\2032\\2032\\2032\\2032' },
-    0x2060: { c: '' },
-    0x2061: { c: '' },
-    0x2062: { c: '' },
-    0x2063: { c: '' },
-    0x2064: { c: '' },
-    0x20D7: { c: '\\2192', f: 'V' },
-    0x2102: { c: 'C', f: 'A' },
-    0x210B: { c: 'H', f: 'SC' },
-    0x210C: { c: 'H', f: 'FR' },
-    0x210D: { c: 'H', f: 'A' },
-    0x210E: { c: 'h', f: 'I' },
-    0x210F: { f: 'A' },
-    0x2110: { c: 'I', f: 'SC' },
-    0x2111: { c: 'I', f: 'FR' },
-    0x2112: { c: 'L', f: 'SC' },
-    0x2115: { c: 'N', f: 'A' },
-    0x2119: { c: 'P', f: 'A' },
-    0x211A: { c: 'Q', f: 'A' },
-    0x211B: { c: 'R', f: 'SC' },
-    0x211C: { c: 'R', f: 'FR' },
-    0x211D: { c: 'R', f: 'A' },
-    0x2124: { c: 'Z', f: 'A' },
-    0x2126: { c: '\\3A9' },
-    0x2127: { f: 'A' },
-    0x2128: { c: 'Z', f: 'FR' },
-    0x212C: { c: 'B', f: 'SC' },
-    0x212D: { c: 'C', f: 'FR' },
-    0x2130: { c: 'E', f: 'SC' },
-    0x2131: { c: 'F', f: 'SC' },
-    0x2132: { f: 'A' },
-    0x2133: { c: 'M', f: 'SC' },
-    0x2136: { f: 'A' },
-    0x2137: { f: 'A' },
-    0x2138: { f: 'A' },
-    0x2141: { f: 'A' },
-    0x219A: { f: 'A' },
-    0x219B: { f: 'A' },
-    0x219E: { f: 'A' },
-    0x21A0: { f: 'A' },
-    0x21A2: { f: 'A' },
-    0x21A3: { f: 'A' },
-    0x21AB: { f: 'A' },
-    0x21AC: { f: 'A' },
-    0x21AD: { f: 'A' },
-    0x21AE: { f: 'A' },
-    0x21B0: { f: 'A' },
-    0x21B1: { f: 'A' },
-    0x21B6: { f: 'A' },
-    0x21B7: { f: 'A' },
-    0x21BA: { f: 'A' },
-    0x21BB: { f: 'A' },
-    0x21BE: { f: 'A' },
-    0x21BF: { f: 'A' },
-    0x21C2: { f: 'A' },
-    0x21C3: { f: 'A' },
-    0x21C4: { f: 'A' },
-    0x21C6: { f: 'A' },
-    0x21C7: { f: 'A' },
-    0x21C8: { f: 'A' },
-    0x21C9: { f: 'A' },
-    0x21CA: { f: 'A' },
-    0x21CB: { f: 'A' },
-    0x21CD: { f: 'A' },
-    0x21CE: { f: 'A' },
-    0x21CF: { f: 'A' },
-    0x21DA: { f: 'A' },
-    0x21DB: { f: 'A' },
-    0x21DD: { f: 'A' },
-    0x21E0: { f: 'A' },
-    0x21E2: { f: 'A' },
-    0x2201: { f: 'A' },
-    0x2204: { c: '\\2203\\338' },
-    0x2206: { c: '\\394' },
-    0x220C: { c: '\\220B\\338' },
-    0x220D: { f: 'A' },
-    0x220F: { f: 'S1' },
-    0x2210: { f: 'S1' },
-    0x2211: { f: 'S1' },
-    0x2214: { f: 'A' },
-    0x2221: { f: 'A' },
-    0x2222: { f: 'A' },
-    0x2224: { f: 'A' },
-    0x2226: { f: 'A' },
-    0x222C: { f: 'S1' },
-    0x222D: { f: 'S1' },
-    0x222E: { f: 'S1' },
-    0x2234: { f: 'A' },
-    0x2235: { f: 'A' },
-    0x223D: { f: 'A' },
-    0x2241: { f: 'A' },
-    0x2242: { f: 'A' },
-    0x2244: { c: '\\2243\\338' },
-    0x2247: { c: '\\2246', f: 'A' },
-    0x2249: { c: '\\2248\\338' },
-    0x224A: { f: 'A' },
-    0x224E: { f: 'A' },
-    0x224F: { f: 'A' },
-    0x2251: { f: 'A' },
-    0x2252: { f: 'A' },
-    0x2253: { f: 'A' },
-    0x2256: { f: 'A' },
-    0x2257: { f: 'A' },
-    0x225C: { f: 'A' },
-    0x2262: { c: '\\2261\\338' },
-    0x2266: { f: 'A' },
-    0x2267: { f: 'A' },
-    0x2268: { f: 'A' },
-    0x2269: { f: 'A' },
-    0x226C: { f: 'A' },
-    0x226D: { c: '\\224D\\338' },
-    0x226E: { f: 'A' },
-    0x226F: { f: 'A' },
-    0x2270: { f: 'A' },
-    0x2271: { f: 'A' },
-    0x2272: { f: 'A' },
-    0x2273: { f: 'A' },
-    0x2274: { c: '\\2272\\338' },
-    0x2275: { c: '\\2273\\338' },
-    0x2276: { f: 'A' },
-    0x2277: { f: 'A' },
-    0x2278: { c: '\\2276\\338' },
-    0x2279: { c: '\\2277\\338' },
-    0x227C: { f: 'A' },
-    0x227D: { f: 'A' },
-    0x227E: { f: 'A' },
-    0x227F: { f: 'A' },
-    0x2280: { f: 'A' },
-    0x2281: { f: 'A' },
-    0x2284: { c: '\\2282\\338' },
-    0x2285: { c: '\\2283\\338' },
-    0x2288: { f: 'A' },
-    0x2289: { f: 'A' },
-    0x228A: { f: 'A' },
-    0x228B: { f: 'A' },
-    0x228F: { f: 'A' },
-    0x2290: { f: 'A' },
-    0x229A: { f: 'A' },
-    0x229B: { f: 'A' },
-    0x229D: { f: 'A' },
-    0x229E: { f: 'A' },
-    0x229F: { f: 'A' },
-    0x22A0: { f: 'A' },
-    0x22A1: { f: 'A' },
-    0x22A9: { f: 'A' },
-    0x22AA: { f: 'A' },
-    0x22AC: { f: 'A' },
-    0x22AD: { f: 'A' },
-    0x22AE: { f: 'A' },
-    0x22AF: { f: 'A' },
-    0x22B2: { f: 'A' },
-    0x22B3: { f: 'A' },
-    0x22B4: { f: 'A' },
-    0x22B5: { f: 'A' },
-    0x22B8: { f: 'A' },
-    0x22BA: { f: 'A' },
-    0x22BB: { f: 'A' },
-    0x22BC: { f: 'A' },
-    0x22C0: { f: 'S1' },
-    0x22C1: { f: 'S1' },
-    0x22C2: { f: 'S1' },
-    0x22C3: { f: 'S1' },
-    0x22C7: { f: 'A' },
-    0x22C9: { f: 'A' },
-    0x22CA: { f: 'A' },
-    0x22CB: { f: 'A' },
-    0x22CC: { f: 'A' },
-    0x22CD: { f: 'A' },
-    0x22CE: { f: 'A' },
-    0x22CF: { f: 'A' },
-    0x22D0: { f: 'A' },
-    0x22D1: { f: 'A' },
-    0x22D2: { f: 'A' },
-    0x22D3: { f: 'A' },
-    0x22D4: { f: 'A' },
-    0x22D6: { f: 'A' },
-    0x22D7: { f: 'A' },
-    0x22D8: { f: 'A' },
-    0x22D9: { f: 'A' },
-    0x22DA: { f: 'A' },
-    0x22DB: { f: 'A' },
-    0x22DE: { f: 'A' },
-    0x22DF: { f: 'A' },
-    0x22E0: { f: 'A' },
-    0x22E1: { f: 'A' },
-    0x22E2: { c: '\\2291\\338' },
-    0x22E3: { c: '\\2292\\338' },
-    0x22E6: { f: 'A' },
-    0x22E7: { f: 'A' },
-    0x22E8: { f: 'A' },
-    0x22E9: { f: 'A' },
-    0x22EA: { f: 'A' },
-    0x22EB: { f: 'A' },
-    0x22EC: { f: 'A' },
-    0x22ED: { f: 'A' },
-    0x2305: { c: '\\22BC', f: 'A' },
-    0x2306: { c: '\\2A5E', f: 'A' },
-    0x231C: { c: '\\250C', f: 'A' },
-    0x231D: { c: '\\2510', f: 'A' },
-    0x231E: { c: '\\2514', f: 'A' },
-    0x231F: { c: '\\2518', f: 'A' },
-    0x2329: { c: '\\27E8' },
-    0x232A: { c: '\\27E9' },
-    0x23D0: { f: 'S1' },
-    0x24C8: { f: 'A' },
-    0x250C: { f: 'A' },
-    0x2510: { f: 'A' },
-    0x2514: { f: 'A' },
-    0x2518: { f: 'A' },
-    0x2571: { f: 'A' },
-    0x2572: { f: 'A' },
-    0x25A0: { f: 'A' },
-    0x25A1: { f: 'A' },
-    0x25AA: { c: '\\25A0', f: 'A' },
-    0x25B2: { f: 'A' },
-    0x25B4: { c: '\\25B2', f: 'A' },
-    0x25B5: { c: '\\25B3' },
-    0x25B6: { f: 'A' },
-    0x25B8: { c: '\\25B6', f: 'A' },
-    0x25BC: { f: 'A' },
-    0x25BE: { c: '\\25BC', f: 'A' },
-    0x25BF: { c: '\\25BD' },
-    0x25C0: { f: 'A' },
-    0x25C2: { c: '\\25C0', f: 'A' },
-    0x25CA: { f: 'A' },
-    0x25FB: { c: '\\25A1', f: 'A' },
-    0x25FC: { c: '\\25A0', f: 'A' },
-    0x2605: { f: 'A' },
-    0x2713: { f: 'A' },
-    0x2720: { f: 'A' },
-    0x2758: { c: '\\2223' },
-    0x29EB: { f: 'A' },
-    0x29F8: { c: '/', f: 'I' },
-    0x2A00: { f: 'S1' },
-    0x2A01: { f: 'S1' },
-    0x2A02: { f: 'S1' },
-    0x2A04: { f: 'S1' },
-    0x2A06: { f: 'S1' },
-    0x2A0C: { c: '\\222C\\222C', f: 'S1' },
-    0x2A2F: { c: '\\D7' },
-    0x2A5E: { f: 'A' },
-    0x2A7D: { f: 'A' },
-    0x2A7E: { f: 'A' },
-    0x2A85: { f: 'A' },
-    0x2A86: { f: 'A' },
-    0x2A87: { f: 'A' },
-    0x2A88: { f: 'A' },
-    0x2A89: { f: 'A' },
-    0x2A8A: { f: 'A' },
-    0x2A8B: { f: 'A' },
-    0x2A8C: { f: 'A' },
-    0x2A95: { f: 'A' },
-    0x2A96: { f: 'A' },
-    0x2AB5: { f: 'A' },
-    0x2AB6: { f: 'A' },
-    0x2AB7: { f: 'A' },
-    0x2AB8: { f: 'A' },
-    0x2AB9: { f: 'A' },
-    0x2ABA: { f: 'A' },
-    0x2AC5: { f: 'A' },
-    0x2AC6: { f: 'A' },
-    0x2ACB: { f: 'A' },
-    0x2ACC: { f: 'A' },
-    0x3008: { c: '\\27E8' },
-    0x3009: { c: '\\27E9' },
-    0xE006: { f: 'A' },
-    0xE007: { f: 'A' },
-    0xE008: { f: 'A' },
-    0xE009: { f: 'A' },
-    0xE00C: { f: 'A' },
-    0xE00D: { f: 'A' },
-    0xE00E: { f: 'A' },
-    0xE00F: { f: 'A' },
-    0xE010: { f: 'A' },
-    0xE011: { f: 'A' },
-    0xE016: { f: 'A' },
-    0xE017: { f: 'A' },
-    0xE018: { f: 'A' },
-    0xE019: { f: 'A' },
-    0xE01A: { f: 'A' },
-    0xE01B: { f: 'A' },
-    0x1D400: { c: 'A', f: 'B' },
-    0x1D401: { c: 'B', f: 'B' },
-    0x1D402: { c: 'C', f: 'B' },
-    0x1D403: { c: 'D', f: 'B' },
-    0x1D404: { c: 'E', f: 'B' },
-    0x1D405: { c: 'F', f: 'B' },
-    0x1D406: { c: 'G', f: 'B' },
-    0x1D407: { c: 'H', f: 'B' },
-    0x1D408: { c: 'I', f: 'B' },
-    0x1D409: { c: 'J', f: 'B' },
-    0x1D40A: { c: 'K', f: 'B' },
-    0x1D40B: { c: 'L', f: 'B' },
-    0x1D40C: { c: 'M', f: 'B' },
-    0x1D40D: { c: 'N', f: 'B' },
-    0x1D40E: { c: 'O', f: 'B' },
-    0x1D40F: { c: 'P', f: 'B' },
-    0x1D410: { c: 'Q', f: 'B' },
-    0x1D411: { c: 'R', f: 'B' },
-    0x1D412: { c: 'S', f: 'B' },
-    0x1D413: { c: 'T', f: 'B' },
-    0x1D414: { c: 'U', f: 'B' },
-    0x1D415: { c: 'V', f: 'B' },
-    0x1D416: { c: 'W', f: 'B' },
-    0x1D417: { c: 'X', f: 'B' },
-    0x1D418: { c: 'Y', f: 'B' },
-    0x1D419: { c: 'Z', f: 'B' },
-    0x1D41A: { c: 'a', f: 'B' },
-    0x1D41B: { c: 'b', f: 'B' },
-    0x1D41C: { c: 'c', f: 'B' },
-    0x1D41D: { c: 'd', f: 'B' },
-    0x1D41E: { c: 'e', f: 'B' },
-    0x1D41F: { c: 'f', f: 'B' },
-    0x1D420: { c: 'g', f: 'B' },
-    0x1D421: { c: 'h', f: 'B' },
-    0x1D422: { c: 'i', f: 'B' },
-    0x1D423: { c: 'j', f: 'B' },
-    0x1D424: { c: 'k', f: 'B' },
-    0x1D425: { c: 'l', f: 'B' },
-    0x1D426: { c: 'm', f: 'B' },
-    0x1D427: { c: 'n', f: 'B' },
-    0x1D428: { c: 'o', f: 'B' },
-    0x1D429: { c: 'p', f: 'B' },
-    0x1D42A: { c: 'q', f: 'B' },
-    0x1D42B: { c: 'r', f: 'B' },
-    0x1D42C: { c: 's', f: 'B' },
-    0x1D42D: { c: 't', f: 'B' },
-    0x1D42E: { c: 'u', f: 'B' },
-    0x1D42F: { c: 'v', f: 'B' },
-    0x1D430: { c: 'w', f: 'B' },
-    0x1D431: { c: 'x', f: 'B' },
-    0x1D432: { c: 'y', f: 'B' },
-    0x1D433: { c: 'z', f: 'B' },
-    0x1D434: { c: 'A', f: 'I' },
-    0x1D435: { c: 'B', f: 'I' },
-    0x1D436: { c: 'C', f: 'I' },
-    0x1D437: { c: 'D', f: 'I' },
-    0x1D438: { c: 'E', f: 'I' },
-    0x1D439: { c: 'F', f: 'I' },
-    0x1D43A: { c: 'G', f: 'I' },
-    0x1D43B: { c: 'H', f: 'I' },
-    0x1D43C: { c: 'I', f: 'I' },
-    0x1D43D: { c: 'J', f: 'I' },
-    0x1D43E: { c: 'K', f: 'I' },
-    0x1D43F: { c: 'L', f: 'I' },
-    0x1D440: { c: 'M', f: 'I' },
-    0x1D441: { c: 'N', f: 'I' },
-    0x1D442: { c: 'O', f: 'I' },
-    0x1D443: { c: 'P', f: 'I' },
-    0x1D444: { c: 'Q', f: 'I' },
-    0x1D445: { c: 'R', f: 'I' },
-    0x1D446: { c: 'S', f: 'I' },
-    0x1D447: { c: 'T', f: 'I' },
-    0x1D448: { c: 'U', f: 'I' },
-    0x1D449: { c: 'V', f: 'I' },
-    0x1D44A: { c: 'W', f: 'I' },
-    0x1D44B: { c: 'X', f: 'I' },
-    0x1D44C: { c: 'Y', f: 'I' },
-    0x1D44D: { c: 'Z', f: 'I' },
-    0x1D44E: { c: 'a', f: 'I' },
-    0x1D44F: { c: 'b', f: 'I' },
-    0x1D450: { c: 'c', f: 'I' },
-    0x1D451: { c: 'd', f: 'I' },
-    0x1D452: { c: 'e', f: 'I' },
-    0x1D453: { c: 'f', f: 'I' },
-    0x1D454: { c: 'g', f: 'I' },
-    0x1D456: { c: 'i', f: 'I' },
-    0x1D457: { c: 'j', f: 'I' },
-    0x1D458: { c: 'k', f: 'I' },
-    0x1D459: { c: 'l', f: 'I' },
-    0x1D45A: { c: 'm', f: 'I' },
-    0x1D45B: { c: 'n', f: 'I' },
-    0x1D45C: { c: 'o', f: 'I' },
-    0x1D45D: { c: 'p', f: 'I' },
-    0x1D45E: { c: 'q', f: 'I' },
-    0x1D45F: { c: 'r', f: 'I' },
-    0x1D460: { c: 's', f: 'I' },
-    0x1D461: { c: 't', f: 'I' },
-    0x1D462: { c: 'u', f: 'I' },
-    0x1D463: { c: 'v', f: 'I' },
-    0x1D464: { c: 'w', f: 'I' },
-    0x1D465: { c: 'x', f: 'I' },
-    0x1D466: { c: 'y', f: 'I' },
-    0x1D467: { c: 'z', f: 'I' },
-    0x1D468: { c: 'A', f: 'BI' },
-    0x1D469: { c: 'B', f: 'BI' },
-    0x1D46A: { c: 'C', f: 'BI' },
-    0x1D46B: { c: 'D', f: 'BI' },
-    0x1D46C: { c: 'E', f: 'BI' },
-    0x1D46D: { c: 'F', f: 'BI' },
-    0x1D46E: { c: 'G', f: 'BI' },
-    0x1D46F: { c: 'H', f: 'BI' },
-    0x1D470: { c: 'I', f: 'BI' },
-    0x1D471: { c: 'J', f: 'BI' },
-    0x1D472: { c: 'K', f: 'BI' },
-    0x1D473: { c: 'L', f: 'BI' },
-    0x1D474: { c: 'M', f: 'BI' },
-    0x1D475: { c: 'N', f: 'BI' },
-    0x1D476: { c: 'O', f: 'BI' },
-    0x1D477: { c: 'P', f: 'BI' },
-    0x1D478: { c: 'Q', f: 'BI' },
-    0x1D479: { c: 'R', f: 'BI' },
-    0x1D47A: { c: 'S', f: 'BI' },
-    0x1D47B: { c: 'T', f: 'BI' },
-    0x1D47C: { c: 'U', f: 'BI' },
-    0x1D47D: { c: 'V', f: 'BI' },
-    0x1D47E: { c: 'W', f: 'BI' },
-    0x1D47F: { c: 'X', f: 'BI' },
-    0x1D480: { c: 'Y', f: 'BI' },
-    0x1D481: { c: 'Z', f: 'BI' },
-    0x1D482: { c: 'a', f: 'BI' },
-    0x1D483: { c: 'b', f: 'BI' },
-    0x1D484: { c: 'c', f: 'BI' },
-    0x1D485: { c: 'd', f: 'BI' },
-    0x1D486: { c: 'e', f: 'BI' },
-    0x1D487: { c: 'f', f: 'BI' },
-    0x1D488: { c: 'g', f: 'BI' },
-    0x1D489: { c: 'h', f: 'BI' },
-    0x1D48A: { c: 'i', f: 'BI' },
-    0x1D48B: { c: 'j', f: 'BI' },
-    0x1D48C: { c: 'k', f: 'BI' },
-    0x1D48D: { c: 'l', f: 'BI' },
-    0x1D48E: { c: 'm', f: 'BI' },
-    0x1D48F: { c: 'n', f: 'BI' },
-    0x1D490: { c: 'o', f: 'BI' },
-    0x1D491: { c: 'p', f: 'BI' },
-    0x1D492: { c: 'q', f: 'BI' },
-    0x1D493: { c: 'r', f: 'BI' },
-    0x1D494: { c: 's', f: 'BI' },
-    0x1D495: { c: 't', f: 'BI' },
-    0x1D496: { c: 'u', f: 'BI' },
-    0x1D497: { c: 'v', f: 'BI' },
-    0x1D498: { c: 'w', f: 'BI' },
-    0x1D499: { c: 'x', f: 'BI' },
-    0x1D49A: { c: 'y', f: 'BI' },
-    0x1D49B: { c: 'z', f: 'BI' },
-    0x1D49C: { c: 'A', f: 'SC' },
-    0x1D49E: { c: 'C', f: 'SC' },
-    0x1D49F: { c: 'D', f: 'SC' },
-    0x1D4A2: { c: 'G', f: 'SC' },
-    0x1D4A5: { c: 'J', f: 'SC' },
-    0x1D4A6: { c: 'K', f: 'SC' },
-    0x1D4A9: { c: 'N', f: 'SC' },
-    0x1D4AA: { c: 'O', f: 'SC' },
-    0x1D4AB: { c: 'P', f: 'SC' },
-    0x1D4AC: { c: 'Q', f: 'SC' },
-    0x1D4AE: { c: 'S', f: 'SC' },
-    0x1D4AF: { c: 'T', f: 'SC' },
-    0x1D4B0: { c: 'U', f: 'SC' },
-    0x1D4B1: { c: 'V', f: 'SC' },
-    0x1D4B2: { c: 'W', f: 'SC' },
-    0x1D4B3: { c: 'X', f: 'SC' },
-    0x1D4B4: { c: 'Y', f: 'SC' },
-    0x1D4B5: { c: 'Z', f: 'SC' },
-    0x1D504: { c: 'A', f: 'FR' },
-    0x1D505: { c: 'B', f: 'FR' },
-    0x1D507: { c: 'D', f: 'FR' },
-    0x1D508: { c: 'E', f: 'FR' },
-    0x1D509: { c: 'F', f: 'FR' },
-    0x1D50A: { c: 'G', f: 'FR' },
-    0x1D50D: { c: 'J', f: 'FR' },
-    0x1D50E: { c: 'K', f: 'FR' },
-    0x1D50F: { c: 'L', f: 'FR' },
-    0x1D510: { c: 'M', f: 'FR' },
-    0x1D511: { c: 'N', f: 'FR' },
-    0x1D512: { c: 'O', f: 'FR' },
-    0x1D513: { c: 'P', f: 'FR' },
-    0x1D514: { c: 'Q', f: 'FR' },
-    0x1D516: { c: 'S', f: 'FR' },
-    0x1D517: { c: 'T', f: 'FR' },
-    0x1D518: { c: 'U', f: 'FR' },
-    0x1D519: { c: 'V', f: 'FR' },
-    0x1D51A: { c: 'W', f: 'FR' },
-    0x1D51B: { c: 'X', f: 'FR' },
-    0x1D51C: { c: 'Y', f: 'FR' },
-    0x1D51E: { c: 'a', f: 'FR' },
-    0x1D51F: { c: 'b', f: 'FR' },
-    0x1D520: { c: 'c', f: 'FR' },
-    0x1D521: { c: 'd', f: 'FR' },
-    0x1D522: { c: 'e', f: 'FR' },
-    0x1D523: { c: 'f', f: 'FR' },
-    0x1D524: { c: 'g', f: 'FR' },
-    0x1D525: { c: 'h', f: 'FR' },
-    0x1D526: { c: 'i', f: 'FR' },
-    0x1D527: { c: 'j', f: 'FR' },
-    0x1D528: { c: 'k', f: 'FR' },
-    0x1D529: { c: 'l', f: 'FR' },
-    0x1D52A: { c: 'm', f: 'FR' },
-    0x1D52B: { c: 'n', f: 'FR' },
-    0x1D52C: { c: 'o', f: 'FR' },
-    0x1D52D: { c: 'p', f: 'FR' },
-    0x1D52E: { c: 'q', f: 'FR' },
-    0x1D52F: { c: 'r', f: 'FR' },
-    0x1D530: { c: 's', f: 'FR' },
-    0x1D531: { c: 't', f: 'FR' },
-    0x1D532: { c: 'u', f: 'FR' },
-    0x1D533: { c: 'v', f: 'FR' },
-    0x1D534: { c: 'w', f: 'FR' },
-    0x1D535: { c: 'x', f: 'FR' },
-    0x1D536: { c: 'y', f: 'FR' },
-    0x1D537: { c: 'z', f: 'FR' },
-    0x1D538: { c: 'A', f: 'A' },
-    0x1D539: { c: 'B', f: 'A' },
-    0x1D53B: { c: 'D', f: 'A' },
-    0x1D53C: { c: 'E', f: 'A' },
-    0x1D53D: { c: 'F', f: 'A' },
-    0x1D53E: { c: 'G', f: 'A' },
-    0x1D540: { c: 'I', f: 'A' },
-    0x1D541: { c: 'J', f: 'A' },
-    0x1D542: { c: 'K', f: 'A' },
-    0x1D543: { c: 'L', f: 'A' },
-    0x1D544: { c: 'M', f: 'A' },
-    0x1D546: { c: 'O', f: 'A' },
-    0x1D54A: { c: 'S', f: 'A' },
-    0x1D54B: { c: 'T', f: 'A' },
-    0x1D54C: { c: 'U', f: 'A' },
-    0x1D54D: { c: 'V', f: 'A' },
-    0x1D54E: { c: 'W', f: 'A' },
-    0x1D54F: { c: 'X', f: 'A' },
-    0x1D550: { c: 'Y', f: 'A' },
-    0x1D56C: { c: 'A', f: 'FRB' },
-    0x1D56D: { c: 'B', f: 'FRB' },
-    0x1D56E: { c: 'C', f: 'FRB' },
-    0x1D56F: { c: 'D', f: 'FRB' },
-    0x1D570: { c: 'E', f: 'FRB' },
-    0x1D571: { c: 'F', f: 'FRB' },
-    0x1D572: { c: 'G', f: 'FRB' },
-    0x1D573: { c: 'H', f: 'FRB' },
-    0x1D574: { c: 'I', f: 'FRB' },
-    0x1D575: { c: 'J', f: 'FRB' },
-    0x1D576: { c: 'K', f: 'FRB' },
-    0x1D577: { c: 'L', f: 'FRB' },
-    0x1D578: { c: 'M', f: 'FRB' },
-    0x1D579: { c: 'N', f: 'FRB' },
-    0x1D57A: { c: 'O', f: 'FRB' },
-    0x1D57B: { c: 'P', f: 'FRB' },
-    0x1D57C: { c: 'Q', f: 'FRB' },
-    0x1D57D: { c: 'R', f: 'FRB' },
-    0x1D57E: { c: 'S', f: 'FRB' },
-    0x1D57F: { c: 'T', f: 'FRB' },
-    0x1D580: { c: 'U', f: 'FRB' },
-    0x1D581: { c: 'V', f: 'FRB' },
-    0x1D582: { c: 'W', f: 'FRB' },
-    0x1D583: { c: 'X', f: 'FRB' },
-    0x1D584: { c: 'Y', f: 'FRB' },
-    0x1D585: { c: 'Z', f: 'FRB' },
-    0x1D586: { c: 'a', f: 'FRB' },
-    0x1D587: { c: 'b', f: 'FRB' },
-    0x1D588: { c: 'c', f: 'FRB' },
-    0x1D589: { c: 'd', f: 'FRB' },
-    0x1D58A: { c: 'e', f: 'FRB' },
-    0x1D58B: { c: 'f', f: 'FRB' },
-    0x1D58C: { c: 'g', f: 'FRB' },
-    0x1D58D: { c: 'h', f: 'FRB' },
-    0x1D58E: { c: 'i', f: 'FRB' },
-    0x1D58F: { c: 'j', f: 'FRB' },
-    0x1D590: { c: 'k', f: 'FRB' },
-    0x1D591: { c: 'l', f: 'FRB' },
-    0x1D592: { c: 'm', f: 'FRB' },
-    0x1D593: { c: 'n', f: 'FRB' },
-    0x1D594: { c: 'o', f: 'FRB' },
-    0x1D595: { c: 'p', f: 'FRB' },
-    0x1D596: { c: 'q', f: 'FRB' },
-    0x1D597: { c: 'r', f: 'FRB' },
-    0x1D598: { c: 's', f: 'FRB' },
-    0x1D599: { c: 't', f: 'FRB' },
-    0x1D59A: { c: 'u', f: 'FRB' },
-    0x1D59B: { c: 'v', f: 'FRB' },
-    0x1D59C: { c: 'w', f: 'FRB' },
-    0x1D59D: { c: 'x', f: 'FRB' },
-    0x1D59E: { c: 'y', f: 'FRB' },
-    0x1D59F: { c: 'z', f: 'FRB' },
-    0x1D5A0: { c: 'A', f: 'SS' },
-    0x1D5A1: { c: 'B', f: 'SS' },
-    0x1D5A2: { c: 'C', f: 'SS' },
-    0x1D5A3: { c: 'D', f: 'SS' },
-    0x1D5A4: { c: 'E', f: 'SS' },
-    0x1D5A5: { c: 'F', f: 'SS' },
-    0x1D5A6: { c: 'G', f: 'SS' },
-    0x1D5A7: { c: 'H', f: 'SS' },
-    0x1D5A8: { c: 'I', f: 'SS' },
-    0x1D5A9: { c: 'J', f: 'SS' },
-    0x1D5AA: { c: 'K', f: 'SS' },
-    0x1D5AB: { c: 'L', f: 'SS' },
-    0x1D5AC: { c: 'M', f: 'SS' },
-    0x1D5AD: { c: 'N', f: 'SS' },
-    0x1D5AE: { c: 'O', f: 'SS' },
-    0x1D5AF: { c: 'P', f: 'SS' },
-    0x1D5B0: { c: 'Q', f: 'SS' },
-    0x1D5B1: { c: 'R', f: 'SS' },
-    0x1D5B2: { c: 'S', f: 'SS' },
-    0x1D5B3: { c: 'T', f: 'SS' },
-    0x1D5B4: { c: 'U', f: 'SS' },
-    0x1D5B5: { c: 'V', f: 'SS' },
-    0x1D5B6: { c: 'W', f: 'SS' },
-    0x1D5B7: { c: 'X', f: 'SS' },
-    0x1D5B8: { c: 'Y', f: 'SS' },
-    0x1D5B9: { c: 'Z', f: 'SS' },
-    0x1D5BA: { c: 'a', f: 'SS' },
-    0x1D5BB: { c: 'b', f: 'SS' },
-    0x1D5BC: { c: 'c', f: 'SS' },
-    0x1D5BD: { c: 'd', f: 'SS' },
-    0x1D5BE: { c: 'e', f: 'SS' },
-    0x1D5BF: { c: 'f', f: 'SS' },
-    0x1D5C0: { c: 'g', f: 'SS' },
-    0x1D5C1: { c: 'h', f: 'SS' },
-    0x1D5C2: { c: 'i', f: 'SS' },
-    0x1D5C3: { c: 'j', f: 'SS' },
-    0x1D5C4: { c: 'k', f: 'SS' },
-    0x1D5C5: { c: 'l', f: 'SS' },
-    0x1D5C6: { c: 'm', f: 'SS' },
-    0x1D5C7: { c: 'n', f: 'SS' },
-    0x1D5C8: { c: 'o', f: 'SS' },
-    0x1D5C9: { c: 'p', f: 'SS' },
-    0x1D5CA: { c: 'q', f: 'SS' },
-    0x1D5CB: { c: 'r', f: 'SS' },
-    0x1D5CC: { c: 's', f: 'SS' },
-    0x1D5CD: { c: 't', f: 'SS' },
-    0x1D5CE: { c: 'u', f: 'SS' },
-    0x1D5CF: { c: 'v', f: 'SS' },
-    0x1D5D0: { c: 'w', f: 'SS' },
-    0x1D5D1: { c: 'x', f: 'SS' },
-    0x1D5D2: { c: 'y', f: 'SS' },
-    0x1D5D3: { c: 'z', f: 'SS' },
-    0x1D5D4: { c: 'A', f: 'SSB' },
-    0x1D5D5: { c: 'B', f: 'SSB' },
-    0x1D5D6: { c: 'C', f: 'SSB' },
-    0x1D5D7: { c: 'D', f: 'SSB' },
-    0x1D5D8: { c: 'E', f: 'SSB' },
-    0x1D5D9: { c: 'F', f: 'SSB' },
-    0x1D5DA: { c: 'G', f: 'SSB' },
-    0x1D5DB: { c: 'H', f: 'SSB' },
-    0x1D5DC: { c: 'I', f: 'SSB' },
-    0x1D5DD: { c: 'J', f: 'SSB' },
-    0x1D5DE: { c: 'K', f: 'SSB' },
-    0x1D5DF: { c: 'L', f: 'SSB' },
-    0x1D5E0: { c: 'M', f: 'SSB' },
-    0x1D5E1: { c: 'N', f: 'SSB' },
-    0x1D5E2: { c: 'O', f: 'SSB' },
-    0x1D5E3: { c: 'P', f: 'SSB' },
-    0x1D5E4: { c: 'Q', f: 'SSB' },
-    0x1D5E5: { c: 'R', f: 'SSB' },
-    0x1D5E6: { c: 'S', f: 'SSB' },
-    0x1D5E7: { c: 'T', f: 'SSB' },
-    0x1D5E8: { c: 'U', f: 'SSB' },
-    0x1D5E9: { c: 'V', f: 'SSB' },
-    0x1D5EA: { c: 'W', f: 'SSB' },
-    0x1D5EB: { c: 'X', f: 'SSB' },
-    0x1D5EC: { c: 'Y', f: 'SSB' },
-    0x1D5ED: { c: 'Z', f: 'SSB' },
-    0x1D5EE: { c: 'a', f: 'SSB' },
-    0x1D5EF: { c: 'b', f: 'SSB' },
-    0x1D5F0: { c: 'c', f: 'SSB' },
-    0x1D5F1: { c: 'd', f: 'SSB' },
-    0x1D5F2: { c: 'e', f: 'SSB' },
-    0x1D5F3: { c: 'f', f: 'SSB' },
-    0x1D5F4: { c: 'g', f: 'SSB' },
-    0x1D5F5: { c: 'h', f: 'SSB' },
-    0x1D5F6: { c: 'i', f: 'SSB' },
-    0x1D5F7: { c: 'j', f: 'SSB' },
-    0x1D5F8: { c: 'k', f: 'SSB' },
-    0x1D5F9: { c: 'l', f: 'SSB' },
-    0x1D5FA: { c: 'm', f: 'SSB' },
-    0x1D5FB: { c: 'n', f: 'SSB' },
-    0x1D5FC: { c: 'o', f: 'SSB' },
-    0x1D5FD: { c: 'p', f: 'SSB' },
-    0x1D5FE: { c: 'q', f: 'SSB' },
-    0x1D5FF: { c: 'r', f: 'SSB' },
-    0x1D600: { c: 's', f: 'SSB' },
-    0x1D601: { c: 't', f: 'SSB' },
-    0x1D602: { c: 'u', f: 'SSB' },
-    0x1D603: { c: 'v', f: 'SSB' },
-    0x1D604: { c: 'w', f: 'SSB' },
-    0x1D605: { c: 'x', f: 'SSB' },
-    0x1D606: { c: 'y', f: 'SSB' },
-    0x1D607: { c: 'z', f: 'SSB' },
-    0x1D608: { c: 'A', f: 'SSI' },
-    0x1D609: { c: 'B', f: 'SSI' },
-    0x1D60A: { c: 'C', f: 'SSI' },
-    0x1D60B: { c: 'D', f: 'SSI' },
-    0x1D60C: { c: 'E', f: 'SSI' },
-    0x1D60D: { c: 'F', f: 'SSI' },
-    0x1D60E: { c: 'G', f: 'SSI' },
-    0x1D60F: { c: 'H', f: 'SSI' },
-    0x1D610: { c: 'I', f: 'SSI' },
-    0x1D611: { c: 'J', f: 'SSI' },
-    0x1D612: { c: 'K', f: 'SSI' },
-    0x1D613: { c: 'L', f: 'SSI' },
-    0x1D614: { c: 'M', f: 'SSI' },
-    0x1D615: { c: 'N', f: 'SSI' },
-    0x1D616: { c: 'O', f: 'SSI' },
-    0x1D617: { c: 'P', f: 'SSI' },
-    0x1D618: { c: 'Q', f: 'SSI' },
-    0x1D619: { c: 'R', f: 'SSI' },
-    0x1D61A: { c: 'S', f: 'SSI' },
-    0x1D61B: { c: 'T', f: 'SSI' },
-    0x1D61C: { c: 'U', f: 'SSI' },
-    0x1D61D: { c: 'V', f: 'SSI' },
-    0x1D61E: { c: 'W', f: 'SSI' },
-    0x1D61F: { c: 'X', f: 'SSI' },
-    0x1D620: { c: 'Y', f: 'SSI' },
-    0x1D621: { c: 'Z', f: 'SSI' },
-    0x1D622: { c: 'a', f: 'SSI' },
-    0x1D623: { c: 'b', f: 'SSI' },
-    0x1D624: { c: 'c', f: 'SSI' },
-    0x1D625: { c: 'd', f: 'SSI' },
-    0x1D626: { c: 'e', f: 'SSI' },
-    0x1D627: { c: 'f', f: 'SSI' },
-    0x1D628: { c: 'g', f: 'SSI' },
-    0x1D629: { c: 'h', f: 'SSI' },
-    0x1D62A: { c: 'i', f: 'SSI' },
-    0x1D62B: { c: 'j', f: 'SSI' },
-    0x1D62C: { c: 'k', f: 'SSI' },
-    0x1D62D: { c: 'l', f: 'SSI' },
-    0x1D62E: { c: 'm', f: 'SSI' },
-    0x1D62F: { c: 'n', f: 'SSI' },
-    0x1D630: { c: 'o', f: 'SSI' },
-    0x1D631: { c: 'p', f: 'SSI' },
-    0x1D632: { c: 'q', f: 'SSI' },
-    0x1D633: { c: 'r', f: 'SSI' },
-    0x1D634: { c: 's', f: 'SSI' },
-    0x1D635: { c: 't', f: 'SSI' },
-    0x1D636: { c: 'u', f: 'SSI' },
-    0x1D637: { c: 'v', f: 'SSI' },
-    0x1D638: { c: 'w', f: 'SSI' },
-    0x1D639: { c: 'x', f: 'SSI' },
-    0x1D63A: { c: 'y', f: 'SSI' },
-    0x1D63B: { c: 'z', f: 'SSI' },
-    0x1D670: { c: 'A', f: 'T' },
-    0x1D671: { c: 'B', f: 'T' },
-    0x1D672: { c: 'C', f: 'T' },
-    0x1D673: { c: 'D', f: 'T' },
-    0x1D674: { c: 'E', f: 'T' },
-    0x1D675: { c: 'F', f: 'T' },
-    0x1D676: { c: 'G', f: 'T' },
-    0x1D677: { c: 'H', f: 'T' },
-    0x1D678: { c: 'I', f: 'T' },
-    0x1D679: { c: 'J', f: 'T' },
-    0x1D67A: { c: 'K', f: 'T' },
-    0x1D67B: { c: 'L', f: 'T' },
-    0x1D67C: { c: 'M', f: 'T' },
-    0x1D67D: { c: 'N', f: 'T' },
-    0x1D67E: { c: 'O', f: 'T' },
-    0x1D67F: { c: 'P', f: 'T' },
-    0x1D680: { c: 'Q', f: 'T' },
-    0x1D681: { c: 'R', f: 'T' },
-    0x1D682: { c: 'S', f: 'T' },
-    0x1D683: { c: 'T', f: 'T' },
-    0x1D684: { c: 'U', f: 'T' },
-    0x1D685: { c: 'V', f: 'T' },
-    0x1D686: { c: 'W', f: 'T' },
-    0x1D687: { c: 'X', f: 'T' },
-    0x1D688: { c: 'Y', f: 'T' },
-    0x1D689: { c: 'Z', f: 'T' },
-    0x1D68A: { c: 'a', f: 'T' },
-    0x1D68B: { c: 'b', f: 'T' },
-    0x1D68C: { c: 'c', f: 'T' },
-    0x1D68D: { c: 'd', f: 'T' },
-    0x1D68E: { c: 'e', f: 'T' },
-    0x1D68F: { c: 'f', f: 'T' },
-    0x1D690: { c: 'g', f: 'T' },
-    0x1D691: { c: 'h', f: 'T' },
-    0x1D692: { c: 'i', f: 'T' },
-    0x1D693: { c: 'j', f: 'T' },
-    0x1D694: { c: 'k', f: 'T' },
-    0x1D695: { c: 'l', f: 'T' },
-    0x1D696: { c: 'm', f: 'T' },
-    0x1D697: { c: 'n', f: 'T' },
-    0x1D698: { c: 'o', f: 'T' },
-    0x1D699: { c: 'p', f: 'T' },
-    0x1D69A: { c: 'q', f: 'T' },
-    0x1D69B: { c: 'r', f: 'T' },
-    0x1D69C: { c: 's', f: 'T' },
-    0x1D69D: { c: 't', f: 'T' },
-    0x1D69E: { c: 'u', f: 'T' },
-    0x1D69F: { c: 'v', f: 'T' },
-    0x1D6A0: { c: 'w', f: 'T' },
-    0x1D6A1: { c: 'x', f: 'T' },
-    0x1D6A2: { c: 'y', f: 'T' },
-    0x1D6A3: { c: 'z', f: 'T' },
-    0x1D6A8: { c: 'A', f: 'B' },
-    0x1D6A9: { c: 'B', f: 'B' },
-    0x1D6AA: { c: '\\393', f: 'B' },
-    0x1D6AB: { c: '\\394', f: 'B' },
-    0x1D6AC: { c: 'E', f: 'B' },
-    0x1D6AD: { c: 'Z', f: 'B' },
-    0x1D6AE: { c: 'H', f: 'B' },
-    0x1D6AF: { c: '\\398', f: 'B' },
-    0x1D6B0: { c: 'I', f: 'B' },
-    0x1D6B1: { c: 'K', f: 'B' },
-    0x1D6B2: { c: '\\39B', f: 'B' },
-    0x1D6B3: { c: 'M', f: 'B' },
-    0x1D6B4: { c: 'N', f: 'B' },
-    0x1D6B5: { c: '\\39E', f: 'B' },
-    0x1D6B6: { c: 'O', f: 'B' },
-    0x1D6B7: { c: '\\3A0', f: 'B' },
-    0x1D6B8: { c: 'P', f: 'B' },
-    0x1D6BA: { c: '\\3A3', f: 'B' },
-    0x1D6BB: { c: 'T', f: 'B' },
-    0x1D6BC: { c: '\\3A5', f: 'B' },
-    0x1D6BD: { c: '\\3A6', f: 'B' },
-    0x1D6BE: { c: 'X', f: 'B' },
-    0x1D6BF: { c: '\\3A8', f: 'B' },
-    0x1D6C0: { c: '\\3A9', f: 'B' },
-    0x1D6C1: { c: '\\2207', f: 'B' },
-    0x1D6E2: { c: 'A', f: 'I' },
-    0x1D6E3: { c: 'B', f: 'I' },
-    0x1D6E4: { c: '\\393', f: 'I' },
-    0x1D6E5: { c: '\\394', f: 'I' },
-    0x1D6E6: { c: 'E', f: 'I' },
-    0x1D6E7: { c: 'Z', f: 'I' },
-    0x1D6E8: { c: 'H', f: 'I' },
-    0x1D6E9: { c: '\\398', f: 'I' },
-    0x1D6EA: { c: 'I', f: 'I' },
-    0x1D6EB: { c: 'K', f: 'I' },
-    0x1D6EC: { c: '\\39B', f: 'I' },
-    0x1D6ED: { c: 'M', f: 'I' },
-    0x1D6EE: { c: 'N', f: 'I' },
-    0x1D6EF: { c: '\\39E', f: 'I' },
-    0x1D6F0: { c: 'O', f: 'I' },
-    0x1D6F1: { c: '\\3A0', f: 'I' },
-    0x1D6F2: { c: 'P', f: 'I' },
-    0x1D6F4: { c: '\\3A3', f: 'I' },
-    0x1D6F5: { c: 'T', f: 'I' },
-    0x1D6F6: { c: '\\3A5', f: 'I' },
-    0x1D6F7: { c: '\\3A6', f: 'I' },
-    0x1D6F8: { c: 'X', f: 'I' },
-    0x1D6F9: { c: '\\3A8', f: 'I' },
-    0x1D6FA: { c: '\\3A9', f: 'I' },
-    0x1D6FC: { c: '\\3B1', f: 'I' },
-    0x1D6FD: { c: '\\3B2', f: 'I' },
-    0x1D6FE: { c: '\\3B3', f: 'I' },
-    0x1D6FF: { c: '\\3B4', f: 'I' },
-    0x1D700: { c: '\\3B5', f: 'I' },
-    0x1D701: { c: '\\3B6', f: 'I' },
-    0x1D702: { c: '\\3B7', f: 'I' },
-    0x1D703: { c: '\\3B8', f: 'I' },
-    0x1D704: { c: '\\3B9', f: 'I' },
-    0x1D705: { c: '\\3BA', f: 'I' },
-    0x1D706: { c: '\\3BB', f: 'I' },
-    0x1D707: { c: '\\3BC', f: 'I' },
-    0x1D708: { c: '\\3BD', f: 'I' },
-    0x1D709: { c: '\\3BE', f: 'I' },
-    0x1D70A: { c: '\\3BF', f: 'I' },
-    0x1D70B: { c: '\\3C0', f: 'I' },
-    0x1D70C: { c: '\\3C1', f: 'I' },
-    0x1D70D: { c: '\\3C2', f: 'I' },
-    0x1D70E: { c: '\\3C3', f: 'I' },
-    0x1D70F: { c: '\\3C4', f: 'I' },
-    0x1D710: { c: '\\3C5', f: 'I' },
-    0x1D711: { c: '\\3C6', f: 'I' },
-    0x1D712: { c: '\\3C7', f: 'I' },
-    0x1D713: { c: '\\3C8', f: 'I' },
-    0x1D714: { c: '\\3C9', f: 'I' },
-    0x1D715: { c: '\\2202' },
-    0x1D716: { c: '\\3F5', f: 'I' },
-    0x1D717: { c: '\\3D1', f: 'I' },
-    0x1D718: { c: '\\E009', f: 'A' },
-    0x1D719: { c: '\\3D5', f: 'I' },
-    0x1D71A: { c: '\\3F1', f: 'I' },
-    0x1D71B: { c: '\\3D6', f: 'I' },
-    0x1D71C: { c: 'A', f: 'BI' },
-    0x1D71D: { c: 'B', f: 'BI' },
-    0x1D71E: { c: '\\393', f: 'BI' },
-    0x1D71F: { c: '\\394', f: 'BI' },
-    0x1D720: { c: 'E', f: 'BI' },
-    0x1D721: { c: 'Z', f: 'BI' },
-    0x1D722: { c: 'H', f: 'BI' },
-    0x1D723: { c: '\\398', f: 'BI' },
-    0x1D724: { c: 'I', f: 'BI' },
-    0x1D725: { c: 'K', f: 'BI' },
-    0x1D726: { c: '\\39B', f: 'BI' },
-    0x1D727: { c: 'M', f: 'BI' },
-    0x1D728: { c: 'N', f: 'BI' },
-    0x1D729: { c: '\\39E', f: 'BI' },
-    0x1D72A: { c: 'O', f: 'BI' },
-    0x1D72B: { c: '\\3A0', f: 'BI' },
-    0x1D72C: { c: 'P', f: 'BI' },
-    0x1D72E: { c: '\\3A3', f: 'BI' },
-    0x1D72F: { c: 'T', f: 'BI' },
-    0x1D730: { c: '\\3A5', f: 'BI' },
-    0x1D731: { c: '\\3A6', f: 'BI' },
-    0x1D732: { c: 'X', f: 'BI' },
-    0x1D733: { c: '\\3A8', f: 'BI' },
-    0x1D734: { c: '\\3A9', f: 'BI' },
-    0x1D736: { c: '\\3B1', f: 'BI' },
-    0x1D737: { c: '\\3B2', f: 'BI' },
-    0x1D738: { c: '\\3B3', f: 'BI' },
-    0x1D739: { c: '\\3B4', f: 'BI' },
-    0x1D73A: { c: '\\3B5', f: 'BI' },
-    0x1D73B: { c: '\\3B6', f: 'BI' },
-    0x1D73C: { c: '\\3B7', f: 'BI' },
-    0x1D73D: { c: '\\3B8', f: 'BI' },
-    0x1D73E: { c: '\\3B9', f: 'BI' },
-    0x1D73F: { c: '\\3BA', f: 'BI' },
-    0x1D740: { c: '\\3BB', f: 'BI' },
-    0x1D741: { c: '\\3BC', f: 'BI' },
-    0x1D742: { c: '\\3BD', f: 'BI' },
-    0x1D743: { c: '\\3BE', f: 'BI' },
-    0x1D744: { c: '\\3BF', f: 'BI' },
-    0x1D745: { c: '\\3C0', f: 'BI' },
-    0x1D746: { c: '\\3C1', f: 'BI' },
-    0x1D747: { c: '\\3C2', f: 'BI' },
-    0x1D748: { c: '\\3C3', f: 'BI' },
-    0x1D749: { c: '\\3C4', f: 'BI' },
-    0x1D74A: { c: '\\3C5', f: 'BI' },
-    0x1D74B: { c: '\\3C6', f: 'BI' },
-    0x1D74C: { c: '\\3C7', f: 'BI' },
-    0x1D74D: { c: '\\3C8', f: 'BI' },
-    0x1D74E: { c: '\\3C9', f: 'BI' },
-    0x1D74F: { c: '\\2202', f: 'B' },
-    0x1D750: { c: '\\3F5', f: 'BI' },
-    0x1D751: { c: '\\3D1', f: 'BI' },
-    0x1D752: { c: '\\E009', f: 'A' },
-    0x1D753: { c: '\\3D5', f: 'BI' },
-    0x1D754: { c: '\\3F1', f: 'BI' },
-    0x1D755: { c: '\\3D6', f: 'BI' },
-    0x1D756: { c: 'A', f: 'SSB' },
-    0x1D757: { c: 'B', f: 'SSB' },
-    0x1D758: { c: '\\393', f: 'SSB' },
-    0x1D759: { c: '\\394', f: 'SSB' },
-    0x1D75A: { c: 'E', f: 'SSB' },
-    0x1D75B: { c: 'Z', f: 'SSB' },
-    0x1D75C: { c: 'H', f: 'SSB' },
-    0x1D75D: { c: '\\398', f: 'SSB' },
-    0x1D75E: { c: 'I', f: 'SSB' },
-    0x1D75F: { c: 'K', f: 'SSB' },
-    0x1D760: { c: '\\39B', f: 'SSB' },
-    0x1D761: { c: 'M', f: 'SSB' },
-    0x1D762: { c: 'N', f: 'SSB' },
-    0x1D763: { c: '\\39E', f: 'SSB' },
-    0x1D764: { c: 'O', f: 'SSB' },
-    0x1D765: { c: '\\3A0', f: 'SSB' },
-    0x1D766: { c: 'P', f: 'SSB' },
-    0x1D768: { c: '\\3A3', f: 'SSB' },
-    0x1D769: { c: 'T', f: 'SSB' },
-    0x1D76A: { c: '\\3A5', f: 'SSB' },
-    0x1D76B: { c: '\\3A6', f: 'SSB' },
-    0x1D76C: { c: 'X', f: 'SSB' },
-    0x1D76D: { c: '\\3A8', f: 'SSB' },
-    0x1D76E: { c: '\\3A9', f: 'SSB' },
-    0x1D7CE: { c: '0', f: 'B' },
-    0x1D7CF: { c: '1', f: 'B' },
-    0x1D7D0: { c: '2', f: 'B' },
-    0x1D7D1: { c: '3', f: 'B' },
-    0x1D7D2: { c: '4', f: 'B' },
-    0x1D7D3: { c: '5', f: 'B' },
-    0x1D7D4: { c: '6', f: 'B' },
-    0x1D7D5: { c: '7', f: 'B' },
-    0x1D7D6: { c: '8', f: 'B' },
-    0x1D7D7: { c: '9', f: 'B' },
-    0x1D7E2: { c: '0', f: 'SS' },
-    0x1D7E3: { c: '1', f: 'SS' },
-    0x1D7E4: { c: '2', f: 'SS' },
-    0x1D7E5: { c: '3', f: 'SS' },
-    0x1D7E6: { c: '4', f: 'SS' },
-    0x1D7E7: { c: '5', f: 'SS' },
-    0x1D7E8: { c: '6', f: 'SS' },
-    0x1D7E9: { c: '7', f: 'SS' },
-    0x1D7EA: { c: '8', f: 'SS' },
-    0x1D7EB: { c: '9', f: 'SS' },
-    0x1D7EC: { c: '0', f: 'SSB' },
-    0x1D7ED: { c: '1', f: 'SSB' },
-    0x1D7EE: { c: '2', f: 'SSB' },
-    0x1D7EF: { c: '3', f: 'SSB' },
-    0x1D7F0: { c: '4', f: 'SSB' },
-    0x1D7F1: { c: '5', f: 'SSB' },
-    0x1D7F2: { c: '6', f: 'SSB' },
-    0x1D7F3: { c: '7', f: 'SSB' },
-    0x1D7F4: { c: '8', f: 'SSB' },
-    0x1D7F5: { c: '9', f: 'SSB' },
-    0x1D7F6: { c: '0', f: 'T' },
-    0x1D7F7: { c: '1', f: 'T' },
-    0x1D7F8: { c: '2', f: 'T' },
-    0x1D7F9: { c: '3', f: 'T' },
-    0x1D7FA: { c: '4', f: 'T' },
-    0x1D7FB: { c: '5', f: 'T' },
-    0x1D7FC: { c: '6', f: 'T' },
-    0x1D7FD: { c: '7', f: 'T' },
-    0x1D7FE: { c: '8', f: 'T' },
-    0x1D7FF: { c: '9', f: 'T' },
-});
-//# sourceMappingURL=normal.js.map
-
-/***/ }),
-
-/***/ 83356:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.sansSerifBoldItalic = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var sans_serif_bold_italic_js_1 = __webpack_require__(47033);
-exports.sansSerifBoldItalic = (0, FontData_js_1.AddCSS)(sans_serif_bold_italic_js_1.sansSerifBoldItalic, {
-    0x131: { f: 'SSB' },
-    0x237: { f: 'SSB' },
-});
-//# sourceMappingURL=sans-serif-bold-italic.js.map
-
-/***/ }),
-
-/***/ 11211:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.sansSerifBold = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var sans_serif_bold_js_1 = __webpack_require__(94872);
-exports.sansSerifBold = (0, FontData_js_1.AddCSS)(sans_serif_bold_js_1.sansSerifBold, {
-    0x2015: { c: '\\2014' },
-    0x2017: { c: '_' },
-    0x2044: { c: '/' },
-    0x2206: { c: '\\394' },
-});
-//# sourceMappingURL=sans-serif-bold.js.map
-
-/***/ }),
-
-/***/ 76316:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.sansSerifItalic = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var sans_serif_italic_js_1 = __webpack_require__(9255);
-exports.sansSerifItalic = (0, FontData_js_1.AddCSS)(sans_serif_italic_js_1.sansSerifItalic, {
-    0x391: { c: 'A' },
-    0x392: { c: 'B' },
-    0x395: { c: 'E' },
-    0x396: { c: 'Z' },
-    0x397: { c: 'H' },
-    0x399: { c: 'I' },
-    0x39A: { c: 'K' },
-    0x39C: { c: 'M' },
-    0x39D: { c: 'N' },
-    0x39F: { c: 'O' },
-    0x3A1: { c: 'P' },
-    0x3A4: { c: 'T' },
-    0x3A7: { c: 'X' },
-    0x2015: { c: '\\2014' },
-    0x2017: { c: '_' },
-    0x2044: { c: '/' },
-    0x2206: { c: '\\394' },
-});
-//# sourceMappingURL=sans-serif-italic.js.map
-
-/***/ }),
-
-/***/ 16651:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.sansSerif = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var sans_serif_js_1 = __webpack_require__(83366);
-exports.sansSerif = (0, FontData_js_1.AddCSS)(sans_serif_js_1.sansSerif, {
-    0x391: { c: 'A' },
-    0x392: { c: 'B' },
-    0x395: { c: 'E' },
-    0x396: { c: 'Z' },
-    0x397: { c: 'H' },
-    0x399: { c: 'I' },
-    0x39A: { c: 'K' },
-    0x39C: { c: 'M' },
-    0x39D: { c: 'N' },
-    0x39F: { c: 'O' },
-    0x3A1: { c: 'P' },
-    0x3A4: { c: 'T' },
-    0x3A7: { c: 'X' },
-    0x2015: { c: '\\2014' },
-    0x2017: { c: '_' },
-    0x2044: { c: '/' },
-    0x2206: { c: '\\394' },
-});
-//# sourceMappingURL=sans-serif.js.map
-
-/***/ }),
-
-/***/ 56755:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.scriptBold = void 0;
-var script_bold_js_1 = __webpack_require__(21616);
-Object.defineProperty(exports, "scriptBold", ({ enumerable: true, get: function () { return script_bold_js_1.scriptBold; } }));
-//# sourceMappingURL=script-bold.js.map
-
-/***/ }),
-
-/***/ 45491:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.script = void 0;
-var script_js_1 = __webpack_require__(24062);
-Object.defineProperty(exports, "script", ({ enumerable: true, get: function () { return script_js_1.script; } }));
-//# sourceMappingURL=script.js.map
-
-/***/ }),
-
-/***/ 7598:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.smallop = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var smallop_js_1 = __webpack_require__(22578);
-exports.smallop = (0, FontData_js_1.AddCSS)(smallop_js_1.smallop, {
-    0x2044: { c: '/' },
-    0x2329: { c: '\\27E8' },
-    0x232A: { c: '\\27E9' },
-    0x2758: { c: '\\2223' },
-    0x2A0C: { c: '\\222C\\222C' },
-    0x3008: { c: '\\27E8' },
-    0x3009: { c: '\\27E9' },
-});
-//# sourceMappingURL=smallop.js.map
-
-/***/ }),
-
-/***/ 83085:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texCalligraphicBold = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var tex_calligraphic_bold_js_1 = __webpack_require__(70286);
-exports.texCalligraphicBold = (0, FontData_js_1.AddCSS)(tex_calligraphic_bold_js_1.texCalligraphicBold, {
-    0x131: { f: 'B' },
-    0x237: { f: 'B' },
-});
-//# sourceMappingURL=tex-calligraphic-bold.js.map
-
-/***/ }),
-
-/***/ 74681:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texCalligraphic = void 0;
-var tex_calligraphic_js_1 = __webpack_require__(57552);
-Object.defineProperty(exports, "texCalligraphic", ({ enumerable: true, get: function () { return tex_calligraphic_js_1.texCalligraphic; } }));
-//# sourceMappingURL=tex-calligraphic.js.map
-
-/***/ }),
-
-/***/ 91611:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texMathit = void 0;
-var tex_mathit_js_1 = __webpack_require__(24398);
-Object.defineProperty(exports, "texMathit", ({ enumerable: true, get: function () { return tex_mathit_js_1.texMathit; } }));
-//# sourceMappingURL=tex-mathit.js.map
-
-/***/ }),
-
-/***/ 56848:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texOldstyleBold = void 0;
-var tex_oldstyle_bold_js_1 = __webpack_require__(20628);
-Object.defineProperty(exports, "texOldstyleBold", ({ enumerable: true, get: function () { return tex_oldstyle_bold_js_1.texOldstyleBold; } }));
-//# sourceMappingURL=tex-oldstyle-bold.js.map
-
-/***/ }),
-
-/***/ 74878:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texOldstyle = void 0;
-var tex_oldstyle_js_1 = __webpack_require__(41855);
-Object.defineProperty(exports, "texOldstyle", ({ enumerable: true, get: function () { return tex_oldstyle_js_1.texOldstyle; } }));
-//# sourceMappingURL=tex-oldstyle.js.map
-
-/***/ }),
-
-/***/ 99652:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texSize3 = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var tex_size3_js_1 = __webpack_require__(75431);
-exports.texSize3 = (0, FontData_js_1.AddCSS)(tex_size3_js_1.texSize3, {
-    0x2044: { c: '/' },
-    0x2329: { c: '\\27E8' },
-    0x232A: { c: '\\27E9' },
-    0x3008: { c: '\\27E8' },
-    0x3009: { c: '\\27E9' },
-});
-//# sourceMappingURL=tex-size3.js.map
-
-/***/ }),
-
-/***/ 39729:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texSize4 = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var tex_size4_js_1 = __webpack_require__(98278);
-exports.texSize4 = (0, FontData_js_1.AddCSS)(tex_size4_js_1.texSize4, {
-    0x2044: { c: '/' },
-    0x2329: { c: '\\27E8' },
-    0x232A: { c: '\\27E9' },
-    0x3008: { c: '\\27E8' },
-    0x3009: { c: '\\27E9' },
-    0xE155: { c: '\\E153\\E152' },
-    0xE156: { c: '\\E151\\E150' },
-});
-//# sourceMappingURL=tex-size4.js.map
-
-/***/ }),
-
-/***/ 82599:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texVariant = void 0;
-var FontData_js_1 = __webpack_require__(92952);
-var tex_variant_js_1 = __webpack_require__(90456);
-exports.texVariant = (0, FontData_js_1.AddCSS)(tex_variant_js_1.texVariant, {
-    0x3F0: { c: '\\E009' },
-    0x210F: { f: '' },
-    0x2224: { c: '\\E006' },
-    0x2226: { c: '\\E007' },
-    0x2268: { c: '\\E00C' },
-    0x2269: { c: '\\E00D' },
-    0x2270: { c: '\\E011' },
-    0x2271: { c: '\\E00E' },
-    0x2288: { c: '\\E016' },
-    0x2289: { c: '\\E018' },
-    0x228A: { c: '\\E01A' },
-    0x228B: { c: '\\E01B' },
-    0x2A87: { c: '\\E010' },
-    0x2A88: { c: '\\E00F' },
-    0x2ACB: { c: '\\E017' },
-    0x2ACC: { c: '\\E019' },
-});
-//# sourceMappingURL=tex-variant.js.map
-
-/***/ }),
-
-/***/ 30861:
-/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
-
-
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __read = (this && this.__read) || function (o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-};
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
-var __values = (this && this.__values) || function(o) {
-    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
-    if (m) return m.call(o);
-    if (o && typeof o.length === "number") return {
-        next: function () {
-            if (o && i >= o.length) o = void 0;
-            return { value: o && o[i++], done: !o };
-        }
-    };
-    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.FontData = exports.NOSTRETCH = exports.H = exports.V = void 0;
-var Options_js_1 = __webpack_require__(34981);
-exports.V = 1;
-exports.H = 2;
-exports.NOSTRETCH = { dir: 0 };
-var FontData = (function () {
-    function FontData(options) {
-        var e_1, _a, e_2, _b;
-        if (options === void 0) { options = null; }
-        this.variant = {};
-        this.delimiters = {};
-        this.cssFontMap = {};
-        this.remapChars = {};
-        this.skewIcFactor = .75;
-        var CLASS = this.constructor;
-        this.options = (0, Options_js_1.userOptions)((0, Options_js_1.defaultOptions)({}, CLASS.OPTIONS), options);
-        this.params = __assign({}, CLASS.defaultParams);
-        this.sizeVariants = __spreadArray([], __read(CLASS.defaultSizeVariants), false);
-        this.stretchVariants = __spreadArray([], __read(CLASS.defaultStretchVariants), false);
-        this.cssFontMap = __assign({}, CLASS.defaultCssFonts);
-        try {
-            for (var _c = __values(Object.keys(this.cssFontMap)), _d = _c.next(); !_d.done; _d = _c.next()) {
-                var name_1 = _d.value;
-                if (this.cssFontMap[name_1][0] === 'unknown') {
-                    this.cssFontMap[name_1][0] = this.options.unknownFamily;
-                }
-            }
-        }
-        catch (e_1_1) { e_1 = { error: e_1_1 }; }
-        finally {
-            try {
-                if (_d && !_d.done && (_a = _c.return)) _a.call(_c);
-            }
-            finally { if (e_1) throw e_1.error; }
-        }
-        this.cssFamilyPrefix = CLASS.defaultCssFamilyPrefix;
-        this.createVariants(CLASS.defaultVariants);
-        this.defineDelimiters(CLASS.defaultDelimiters);
-        try {
-            for (var _e = __values(Object.keys(CLASS.defaultChars)), _f = _e.next(); !_f.done; _f = _e.next()) {
-                var name_2 = _f.value;
-                this.defineChars(name_2, CLASS.defaultChars[name_2]);
-            }
-        }
-        catch (e_2_1) { e_2 = { error: e_2_1 }; }
-        finally {
-            try {
-                if (_f && !_f.done && (_b = _e.return)) _b.call(_e);
-            }
-            finally { if (e_2) throw e_2.error; }
-        }
-        this.defineRemap('accent', CLASS.defaultAccentMap);
-        this.defineRemap('mo', CLASS.defaultMoMap);
-        this.defineRemap('mn', CLASS.defaultMnMap);
-    }
-    FontData.charOptions = function (font, n) {
-        var char = font[n];
-        if (char.length === 3) {
-            char[3] = {};
-        }
-        return char[3];
-    };
-    Object.defineProperty(FontData.prototype, "styles", {
-        get: function () {
-            return this._styles;
-        },
-        set: function (style) {
-            this._styles = style;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    FontData.prototype.createVariant = function (name, inherit, link) {
-        if (inherit === void 0) { inherit = null; }
-        if (link === void 0) { link = null; }
-        var variant = {
-            linked: [],
-            chars: (inherit ? Object.create(this.variant[inherit].chars) : {})
+          }
+          this.used.add(name);
         };
-        if (link && this.variant[link]) {
+        Usage.prototype.has = function (item) {
+          return this.used.has(JSON.stringify(item));
+        };
+        Usage.prototype.clear = function () {
+          this.used.clear();
+          this.needsUpdate = [];
+        };
+        Usage.prototype.update = function () {
+          var update = this.needsUpdate;
+          this.needsUpdate = [];
+          return update;
+        };
+        return Usage;
+      })();
+      exports.Usage = Usage;
+      //# sourceMappingURL=Usage.js.map
+
+      /***/
+    },
+
+    /***/ 1673: /***/ function (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) {
+      var __extends =
+        (this && this.__extends) ||
+        (function () {
+          var extendStatics = function (d, b) {
+            extendStatics =
+              Object.setPrototypeOf ||
+              ({ __proto__: [] } instanceof Array &&
+                function (d, b) {
+                  d.__proto__ = b;
+                }) ||
+              function (d, b) {
+                for (var p in b)
+                  if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+              };
+            return extendStatics(d, b);
+          };
+          return function (d, b) {
+            if (typeof b !== 'function' && b !== null)
+              throw new TypeError(
+                'Class extends value ' +
+                  String(b) +
+                  ' is not a constructor or null'
+              );
+            extendStatics(d, b);
+            function __() {
+              this.constructor = d;
+            }
+            d.prototype =
+              b === null
+                ? Object.create(b)
+                : ((__.prototype = b.prototype), new __());
+          };
+        })();
+      var __assign =
+        (this && this.__assign) ||
+        function () {
+          __assign =
+            Object.assign ||
+            function (t) {
+              for (var s, i = 1, n = arguments.length; i < n; i++) {
+                s = arguments[i];
+                for (var p in s)
+                  if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+              }
+              return t;
+            };
+          return __assign.apply(this, arguments);
+        };
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.TeXFont = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var tex_js_1 = __webpack_require__(6382);
+      var bold_italic_js_1 = __webpack_require__(59316);
+      var bold_js_1 = __webpack_require__(78451);
+      var double_struck_js_1 = __webpack_require__(18018);
+      var fraktur_bold_js_1 = __webpack_require__(74141);
+      var fraktur_js_1 = __webpack_require__(3785);
+      var italic_js_1 = __webpack_require__(74868);
+      var largeop_js_1 = __webpack_require__(87434);
+      var monospace_js_1 = __webpack_require__(82621);
+      var normal_js_1 = __webpack_require__(56979);
+      var sans_serif_bold_italic_js_1 = __webpack_require__(83356);
+      var sans_serif_bold_js_1 = __webpack_require__(11211);
+      var sans_serif_italic_js_1 = __webpack_require__(76316);
+      var sans_serif_js_1 = __webpack_require__(16651);
+      var script_bold_js_1 = __webpack_require__(56755);
+      var script_js_1 = __webpack_require__(45491);
+      var smallop_js_1 = __webpack_require__(7598);
+      var tex_calligraphic_bold_js_1 = __webpack_require__(83085);
+      var tex_calligraphic_js_1 = __webpack_require__(74681);
+      var tex_mathit_js_1 = __webpack_require__(91611);
+      var tex_oldstyle_bold_js_1 = __webpack_require__(56848);
+      var tex_oldstyle_js_1 = __webpack_require__(74878);
+      var tex_size3_js_1 = __webpack_require__(99652);
+      var tex_size4_js_1 = __webpack_require__(39729);
+      var tex_variant_js_1 = __webpack_require__(82599);
+      var delimiters_js_1 = __webpack_require__(6987);
+      var TeXFont = (function (_super) {
+        __extends(TeXFont, _super);
+        function TeXFont() {
+          return (_super !== null && _super.apply(this, arguments)) || this;
+        }
+        TeXFont.defaultCssFamilyPrefix = 'MJXZERO';
+        TeXFont.defaultVariantClasses = {
+          normal: 'mjx-n',
+          bold: 'mjx-b',
+          italic: 'mjx-i',
+          'bold-italic': 'mjx-b mjx-i',
+          'double-struck': 'mjx-ds mjx-b',
+          fraktur: 'mjx-fr',
+          'bold-fraktur': 'mjx-fr mjx-b',
+          script: 'mjx-sc mjx-i',
+          'bold-script': 'mjx-sc mjx-b mjx-i',
+          'sans-serif': 'mjx-ss',
+          'bold-sans-serif': 'mjx-ss mjx-b',
+          'sans-serif-italic': 'mjx-ss mjx-i',
+          'sans-serif-bold-italic': 'mjx-ss mjx-b mjx-i',
+          monospace: 'mjx-ty',
+          '-smallop': 'mjx-sop',
+          '-largeop': 'mjx-lop',
+          '-size3': 'mjx-s3',
+          '-size4': 'mjx-s4',
+          '-tex-calligraphic': 'mjx-cal mjx-i',
+          '-tex-bold-calligraphic': 'mjx-cal mjx-b',
+          '-tex-mathit': 'mjx-mit mjx-i',
+          '-tex-oldstyle': 'mjx-os',
+          '-tex-bold-oldstyle': 'mjx-os mjx-b',
+          '-tex-variant': 'mjx-var'
+        };
+        TeXFont.defaultVariantLetters = {
+          normal: '',
+          bold: 'B',
+          italic: 'MI',
+          'bold-italic': 'BI',
+          'double-struck': 'A',
+          fraktur: 'FR',
+          'bold-fraktur': 'FRB',
+          script: 'SC',
+          'bold-script': 'SCB',
+          'sans-serif': 'SS',
+          'bold-sans-serif': 'SSB',
+          'sans-serif-italic': 'SSI',
+          'sans-serif-bold-italic': 'SSBI',
+          monospace: 'T',
+          '-smallop': 'S1',
+          '-largeop': 'S2',
+          '-size3': 'S3',
+          '-size4': 'S4',
+          '-tex-calligraphic': 'C',
+          '-tex-bold-calligraphic': 'CB',
+          '-tex-mathit': 'MI',
+          '-tex-oldstyle': 'C',
+          '-tex-bold-oldstyle': 'CB',
+          '-tex-variant': 'A'
+        };
+        TeXFont.defaultDelimiters = delimiters_js_1.delimiters;
+        TeXFont.defaultChars = {
+          normal: normal_js_1.normal,
+          bold: bold_js_1.bold,
+          italic: italic_js_1.italic,
+          'bold-italic': bold_italic_js_1.boldItalic,
+          'double-struck': double_struck_js_1.doubleStruck,
+          fraktur: fraktur_js_1.fraktur,
+          'bold-fraktur': fraktur_bold_js_1.frakturBold,
+          script: script_js_1.script,
+          'bold-script': script_bold_js_1.scriptBold,
+          'sans-serif': sans_serif_js_1.sansSerif,
+          'bold-sans-serif': sans_serif_bold_js_1.sansSerifBold,
+          'sans-serif-italic': sans_serif_italic_js_1.sansSerifItalic,
+          'sans-serif-bold-italic':
+            sans_serif_bold_italic_js_1.sansSerifBoldItalic,
+          monospace: monospace_js_1.monospace,
+          '-smallop': smallop_js_1.smallop,
+          '-largeop': largeop_js_1.largeop,
+          '-size3': tex_size3_js_1.texSize3,
+          '-size4': tex_size4_js_1.texSize4,
+          '-tex-calligraphic': tex_calligraphic_js_1.texCalligraphic,
+          '-tex-bold-calligraphic':
+            tex_calligraphic_bold_js_1.texCalligraphicBold,
+          '-tex-mathit': tex_mathit_js_1.texMathit,
+          '-tex-oldstyle': tex_oldstyle_js_1.texOldstyle,
+          '-tex-bold-oldstyle': tex_oldstyle_bold_js_1.texOldstyleBold,
+          '-tex-variant': tex_variant_js_1.texVariant
+        };
+        TeXFont.defaultStyles = __assign(
+          __assign({}, FontData_js_1.CHTMLFontData.defaultStyles),
+          {
+            '.MJX-TEX': {
+              'font-family': 'MJXZERO, MJXTEX'
+            },
+            '.TEX-B': {
+              'font-family': 'MJXZERO, MJXTEX-B'
+            },
+            '.TEX-I': {
+              'font-family': 'MJXZERO, MJXTEX-I'
+            },
+            '.TEX-MI': {
+              'font-family': 'MJXZERO, MJXTEX-MI'
+            },
+            '.TEX-BI': {
+              'font-family': 'MJXZERO, MJXTEX-BI'
+            },
+            '.TEX-S1': {
+              'font-family': 'MJXZERO, MJXTEX-S1'
+            },
+            '.TEX-S2': {
+              'font-family': 'MJXZERO, MJXTEX-S2'
+            },
+            '.TEX-S3': {
+              'font-family': 'MJXZERO, MJXTEX-S3'
+            },
+            '.TEX-S4': {
+              'font-family': 'MJXZERO, MJXTEX-S4'
+            },
+            '.TEX-A': {
+              'font-family': 'MJXZERO, MJXTEX-A'
+            },
+            '.TEX-C': {
+              'font-family': 'MJXZERO, MJXTEX-C'
+            },
+            '.TEX-CB': {
+              'font-family': 'MJXZERO, MJXTEX-CB'
+            },
+            '.TEX-FR': {
+              'font-family': 'MJXZERO, MJXTEX-FR'
+            },
+            '.TEX-FRB': {
+              'font-family': 'MJXZERO, MJXTEX-FRB'
+            },
+            '.TEX-SS': {
+              'font-family': 'MJXZERO, MJXTEX-SS'
+            },
+            '.TEX-SSB': {
+              'font-family': 'MJXZERO, MJXTEX-SSB'
+            },
+            '.TEX-SSI': {
+              'font-family': 'MJXZERO, MJXTEX-SSI'
+            },
+            '.TEX-SC': {
+              'font-family': 'MJXZERO, MJXTEX-SC'
+            },
+            '.TEX-T': {
+              'font-family': 'MJXZERO, MJXTEX-T'
+            },
+            '.TEX-V': {
+              'font-family': 'MJXZERO, MJXTEX-V'
+            },
+            '.TEX-VB': {
+              'font-family': 'MJXZERO, MJXTEX-VB'
+            },
+            'mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c': {
+              'font-family':
+                'MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important'
+            }
+          }
+        );
+        TeXFont.defaultFonts = __assign(
+          __assign({}, FontData_js_1.CHTMLFontData.defaultFonts),
+          {
+            '@font-face /* 1 */': {
+              'font-family': 'MJXTEX',
+              src: 'url("%%URL%%/MathJax_Main-Regular.woff") format("woff")'
+            },
+            '@font-face /* 2 */': {
+              'font-family': 'MJXTEX-B',
+              src: 'url("%%URL%%/MathJax_Main-Bold.woff") format("woff")'
+            },
+            '@font-face /* 3 */': {
+              'font-family': 'MJXTEX-I',
+              src: 'url("%%URL%%/MathJax_Math-Italic.woff") format("woff")'
+            },
+            '@font-face /* 4 */': {
+              'font-family': 'MJXTEX-MI',
+              src: 'url("%%URL%%/MathJax_Main-Italic.woff") format("woff")'
+            },
+            '@font-face /* 5 */': {
+              'font-family': 'MJXTEX-BI',
+              src: 'url("%%URL%%/MathJax_Math-BoldItalic.woff") format("woff")'
+            },
+            '@font-face /* 6 */': {
+              'font-family': 'MJXTEX-S1',
+              src: 'url("%%URL%%/MathJax_Size1-Regular.woff") format("woff")'
+            },
+            '@font-face /* 7 */': {
+              'font-family': 'MJXTEX-S2',
+              src: 'url("%%URL%%/MathJax_Size2-Regular.woff") format("woff")'
+            },
+            '@font-face /* 8 */': {
+              'font-family': 'MJXTEX-S3',
+              src: 'url("%%URL%%/MathJax_Size3-Regular.woff") format("woff")'
+            },
+            '@font-face /* 9 */': {
+              'font-family': 'MJXTEX-S4',
+              src: 'url("%%URL%%/MathJax_Size4-Regular.woff") format("woff")'
+            },
+            '@font-face /* 10 */': {
+              'font-family': 'MJXTEX-A',
+              src: 'url("%%URL%%/MathJax_AMS-Regular.woff") format("woff")'
+            },
+            '@font-face /* 11 */': {
+              'font-family': 'MJXTEX-C',
+              src: 'url("%%URL%%/MathJax_Calligraphic-Regular.woff") format("woff")'
+            },
+            '@font-face /* 12 */': {
+              'font-family': 'MJXTEX-CB',
+              src: 'url("%%URL%%/MathJax_Calligraphic-Bold.woff") format("woff")'
+            },
+            '@font-face /* 13 */': {
+              'font-family': 'MJXTEX-FR',
+              src: 'url("%%URL%%/MathJax_Fraktur-Regular.woff") format("woff")'
+            },
+            '@font-face /* 14 */': {
+              'font-family': 'MJXTEX-FRB',
+              src: 'url("%%URL%%/MathJax_Fraktur-Bold.woff") format("woff")'
+            },
+            '@font-face /* 15 */': {
+              'font-family': 'MJXTEX-SS',
+              src: 'url("%%URL%%/MathJax_SansSerif-Regular.woff") format("woff")'
+            },
+            '@font-face /* 16 */': {
+              'font-family': 'MJXTEX-SSB',
+              src: 'url("%%URL%%/MathJax_SansSerif-Bold.woff") format("woff")'
+            },
+            '@font-face /* 17 */': {
+              'font-family': 'MJXTEX-SSI',
+              src: 'url("%%URL%%/MathJax_SansSerif-Italic.woff") format("woff")'
+            },
+            '@font-face /* 18 */': {
+              'font-family': 'MJXTEX-SC',
+              src: 'url("%%URL%%/MathJax_Script-Regular.woff") format("woff")'
+            },
+            '@font-face /* 19 */': {
+              'font-family': 'MJXTEX-T',
+              src: 'url("%%URL%%/MathJax_Typewriter-Regular.woff") format("woff")'
+            },
+            '@font-face /* 20 */': {
+              'font-family': 'MJXTEX-V',
+              src: 'url("%%URL%%/MathJax_Vector-Regular.woff") format("woff")'
+            },
+            '@font-face /* 21 */': {
+              'font-family': 'MJXTEX-VB',
+              src: 'url("%%URL%%/MathJax_Vector-Bold.woff") format("woff")'
+            }
+          }
+        );
+        return TeXFont;
+      })((0, tex_js_1.CommonTeXFontMixin)(FontData_js_1.CHTMLFontData));
+      exports.TeXFont = TeXFont;
+      //# sourceMappingURL=tex.js.map
+
+      /***/
+    },
+
+    /***/ 59316: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.boldItalic = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var bold_italic_js_1 = __webpack_require__(51091);
+      exports.boldItalic = (0, FontData_js_1.AddCSS)(
+        bold_italic_js_1.boldItalic,
+        {
+          0x131: { f: 'B' },
+          0x237: { f: 'B' },
+          0x2044: { c: '/' },
+          0x2206: { c: '\\394' },
+          0x29f8: { c: '/' }
+        }
+      );
+      //# sourceMappingURL=bold-italic.js.map
+
+      /***/
+    },
+
+    /***/ 78451: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.bold = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var bold_js_1 = __webpack_require__(95746);
+      exports.bold = (0, FontData_js_1.AddCSS)(bold_js_1.bold, {
+        0xb7: { c: '\\22C5' },
+        0x131: { f: '' },
+        0x237: { f: '' },
+        0x2b9: { c: '\\2032' },
+        0x2002: { c: '' },
+        0x2003: { c: '' },
+        0x2004: { c: '' },
+        0x2005: { c: '' },
+        0x2006: { c: '' },
+        0x2009: { c: '' },
+        0x200a: { c: '' },
+        0x2015: { c: '\\2014' },
+        0x2016: { c: '\\2225' },
+        0x2017: { c: '_' },
+        0x2022: { c: '\\2219' },
+        0x2033: { c: '\\2032\\2032' },
+        0x2034: { c: '\\2032\\2032\\2032' },
+        0x203e: { c: '\\2C9' },
+        0x2044: { c: '/' },
+        0x2057: { c: '\\2032\\2032\\2032\\2032' },
+        0x20d7: { c: '\\2192', f: 'VB' },
+        0x219a: { c: '\\2190\\338' },
+        0x219b: { c: '\\2192\\338' },
+        0x21ae: { c: '\\2194\\338' },
+        0x21cd: { c: '\\21D0\\338' },
+        0x21ce: { c: '\\21D4\\338' },
+        0x21cf: { c: '\\21D2\\338' },
+        0x2204: { c: '\\2203\\338' },
+        0x2206: { c: '\\394' },
+        0x220c: { c: '\\220B\\338' },
+        0x2224: { c: '\\2223\\338' },
+        0x2226: { c: '\\2225\\338' },
+        0x2241: { c: '\\223C\\338' },
+        0x2244: { c: '\\2243\\338' },
+        0x2247: { c: '\\2245\\338' },
+        0x2249: { c: '\\2248\\338' },
+        0x2262: { c: '\\2261\\338' },
+        0x226d: { c: '\\224D\\338' },
+        0x226e: { c: '<\\338' },
+        0x226f: { c: '>\\338' },
+        0x2270: { c: '\\2264\\338' },
+        0x2271: { c: '\\2265\\338' },
+        0x2280: { c: '\\227A\\338' },
+        0x2281: { c: '\\227B\\338' },
+        0x2284: { c: '\\2282\\338' },
+        0x2285: { c: '\\2283\\338' },
+        0x2288: { c: '\\2286\\338' },
+        0x2289: { c: '\\2287\\338' },
+        0x22ac: { c: '\\22A2\\338' },
+        0x22ad: { c: '\\22A8\\338' },
+        0x22e2: { c: '\\2291\\338' },
+        0x22e3: { c: '\\2292\\338' },
+        0x2329: { c: '\\27E8' },
+        0x232a: { c: '\\27E9' },
+        0x25b5: { c: '\\25B3' },
+        0x25bf: { c: '\\25BD' },
+        0x2758: { c: '\\2223' },
+        0x29f8: { c: '/', f: 'BI' },
+        0x2a2f: { c: '\\D7' },
+        0x3008: { c: '\\27E8' },
+        0x3009: { c: '\\27E9' }
+      });
+      //# sourceMappingURL=bold.js.map
+
+      /***/
+    },
+
+    /***/ 18018: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.doubleStruck = void 0;
+      var double_struck_js_1 = __webpack_require__(32249);
+      Object.defineProperty(exports, 'doubleStruck', {
+        enumerable: true,
+        get: function () {
+          return double_struck_js_1.doubleStruck;
+        }
+      });
+      //# sourceMappingURL=double-struck.js.map
+
+      /***/
+    },
+
+    /***/ 74141: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.frakturBold = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var fraktur_bold_js_1 = __webpack_require__(45600);
+      exports.frakturBold = (0, FontData_js_1.AddCSS)(
+        fraktur_bold_js_1.frakturBold,
+        {
+          0x2044: { c: '/' }
+        }
+      );
+      //# sourceMappingURL=fraktur-bold.js.map
+
+      /***/
+    },
+
+    /***/ 3785: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.fraktur = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var fraktur_js_1 = __webpack_require__(59534);
+      exports.fraktur = (0, FontData_js_1.AddCSS)(fraktur_js_1.fraktur, {
+        0x2044: { c: '/' }
+      });
+      //# sourceMappingURL=fraktur.js.map
+
+      /***/
+    },
+
+    /***/ 74868: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.italic = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var italic_js_1 = __webpack_require__(14141);
+      exports.italic = (0, FontData_js_1.AddCSS)(italic_js_1.italic, {
+        0x2f: { f: 'I' },
+        0x3dd: { c: '\\E008', f: 'A' },
+        0x2015: { c: '\\2014' },
+        0x2017: { c: '_' },
+        0x2044: { c: '/', f: 'I' },
+        0x2206: { c: '\\394', f: 'I' },
+        0x29f8: { c: '/', f: 'I' }
+      });
+      //# sourceMappingURL=italic.js.map
+
+      /***/
+    },
+
+    /***/ 87434: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.largeop = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var largeop_js_1 = __webpack_require__(63969);
+      exports.largeop = (0, FontData_js_1.AddCSS)(largeop_js_1.largeop, {
+        0x2016: { f: 'S1' },
+        0x2044: { c: '/' },
+        0x2191: { f: 'S1' },
+        0x2193: { f: 'S1' },
+        0x21d1: { f: 'S1' },
+        0x21d3: { f: 'S1' },
+        0x2223: { f: 'S1' },
+        0x2225: { f: 'S1' },
+        0x2329: { c: '\\27E8' },
+        0x232a: { c: '\\27E9' },
+        0x23d0: { f: 'S1' },
+        0x2758: { c: '\\2223', f: 'S1' },
+        0x2a0c: { c: '\\222C\\222C' },
+        0x3008: { c: '\\27E8' },
+        0x3009: { c: '\\27E9' }
+      });
+      //# sourceMappingURL=largeop.js.map
+
+      /***/
+    },
+
+    /***/ 82621: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.monospace = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var monospace_js_1 = __webpack_require__(58626);
+      exports.monospace = (0, FontData_js_1.AddCSS)(monospace_js_1.monospace, {
+        0x2b9: { c: '\\2032' },
+        0x391: { c: 'A' },
+        0x392: { c: 'B' },
+        0x395: { c: 'E' },
+        0x396: { c: 'Z' },
+        0x397: { c: 'H' },
+        0x399: { c: 'I' },
+        0x39a: { c: 'K' },
+        0x39c: { c: 'M' },
+        0x39d: { c: 'N' },
+        0x39f: { c: 'O' },
+        0x3a1: { c: 'P' },
+        0x3a4: { c: 'T' },
+        0x3a7: { c: 'X' },
+        0x2017: { c: '_' },
+        0x2033: { c: '\\2032\\2032' },
+        0x2034: { c: '\\2032\\2032\\2032' },
+        0x2044: { c: '/' },
+        0x2057: { c: '\\2032\\2032\\2032\\2032' },
+        0x2206: { c: '\\394' }
+      });
+      //# sourceMappingURL=monospace.js.map
+
+      /***/
+    },
+
+    /***/ 56979: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.normal = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var normal_js_1 = __webpack_require__(25190);
+      exports.normal = (0, FontData_js_1.AddCSS)(normal_js_1.normal, {
+        0xa3: { f: 'MI' },
+        0xa5: { f: 'A' },
+        0xae: { f: 'A' },
+        0xb7: { c: '\\22C5' },
+        0xf0: { f: 'A' },
+        0x2b9: { c: '\\2032' },
+        0x391: { c: 'A' },
+        0x392: { c: 'B' },
+        0x395: { c: 'E' },
+        0x396: { c: 'Z' },
+        0x397: { c: 'H' },
+        0x399: { c: 'I' },
+        0x39a: { c: 'K' },
+        0x39c: { c: 'M' },
+        0x39d: { c: 'N' },
+        0x39f: { c: 'O' },
+        0x3a1: { c: 'P' },
+        0x3a4: { c: 'T' },
+        0x3a7: { c: 'X' },
+        0x2000: { c: '' },
+        0x2001: { c: '' },
+        0x2002: { c: '' },
+        0x2003: { c: '' },
+        0x2004: { c: '' },
+        0x2005: { c: '' },
+        0x2006: { c: '' },
+        0x2009: { c: '' },
+        0x200a: { c: '' },
+        0x200b: { c: '' },
+        0x200c: { c: '' },
+        0x2015: { c: '\\2014' },
+        0x2016: { c: '\\2225' },
+        0x2017: { c: '_' },
+        0x2022: { c: '\\2219' },
+        0x2033: { c: '\\2032\\2032' },
+        0x2034: { c: '\\2032\\2032\\2032' },
+        0x2035: { f: 'A' },
+        0x2036: { c: '\\2035\\2035', f: 'A' },
+        0x2037: { c: '\\2035\\2035\\2035', f: 'A' },
+        0x203e: { c: '\\2C9' },
+        0x2044: { c: '/' },
+        0x2057: { c: '\\2032\\2032\\2032\\2032' },
+        0x2060: { c: '' },
+        0x2061: { c: '' },
+        0x2062: { c: '' },
+        0x2063: { c: '' },
+        0x2064: { c: '' },
+        0x20d7: { c: '\\2192', f: 'V' },
+        0x2102: { c: 'C', f: 'A' },
+        0x210b: { c: 'H', f: 'SC' },
+        0x210c: { c: 'H', f: 'FR' },
+        0x210d: { c: 'H', f: 'A' },
+        0x210e: { c: 'h', f: 'I' },
+        0x210f: { f: 'A' },
+        0x2110: { c: 'I', f: 'SC' },
+        0x2111: { c: 'I', f: 'FR' },
+        0x2112: { c: 'L', f: 'SC' },
+        0x2115: { c: 'N', f: 'A' },
+        0x2119: { c: 'P', f: 'A' },
+        0x211a: { c: 'Q', f: 'A' },
+        0x211b: { c: 'R', f: 'SC' },
+        0x211c: { c: 'R', f: 'FR' },
+        0x211d: { c: 'R', f: 'A' },
+        0x2124: { c: 'Z', f: 'A' },
+        0x2126: { c: '\\3A9' },
+        0x2127: { f: 'A' },
+        0x2128: { c: 'Z', f: 'FR' },
+        0x212c: { c: 'B', f: 'SC' },
+        0x212d: { c: 'C', f: 'FR' },
+        0x2130: { c: 'E', f: 'SC' },
+        0x2131: { c: 'F', f: 'SC' },
+        0x2132: { f: 'A' },
+        0x2133: { c: 'M', f: 'SC' },
+        0x2136: { f: 'A' },
+        0x2137: { f: 'A' },
+        0x2138: { f: 'A' },
+        0x2141: { f: 'A' },
+        0x219a: { f: 'A' },
+        0x219b: { f: 'A' },
+        0x219e: { f: 'A' },
+        0x21a0: { f: 'A' },
+        0x21a2: { f: 'A' },
+        0x21a3: { f: 'A' },
+        0x21ab: { f: 'A' },
+        0x21ac: { f: 'A' },
+        0x21ad: { f: 'A' },
+        0x21ae: { f: 'A' },
+        0x21b0: { f: 'A' },
+        0x21b1: { f: 'A' },
+        0x21b6: { f: 'A' },
+        0x21b7: { f: 'A' },
+        0x21ba: { f: 'A' },
+        0x21bb: { f: 'A' },
+        0x21be: { f: 'A' },
+        0x21bf: { f: 'A' },
+        0x21c2: { f: 'A' },
+        0x21c3: { f: 'A' },
+        0x21c4: { f: 'A' },
+        0x21c6: { f: 'A' },
+        0x21c7: { f: 'A' },
+        0x21c8: { f: 'A' },
+        0x21c9: { f: 'A' },
+        0x21ca: { f: 'A' },
+        0x21cb: { f: 'A' },
+        0x21cd: { f: 'A' },
+        0x21ce: { f: 'A' },
+        0x21cf: { f: 'A' },
+        0x21da: { f: 'A' },
+        0x21db: { f: 'A' },
+        0x21dd: { f: 'A' },
+        0x21e0: { f: 'A' },
+        0x21e2: { f: 'A' },
+        0x2201: { f: 'A' },
+        0x2204: { c: '\\2203\\338' },
+        0x2206: { c: '\\394' },
+        0x220c: { c: '\\220B\\338' },
+        0x220d: { f: 'A' },
+        0x220f: { f: 'S1' },
+        0x2210: { f: 'S1' },
+        0x2211: { f: 'S1' },
+        0x2214: { f: 'A' },
+        0x2221: { f: 'A' },
+        0x2222: { f: 'A' },
+        0x2224: { f: 'A' },
+        0x2226: { f: 'A' },
+        0x222c: { f: 'S1' },
+        0x222d: { f: 'S1' },
+        0x222e: { f: 'S1' },
+        0x2234: { f: 'A' },
+        0x2235: { f: 'A' },
+        0x223d: { f: 'A' },
+        0x2241: { f: 'A' },
+        0x2242: { f: 'A' },
+        0x2244: { c: '\\2243\\338' },
+        0x2247: { c: '\\2246', f: 'A' },
+        0x2249: { c: '\\2248\\338' },
+        0x224a: { f: 'A' },
+        0x224e: { f: 'A' },
+        0x224f: { f: 'A' },
+        0x2251: { f: 'A' },
+        0x2252: { f: 'A' },
+        0x2253: { f: 'A' },
+        0x2256: { f: 'A' },
+        0x2257: { f: 'A' },
+        0x225c: { f: 'A' },
+        0x2262: { c: '\\2261\\338' },
+        0x2266: { f: 'A' },
+        0x2267: { f: 'A' },
+        0x2268: { f: 'A' },
+        0x2269: { f: 'A' },
+        0x226c: { f: 'A' },
+        0x226d: { c: '\\224D\\338' },
+        0x226e: { f: 'A' },
+        0x226f: { f: 'A' },
+        0x2270: { f: 'A' },
+        0x2271: { f: 'A' },
+        0x2272: { f: 'A' },
+        0x2273: { f: 'A' },
+        0x2274: { c: '\\2272\\338' },
+        0x2275: { c: '\\2273\\338' },
+        0x2276: { f: 'A' },
+        0x2277: { f: 'A' },
+        0x2278: { c: '\\2276\\338' },
+        0x2279: { c: '\\2277\\338' },
+        0x227c: { f: 'A' },
+        0x227d: { f: 'A' },
+        0x227e: { f: 'A' },
+        0x227f: { f: 'A' },
+        0x2280: { f: 'A' },
+        0x2281: { f: 'A' },
+        0x2284: { c: '\\2282\\338' },
+        0x2285: { c: '\\2283\\338' },
+        0x2288: { f: 'A' },
+        0x2289: { f: 'A' },
+        0x228a: { f: 'A' },
+        0x228b: { f: 'A' },
+        0x228f: { f: 'A' },
+        0x2290: { f: 'A' },
+        0x229a: { f: 'A' },
+        0x229b: { f: 'A' },
+        0x229d: { f: 'A' },
+        0x229e: { f: 'A' },
+        0x229f: { f: 'A' },
+        0x22a0: { f: 'A' },
+        0x22a1: { f: 'A' },
+        0x22a9: { f: 'A' },
+        0x22aa: { f: 'A' },
+        0x22ac: { f: 'A' },
+        0x22ad: { f: 'A' },
+        0x22ae: { f: 'A' },
+        0x22af: { f: 'A' },
+        0x22b2: { f: 'A' },
+        0x22b3: { f: 'A' },
+        0x22b4: { f: 'A' },
+        0x22b5: { f: 'A' },
+        0x22b8: { f: 'A' },
+        0x22ba: { f: 'A' },
+        0x22bb: { f: 'A' },
+        0x22bc: { f: 'A' },
+        0x22c0: { f: 'S1' },
+        0x22c1: { f: 'S1' },
+        0x22c2: { f: 'S1' },
+        0x22c3: { f: 'S1' },
+        0x22c7: { f: 'A' },
+        0x22c9: { f: 'A' },
+        0x22ca: { f: 'A' },
+        0x22cb: { f: 'A' },
+        0x22cc: { f: 'A' },
+        0x22cd: { f: 'A' },
+        0x22ce: { f: 'A' },
+        0x22cf: { f: 'A' },
+        0x22d0: { f: 'A' },
+        0x22d1: { f: 'A' },
+        0x22d2: { f: 'A' },
+        0x22d3: { f: 'A' },
+        0x22d4: { f: 'A' },
+        0x22d6: { f: 'A' },
+        0x22d7: { f: 'A' },
+        0x22d8: { f: 'A' },
+        0x22d9: { f: 'A' },
+        0x22da: { f: 'A' },
+        0x22db: { f: 'A' },
+        0x22de: { f: 'A' },
+        0x22df: { f: 'A' },
+        0x22e0: { f: 'A' },
+        0x22e1: { f: 'A' },
+        0x22e2: { c: '\\2291\\338' },
+        0x22e3: { c: '\\2292\\338' },
+        0x22e6: { f: 'A' },
+        0x22e7: { f: 'A' },
+        0x22e8: { f: 'A' },
+        0x22e9: { f: 'A' },
+        0x22ea: { f: 'A' },
+        0x22eb: { f: 'A' },
+        0x22ec: { f: 'A' },
+        0x22ed: { f: 'A' },
+        0x2305: { c: '\\22BC', f: 'A' },
+        0x2306: { c: '\\2A5E', f: 'A' },
+        0x231c: { c: '\\250C', f: 'A' },
+        0x231d: { c: '\\2510', f: 'A' },
+        0x231e: { c: '\\2514', f: 'A' },
+        0x231f: { c: '\\2518', f: 'A' },
+        0x2329: { c: '\\27E8' },
+        0x232a: { c: '\\27E9' },
+        0x23d0: { f: 'S1' },
+        0x24c8: { f: 'A' },
+        0x250c: { f: 'A' },
+        0x2510: { f: 'A' },
+        0x2514: { f: 'A' },
+        0x2518: { f: 'A' },
+        0x2571: { f: 'A' },
+        0x2572: { f: 'A' },
+        0x25a0: { f: 'A' },
+        0x25a1: { f: 'A' },
+        0x25aa: { c: '\\25A0', f: 'A' },
+        0x25b2: { f: 'A' },
+        0x25b4: { c: '\\25B2', f: 'A' },
+        0x25b5: { c: '\\25B3' },
+        0x25b6: { f: 'A' },
+        0x25b8: { c: '\\25B6', f: 'A' },
+        0x25bc: { f: 'A' },
+        0x25be: { c: '\\25BC', f: 'A' },
+        0x25bf: { c: '\\25BD' },
+        0x25c0: { f: 'A' },
+        0x25c2: { c: '\\25C0', f: 'A' },
+        0x25ca: { f: 'A' },
+        0x25fb: { c: '\\25A1', f: 'A' },
+        0x25fc: { c: '\\25A0', f: 'A' },
+        0x2605: { f: 'A' },
+        0x2713: { f: 'A' },
+        0x2720: { f: 'A' },
+        0x2758: { c: '\\2223' },
+        0x29eb: { f: 'A' },
+        0x29f8: { c: '/', f: 'I' },
+        0x2a00: { f: 'S1' },
+        0x2a01: { f: 'S1' },
+        0x2a02: { f: 'S1' },
+        0x2a04: { f: 'S1' },
+        0x2a06: { f: 'S1' },
+        0x2a0c: { c: '\\222C\\222C', f: 'S1' },
+        0x2a2f: { c: '\\D7' },
+        0x2a5e: { f: 'A' },
+        0x2a7d: { f: 'A' },
+        0x2a7e: { f: 'A' },
+        0x2a85: { f: 'A' },
+        0x2a86: { f: 'A' },
+        0x2a87: { f: 'A' },
+        0x2a88: { f: 'A' },
+        0x2a89: { f: 'A' },
+        0x2a8a: { f: 'A' },
+        0x2a8b: { f: 'A' },
+        0x2a8c: { f: 'A' },
+        0x2a95: { f: 'A' },
+        0x2a96: { f: 'A' },
+        0x2ab5: { f: 'A' },
+        0x2ab6: { f: 'A' },
+        0x2ab7: { f: 'A' },
+        0x2ab8: { f: 'A' },
+        0x2ab9: { f: 'A' },
+        0x2aba: { f: 'A' },
+        0x2ac5: { f: 'A' },
+        0x2ac6: { f: 'A' },
+        0x2acb: { f: 'A' },
+        0x2acc: { f: 'A' },
+        0x3008: { c: '\\27E8' },
+        0x3009: { c: '\\27E9' },
+        0xe006: { f: 'A' },
+        0xe007: { f: 'A' },
+        0xe008: { f: 'A' },
+        0xe009: { f: 'A' },
+        0xe00c: { f: 'A' },
+        0xe00d: { f: 'A' },
+        0xe00e: { f: 'A' },
+        0xe00f: { f: 'A' },
+        0xe010: { f: 'A' },
+        0xe011: { f: 'A' },
+        0xe016: { f: 'A' },
+        0xe017: { f: 'A' },
+        0xe018: { f: 'A' },
+        0xe019: { f: 'A' },
+        0xe01a: { f: 'A' },
+        0xe01b: { f: 'A' },
+        0x1d400: { c: 'A', f: 'B' },
+        0x1d401: { c: 'B', f: 'B' },
+        0x1d402: { c: 'C', f: 'B' },
+        0x1d403: { c: 'D', f: 'B' },
+        0x1d404: { c: 'E', f: 'B' },
+        0x1d405: { c: 'F', f: 'B' },
+        0x1d406: { c: 'G', f: 'B' },
+        0x1d407: { c: 'H', f: 'B' },
+        0x1d408: { c: 'I', f: 'B' },
+        0x1d409: { c: 'J', f: 'B' },
+        0x1d40a: { c: 'K', f: 'B' },
+        0x1d40b: { c: 'L', f: 'B' },
+        0x1d40c: { c: 'M', f: 'B' },
+        0x1d40d: { c: 'N', f: 'B' },
+        0x1d40e: { c: 'O', f: 'B' },
+        0x1d40f: { c: 'P', f: 'B' },
+        0x1d410: { c: 'Q', f: 'B' },
+        0x1d411: { c: 'R', f: 'B' },
+        0x1d412: { c: 'S', f: 'B' },
+        0x1d413: { c: 'T', f: 'B' },
+        0x1d414: { c: 'U', f: 'B' },
+        0x1d415: { c: 'V', f: 'B' },
+        0x1d416: { c: 'W', f: 'B' },
+        0x1d417: { c: 'X', f: 'B' },
+        0x1d418: { c: 'Y', f: 'B' },
+        0x1d419: { c: 'Z', f: 'B' },
+        0x1d41a: { c: 'a', f: 'B' },
+        0x1d41b: { c: 'b', f: 'B' },
+        0x1d41c: { c: 'c', f: 'B' },
+        0x1d41d: { c: 'd', f: 'B' },
+        0x1d41e: { c: 'e', f: 'B' },
+        0x1d41f: { c: 'f', f: 'B' },
+        0x1d420: { c: 'g', f: 'B' },
+        0x1d421: { c: 'h', f: 'B' },
+        0x1d422: { c: 'i', f: 'B' },
+        0x1d423: { c: 'j', f: 'B' },
+        0x1d424: { c: 'k', f: 'B' },
+        0x1d425: { c: 'l', f: 'B' },
+        0x1d426: { c: 'm', f: 'B' },
+        0x1d427: { c: 'n', f: 'B' },
+        0x1d428: { c: 'o', f: 'B' },
+        0x1d429: { c: 'p', f: 'B' },
+        0x1d42a: { c: 'q', f: 'B' },
+        0x1d42b: { c: 'r', f: 'B' },
+        0x1d42c: { c: 's', f: 'B' },
+        0x1d42d: { c: 't', f: 'B' },
+        0x1d42e: { c: 'u', f: 'B' },
+        0x1d42f: { c: 'v', f: 'B' },
+        0x1d430: { c: 'w', f: 'B' },
+        0x1d431: { c: 'x', f: 'B' },
+        0x1d432: { c: 'y', f: 'B' },
+        0x1d433: { c: 'z', f: 'B' },
+        0x1d434: { c: 'A', f: 'I' },
+        0x1d435: { c: 'B', f: 'I' },
+        0x1d436: { c: 'C', f: 'I' },
+        0x1d437: { c: 'D', f: 'I' },
+        0x1d438: { c: 'E', f: 'I' },
+        0x1d439: { c: 'F', f: 'I' },
+        0x1d43a: { c: 'G', f: 'I' },
+        0x1d43b: { c: 'H', f: 'I' },
+        0x1d43c: { c: 'I', f: 'I' },
+        0x1d43d: { c: 'J', f: 'I' },
+        0x1d43e: { c: 'K', f: 'I' },
+        0x1d43f: { c: 'L', f: 'I' },
+        0x1d440: { c: 'M', f: 'I' },
+        0x1d441: { c: 'N', f: 'I' },
+        0x1d442: { c: 'O', f: 'I' },
+        0x1d443: { c: 'P', f: 'I' },
+        0x1d444: { c: 'Q', f: 'I' },
+        0x1d445: { c: 'R', f: 'I' },
+        0x1d446: { c: 'S', f: 'I' },
+        0x1d447: { c: 'T', f: 'I' },
+        0x1d448: { c: 'U', f: 'I' },
+        0x1d449: { c: 'V', f: 'I' },
+        0x1d44a: { c: 'W', f: 'I' },
+        0x1d44b: { c: 'X', f: 'I' },
+        0x1d44c: { c: 'Y', f: 'I' },
+        0x1d44d: { c: 'Z', f: 'I' },
+        0x1d44e: { c: 'a', f: 'I' },
+        0x1d44f: { c: 'b', f: 'I' },
+        0x1d450: { c: 'c', f: 'I' },
+        0x1d451: { c: 'd', f: 'I' },
+        0x1d452: { c: 'e', f: 'I' },
+        0x1d453: { c: 'f', f: 'I' },
+        0x1d454: { c: 'g', f: 'I' },
+        0x1d456: { c: 'i', f: 'I' },
+        0x1d457: { c: 'j', f: 'I' },
+        0x1d458: { c: 'k', f: 'I' },
+        0x1d459: { c: 'l', f: 'I' },
+        0x1d45a: { c: 'm', f: 'I' },
+        0x1d45b: { c: 'n', f: 'I' },
+        0x1d45c: { c: 'o', f: 'I' },
+        0x1d45d: { c: 'p', f: 'I' },
+        0x1d45e: { c: 'q', f: 'I' },
+        0x1d45f: { c: 'r', f: 'I' },
+        0x1d460: { c: 's', f: 'I' },
+        0x1d461: { c: 't', f: 'I' },
+        0x1d462: { c: 'u', f: 'I' },
+        0x1d463: { c: 'v', f: 'I' },
+        0x1d464: { c: 'w', f: 'I' },
+        0x1d465: { c: 'x', f: 'I' },
+        0x1d466: { c: 'y', f: 'I' },
+        0x1d467: { c: 'z', f: 'I' },
+        0x1d468: { c: 'A', f: 'BI' },
+        0x1d469: { c: 'B', f: 'BI' },
+        0x1d46a: { c: 'C', f: 'BI' },
+        0x1d46b: { c: 'D', f: 'BI' },
+        0x1d46c: { c: 'E', f: 'BI' },
+        0x1d46d: { c: 'F', f: 'BI' },
+        0x1d46e: { c: 'G', f: 'BI' },
+        0x1d46f: { c: 'H', f: 'BI' },
+        0x1d470: { c: 'I', f: 'BI' },
+        0x1d471: { c: 'J', f: 'BI' },
+        0x1d472: { c: 'K', f: 'BI' },
+        0x1d473: { c: 'L', f: 'BI' },
+        0x1d474: { c: 'M', f: 'BI' },
+        0x1d475: { c: 'N', f: 'BI' },
+        0x1d476: { c: 'O', f: 'BI' },
+        0x1d477: { c: 'P', f: 'BI' },
+        0x1d478: { c: 'Q', f: 'BI' },
+        0x1d479: { c: 'R', f: 'BI' },
+        0x1d47a: { c: 'S', f: 'BI' },
+        0x1d47b: { c: 'T', f: 'BI' },
+        0x1d47c: { c: 'U', f: 'BI' },
+        0x1d47d: { c: 'V', f: 'BI' },
+        0x1d47e: { c: 'W', f: 'BI' },
+        0x1d47f: { c: 'X', f: 'BI' },
+        0x1d480: { c: 'Y', f: 'BI' },
+        0x1d481: { c: 'Z', f: 'BI' },
+        0x1d482: { c: 'a', f: 'BI' },
+        0x1d483: { c: 'b', f: 'BI' },
+        0x1d484: { c: 'c', f: 'BI' },
+        0x1d485: { c: 'd', f: 'BI' },
+        0x1d486: { c: 'e', f: 'BI' },
+        0x1d487: { c: 'f', f: 'BI' },
+        0x1d488: { c: 'g', f: 'BI' },
+        0x1d489: { c: 'h', f: 'BI' },
+        0x1d48a: { c: 'i', f: 'BI' },
+        0x1d48b: { c: 'j', f: 'BI' },
+        0x1d48c: { c: 'k', f: 'BI' },
+        0x1d48d: { c: 'l', f: 'BI' },
+        0x1d48e: { c: 'm', f: 'BI' },
+        0x1d48f: { c: 'n', f: 'BI' },
+        0x1d490: { c: 'o', f: 'BI' },
+        0x1d491: { c: 'p', f: 'BI' },
+        0x1d492: { c: 'q', f: 'BI' },
+        0x1d493: { c: 'r', f: 'BI' },
+        0x1d494: { c: 's', f: 'BI' },
+        0x1d495: { c: 't', f: 'BI' },
+        0x1d496: { c: 'u', f: 'BI' },
+        0x1d497: { c: 'v', f: 'BI' },
+        0x1d498: { c: 'w', f: 'BI' },
+        0x1d499: { c: 'x', f: 'BI' },
+        0x1d49a: { c: 'y', f: 'BI' },
+        0x1d49b: { c: 'z', f: 'BI' },
+        0x1d49c: { c: 'A', f: 'SC' },
+        0x1d49e: { c: 'C', f: 'SC' },
+        0x1d49f: { c: 'D', f: 'SC' },
+        0x1d4a2: { c: 'G', f: 'SC' },
+        0x1d4a5: { c: 'J', f: 'SC' },
+        0x1d4a6: { c: 'K', f: 'SC' },
+        0x1d4a9: { c: 'N', f: 'SC' },
+        0x1d4aa: { c: 'O', f: 'SC' },
+        0x1d4ab: { c: 'P', f: 'SC' },
+        0x1d4ac: { c: 'Q', f: 'SC' },
+        0x1d4ae: { c: 'S', f: 'SC' },
+        0x1d4af: { c: 'T', f: 'SC' },
+        0x1d4b0: { c: 'U', f: 'SC' },
+        0x1d4b1: { c: 'V', f: 'SC' },
+        0x1d4b2: { c: 'W', f: 'SC' },
+        0x1d4b3: { c: 'X', f: 'SC' },
+        0x1d4b4: { c: 'Y', f: 'SC' },
+        0x1d4b5: { c: 'Z', f: 'SC' },
+        0x1d504: { c: 'A', f: 'FR' },
+        0x1d505: { c: 'B', f: 'FR' },
+        0x1d507: { c: 'D', f: 'FR' },
+        0x1d508: { c: 'E', f: 'FR' },
+        0x1d509: { c: 'F', f: 'FR' },
+        0x1d50a: { c: 'G', f: 'FR' },
+        0x1d50d: { c: 'J', f: 'FR' },
+        0x1d50e: { c: 'K', f: 'FR' },
+        0x1d50f: { c: 'L', f: 'FR' },
+        0x1d510: { c: 'M', f: 'FR' },
+        0x1d511: { c: 'N', f: 'FR' },
+        0x1d512: { c: 'O', f: 'FR' },
+        0x1d513: { c: 'P', f: 'FR' },
+        0x1d514: { c: 'Q', f: 'FR' },
+        0x1d516: { c: 'S', f: 'FR' },
+        0x1d517: { c: 'T', f: 'FR' },
+        0x1d518: { c: 'U', f: 'FR' },
+        0x1d519: { c: 'V', f: 'FR' },
+        0x1d51a: { c: 'W', f: 'FR' },
+        0x1d51b: { c: 'X', f: 'FR' },
+        0x1d51c: { c: 'Y', f: 'FR' },
+        0x1d51e: { c: 'a', f: 'FR' },
+        0x1d51f: { c: 'b', f: 'FR' },
+        0x1d520: { c: 'c', f: 'FR' },
+        0x1d521: { c: 'd', f: 'FR' },
+        0x1d522: { c: 'e', f: 'FR' },
+        0x1d523: { c: 'f', f: 'FR' },
+        0x1d524: { c: 'g', f: 'FR' },
+        0x1d525: { c: 'h', f: 'FR' },
+        0x1d526: { c: 'i', f: 'FR' },
+        0x1d527: { c: 'j', f: 'FR' },
+        0x1d528: { c: 'k', f: 'FR' },
+        0x1d529: { c: 'l', f: 'FR' },
+        0x1d52a: { c: 'm', f: 'FR' },
+        0x1d52b: { c: 'n', f: 'FR' },
+        0x1d52c: { c: 'o', f: 'FR' },
+        0x1d52d: { c: 'p', f: 'FR' },
+        0x1d52e: { c: 'q', f: 'FR' },
+        0x1d52f: { c: 'r', f: 'FR' },
+        0x1d530: { c: 's', f: 'FR' },
+        0x1d531: { c: 't', f: 'FR' },
+        0x1d532: { c: 'u', f: 'FR' },
+        0x1d533: { c: 'v', f: 'FR' },
+        0x1d534: { c: 'w', f: 'FR' },
+        0x1d535: { c: 'x', f: 'FR' },
+        0x1d536: { c: 'y', f: 'FR' },
+        0x1d537: { c: 'z', f: 'FR' },
+        0x1d538: { c: 'A', f: 'A' },
+        0x1d539: { c: 'B', f: 'A' },
+        0x1d53b: { c: 'D', f: 'A' },
+        0x1d53c: { c: 'E', f: 'A' },
+        0x1d53d: { c: 'F', f: 'A' },
+        0x1d53e: { c: 'G', f: 'A' },
+        0x1d540: { c: 'I', f: 'A' },
+        0x1d541: { c: 'J', f: 'A' },
+        0x1d542: { c: 'K', f: 'A' },
+        0x1d543: { c: 'L', f: 'A' },
+        0x1d544: { c: 'M', f: 'A' },
+        0x1d546: { c: 'O', f: 'A' },
+        0x1d54a: { c: 'S', f: 'A' },
+        0x1d54b: { c: 'T', f: 'A' },
+        0x1d54c: { c: 'U', f: 'A' },
+        0x1d54d: { c: 'V', f: 'A' },
+        0x1d54e: { c: 'W', f: 'A' },
+        0x1d54f: { c: 'X', f: 'A' },
+        0x1d550: { c: 'Y', f: 'A' },
+        0x1d56c: { c: 'A', f: 'FRB' },
+        0x1d56d: { c: 'B', f: 'FRB' },
+        0x1d56e: { c: 'C', f: 'FRB' },
+        0x1d56f: { c: 'D', f: 'FRB' },
+        0x1d570: { c: 'E', f: 'FRB' },
+        0x1d571: { c: 'F', f: 'FRB' },
+        0x1d572: { c: 'G', f: 'FRB' },
+        0x1d573: { c: 'H', f: 'FRB' },
+        0x1d574: { c: 'I', f: 'FRB' },
+        0x1d575: { c: 'J', f: 'FRB' },
+        0x1d576: { c: 'K', f: 'FRB' },
+        0x1d577: { c: 'L', f: 'FRB' },
+        0x1d578: { c: 'M', f: 'FRB' },
+        0x1d579: { c: 'N', f: 'FRB' },
+        0x1d57a: { c: 'O', f: 'FRB' },
+        0x1d57b: { c: 'P', f: 'FRB' },
+        0x1d57c: { c: 'Q', f: 'FRB' },
+        0x1d57d: { c: 'R', f: 'FRB' },
+        0x1d57e: { c: 'S', f: 'FRB' },
+        0x1d57f: { c: 'T', f: 'FRB' },
+        0x1d580: { c: 'U', f: 'FRB' },
+        0x1d581: { c: 'V', f: 'FRB' },
+        0x1d582: { c: 'W', f: 'FRB' },
+        0x1d583: { c: 'X', f: 'FRB' },
+        0x1d584: { c: 'Y', f: 'FRB' },
+        0x1d585: { c: 'Z', f: 'FRB' },
+        0x1d586: { c: 'a', f: 'FRB' },
+        0x1d587: { c: 'b', f: 'FRB' },
+        0x1d588: { c: 'c', f: 'FRB' },
+        0x1d589: { c: 'd', f: 'FRB' },
+        0x1d58a: { c: 'e', f: 'FRB' },
+        0x1d58b: { c: 'f', f: 'FRB' },
+        0x1d58c: { c: 'g', f: 'FRB' },
+        0x1d58d: { c: 'h', f: 'FRB' },
+        0x1d58e: { c: 'i', f: 'FRB' },
+        0x1d58f: { c: 'j', f: 'FRB' },
+        0x1d590: { c: 'k', f: 'FRB' },
+        0x1d591: { c: 'l', f: 'FRB' },
+        0x1d592: { c: 'm', f: 'FRB' },
+        0x1d593: { c: 'n', f: 'FRB' },
+        0x1d594: { c: 'o', f: 'FRB' },
+        0x1d595: { c: 'p', f: 'FRB' },
+        0x1d596: { c: 'q', f: 'FRB' },
+        0x1d597: { c: 'r', f: 'FRB' },
+        0x1d598: { c: 's', f: 'FRB' },
+        0x1d599: { c: 't', f: 'FRB' },
+        0x1d59a: { c: 'u', f: 'FRB' },
+        0x1d59b: { c: 'v', f: 'FRB' },
+        0x1d59c: { c: 'w', f: 'FRB' },
+        0x1d59d: { c: 'x', f: 'FRB' },
+        0x1d59e: { c: 'y', f: 'FRB' },
+        0x1d59f: { c: 'z', f: 'FRB' },
+        0x1d5a0: { c: 'A', f: 'SS' },
+        0x1d5a1: { c: 'B', f: 'SS' },
+        0x1d5a2: { c: 'C', f: 'SS' },
+        0x1d5a3: { c: 'D', f: 'SS' },
+        0x1d5a4: { c: 'E', f: 'SS' },
+        0x1d5a5: { c: 'F', f: 'SS' },
+        0x1d5a6: { c: 'G', f: 'SS' },
+        0x1d5a7: { c: 'H', f: 'SS' },
+        0x1d5a8: { c: 'I', f: 'SS' },
+        0x1d5a9: { c: 'J', f: 'SS' },
+        0x1d5aa: { c: 'K', f: 'SS' },
+        0x1d5ab: { c: 'L', f: 'SS' },
+        0x1d5ac: { c: 'M', f: 'SS' },
+        0x1d5ad: { c: 'N', f: 'SS' },
+        0x1d5ae: { c: 'O', f: 'SS' },
+        0x1d5af: { c: 'P', f: 'SS' },
+        0x1d5b0: { c: 'Q', f: 'SS' },
+        0x1d5b1: { c: 'R', f: 'SS' },
+        0x1d5b2: { c: 'S', f: 'SS' },
+        0x1d5b3: { c: 'T', f: 'SS' },
+        0x1d5b4: { c: 'U', f: 'SS' },
+        0x1d5b5: { c: 'V', f: 'SS' },
+        0x1d5b6: { c: 'W', f: 'SS' },
+        0x1d5b7: { c: 'X', f: 'SS' },
+        0x1d5b8: { c: 'Y', f: 'SS' },
+        0x1d5b9: { c: 'Z', f: 'SS' },
+        0x1d5ba: { c: 'a', f: 'SS' },
+        0x1d5bb: { c: 'b', f: 'SS' },
+        0x1d5bc: { c: 'c', f: 'SS' },
+        0x1d5bd: { c: 'd', f: 'SS' },
+        0x1d5be: { c: 'e', f: 'SS' },
+        0x1d5bf: { c: 'f', f: 'SS' },
+        0x1d5c0: { c: 'g', f: 'SS' },
+        0x1d5c1: { c: 'h', f: 'SS' },
+        0x1d5c2: { c: 'i', f: 'SS' },
+        0x1d5c3: { c: 'j', f: 'SS' },
+        0x1d5c4: { c: 'k', f: 'SS' },
+        0x1d5c5: { c: 'l', f: 'SS' },
+        0x1d5c6: { c: 'm', f: 'SS' },
+        0x1d5c7: { c: 'n', f: 'SS' },
+        0x1d5c8: { c: 'o', f: 'SS' },
+        0x1d5c9: { c: 'p', f: 'SS' },
+        0x1d5ca: { c: 'q', f: 'SS' },
+        0x1d5cb: { c: 'r', f: 'SS' },
+        0x1d5cc: { c: 's', f: 'SS' },
+        0x1d5cd: { c: 't', f: 'SS' },
+        0x1d5ce: { c: 'u', f: 'SS' },
+        0x1d5cf: { c: 'v', f: 'SS' },
+        0x1d5d0: { c: 'w', f: 'SS' },
+        0x1d5d1: { c: 'x', f: 'SS' },
+        0x1d5d2: { c: 'y', f: 'SS' },
+        0x1d5d3: { c: 'z', f: 'SS' },
+        0x1d5d4: { c: 'A', f: 'SSB' },
+        0x1d5d5: { c: 'B', f: 'SSB' },
+        0x1d5d6: { c: 'C', f: 'SSB' },
+        0x1d5d7: { c: 'D', f: 'SSB' },
+        0x1d5d8: { c: 'E', f: 'SSB' },
+        0x1d5d9: { c: 'F', f: 'SSB' },
+        0x1d5da: { c: 'G', f: 'SSB' },
+        0x1d5db: { c: 'H', f: 'SSB' },
+        0x1d5dc: { c: 'I', f: 'SSB' },
+        0x1d5dd: { c: 'J', f: 'SSB' },
+        0x1d5de: { c: 'K', f: 'SSB' },
+        0x1d5df: { c: 'L', f: 'SSB' },
+        0x1d5e0: { c: 'M', f: 'SSB' },
+        0x1d5e1: { c: 'N', f: 'SSB' },
+        0x1d5e2: { c: 'O', f: 'SSB' },
+        0x1d5e3: { c: 'P', f: 'SSB' },
+        0x1d5e4: { c: 'Q', f: 'SSB' },
+        0x1d5e5: { c: 'R', f: 'SSB' },
+        0x1d5e6: { c: 'S', f: 'SSB' },
+        0x1d5e7: { c: 'T', f: 'SSB' },
+        0x1d5e8: { c: 'U', f: 'SSB' },
+        0x1d5e9: { c: 'V', f: 'SSB' },
+        0x1d5ea: { c: 'W', f: 'SSB' },
+        0x1d5eb: { c: 'X', f: 'SSB' },
+        0x1d5ec: { c: 'Y', f: 'SSB' },
+        0x1d5ed: { c: 'Z', f: 'SSB' },
+        0x1d5ee: { c: 'a', f: 'SSB' },
+        0x1d5ef: { c: 'b', f: 'SSB' },
+        0x1d5f0: { c: 'c', f: 'SSB' },
+        0x1d5f1: { c: 'd', f: 'SSB' },
+        0x1d5f2: { c: 'e', f: 'SSB' },
+        0x1d5f3: { c: 'f', f: 'SSB' },
+        0x1d5f4: { c: 'g', f: 'SSB' },
+        0x1d5f5: { c: 'h', f: 'SSB' },
+        0x1d5f6: { c: 'i', f: 'SSB' },
+        0x1d5f7: { c: 'j', f: 'SSB' },
+        0x1d5f8: { c: 'k', f: 'SSB' },
+        0x1d5f9: { c: 'l', f: 'SSB' },
+        0x1d5fa: { c: 'm', f: 'SSB' },
+        0x1d5fb: { c: 'n', f: 'SSB' },
+        0x1d5fc: { c: 'o', f: 'SSB' },
+        0x1d5fd: { c: 'p', f: 'SSB' },
+        0x1d5fe: { c: 'q', f: 'SSB' },
+        0x1d5ff: { c: 'r', f: 'SSB' },
+        0x1d600: { c: 's', f: 'SSB' },
+        0x1d601: { c: 't', f: 'SSB' },
+        0x1d602: { c: 'u', f: 'SSB' },
+        0x1d603: { c: 'v', f: 'SSB' },
+        0x1d604: { c: 'w', f: 'SSB' },
+        0x1d605: { c: 'x', f: 'SSB' },
+        0x1d606: { c: 'y', f: 'SSB' },
+        0x1d607: { c: 'z', f: 'SSB' },
+        0x1d608: { c: 'A', f: 'SSI' },
+        0x1d609: { c: 'B', f: 'SSI' },
+        0x1d60a: { c: 'C', f: 'SSI' },
+        0x1d60b: { c: 'D', f: 'SSI' },
+        0x1d60c: { c: 'E', f: 'SSI' },
+        0x1d60d: { c: 'F', f: 'SSI' },
+        0x1d60e: { c: 'G', f: 'SSI' },
+        0x1d60f: { c: 'H', f: 'SSI' },
+        0x1d610: { c: 'I', f: 'SSI' },
+        0x1d611: { c: 'J', f: 'SSI' },
+        0x1d612: { c: 'K', f: 'SSI' },
+        0x1d613: { c: 'L', f: 'SSI' },
+        0x1d614: { c: 'M', f: 'SSI' },
+        0x1d615: { c: 'N', f: 'SSI' },
+        0x1d616: { c: 'O', f: 'SSI' },
+        0x1d617: { c: 'P', f: 'SSI' },
+        0x1d618: { c: 'Q', f: 'SSI' },
+        0x1d619: { c: 'R', f: 'SSI' },
+        0x1d61a: { c: 'S', f: 'SSI' },
+        0x1d61b: { c: 'T', f: 'SSI' },
+        0x1d61c: { c: 'U', f: 'SSI' },
+        0x1d61d: { c: 'V', f: 'SSI' },
+        0x1d61e: { c: 'W', f: 'SSI' },
+        0x1d61f: { c: 'X', f: 'SSI' },
+        0x1d620: { c: 'Y', f: 'SSI' },
+        0x1d621: { c: 'Z', f: 'SSI' },
+        0x1d622: { c: 'a', f: 'SSI' },
+        0x1d623: { c: 'b', f: 'SSI' },
+        0x1d624: { c: 'c', f: 'SSI' },
+        0x1d625: { c: 'd', f: 'SSI' },
+        0x1d626: { c: 'e', f: 'SSI' },
+        0x1d627: { c: 'f', f: 'SSI' },
+        0x1d628: { c: 'g', f: 'SSI' },
+        0x1d629: { c: 'h', f: 'SSI' },
+        0x1d62a: { c: 'i', f: 'SSI' },
+        0x1d62b: { c: 'j', f: 'SSI' },
+        0x1d62c: { c: 'k', f: 'SSI' },
+        0x1d62d: { c: 'l', f: 'SSI' },
+        0x1d62e: { c: 'm', f: 'SSI' },
+        0x1d62f: { c: 'n', f: 'SSI' },
+        0x1d630: { c: 'o', f: 'SSI' },
+        0x1d631: { c: 'p', f: 'SSI' },
+        0x1d632: { c: 'q', f: 'SSI' },
+        0x1d633: { c: 'r', f: 'SSI' },
+        0x1d634: { c: 's', f: 'SSI' },
+        0x1d635: { c: 't', f: 'SSI' },
+        0x1d636: { c: 'u', f: 'SSI' },
+        0x1d637: { c: 'v', f: 'SSI' },
+        0x1d638: { c: 'w', f: 'SSI' },
+        0x1d639: { c: 'x', f: 'SSI' },
+        0x1d63a: { c: 'y', f: 'SSI' },
+        0x1d63b: { c: 'z', f: 'SSI' },
+        0x1d670: { c: 'A', f: 'T' },
+        0x1d671: { c: 'B', f: 'T' },
+        0x1d672: { c: 'C', f: 'T' },
+        0x1d673: { c: 'D', f: 'T' },
+        0x1d674: { c: 'E', f: 'T' },
+        0x1d675: { c: 'F', f: 'T' },
+        0x1d676: { c: 'G', f: 'T' },
+        0x1d677: { c: 'H', f: 'T' },
+        0x1d678: { c: 'I', f: 'T' },
+        0x1d679: { c: 'J', f: 'T' },
+        0x1d67a: { c: 'K', f: 'T' },
+        0x1d67b: { c: 'L', f: 'T' },
+        0x1d67c: { c: 'M', f: 'T' },
+        0x1d67d: { c: 'N', f: 'T' },
+        0x1d67e: { c: 'O', f: 'T' },
+        0x1d67f: { c: 'P', f: 'T' },
+        0x1d680: { c: 'Q', f: 'T' },
+        0x1d681: { c: 'R', f: 'T' },
+        0x1d682: { c: 'S', f: 'T' },
+        0x1d683: { c: 'T', f: 'T' },
+        0x1d684: { c: 'U', f: 'T' },
+        0x1d685: { c: 'V', f: 'T' },
+        0x1d686: { c: 'W', f: 'T' },
+        0x1d687: { c: 'X', f: 'T' },
+        0x1d688: { c: 'Y', f: 'T' },
+        0x1d689: { c: 'Z', f: 'T' },
+        0x1d68a: { c: 'a', f: 'T' },
+        0x1d68b: { c: 'b', f: 'T' },
+        0x1d68c: { c: 'c', f: 'T' },
+        0x1d68d: { c: 'd', f: 'T' },
+        0x1d68e: { c: 'e', f: 'T' },
+        0x1d68f: { c: 'f', f: 'T' },
+        0x1d690: { c: 'g', f: 'T' },
+        0x1d691: { c: 'h', f: 'T' },
+        0x1d692: { c: 'i', f: 'T' },
+        0x1d693: { c: 'j', f: 'T' },
+        0x1d694: { c: 'k', f: 'T' },
+        0x1d695: { c: 'l', f: 'T' },
+        0x1d696: { c: 'm', f: 'T' },
+        0x1d697: { c: 'n', f: 'T' },
+        0x1d698: { c: 'o', f: 'T' },
+        0x1d699: { c: 'p', f: 'T' },
+        0x1d69a: { c: 'q', f: 'T' },
+        0x1d69b: { c: 'r', f: 'T' },
+        0x1d69c: { c: 's', f: 'T' },
+        0x1d69d: { c: 't', f: 'T' },
+        0x1d69e: { c: 'u', f: 'T' },
+        0x1d69f: { c: 'v', f: 'T' },
+        0x1d6a0: { c: 'w', f: 'T' },
+        0x1d6a1: { c: 'x', f: 'T' },
+        0x1d6a2: { c: 'y', f: 'T' },
+        0x1d6a3: { c: 'z', f: 'T' },
+        0x1d6a8: { c: 'A', f: 'B' },
+        0x1d6a9: { c: 'B', f: 'B' },
+        0x1d6aa: { c: '\\393', f: 'B' },
+        0x1d6ab: { c: '\\394', f: 'B' },
+        0x1d6ac: { c: 'E', f: 'B' },
+        0x1d6ad: { c: 'Z', f: 'B' },
+        0x1d6ae: { c: 'H', f: 'B' },
+        0x1d6af: { c: '\\398', f: 'B' },
+        0x1d6b0: { c: 'I', f: 'B' },
+        0x1d6b1: { c: 'K', f: 'B' },
+        0x1d6b2: { c: '\\39B', f: 'B' },
+        0x1d6b3: { c: 'M', f: 'B' },
+        0x1d6b4: { c: 'N', f: 'B' },
+        0x1d6b5: { c: '\\39E', f: 'B' },
+        0x1d6b6: { c: 'O', f: 'B' },
+        0x1d6b7: { c: '\\3A0', f: 'B' },
+        0x1d6b8: { c: 'P', f: 'B' },
+        0x1d6ba: { c: '\\3A3', f: 'B' },
+        0x1d6bb: { c: 'T', f: 'B' },
+        0x1d6bc: { c: '\\3A5', f: 'B' },
+        0x1d6bd: { c: '\\3A6', f: 'B' },
+        0x1d6be: { c: 'X', f: 'B' },
+        0x1d6bf: { c: '\\3A8', f: 'B' },
+        0x1d6c0: { c: '\\3A9', f: 'B' },
+        0x1d6c1: { c: '\\2207', f: 'B' },
+        0x1d6e2: { c: 'A', f: 'I' },
+        0x1d6e3: { c: 'B', f: 'I' },
+        0x1d6e4: { c: '\\393', f: 'I' },
+        0x1d6e5: { c: '\\394', f: 'I' },
+        0x1d6e6: { c: 'E', f: 'I' },
+        0x1d6e7: { c: 'Z', f: 'I' },
+        0x1d6e8: { c: 'H', f: 'I' },
+        0x1d6e9: { c: '\\398', f: 'I' },
+        0x1d6ea: { c: 'I', f: 'I' },
+        0x1d6eb: { c: 'K', f: 'I' },
+        0x1d6ec: { c: '\\39B', f: 'I' },
+        0x1d6ed: { c: 'M', f: 'I' },
+        0x1d6ee: { c: 'N', f: 'I' },
+        0x1d6ef: { c: '\\39E', f: 'I' },
+        0x1d6f0: { c: 'O', f: 'I' },
+        0x1d6f1: { c: '\\3A0', f: 'I' },
+        0x1d6f2: { c: 'P', f: 'I' },
+        0x1d6f4: { c: '\\3A3', f: 'I' },
+        0x1d6f5: { c: 'T', f: 'I' },
+        0x1d6f6: { c: '\\3A5', f: 'I' },
+        0x1d6f7: { c: '\\3A6', f: 'I' },
+        0x1d6f8: { c: 'X', f: 'I' },
+        0x1d6f9: { c: '\\3A8', f: 'I' },
+        0x1d6fa: { c: '\\3A9', f: 'I' },
+        0x1d6fc: { c: '\\3B1', f: 'I' },
+        0x1d6fd: { c: '\\3B2', f: 'I' },
+        0x1d6fe: { c: '\\3B3', f: 'I' },
+        0x1d6ff: { c: '\\3B4', f: 'I' },
+        0x1d700: { c: '\\3B5', f: 'I' },
+        0x1d701: { c: '\\3B6', f: 'I' },
+        0x1d702: { c: '\\3B7', f: 'I' },
+        0x1d703: { c: '\\3B8', f: 'I' },
+        0x1d704: { c: '\\3B9', f: 'I' },
+        0x1d705: { c: '\\3BA', f: 'I' },
+        0x1d706: { c: '\\3BB', f: 'I' },
+        0x1d707: { c: '\\3BC', f: 'I' },
+        0x1d708: { c: '\\3BD', f: 'I' },
+        0x1d709: { c: '\\3BE', f: 'I' },
+        0x1d70a: { c: '\\3BF', f: 'I' },
+        0x1d70b: { c: '\\3C0', f: 'I' },
+        0x1d70c: { c: '\\3C1', f: 'I' },
+        0x1d70d: { c: '\\3C2', f: 'I' },
+        0x1d70e: { c: '\\3C3', f: 'I' },
+        0x1d70f: { c: '\\3C4', f: 'I' },
+        0x1d710: { c: '\\3C5', f: 'I' },
+        0x1d711: { c: '\\3C6', f: 'I' },
+        0x1d712: { c: '\\3C7', f: 'I' },
+        0x1d713: { c: '\\3C8', f: 'I' },
+        0x1d714: { c: '\\3C9', f: 'I' },
+        0x1d715: { c: '\\2202' },
+        0x1d716: { c: '\\3F5', f: 'I' },
+        0x1d717: { c: '\\3D1', f: 'I' },
+        0x1d718: { c: '\\E009', f: 'A' },
+        0x1d719: { c: '\\3D5', f: 'I' },
+        0x1d71a: { c: '\\3F1', f: 'I' },
+        0x1d71b: { c: '\\3D6', f: 'I' },
+        0x1d71c: { c: 'A', f: 'BI' },
+        0x1d71d: { c: 'B', f: 'BI' },
+        0x1d71e: { c: '\\393', f: 'BI' },
+        0x1d71f: { c: '\\394', f: 'BI' },
+        0x1d720: { c: 'E', f: 'BI' },
+        0x1d721: { c: 'Z', f: 'BI' },
+        0x1d722: { c: 'H', f: 'BI' },
+        0x1d723: { c: '\\398', f: 'BI' },
+        0x1d724: { c: 'I', f: 'BI' },
+        0x1d725: { c: 'K', f: 'BI' },
+        0x1d726: { c: '\\39B', f: 'BI' },
+        0x1d727: { c: 'M', f: 'BI' },
+        0x1d728: { c: 'N', f: 'BI' },
+        0x1d729: { c: '\\39E', f: 'BI' },
+        0x1d72a: { c: 'O', f: 'BI' },
+        0x1d72b: { c: '\\3A0', f: 'BI' },
+        0x1d72c: { c: 'P', f: 'BI' },
+        0x1d72e: { c: '\\3A3', f: 'BI' },
+        0x1d72f: { c: 'T', f: 'BI' },
+        0x1d730: { c: '\\3A5', f: 'BI' },
+        0x1d731: { c: '\\3A6', f: 'BI' },
+        0x1d732: { c: 'X', f: 'BI' },
+        0x1d733: { c: '\\3A8', f: 'BI' },
+        0x1d734: { c: '\\3A9', f: 'BI' },
+        0x1d736: { c: '\\3B1', f: 'BI' },
+        0x1d737: { c: '\\3B2', f: 'BI' },
+        0x1d738: { c: '\\3B3', f: 'BI' },
+        0x1d739: { c: '\\3B4', f: 'BI' },
+        0x1d73a: { c: '\\3B5', f: 'BI' },
+        0x1d73b: { c: '\\3B6', f: 'BI' },
+        0x1d73c: { c: '\\3B7', f: 'BI' },
+        0x1d73d: { c: '\\3B8', f: 'BI' },
+        0x1d73e: { c: '\\3B9', f: 'BI' },
+        0x1d73f: { c: '\\3BA', f: 'BI' },
+        0x1d740: { c: '\\3BB', f: 'BI' },
+        0x1d741: { c: '\\3BC', f: 'BI' },
+        0x1d742: { c: '\\3BD', f: 'BI' },
+        0x1d743: { c: '\\3BE', f: 'BI' },
+        0x1d744: { c: '\\3BF', f: 'BI' },
+        0x1d745: { c: '\\3C0', f: 'BI' },
+        0x1d746: { c: '\\3C1', f: 'BI' },
+        0x1d747: { c: '\\3C2', f: 'BI' },
+        0x1d748: { c: '\\3C3', f: 'BI' },
+        0x1d749: { c: '\\3C4', f: 'BI' },
+        0x1d74a: { c: '\\3C5', f: 'BI' },
+        0x1d74b: { c: '\\3C6', f: 'BI' },
+        0x1d74c: { c: '\\3C7', f: 'BI' },
+        0x1d74d: { c: '\\3C8', f: 'BI' },
+        0x1d74e: { c: '\\3C9', f: 'BI' },
+        0x1d74f: { c: '\\2202', f: 'B' },
+        0x1d750: { c: '\\3F5', f: 'BI' },
+        0x1d751: { c: '\\3D1', f: 'BI' },
+        0x1d752: { c: '\\E009', f: 'A' },
+        0x1d753: { c: '\\3D5', f: 'BI' },
+        0x1d754: { c: '\\3F1', f: 'BI' },
+        0x1d755: { c: '\\3D6', f: 'BI' },
+        0x1d756: { c: 'A', f: 'SSB' },
+        0x1d757: { c: 'B', f: 'SSB' },
+        0x1d758: { c: '\\393', f: 'SSB' },
+        0x1d759: { c: '\\394', f: 'SSB' },
+        0x1d75a: { c: 'E', f: 'SSB' },
+        0x1d75b: { c: 'Z', f: 'SSB' },
+        0x1d75c: { c: 'H', f: 'SSB' },
+        0x1d75d: { c: '\\398', f: 'SSB' },
+        0x1d75e: { c: 'I', f: 'SSB' },
+        0x1d75f: { c: 'K', f: 'SSB' },
+        0x1d760: { c: '\\39B', f: 'SSB' },
+        0x1d761: { c: 'M', f: 'SSB' },
+        0x1d762: { c: 'N', f: 'SSB' },
+        0x1d763: { c: '\\39E', f: 'SSB' },
+        0x1d764: { c: 'O', f: 'SSB' },
+        0x1d765: { c: '\\3A0', f: 'SSB' },
+        0x1d766: { c: 'P', f: 'SSB' },
+        0x1d768: { c: '\\3A3', f: 'SSB' },
+        0x1d769: { c: 'T', f: 'SSB' },
+        0x1d76a: { c: '\\3A5', f: 'SSB' },
+        0x1d76b: { c: '\\3A6', f: 'SSB' },
+        0x1d76c: { c: 'X', f: 'SSB' },
+        0x1d76d: { c: '\\3A8', f: 'SSB' },
+        0x1d76e: { c: '\\3A9', f: 'SSB' },
+        0x1d7ce: { c: '0', f: 'B' },
+        0x1d7cf: { c: '1', f: 'B' },
+        0x1d7d0: { c: '2', f: 'B' },
+        0x1d7d1: { c: '3', f: 'B' },
+        0x1d7d2: { c: '4', f: 'B' },
+        0x1d7d3: { c: '5', f: 'B' },
+        0x1d7d4: { c: '6', f: 'B' },
+        0x1d7d5: { c: '7', f: 'B' },
+        0x1d7d6: { c: '8', f: 'B' },
+        0x1d7d7: { c: '9', f: 'B' },
+        0x1d7e2: { c: '0', f: 'SS' },
+        0x1d7e3: { c: '1', f: 'SS' },
+        0x1d7e4: { c: '2', f: 'SS' },
+        0x1d7e5: { c: '3', f: 'SS' },
+        0x1d7e6: { c: '4', f: 'SS' },
+        0x1d7e7: { c: '5', f: 'SS' },
+        0x1d7e8: { c: '6', f: 'SS' },
+        0x1d7e9: { c: '7', f: 'SS' },
+        0x1d7ea: { c: '8', f: 'SS' },
+        0x1d7eb: { c: '9', f: 'SS' },
+        0x1d7ec: { c: '0', f: 'SSB' },
+        0x1d7ed: { c: '1', f: 'SSB' },
+        0x1d7ee: { c: '2', f: 'SSB' },
+        0x1d7ef: { c: '3', f: 'SSB' },
+        0x1d7f0: { c: '4', f: 'SSB' },
+        0x1d7f1: { c: '5', f: 'SSB' },
+        0x1d7f2: { c: '6', f: 'SSB' },
+        0x1d7f3: { c: '7', f: 'SSB' },
+        0x1d7f4: { c: '8', f: 'SSB' },
+        0x1d7f5: { c: '9', f: 'SSB' },
+        0x1d7f6: { c: '0', f: 'T' },
+        0x1d7f7: { c: '1', f: 'T' },
+        0x1d7f8: { c: '2', f: 'T' },
+        0x1d7f9: { c: '3', f: 'T' },
+        0x1d7fa: { c: '4', f: 'T' },
+        0x1d7fb: { c: '5', f: 'T' },
+        0x1d7fc: { c: '6', f: 'T' },
+        0x1d7fd: { c: '7', f: 'T' },
+        0x1d7fe: { c: '8', f: 'T' },
+        0x1d7ff: { c: '9', f: 'T' }
+      });
+      //# sourceMappingURL=normal.js.map
+
+      /***/
+    },
+
+    /***/ 83356: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.sansSerifBoldItalic = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var sans_serif_bold_italic_js_1 = __webpack_require__(47033);
+      exports.sansSerifBoldItalic = (0, FontData_js_1.AddCSS)(
+        sans_serif_bold_italic_js_1.sansSerifBoldItalic,
+        {
+          0x131: { f: 'SSB' },
+          0x237: { f: 'SSB' }
+        }
+      );
+      //# sourceMappingURL=sans-serif-bold-italic.js.map
+
+      /***/
+    },
+
+    /***/ 11211: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.sansSerifBold = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var sans_serif_bold_js_1 = __webpack_require__(94872);
+      exports.sansSerifBold = (0, FontData_js_1.AddCSS)(
+        sans_serif_bold_js_1.sansSerifBold,
+        {
+          0x2015: { c: '\\2014' },
+          0x2017: { c: '_' },
+          0x2044: { c: '/' },
+          0x2206: { c: '\\394' }
+        }
+      );
+      //# sourceMappingURL=sans-serif-bold.js.map
+
+      /***/
+    },
+
+    /***/ 76316: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.sansSerifItalic = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var sans_serif_italic_js_1 = __webpack_require__(9255);
+      exports.sansSerifItalic = (0, FontData_js_1.AddCSS)(
+        sans_serif_italic_js_1.sansSerifItalic,
+        {
+          0x391: { c: 'A' },
+          0x392: { c: 'B' },
+          0x395: { c: 'E' },
+          0x396: { c: 'Z' },
+          0x397: { c: 'H' },
+          0x399: { c: 'I' },
+          0x39a: { c: 'K' },
+          0x39c: { c: 'M' },
+          0x39d: { c: 'N' },
+          0x39f: { c: 'O' },
+          0x3a1: { c: 'P' },
+          0x3a4: { c: 'T' },
+          0x3a7: { c: 'X' },
+          0x2015: { c: '\\2014' },
+          0x2017: { c: '_' },
+          0x2044: { c: '/' },
+          0x2206: { c: '\\394' }
+        }
+      );
+      //# sourceMappingURL=sans-serif-italic.js.map
+
+      /***/
+    },
+
+    /***/ 16651: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.sansSerif = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var sans_serif_js_1 = __webpack_require__(83366);
+      exports.sansSerif = (0, FontData_js_1.AddCSS)(sans_serif_js_1.sansSerif, {
+        0x391: { c: 'A' },
+        0x392: { c: 'B' },
+        0x395: { c: 'E' },
+        0x396: { c: 'Z' },
+        0x397: { c: 'H' },
+        0x399: { c: 'I' },
+        0x39a: { c: 'K' },
+        0x39c: { c: 'M' },
+        0x39d: { c: 'N' },
+        0x39f: { c: 'O' },
+        0x3a1: { c: 'P' },
+        0x3a4: { c: 'T' },
+        0x3a7: { c: 'X' },
+        0x2015: { c: '\\2014' },
+        0x2017: { c: '_' },
+        0x2044: { c: '/' },
+        0x2206: { c: '\\394' }
+      });
+      //# sourceMappingURL=sans-serif.js.map
+
+      /***/
+    },
+
+    /***/ 56755: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.scriptBold = void 0;
+      var script_bold_js_1 = __webpack_require__(21616);
+      Object.defineProperty(exports, 'scriptBold', {
+        enumerable: true,
+        get: function () {
+          return script_bold_js_1.scriptBold;
+        }
+      });
+      //# sourceMappingURL=script-bold.js.map
+
+      /***/
+    },
+
+    /***/ 45491: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.script = void 0;
+      var script_js_1 = __webpack_require__(24062);
+      Object.defineProperty(exports, 'script', {
+        enumerable: true,
+        get: function () {
+          return script_js_1.script;
+        }
+      });
+      //# sourceMappingURL=script.js.map
+
+      /***/
+    },
+
+    /***/ 7598: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.smallop = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var smallop_js_1 = __webpack_require__(22578);
+      exports.smallop = (0, FontData_js_1.AddCSS)(smallop_js_1.smallop, {
+        0x2044: { c: '/' },
+        0x2329: { c: '\\27E8' },
+        0x232a: { c: '\\27E9' },
+        0x2758: { c: '\\2223' },
+        0x2a0c: { c: '\\222C\\222C' },
+        0x3008: { c: '\\27E8' },
+        0x3009: { c: '\\27E9' }
+      });
+      //# sourceMappingURL=smallop.js.map
+
+      /***/
+    },
+
+    /***/ 83085: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texCalligraphicBold = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var tex_calligraphic_bold_js_1 = __webpack_require__(70286);
+      exports.texCalligraphicBold = (0, FontData_js_1.AddCSS)(
+        tex_calligraphic_bold_js_1.texCalligraphicBold,
+        {
+          0x131: { f: 'B' },
+          0x237: { f: 'B' }
+        }
+      );
+      //# sourceMappingURL=tex-calligraphic-bold.js.map
+
+      /***/
+    },
+
+    /***/ 74681: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texCalligraphic = void 0;
+      var tex_calligraphic_js_1 = __webpack_require__(57552);
+      Object.defineProperty(exports, 'texCalligraphic', {
+        enumerable: true,
+        get: function () {
+          return tex_calligraphic_js_1.texCalligraphic;
+        }
+      });
+      //# sourceMappingURL=tex-calligraphic.js.map
+
+      /***/
+    },
+
+    /***/ 91611: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texMathit = void 0;
+      var tex_mathit_js_1 = __webpack_require__(24398);
+      Object.defineProperty(exports, 'texMathit', {
+        enumerable: true,
+        get: function () {
+          return tex_mathit_js_1.texMathit;
+        }
+      });
+      //# sourceMappingURL=tex-mathit.js.map
+
+      /***/
+    },
+
+    /***/ 56848: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texOldstyleBold = void 0;
+      var tex_oldstyle_bold_js_1 = __webpack_require__(20628);
+      Object.defineProperty(exports, 'texOldstyleBold', {
+        enumerable: true,
+        get: function () {
+          return tex_oldstyle_bold_js_1.texOldstyleBold;
+        }
+      });
+      //# sourceMappingURL=tex-oldstyle-bold.js.map
+
+      /***/
+    },
+
+    /***/ 74878: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texOldstyle = void 0;
+      var tex_oldstyle_js_1 = __webpack_require__(41855);
+      Object.defineProperty(exports, 'texOldstyle', {
+        enumerable: true,
+        get: function () {
+          return tex_oldstyle_js_1.texOldstyle;
+        }
+      });
+      //# sourceMappingURL=tex-oldstyle.js.map
+
+      /***/
+    },
+
+    /***/ 99652: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texSize3 = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var tex_size3_js_1 = __webpack_require__(75431);
+      exports.texSize3 = (0, FontData_js_1.AddCSS)(tex_size3_js_1.texSize3, {
+        0x2044: { c: '/' },
+        0x2329: { c: '\\27E8' },
+        0x232a: { c: '\\27E9' },
+        0x3008: { c: '\\27E8' },
+        0x3009: { c: '\\27E9' }
+      });
+      //# sourceMappingURL=tex-size3.js.map
+
+      /***/
+    },
+
+    /***/ 39729: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texSize4 = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var tex_size4_js_1 = __webpack_require__(98278);
+      exports.texSize4 = (0, FontData_js_1.AddCSS)(tex_size4_js_1.texSize4, {
+        0x2044: { c: '/' },
+        0x2329: { c: '\\27E8' },
+        0x232a: { c: '\\27E9' },
+        0x3008: { c: '\\27E8' },
+        0x3009: { c: '\\27E9' },
+        0xe155: { c: '\\E153\\E152' },
+        0xe156: { c: '\\E151\\E150' }
+      });
+      //# sourceMappingURL=tex-size4.js.map
+
+      /***/
+    },
+
+    /***/ 82599: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texVariant = void 0;
+      var FontData_js_1 = __webpack_require__(92952);
+      var tex_variant_js_1 = __webpack_require__(90456);
+      exports.texVariant = (0, FontData_js_1.AddCSS)(
+        tex_variant_js_1.texVariant,
+        {
+          0x3f0: { c: '\\E009' },
+          0x210f: { f: '' },
+          0x2224: { c: '\\E006' },
+          0x2226: { c: '\\E007' },
+          0x2268: { c: '\\E00C' },
+          0x2269: { c: '\\E00D' },
+          0x2270: { c: '\\E011' },
+          0x2271: { c: '\\E00E' },
+          0x2288: { c: '\\E016' },
+          0x2289: { c: '\\E018' },
+          0x228a: { c: '\\E01A' },
+          0x228b: { c: '\\E01B' },
+          0x2a87: { c: '\\E010' },
+          0x2a88: { c: '\\E00F' },
+          0x2acb: { c: '\\E017' },
+          0x2acc: { c: '\\E019' }
+        }
+      );
+      //# sourceMappingURL=tex-variant.js.map
+
+      /***/
+    },
+
+    /***/ 30861: /***/ function (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) {
+      var __assign =
+        (this && this.__assign) ||
+        function () {
+          __assign =
+            Object.assign ||
+            function (t) {
+              for (var s, i = 1, n = arguments.length; i < n; i++) {
+                s = arguments[i];
+                for (var p in s)
+                  if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+              }
+              return t;
+            };
+          return __assign.apply(this, arguments);
+        };
+      var __read =
+        (this && this.__read) ||
+        function (o, n) {
+          var m = typeof Symbol === 'function' && o[Symbol.iterator];
+          if (!m) return o;
+          var i = m.call(o),
+            r,
+            ar = [],
+            e;
+          try {
+            while ((n === void 0 || n-- > 0) && !(r = i.next()).done)
+              ar.push(r.value);
+          } catch (error) {
+            e = { error: error };
+          } finally {
+            try {
+              if (r && !r.done && (m = i['return'])) m.call(i);
+            } finally {
+              if (e) throw e.error;
+            }
+          }
+          return ar;
+        };
+      var __spreadArray =
+        (this && this.__spreadArray) ||
+        function (to, from, pack) {
+          if (pack || arguments.length === 2)
+            for (var i = 0, l = from.length, ar; i < l; i++) {
+              if (ar || !(i in from)) {
+                if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+                ar[i] = from[i];
+              }
+            }
+          return to.concat(ar || Array.prototype.slice.call(from));
+        };
+      var __values =
+        (this && this.__values) ||
+        function (o) {
+          var s = typeof Symbol === 'function' && Symbol.iterator,
+            m = s && o[s],
+            i = 0;
+          if (m) return m.call(o);
+          if (o && typeof o.length === 'number')
+            return {
+              next: function () {
+                if (o && i >= o.length) o = void 0;
+                return { value: o && o[i++], done: !o };
+              }
+            };
+          throw new TypeError(
+            s ? 'Object is not iterable.' : 'Symbol.iterator is not defined.'
+          );
+        };
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.FontData = exports.NOSTRETCH = exports.H = exports.V = void 0;
+      var Options_js_1 = __webpack_require__(34981);
+      exports.V = 1;
+      exports.H = 2;
+      exports.NOSTRETCH = { dir: 0 };
+      var FontData = (function () {
+        function FontData(options) {
+          var e_1, _a, e_2, _b;
+          if (options === void 0) {
+            options = null;
+          }
+          this.variant = {};
+          this.delimiters = {};
+          this.cssFontMap = {};
+          this.remapChars = {};
+          this.skewIcFactor = 0.75;
+          var CLASS = this.constructor;
+          this.options = (0, Options_js_1.userOptions)(
+            (0, Options_js_1.defaultOptions)({}, CLASS.OPTIONS),
+            options
+          );
+          this.params = __assign({}, CLASS.defaultParams);
+          this.sizeVariants = __spreadArray(
+            [],
+            __read(CLASS.defaultSizeVariants),
+            false
+          );
+          this.stretchVariants = __spreadArray(
+            [],
+            __read(CLASS.defaultStretchVariants),
+            false
+          );
+          this.cssFontMap = __assign({}, CLASS.defaultCssFonts);
+          try {
+            for (
+              var _c = __values(Object.keys(this.cssFontMap)), _d = _c.next();
+              !_d.done;
+              _d = _c.next()
+            ) {
+              var name_1 = _d.value;
+              if (this.cssFontMap[name_1][0] === 'unknown') {
+                this.cssFontMap[name_1][0] = this.options.unknownFamily;
+              }
+            }
+          } catch (e_1_1) {
+            e_1 = { error: e_1_1 };
+          } finally {
+            try {
+              if (_d && !_d.done && (_a = _c.return)) _a.call(_c);
+            } finally {
+              if (e_1) throw e_1.error;
+            }
+          }
+          this.cssFamilyPrefix = CLASS.defaultCssFamilyPrefix;
+          this.createVariants(CLASS.defaultVariants);
+          this.defineDelimiters(CLASS.defaultDelimiters);
+          try {
+            for (
+              var _e = __values(Object.keys(CLASS.defaultChars)),
+                _f = _e.next();
+              !_f.done;
+              _f = _e.next()
+            ) {
+              var name_2 = _f.value;
+              this.defineChars(name_2, CLASS.defaultChars[name_2]);
+            }
+          } catch (e_2_1) {
+            e_2 = { error: e_2_1 };
+          } finally {
+            try {
+              if (_f && !_f.done && (_b = _e.return)) _b.call(_e);
+            } finally {
+              if (e_2) throw e_2.error;
+            }
+          }
+          this.defineRemap('accent', CLASS.defaultAccentMap);
+          this.defineRemap('mo', CLASS.defaultMoMap);
+          this.defineRemap('mn', CLASS.defaultMnMap);
+        }
+        FontData.charOptions = function (font, n) {
+          var char = font[n];
+          if (char.length === 3) {
+            char[3] = {};
+          }
+          return char[3];
+        };
+        Object.defineProperty(FontData.prototype, 'styles', {
+          get: function () {
+            return this._styles;
+          },
+          set: function (style) {
+            this._styles = style;
+          },
+          enumerable: false,
+          configurable: true
+        });
+        FontData.prototype.createVariant = function (name, inherit, link) {
+          if (inherit === void 0) {
+            inherit = null;
+          }
+          if (link === void 0) {
+            link = null;
+          }
+          var variant = {
+            linked: [],
+            chars: inherit ? Object.create(this.variant[inherit].chars) : {}
+          };
+          if (link && this.variant[link]) {
             Object.assign(variant.chars, this.variant[link].chars);
             this.variant[link].linked.push(variant.chars);
             variant.chars = Object.create(variant.chars);
-        }
-        this.remapSmpChars(variant.chars, name);
-        this.variant[name] = variant;
-    };
-    FontData.prototype.remapSmpChars = function (chars, name) {
-        var e_3, _a, e_4, _b;
-        var CLASS = this.constructor;
-        if (CLASS.VariantSmp[name]) {
+          }
+          this.remapSmpChars(variant.chars, name);
+          this.variant[name] = variant;
+        };
+        FontData.prototype.remapSmpChars = function (chars, name) {
+          var e_3, _a, e_4, _b;
+          var CLASS = this.constructor;
+          if (CLASS.VariantSmp[name]) {
             var SmpRemap = CLASS.SmpRemap;
-            var SmpGreek = [null, null, CLASS.SmpRemapGreekU, CLASS.SmpRemapGreekL];
+            var SmpGreek = [
+              null,
+              null,
+              CLASS.SmpRemapGreekU,
+              CLASS.SmpRemapGreekL
+            ];
             try {
-                for (var _c = __values(CLASS.SmpRanges), _d = _c.next(); !_d.done; _d = _c.next()) {
-                    var _e = __read(_d.value, 3), i = _e[0], lo = _e[1], hi = _e[2];
-                    var base = CLASS.VariantSmp[name][i];
-                    if (!base)
-                        continue;
-                    for (var n = lo; n <= hi; n++) {
-                        if (n === 0x3A2)
-                            continue;
-                        var smp = base + n - lo;
-                        chars[n] = this.smpChar(SmpRemap[smp] || smp);
-                    }
-                    if (SmpGreek[i]) {
-                        try {
-                            for (var _f = (e_4 = void 0, __values(Object.keys(SmpGreek[i]).map(function (x) { return parseInt(x); }))), _g = _f.next(); !_g.done; _g = _f.next()) {
-                                var n = _g.value;
-                                chars[n] = this.smpChar(base + SmpGreek[i][n]);
-                            }
-                        }
-                        catch (e_4_1) { e_4 = { error: e_4_1 }; }
-                        finally {
-                            try {
-                                if (_g && !_g.done && (_b = _f.return)) _b.call(_f);
-                            }
-                            finally { if (e_4) throw e_4.error; }
-                        }
-                    }
+              for (
+                var _c = __values(CLASS.SmpRanges), _d = _c.next();
+                !_d.done;
+                _d = _c.next()
+              ) {
+                var _e = __read(_d.value, 3),
+                  i = _e[0],
+                  lo = _e[1],
+                  hi = _e[2];
+                var base = CLASS.VariantSmp[name][i];
+                if (!base) continue;
+                for (var n = lo; n <= hi; n++) {
+                  if (n === 0x3a2) continue;
+                  var smp = base + n - lo;
+                  chars[n] = this.smpChar(SmpRemap[smp] || smp);
                 }
-            }
-            catch (e_3_1) { e_3 = { error: e_3_1 }; }
-            finally {
-                try {
-                    if (_d && !_d.done && (_a = _c.return)) _a.call(_c);
+                if (SmpGreek[i]) {
+                  try {
+                    for (
+                      var _f =
+                          ((e_4 = void 0),
+                          __values(
+                            Object.keys(SmpGreek[i]).map(function (x) {
+                              return parseInt(x);
+                            })
+                          )),
+                        _g = _f.next();
+                      !_g.done;
+                      _g = _f.next()
+                    ) {
+                      var n = _g.value;
+                      chars[n] = this.smpChar(base + SmpGreek[i][n]);
+                    }
+                  } catch (e_4_1) {
+                    e_4 = { error: e_4_1 };
+                  } finally {
+                    try {
+                      if (_g && !_g.done && (_b = _f.return)) _b.call(_f);
+                    } finally {
+                      if (e_4) throw e_4.error;
+                    }
+                  }
                 }
-                finally { if (e_3) throw e_3.error; }
+              }
+            } catch (e_3_1) {
+              e_3 = { error: e_3_1 };
+            } finally {
+              try {
+                if (_d && !_d.done && (_a = _c.return)) _a.call(_c);
+              } finally {
+                if (e_3) throw e_3.error;
+              }
             }
-        }
-        if (name === 'bold') {
-            chars[0x3DC] = this.smpChar(0x1D7CA);
-            chars[0x3DD] = this.smpChar(0x1D7CB);
-        }
-    };
-    FontData.prototype.smpChar = function (n) {
-        return [, , , { smp: n }];
-    };
-    FontData.prototype.createVariants = function (variants) {
-        var e_5, _a;
-        try {
-            for (var variants_1 = __values(variants), variants_1_1 = variants_1.next(); !variants_1_1.done; variants_1_1 = variants_1.next()) {
-                var variant = variants_1_1.value;
-                this.createVariant(variant[0], variant[1], variant[2]);
+          }
+          if (name === 'bold') {
+            chars[0x3dc] = this.smpChar(0x1d7ca);
+            chars[0x3dd] = this.smpChar(0x1d7cb);
+          }
+        };
+        FontData.prototype.smpChar = function (n) {
+          return [, , , { smp: n }];
+        };
+        FontData.prototype.createVariants = function (variants) {
+          var e_5, _a;
+          try {
+            for (
+              var variants_1 = __values(variants),
+                variants_1_1 = variants_1.next();
+              !variants_1_1.done;
+              variants_1_1 = variants_1.next()
+            ) {
+              var variant = variants_1_1.value;
+              this.createVariant(variant[0], variant[1], variant[2]);
             }
-        }
-        catch (e_5_1) { e_5 = { error: e_5_1 }; }
-        finally {
+          } catch (e_5_1) {
+            e_5 = { error: e_5_1 };
+          } finally {
             try {
-                if (variants_1_1 && !variants_1_1.done && (_a = variants_1.return)) _a.call(variants_1);
+              if (
+                variants_1_1 &&
+                !variants_1_1.done &&
+                (_a = variants_1.return)
+              )
+                _a.call(variants_1);
+            } finally {
+              if (e_5) throw e_5.error;
             }
-            finally { if (e_5) throw e_5.error; }
-        }
-    };
-    FontData.prototype.defineChars = function (name, chars) {
-        var e_6, _a;
-        var variant = this.variant[name];
-        Object.assign(variant.chars, chars);
-        try {
-            for (var _b = __values(variant.linked), _c = _b.next(); !_c.done; _c = _b.next()) {
-                var link = _c.value;
-                Object.assign(link, chars);
+          }
+        };
+        FontData.prototype.defineChars = function (name, chars) {
+          var e_6, _a;
+          var variant = this.variant[name];
+          Object.assign(variant.chars, chars);
+          try {
+            for (
+              var _b = __values(variant.linked), _c = _b.next();
+              !_c.done;
+              _c = _b.next()
+            ) {
+              var link = _c.value;
+              Object.assign(link, chars);
             }
-        }
-        catch (e_6_1) { e_6 = { error: e_6_1 }; }
-        finally {
+          } catch (e_6_1) {
+            e_6 = { error: e_6_1 };
+          } finally {
             try {
-                if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+              if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+            } finally {
+              if (e_6) throw e_6.error;
             }
-            finally { if (e_6) throw e_6.error; }
-        }
-    };
-    FontData.prototype.defineDelimiters = function (delims) {
-        Object.assign(this.delimiters, delims);
-    };
-    FontData.prototype.defineRemap = function (name, remap) {
-        if (!this.remapChars.hasOwnProperty(name)) {
+          }
+        };
+        FontData.prototype.defineDelimiters = function (delims) {
+          Object.assign(this.delimiters, delims);
+        };
+        FontData.prototype.defineRemap = function (name, remap) {
+          if (!this.remapChars.hasOwnProperty(name)) {
             this.remapChars[name] = {};
-        }
-        Object.assign(this.remapChars[name], remap);
-    };
-    FontData.prototype.getDelimiter = function (n) {
-        return this.delimiters[n];
-    };
-    FontData.prototype.getSizeVariant = function (n, i) {
-        if (this.delimiters[n].variants) {
+          }
+          Object.assign(this.remapChars[name], remap);
+        };
+        FontData.prototype.getDelimiter = function (n) {
+          return this.delimiters[n];
+        };
+        FontData.prototype.getSizeVariant = function (n, i) {
+          if (this.delimiters[n].variants) {
             i = this.delimiters[n].variants[i];
-        }
-        return this.sizeVariants[i];
-    };
-    FontData.prototype.getStretchVariant = function (n, i) {
-        return this.stretchVariants[this.delimiters[n].stretchv ? this.delimiters[n].stretchv[i] : 0];
-    };
-    FontData.prototype.getChar = function (name, n) {
-        return this.variant[name].chars[n];
-    };
-    FontData.prototype.getVariant = function (name) {
-        return this.variant[name];
-    };
-    FontData.prototype.getCssFont = function (variant) {
-        return this.cssFontMap[variant] || ['serif', false, false];
-    };
-    FontData.prototype.getFamily = function (family) {
-        return (this.cssFamilyPrefix ? this.cssFamilyPrefix + ', ' + family : family);
-    };
-    FontData.prototype.getRemappedChar = function (name, c) {
-        var map = this.remapChars[name] || {};
-        return map[c];
-    };
-    FontData.OPTIONS = {
-        unknownFamily: 'serif'
-    };
-    FontData.JAX = 'common';
-    FontData.NAME = '';
-    FontData.defaultVariants = [
-        ['normal'],
-        ['bold', 'normal'],
-        ['italic', 'normal'],
-        ['bold-italic', 'italic', 'bold'],
-        ['double-struck', 'bold'],
-        ['fraktur', 'normal'],
-        ['bold-fraktur', 'bold', 'fraktur'],
-        ['script', 'italic'],
-        ['bold-script', 'bold-italic', 'script'],
-        ['sans-serif', 'normal'],
-        ['bold-sans-serif', 'bold', 'sans-serif'],
-        ['sans-serif-italic', 'italic', 'sans-serif'],
-        ['sans-serif-bold-italic', 'bold-italic', 'bold-sans-serif'],
-        ['monospace', 'normal']
-    ];
-    FontData.defaultCssFonts = {
-        normal: ['unknown', false, false],
-        bold: ['unknown', false, true],
-        italic: ['unknown', true, false],
-        'bold-italic': ['unknown', true, true],
-        'double-struck': ['unknown', false, true],
-        fraktur: ['unknown', false, false],
-        'bold-fraktur': ['unknown', false, true],
-        script: ['cursive', false, false],
-        'bold-script': ['cursive', false, true],
-        'sans-serif': ['sans-serif', false, false],
-        'bold-sans-serif': ['sans-serif', false, true],
-        'sans-serif-italic': ['sans-serif', true, false],
-        'sans-serif-bold-italic': ['sans-serif', true, true],
-        monospace: ['monospace', false, false]
-    };
-    FontData.defaultCssFamilyPrefix = '';
-    FontData.VariantSmp = {
-        bold: [0x1D400, 0x1D41A, 0x1D6A8, 0x1D6C2, 0x1D7CE],
-        italic: [0x1D434, 0x1D44E, 0x1D6E2, 0x1D6FC],
-        'bold-italic': [0x1D468, 0x1D482, 0x1D71C, 0x1D736],
-        script: [0x1D49C, 0x1D4B6],
-        'bold-script': [0x1D4D0, 0x1D4EA],
-        fraktur: [0x1D504, 0x1D51E],
-        'double-struck': [0x1D538, 0x1D552, , , 0x1D7D8],
-        'bold-fraktur': [0x1D56C, 0x1D586],
-        'sans-serif': [0x1D5A0, 0x1D5BA, , , 0x1D7E2],
-        'bold-sans-serif': [0x1D5D4, 0x1D5EE, 0x1D756, 0x1D770, 0x1D7EC],
-        'sans-serif-italic': [0x1D608, 0x1D622],
-        'sans-serif-bold-italic': [0x1D63C, 0x1D656, 0x1D790, 0x1D7AA],
-        'monospace': [0x1D670, 0x1D68A, , , 0x1D7F6]
-    };
-    FontData.SmpRanges = [
-        [0, 0x41, 0x5A],
-        [1, 0x61, 0x7A],
-        [2, 0x391, 0x3A9],
-        [3, 0x3B1, 0x3C9],
-        [4, 0x30, 0x39]
-    ];
-    FontData.SmpRemap = {
-        0x1D455: 0x210E,
-        0x1D49D: 0x212C,
-        0x1D4A0: 0x2130,
-        0x1D4A1: 0x2131,
-        0x1D4A3: 0x210B,
-        0x1D4A4: 0x2110,
-        0x1D4A7: 0x2112,
-        0x1D4A8: 0x2133,
-        0x1D4AD: 0x211B,
-        0x1D4BA: 0x212F,
-        0x1D4BC: 0x210A,
-        0x1D4C4: 0x2134,
-        0x1D506: 0x212D,
-        0x1D50B: 0x210C,
-        0x1D50C: 0x2111,
-        0x1D515: 0x211C,
-        0x1D51D: 0x2128,
-        0x1D53A: 0x2102,
-        0x1D53F: 0x210D,
-        0x1D545: 0x2115,
-        0x1D547: 0x2119,
-        0x1D548: 0x211A,
-        0x1D549: 0x211D,
-        0x1D551: 0x2124,
-    };
-    FontData.SmpRemapGreekU = {
-        0x2207: 0x19,
-        0x03F4: 0x11
-    };
-    FontData.SmpRemapGreekL = {
-        0x3D1: 0x1B,
-        0x3D5: 0x1D,
-        0x3D6: 0x1F,
-        0x3F0: 0x1C,
-        0x3F1: 0x1E,
-        0x3F5: 0x1A,
-        0x2202: 0x19
-    };
-    FontData.defaultAccentMap = {
-        0x0300: '\u02CB',
-        0x0301: '\u02CA',
-        0x0302: '\u02C6',
-        0x0303: '\u02DC',
-        0x0304: '\u02C9',
-        0x0306: '\u02D8',
-        0x0307: '\u02D9',
-        0x0308: '\u00A8',
-        0x030A: '\u02DA',
-        0x030C: '\u02C7',
-        0x2192: '\u20D7',
-        0x2032: '\'',
-        0x2033: '\'\'',
-        0x2034: '\'\'\'',
-        0x2035: '`',
-        0x2036: '``',
-        0x2037: '```',
-        0x2057: '\'\'\'\'',
-        0x20D0: '\u21BC',
-        0x20D1: '\u21C0',
-        0x20D6: '\u2190',
-        0x20E1: '\u2194',
-        0x20F0: '*',
-        0x20DB: '...',
-        0x20DC: '....',
-        0x20EC: '\u21C1',
-        0x20ED: '\u21BD',
-        0x20EE: '\u2190',
-        0x20EF: '\u2192'
-    };
-    FontData.defaultMoMap = {
-        0x002D: '\u2212'
-    };
-    FontData.defaultMnMap = {
-        0x002D: '\u2212'
-    };
-    FontData.defaultParams = {
-        x_height: .442,
-        quad: 1,
-        num1: .676,
-        num2: .394,
-        num3: .444,
-        denom1: .686,
-        denom2: .345,
-        sup1: .413,
-        sup2: .363,
-        sup3: .289,
-        sub1: .15,
-        sub2: .247,
-        sup_drop: .386,
-        sub_drop: .05,
-        delim1: 2.39,
-        delim2: 1.0,
-        axis_height: .25,
-        rule_thickness: .06,
-        big_op_spacing1: .111,
-        big_op_spacing2: .167,
-        big_op_spacing3: .2,
-        big_op_spacing4: .6,
-        big_op_spacing5: .1,
-        surd_height: .075,
-        scriptspace: .05,
-        nulldelimiterspace: .12,
-        delimiterfactor: 901,
-        delimitershortfall: .3,
-        min_rule_thickness: 1.25,
-        separation_factor: 1.75,
-        extra_ic: .033
-    };
-    FontData.defaultDelimiters = {};
-    FontData.defaultChars = {};
-    FontData.defaultSizeVariants = [];
-    FontData.defaultStretchVariants = [];
-    return FontData;
-}());
-exports.FontData = FontData;
-//# sourceMappingURL=FontData.js.map
+          }
+          return this.sizeVariants[i];
+        };
+        FontData.prototype.getStretchVariant = function (n, i) {
+          return this.stretchVariants[
+            this.delimiters[n].stretchv ? this.delimiters[n].stretchv[i] : 0
+          ];
+        };
+        FontData.prototype.getChar = function (name, n) {
+          return this.variant[name].chars[n];
+        };
+        FontData.prototype.getVariant = function (name) {
+          return this.variant[name];
+        };
+        FontData.prototype.getCssFont = function (variant) {
+          return this.cssFontMap[variant] || ['serif', false, false];
+        };
+        FontData.prototype.getFamily = function (family) {
+          return this.cssFamilyPrefix
+            ? this.cssFamilyPrefix + ', ' + family
+            : family;
+        };
+        FontData.prototype.getRemappedChar = function (name, c) {
+          var map = this.remapChars[name] || {};
+          return map[c];
+        };
+        FontData.OPTIONS = {
+          unknownFamily: 'serif'
+        };
+        FontData.JAX = 'common';
+        FontData.NAME = '';
+        FontData.defaultVariants = [
+          ['normal'],
+          ['bold', 'normal'],
+          ['italic', 'normal'],
+          ['bold-italic', 'italic', 'bold'],
+          ['double-struck', 'bold'],
+          ['fraktur', 'normal'],
+          ['bold-fraktur', 'bold', 'fraktur'],
+          ['script', 'italic'],
+          ['bold-script', 'bold-italic', 'script'],
+          ['sans-serif', 'normal'],
+          ['bold-sans-serif', 'bold', 'sans-serif'],
+          ['sans-serif-italic', 'italic', 'sans-serif'],
+          ['sans-serif-bold-italic', 'bold-italic', 'bold-sans-serif'],
+          ['monospace', 'normal']
+        ];
+        FontData.defaultCssFonts = {
+          normal: ['unknown', false, false],
+          bold: ['unknown', false, true],
+          italic: ['unknown', true, false],
+          'bold-italic': ['unknown', true, true],
+          'double-struck': ['unknown', false, true],
+          fraktur: ['unknown', false, false],
+          'bold-fraktur': ['unknown', false, true],
+          script: ['cursive', false, false],
+          'bold-script': ['cursive', false, true],
+          'sans-serif': ['sans-serif', false, false],
+          'bold-sans-serif': ['sans-serif', false, true],
+          'sans-serif-italic': ['sans-serif', true, false],
+          'sans-serif-bold-italic': ['sans-serif', true, true],
+          monospace: ['monospace', false, false]
+        };
+        FontData.defaultCssFamilyPrefix = '';
+        FontData.VariantSmp = {
+          bold: [0x1d400, 0x1d41a, 0x1d6a8, 0x1d6c2, 0x1d7ce],
+          italic: [0x1d434, 0x1d44e, 0x1d6e2, 0x1d6fc],
+          'bold-italic': [0x1d468, 0x1d482, 0x1d71c, 0x1d736],
+          script: [0x1d49c, 0x1d4b6],
+          'bold-script': [0x1d4d0, 0x1d4ea],
+          fraktur: [0x1d504, 0x1d51e],
+          'double-struck': [0x1d538, 0x1d552, , , 0x1d7d8],
+          'bold-fraktur': [0x1d56c, 0x1d586],
+          'sans-serif': [0x1d5a0, 0x1d5ba, , , 0x1d7e2],
+          'bold-sans-serif': [0x1d5d4, 0x1d5ee, 0x1d756, 0x1d770, 0x1d7ec],
+          'sans-serif-italic': [0x1d608, 0x1d622],
+          'sans-serif-bold-italic': [0x1d63c, 0x1d656, 0x1d790, 0x1d7aa],
+          monospace: [0x1d670, 0x1d68a, , , 0x1d7f6]
+        };
+        FontData.SmpRanges = [
+          [0, 0x41, 0x5a],
+          [1, 0x61, 0x7a],
+          [2, 0x391, 0x3a9],
+          [3, 0x3b1, 0x3c9],
+          [4, 0x30, 0x39]
+        ];
+        FontData.SmpRemap = {
+          0x1d455: 0x210e,
+          0x1d49d: 0x212c,
+          0x1d4a0: 0x2130,
+          0x1d4a1: 0x2131,
+          0x1d4a3: 0x210b,
+          0x1d4a4: 0x2110,
+          0x1d4a7: 0x2112,
+          0x1d4a8: 0x2133,
+          0x1d4ad: 0x211b,
+          0x1d4ba: 0x212f,
+          0x1d4bc: 0x210a,
+          0x1d4c4: 0x2134,
+          0x1d506: 0x212d,
+          0x1d50b: 0x210c,
+          0x1d50c: 0x2111,
+          0x1d515: 0x211c,
+          0x1d51d: 0x2128,
+          0x1d53a: 0x2102,
+          0x1d53f: 0x210d,
+          0x1d545: 0x2115,
+          0x1d547: 0x2119,
+          0x1d548: 0x211a,
+          0x1d549: 0x211d,
+          0x1d551: 0x2124
+        };
+        FontData.SmpRemapGreekU = {
+          0x2207: 0x19,
+          0x03f4: 0x11
+        };
+        FontData.SmpRemapGreekL = {
+          0x3d1: 0x1b,
+          0x3d5: 0x1d,
+          0x3d6: 0x1f,
+          0x3f0: 0x1c,
+          0x3f1: 0x1e,
+          0x3f5: 0x1a,
+          0x2202: 0x19
+        };
+        FontData.defaultAccentMap = {
+          0x0300: '\u02CB',
+          0x0301: '\u02CA',
+          0x0302: '\u02C6',
+          0x0303: '\u02DC',
+          0x0304: '\u02C9',
+          0x0306: '\u02D8',
+          0x0307: '\u02D9',
+          0x0308: '\u00A8',
+          0x030a: '\u02DA',
+          0x030c: '\u02C7',
+          0x2192: '\u20D7',
+          0x2032: "'",
+          0x2033: "''",
+          0x2034: "'''",
+          0x2035: '`',
+          0x2036: '``',
+          0x2037: '```',
+          0x2057: "''''",
+          0x20d0: '\u21BC',
+          0x20d1: '\u21C0',
+          0x20d6: '\u2190',
+          0x20e1: '\u2194',
+          0x20f0: '*',
+          0x20db: '...',
+          0x20dc: '....',
+          0x20ec: '\u21C1',
+          0x20ed: '\u21BD',
+          0x20ee: '\u2190',
+          0x20ef: '\u2192'
+        };
+        FontData.defaultMoMap = {
+          0x002d: '\u2212'
+        };
+        FontData.defaultMnMap = {
+          0x002d: '\u2212'
+        };
+        FontData.defaultParams = {
+          x_height: 0.442,
+          quad: 1,
+          num1: 0.676,
+          num2: 0.394,
+          num3: 0.444,
+          denom1: 0.686,
+          denom2: 0.345,
+          sup1: 0.413,
+          sup2: 0.363,
+          sup3: 0.289,
+          sub1: 0.15,
+          sub2: 0.247,
+          sup_drop: 0.386,
+          sub_drop: 0.05,
+          delim1: 2.39,
+          delim2: 1.0,
+          axis_height: 0.25,
+          rule_thickness: 0.06,
+          big_op_spacing1: 0.111,
+          big_op_spacing2: 0.167,
+          big_op_spacing3: 0.2,
+          big_op_spacing4: 0.6,
+          big_op_spacing5: 0.1,
+          surd_height: 0.075,
+          scriptspace: 0.05,
+          nulldelimiterspace: 0.12,
+          delimiterfactor: 901,
+          delimitershortfall: 0.3,
+          min_rule_thickness: 1.25,
+          separation_factor: 1.75,
+          extra_ic: 0.033
+        };
+        FontData.defaultDelimiters = {};
+        FontData.defaultChars = {};
+        FontData.defaultSizeVariants = [];
+        FontData.defaultStretchVariants = [];
+        return FontData;
+      })();
+      exports.FontData = FontData;
+      //# sourceMappingURL=FontData.js.map
 
-/***/ }),
+      /***/
+    },
 
-/***/ 6382:
-/***/ (function(__unused_webpack_module, exports) {
-
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        if (typeof b !== "function" && b !== null)
-            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __read = (this && this.__read) || function (o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-};
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.CommonTeXFontMixin = void 0;
-function CommonTeXFontMixin(Base) {
-    var _a;
-    return _a = (function (_super) {
+    /***/ 6382: /***/ function (__unused_webpack_module, exports) {
+      var __extends =
+        (this && this.__extends) ||
+        (function () {
+          var extendStatics = function (d, b) {
+            extendStatics =
+              Object.setPrototypeOf ||
+              ({ __proto__: [] } instanceof Array &&
+                function (d, b) {
+                  d.__proto__ = b;
+                }) ||
+              function (d, b) {
+                for (var p in b)
+                  if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+              };
+            return extendStatics(d, b);
+          };
+          return function (d, b) {
+            if (typeof b !== 'function' && b !== null)
+              throw new TypeError(
+                'Class extends value ' +
+                  String(b) +
+                  ' is not a constructor or null'
+              );
+            extendStatics(d, b);
+            function __() {
+              this.constructor = d;
+            }
+            d.prototype =
+              b === null
+                ? Object.create(b)
+                : ((__.prototype = b.prototype), new __());
+          };
+        })();
+      var __assign =
+        (this && this.__assign) ||
+        function () {
+          __assign =
+            Object.assign ||
+            function (t) {
+              for (var s, i = 1, n = arguments.length; i < n; i++) {
+                s = arguments[i];
+                for (var p in s)
+                  if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+              }
+              return t;
+            };
+          return __assign.apply(this, arguments);
+        };
+      var __read =
+        (this && this.__read) ||
+        function (o, n) {
+          var m = typeof Symbol === 'function' && o[Symbol.iterator];
+          if (!m) return o;
+          var i = m.call(o),
+            r,
+            ar = [],
+            e;
+          try {
+            while ((n === void 0 || n-- > 0) && !(r = i.next()).done)
+              ar.push(r.value);
+          } catch (error) {
+            e = { error: error };
+          } finally {
+            try {
+              if (r && !r.done && (m = i['return'])) m.call(i);
+            } finally {
+              if (e) throw e.error;
+            }
+          }
+          return ar;
+        };
+      var __spreadArray =
+        (this && this.__spreadArray) ||
+        function (to, from, pack) {
+          if (pack || arguments.length === 2)
+            for (var i = 0, l = from.length, ar; i < l; i++) {
+              if (ar || !(i in from)) {
+                if (!ar) ar = Array.prototype.slice.call(from, 0, i);
+                ar[i] = from[i];
+              }
+            }
+          return to.concat(ar || Array.prototype.slice.call(from));
+        };
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.CommonTeXFontMixin = void 0;
+      function CommonTeXFontMixin(Base) {
+        var _a;
+        return (
+          (_a = (function (_super) {
             __extends(class_1, _super);
             function class_1() {
-                return _super !== null && _super.apply(this, arguments) || this;
+              return (_super !== null && _super.apply(this, arguments)) || this;
             }
             class_1.prototype.getDelimiterData = function (n) {
-                return this.getChar('-smallop', n) || this.getChar('-size4', n);
+              return this.getChar('-smallop', n) || this.getChar('-size4', n);
             };
             return class_1;
-        }(Base)),
-        _a.NAME = 'TeX',
-        _a.defaultVariants = __spreadArray(__spreadArray([], __read(Base.defaultVariants), false), [
-            ['-smallop', 'normal'],
-            ['-largeop', 'normal'],
-            ['-size3', 'normal'],
-            ['-size4', 'normal'],
-            ['-tex-calligraphic', 'italic'],
-            ['-tex-bold-calligraphic', 'bold-italic'],
-            ['-tex-oldstyle', 'normal'],
-            ['-tex-bold-oldstyle', 'bold'],
-            ['-tex-mathit', 'italic'],
-            ['-tex-variant', 'normal']
-        ], false),
-        _a.defaultCssFonts = __assign(__assign({}, Base.defaultCssFonts), { '-smallop': ['serif', false, false], '-largeop': ['serif', false, false], '-size3': ['serif', false, false], '-size4': ['serif', false, false], '-tex-calligraphic': ['cursive', true, false], '-tex-bold-calligraphic': ['cursive', true, true], '-tex-oldstyle': ['serif', false, false], '-tex-bold-oldstyle': ['serif', false, true], '-tex-mathit': ['serif', true, false] }),
-        _a.defaultSizeVariants = ['normal', '-smallop', '-largeop', '-size3', '-size4', '-tex-variant'],
-        _a.defaultStretchVariants = ['-size4'],
-        _a;
-}
-exports.CommonTeXFontMixin = CommonTeXFontMixin;
-//# sourceMappingURL=tex.js.map
-
-/***/ }),
-
-/***/ 51091:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.boldItalic = void 0;
-exports.boldItalic = {
-    0x2F: [.711, .21, .894],
-    0x131: [.452, .008, .394, { sk: .0319 }],
-    0x237: [.451, .201, .439, { sk: .0958 }],
-    0x2044: [.711, .21, .894],
-    0x2206: [.711, 0, .958, { sk: .192 }],
-    0x29F8: [.711, .21, .894],
-};
-//# sourceMappingURL=bold-italic.js.map
-
-/***/ }),
-
-/***/ 95746:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.bold = void 0;
-exports.bold = {
-    0x21: [.705, 0, .35],
-    0x22: [.694, -0.329, .603],
-    0x23: [.694, .193, .958],
-    0x24: [.75, .056, .575],
-    0x25: [.75, .056, .958],
-    0x26: [.705, .011, .894],
-    0x27: [.694, -0.329, .319],
-    0x28: [.75, .249, .447],
-    0x29: [.75, .249, .447],
-    0x2A: [.75, -0.306, .575],
-    0x2B: [.633, .131, .894],
-    0x2C: [.171, .194, .319],
-    0x2D: [.278, -0.166, .383],
-    0x2E: [.171, 0, .319],
-    0x2F: [.75, .25, .575],
-    0x3A: [.444, 0, .319],
-    0x3B: [.444, .194, .319],
-    0x3C: [.587, .085, .894],
-    0x3D: [.393, -0.109, .894],
-    0x3E: [.587, .085, .894],
-    0x3F: [.7, 0, .543],
-    0x40: [.699, .006, .894],
-    0x5B: [.75, .25, .319],
-    0x5C: [.75, .25, .575],
-    0x5D: [.75, .25, .319],
-    0x5E: [.694, -0.52, .575],
-    0x5F: [-0.01, .061, .575],
-    0x60: [.706, -0.503, .575],
-    0x7B: [.75, .25, .575],
-    0x7C: [.75, .249, .319],
-    0x7D: [.75, .25, .575],
-    0x7E: [.344, -0.202, .575],
-    0xA8: [.695, -0.535, .575],
-    0xAC: [.371, -0.061, .767],
-    0xAF: [.607, -0.54, .575],
-    0xB0: [.702, -0.536, .575],
-    0xB1: [.728, .035, .894],
-    0xB4: [.706, -0.503, .575],
-    0xB7: [.336, -0.166, .319],
-    0xD7: [.53, .028, .894],
-    0xF7: [.597, .096, .894],
-    0x131: [.442, 0, .278, { sk: .0278 }],
-    0x237: [.442, .205, .306, { sk: .0833 }],
-    0x2B9: [.563, -0.033, .344],
-    0x2C6: [.694, -0.52, .575],
-    0x2C7: [.66, -0.515, .575],
-    0x2C9: [.607, -0.54, .575],
-    0x2CA: [.706, -0.503, .575],
-    0x2CB: [.706, -0.503, .575],
-    0x2D8: [.694, -0.5, .575],
-    0x2D9: [.695, -0.525, .575],
-    0x2DA: [.702, -0.536, .575],
-    0x2DC: [.694, -0.552, .575],
-    0x300: [.706, -0.503, 0],
-    0x301: [.706, -0.503, 0],
-    0x302: [.694, -0.52, 0],
-    0x303: [.694, -0.552, 0],
-    0x304: [.607, -0.54, 0],
-    0x306: [.694, -0.5, 0],
-    0x307: [.695, -0.525, 0],
-    0x308: [.695, -0.535, 0],
-    0x30A: [.702, -0.536, 0],
-    0x30B: [.714, -0.511, 0],
-    0x30C: [.66, -0.515, 0],
-    0x338: [.711, .21, 0],
-    0x2002: [0, 0, .5],
-    0x2003: [0, 0, .999],
-    0x2004: [0, 0, .333],
-    0x2005: [0, 0, .25],
-    0x2006: [0, 0, .167],
-    0x2009: [0, 0, .167],
-    0x200A: [0, 0, .083],
-    0x2013: [.3, -0.249, .575],
-    0x2014: [.3, -0.249, 1.15],
-    0x2015: [.3, -0.249, 1.15],
-    0x2016: [.75, .248, .575],
-    0x2017: [-0.01, .061, .575],
-    0x2018: [.694, -0.329, .319],
-    0x2019: [.694, -0.329, .319],
-    0x201C: [.694, -0.329, .603],
-    0x201D: [.694, -0.329, .603],
-    0x2020: [.702, .211, .511],
-    0x2021: [.702, .202, .511],
-    0x2022: [.474, -0.028, .575],
-    0x2026: [.171, 0, 1.295],
-    0x2032: [.563, -0.033, .344],
-    0x2033: [.563, 0, .688],
-    0x2034: [.563, 0, 1.032],
-    0x203E: [.607, -0.54, .575],
-    0x2044: [.75, .25, .575],
-    0x2057: [.563, 0, 1.376],
-    0x20D7: [.723, -0.513, .575],
-    0x210F: [.694, .008, .668, { sk: -0.0319 }],
-    0x2113: [.702, .019, .474, { sk: .128 }],
-    0x2118: [.461, .21, .74],
-    0x2135: [.694, 0, .703],
-    0x2190: [.518, .017, 1.15],
-    0x2191: [.694, .193, .575],
-    0x2192: [.518, .017, 1.15],
-    0x2193: [.694, .194, .575],
-    0x2194: [.518, .017, 1.15],
-    0x2195: [.767, .267, .575],
-    0x2196: [.724, .194, 1.15],
-    0x2197: [.724, .193, 1.15],
-    0x2198: [.694, .224, 1.15],
-    0x2199: [.694, .224, 1.15],
-    0x219A: [.711, .21, 1.15],
-    0x219B: [.711, .21, 1.15],
-    0x21A6: [.518, .017, 1.15],
-    0x21A9: [.518, .017, 1.282],
-    0x21AA: [.518, .017, 1.282],
-    0x21AE: [.711, .21, 1.15],
-    0x21BC: [.518, -0.22, 1.15],
-    0x21BD: [.281, .017, 1.15],
-    0x21C0: [.518, -0.22, 1.15],
-    0x21C1: [.281, .017, 1.15],
-    0x21CC: [.718, .017, 1.15],
-    0x21CD: [.711, .21, 1.15],
-    0x21CE: [.711, .21, 1.15],
-    0x21CF: [.711, .21, 1.15],
-    0x21D0: [.547, .046, 1.15],
-    0x21D1: [.694, .193, .703],
-    0x21D2: [.547, .046, 1.15],
-    0x21D3: [.694, .194, .703],
-    0x21D4: [.547, .046, 1.15],
-    0x21D5: [.767, .267, .703],
-    0x2200: [.694, .016, .639],
-    0x2203: [.694, 0, .639],
-    0x2204: [.711, .21, .639],
-    0x2205: [.767, .073, .575],
-    0x2206: [.698, 0, .958],
-    0x2208: [.587, .086, .767],
-    0x2209: [.711, .21, .767],
-    0x220B: [.587, .086, .767],
-    0x220C: [.711, .21, .767],
-    0x2212: [.281, -0.221, .894],
-    0x2213: [.537, .227, .894],
-    0x2215: [.75, .25, .575],
-    0x2216: [.75, .25, .575],
-    0x2217: [.472, -0.028, .575],
-    0x2218: [.474, -0.028, .575],
-    0x2219: [.474, -0.028, .575],
-    0x221A: [.82, .18, .958, { ic: .03 }],
-    0x221D: [.451, .008, .894],
-    0x221E: [.452, .008, 1.15],
-    0x2220: [.714, 0, .722],
-    0x2223: [.75, .249, .319],
-    0x2224: [.75, .249, .319],
-    0x2225: [.75, .248, .575],
-    0x2226: [.75, .248, .575],
-    0x2227: [.604, .017, .767],
-    0x2228: [.604, .016, .767],
-    0x2229: [.603, .016, .767],
-    0x222A: [.604, .016, .767],
-    0x222B: [.711, .211, .569, { ic: .063 }],
-    0x223C: [.391, -0.109, .894],
-    0x2240: [.583, .082, .319],
-    0x2241: [.711, .21, .894],
-    0x2243: [.502, 0, .894],
-    0x2244: [.711, .21, .894],
-    0x2245: [.638, .027, .894],
-    0x2247: [.711, .21, .894],
-    0x2248: [.524, -0.032, .894],
-    0x2249: [.711, .21, .894],
-    0x224D: [.533, .032, .894],
-    0x2250: [.721, -0.109, .894],
-    0x2260: [.711, .21, .894],
-    0x2261: [.505, 0, .894],
-    0x2262: [.711, .21, .894],
-    0x2264: [.697, .199, .894],
-    0x2265: [.697, .199, .894],
-    0x226A: [.617, .116, 1.15],
-    0x226B: [.618, .116, 1.15],
-    0x226D: [.711, .21, .894],
-    0x226E: [.711, .21, .894],
-    0x226F: [.711, .21, .894],
-    0x2270: [.711, .21, .894],
-    0x2271: [.711, .21, .894],
-    0x227A: [.585, .086, .894],
-    0x227B: [.586, .086, .894],
-    0x2280: [.711, .21, .894],
-    0x2281: [.711, .21, .894],
-    0x2282: [.587, .085, .894],
-    0x2283: [.587, .086, .894],
-    0x2284: [.711, .21, .894],
-    0x2285: [.711, .21, .894],
-    0x2286: [.697, .199, .894],
-    0x2287: [.697, .199, .894],
-    0x2288: [.711, .21, .894],
-    0x2289: [.711, .21, .894],
-    0x228E: [.604, .016, .767],
-    0x2291: [.697, .199, .894],
-    0x2292: [.697, .199, .894],
-    0x2293: [.604, 0, .767],
-    0x2294: [.604, 0, .767],
-    0x2295: [.632, .132, .894],
-    0x2296: [.632, .132, .894],
-    0x2297: [.632, .132, .894],
-    0x2298: [.632, .132, .894],
-    0x2299: [.632, .132, .894],
-    0x22A2: [.693, 0, .703],
-    0x22A3: [.693, 0, .703],
-    0x22A4: [.694, 0, .894],
-    0x22A5: [.693, 0, .894],
-    0x22A8: [.75, .249, .974],
-    0x22AC: [.711, .21, .703],
-    0x22AD: [.75, .249, .974],
-    0x22C4: [.523, .021, .575],
-    0x22C5: [.336, -0.166, .319],
-    0x22C6: [.502, 0, .575],
-    0x22C8: [.54, .039, 1],
-    0x22E2: [.711, .21, .894],
-    0x22E3: [.711, .21, .894],
-    0x22EE: [.951, .029, .319],
-    0x22EF: [.336, -0.166, 1.295],
-    0x22F1: [.871, -0.101, 1.323],
-    0x2308: [.75, .248, .511],
-    0x2309: [.75, .248, .511],
-    0x230A: [.749, .248, .511],
-    0x230B: [.749, .248, .511],
-    0x2322: [.405, -0.108, 1.15],
-    0x2323: [.392, -0.126, 1.15],
-    0x2329: [.75, .249, .447],
-    0x232A: [.75, .249, .447],
-    0x25B3: [.711, 0, 1.022],
-    0x25B5: [.711, 0, 1.022],
-    0x25B9: [.54, .039, .575],
-    0x25BD: [.5, .21, 1.022],
-    0x25BF: [.5, .21, 1.022],
-    0x25C3: [.539, .038, .575],
-    0x25EF: [.711, .211, 1.15],
-    0x2660: [.719, .129, .894],
-    0x2661: [.711, .024, .894],
-    0x2662: [.719, .154, .894],
-    0x2663: [.719, .129, .894],
-    0x266D: [.75, .017, .447],
-    0x266E: [.741, .223, .447],
-    0x266F: [.724, .224, .447],
-    0x2758: [.75, .249, .319],
-    0x27E8: [.75, .249, .447],
-    0x27E9: [.75, .249, .447],
-    0x27F5: [.518, .017, 1.805],
-    0x27F6: [.518, .017, 1.833],
-    0x27F7: [.518, .017, 2.126],
-    0x27F8: [.547, .046, 1.868],
-    0x27F9: [.547, .046, 1.87],
-    0x27FA: [.547, .046, 2.126],
-    0x27FC: [.518, .017, 1.833],
-    0x29F8: [.711, .21, .894],
-    0x2A2F: [.53, .028, .894],
-    0x2A3F: [.686, 0, .9],
-    0x2AAF: [.696, .199, .894],
-    0x2AB0: [.697, .199, .894],
-    0x3008: [.75, .249, .447],
-    0x3009: [.75, .249, .447],
-};
-//# sourceMappingURL=bold.js.map
-
-/***/ }),
-
-/***/ 6987:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.delimiters = exports.VSIZES = exports.HDW3 = exports.HDW2 = exports.HDW1 = void 0;
-var FontData_js_1 = __webpack_require__(30861);
-exports.HDW1 = [.75, .25, .875];
-exports.HDW2 = [.85, .349, .667];
-exports.HDW3 = [.583, .082, .5];
-exports.VSIZES = [1, 1.2, 1.8, 2.4, 3];
-var DELIM2F = { c: 0x2F, dir: FontData_js_1.V, sizes: exports.VSIZES };
-var DELIMAF = { c: 0xAF, dir: FontData_js_1.H, sizes: [.5], stretch: [0, 0xAF], HDW: [.59, -0.544, .5] };
-var DELIM2C6 = { c: 0x2C6, dir: FontData_js_1.H, sizes: [.5, .556, 1, 1.444, 1.889] };
-var DELIM2DC = { c: 0x2DC, dir: FontData_js_1.H, sizes: [.5, .556, 1, 1.444, 1.889] };
-var DELIM2013 = { c: 0x2013, dir: FontData_js_1.H, sizes: [.5], stretch: [0, 0x2013], HDW: [.285, -0.248, .5] };
-var DELIM2190 = { c: 0x2190, dir: FontData_js_1.H, sizes: [1], stretch: [0x2190, 0x2212], HDW: exports.HDW3 };
-var DELIM2192 = { c: 0x2192, dir: FontData_js_1.H, sizes: [1], stretch: [0, 0x2212, 0x2192], HDW: exports.HDW3 };
-var DELIM2194 = { c: 0x2194, dir: FontData_js_1.H, sizes: [1], stretch: [0x2190, 0x2212, 0x2192], HDW: exports.HDW3 };
-var DELIM21A4 = { c: 0x21A4, dir: FontData_js_1.H, stretch: [0x2190, 0x2212, 0x2223], HDW: exports.HDW3, min: 1.278 };
-var DELIM21A6 = { c: 0x21A6, dir: FontData_js_1.H, sizes: [1], stretch: [0x2223, 0x2212, 0x2192], HDW: exports.HDW3 };
-var DELIM21D0 = { c: 0x21D0, dir: FontData_js_1.H, sizes: [1], stretch: [0x21D0, 0x3D], HDW: exports.HDW3 };
-var DELIM21D2 = { c: 0x21D2, dir: FontData_js_1.H, sizes: [1], stretch: [0, 0x3D, 0x21D2], HDW: exports.HDW3 };
-var DELIM21D4 = { c: 0x21D4, dir: FontData_js_1.H, sizes: [1], stretch: [0x21D0, 0x3D, 0x21D2], HDW: exports.HDW3 };
-var DELIM2212 = { c: 0x2212, dir: FontData_js_1.H, sizes: [.778], stretch: [0, 0x2212], HDW: exports.HDW3 };
-var DELIM2223 = { c: 0x2223, dir: FontData_js_1.V, sizes: [1], stretch: [0, 0x2223], HDW: [.627, .015, .333] };
-var DELIM23DC = { c: 0x23DC, dir: FontData_js_1.H, sizes: [.778, 1], schar: [0x2322, 0x2322], variants: [5, 0],
-    stretch: [0xE150, 0xE154, 0xE151], HDW: [.32, .2, .5] };
-var DELIM23DD = { c: 0x23DD, dir: FontData_js_1.H, sizes: [.778, 1], schar: [0x2323, 0x2323], variants: [5, 0],
-    stretch: [0xE152, 0xE154, 0xE153], HDW: [.32, .2, .5] };
-var DELIM23DE = { c: 0x23DE, dir: FontData_js_1.H, stretch: [0xE150, 0xE154, 0xE151, 0xE155], HDW: [.32, .2, .5], min: 1.8 };
-var DELIM23DF = { c: 0x23DF, dir: FontData_js_1.H, stretch: [0xE152, 0xE154, 0xE153, 0xE156], HDW: [.32, .2, .5], min: 1.8 };
-var DELIM27E8 = { c: 0x27E8, dir: FontData_js_1.V, sizes: exports.VSIZES };
-var DELIM27E9 = { c: 0x27E9, dir: FontData_js_1.V, sizes: exports.VSIZES };
-var DELIM2906 = { c: 0x2906, dir: FontData_js_1.H, stretch: [0x21D0, 0x3D, 0x2223], HDW: exports.HDW3, min: 1.278 };
-var DELIM2907 = { c: 0x2907, dir: FontData_js_1.H, stretch: [0x22A8, 0x3D, 0x21D2], HDW: exports.HDW3, min: 1.278 };
-exports.delimiters = {
-    0x28: { dir: FontData_js_1.V, sizes: exports.VSIZES, stretch: [0x239B, 0x239C, 0x239D], HDW: [.85, .349, .875] },
-    0x29: { dir: FontData_js_1.V, sizes: exports.VSIZES, stretch: [0x239E, 0x239F, 0x23A0], HDW: [.85, .349, .875] },
-    0x2D: DELIM2212,
-    0x2F: DELIM2F,
-    0x3D: { dir: FontData_js_1.H, sizes: [.778], stretch: [0, 0x3D], HDW: exports.HDW3 },
-    0x5B: { dir: FontData_js_1.V, sizes: exports.VSIZES, stretch: [0x23A1, 0x23A2, 0x23A3], HDW: exports.HDW2 },
-    0x5C: { dir: FontData_js_1.V, sizes: exports.VSIZES },
-    0x5D: { dir: FontData_js_1.V, sizes: exports.VSIZES, stretch: [0x23A4, 0x23A5, 0x23A6], HDW: exports.HDW2 },
-    0x5E: DELIM2C6,
-    0x5F: DELIM2013,
-    0x7B: { dir: FontData_js_1.V, sizes: exports.VSIZES, stretch: [0x23A7, 0x23AA, 0x23A9, 0x23A8], HDW: [.85, .349, .889] },
-    0x7C: { dir: FontData_js_1.V, sizes: [1], stretch: [0, 0x2223], HDW: [.75, .25, .333] },
-    0x7D: { dir: FontData_js_1.V, sizes: exports.VSIZES, stretch: [0x23AB, 0x23AA, 0x23AD, 0x23AC], HDW: [.85, .349, .889] },
-    0x7E: DELIM2DC,
-    0xAF: DELIMAF,
-    0x2C6: DELIM2C6,
-    0x2C9: DELIMAF,
-    0x2DC: DELIM2DC,
-    0x302: DELIM2C6,
-    0x303: DELIM2DC,
-    0x332: DELIM2013,
-    0x2013: DELIM2013,
-    0x2014: DELIM2013,
-    0x2015: DELIM2013,
-    0x2016: { dir: FontData_js_1.V, sizes: [.602, 1], schar: [0, 0x2225], variants: [1, 0], stretch: [0, 0x2225], HDW: [.602, 0, .556] },
-    0x2017: DELIM2013,
-    0x203E: DELIMAF,
-    0x20D7: DELIM2192,
-    0x2190: DELIM2190,
-    0x2191: { dir: FontData_js_1.V, sizes: [.888], stretch: [0x2191, 0x23D0], HDW: [.6, 0, .667] },
-    0x2192: DELIM2192,
-    0x2193: { dir: FontData_js_1.V, sizes: [.888], stretch: [0, 0x23D0, 0x2193], HDW: [.6, 0, .667] },
-    0x2194: DELIM2194,
-    0x2195: { dir: FontData_js_1.V, sizes: [1.044], stretch: [0x2191, 0x23D0, 0x2193], HDW: exports.HDW1 },
-    0x219E: { dir: FontData_js_1.H, sizes: [1], stretch: [0x219E, 0x2212], HDW: exports.HDW3 },
-    0x21A0: { dir: FontData_js_1.H, sizes: [1], stretch: [0, 0x2212, 0x21A0], HDW: exports.HDW3 },
-    0x21A4: DELIM21A4,
-    0x21A5: { dir: FontData_js_1.V, stretch: [0x2191, 0x23D0, 0x22A5], HDW: exports.HDW1, min: 1.555 },
-    0x21A6: DELIM21A6,
-    0x21A7: { dir: FontData_js_1.V, stretch: [0x22A4, 0x23D0, 0x2193], HDW: exports.HDW1, min: 1.555 },
-    0x21B0: { dir: FontData_js_1.V, sizes: [.722], stretch: [0x21B0, 0x23D0], HDW: exports.HDW1 },
-    0x21B1: { dir: FontData_js_1.V, sizes: [.722], stretch: [0x21B1, 0x23D0], HDW: exports.HDW1 },
-    0x21BC: { dir: FontData_js_1.H, sizes: [1], stretch: [0x21BC, 0x2212], HDW: exports.HDW3 },
-    0x21BD: { dir: FontData_js_1.H, sizes: [1], stretch: [0x21BD, 0x2212], HDW: exports.HDW3 },
-    0x21BE: { dir: FontData_js_1.V, sizes: [.888], stretch: [0x21BE, 0x23D0], HDW: exports.HDW1 },
-    0x21BF: { dir: FontData_js_1.V, sizes: [.888], stretch: [0x21BF, 0x23D0], HDW: exports.HDW1 },
-    0x21C0: { dir: FontData_js_1.H, sizes: [1], stretch: [0, 0x2212, 0x21C0], HDW: exports.HDW3 },
-    0x21C1: { dir: FontData_js_1.H, sizes: [1], stretch: [0, 0x2212, 0x21C1], HDW: exports.HDW3 },
-    0x21C2: { dir: FontData_js_1.V, sizes: [.888], stretch: [0, 0x23D0, 0x21C2], HDW: exports.HDW1 },
-    0x21C3: { dir: FontData_js_1.V, sizes: [.888], stretch: [0, 0x23D0, 0x21C3], HDW: exports.HDW1 },
-    0x21D0: DELIM21D0,
-    0x21D1: { dir: FontData_js_1.V, sizes: [.888], stretch: [0x21D1, 0x2016], HDW: [.599, 0, .778] },
-    0x21D2: DELIM21D2,
-    0x21D3: { dir: FontData_js_1.V, sizes: [.888], stretch: [0, 0x2016, 0x21D3], HDW: [.6, 0, .778] },
-    0x21D4: DELIM21D4,
-    0x21D5: { dir: FontData_js_1.V, sizes: [1.044], stretch: [0x21D1, 0x2016, 0x21D3], HDW: [.75, .25, .778] },
-    0x21DA: { dir: FontData_js_1.H, sizes: [1], stretch: [0x21DA, 0x2261], HDW: [.464, -0.036, .5] },
-    0x21DB: { dir: FontData_js_1.H, sizes: [1], stretch: [0, 0x2261, 0x21DB], HDW: [.464, -0.036, .5] },
-    0x2212: DELIM2212,
-    0x2215: DELIM2F,
-    0x221A: { dir: FontData_js_1.V, sizes: exports.VSIZES, stretch: [0xE001, 0xE000, 0x23B7], fullExt: [.65, 2.3], HDW: [.85, .35, 1.056] },
-    0x2223: DELIM2223,
-    0x2225: { dir: FontData_js_1.V, sizes: [1], stretch: [0, 0x2225], HDW: [.627, .015, .556] },
-    0x2308: { dir: FontData_js_1.V, sizes: exports.VSIZES, stretch: [0x23A1, 0x23A2], HDW: exports.HDW2 },
-    0x2309: { dir: FontData_js_1.V, sizes: exports.VSIZES, stretch: [0x23A4, 0x23A5], HDW: exports.HDW2 },
-    0x230A: { dir: FontData_js_1.V, sizes: exports.VSIZES, stretch: [0, 0x23A2, 0x23A3], HDW: exports.HDW2 },
-    0x230B: { dir: FontData_js_1.V, sizes: exports.VSIZES, stretch: [0, 0x23A5, 0x23A6], HDW: exports.HDW2 },
-    0x2312: DELIM23DC,
-    0x2322: DELIM23DC,
-    0x2323: DELIM23DD,
-    0x2329: DELIM27E8,
-    0x232A: DELIM27E9,
-    0x23AA: { dir: FontData_js_1.V, sizes: [.32], stretch: [0x23AA, 0x23AA, 0x23AA], HDW: [.29, .015, .889] },
-    0x23AF: DELIM2013,
-    0x23B0: { dir: FontData_js_1.V, sizes: [.989], stretch: [0x23A7, 0x23AA, 0x23AD], HDW: [.75, .25, .889] },
-    0x23B1: { dir: FontData_js_1.V, sizes: [.989], stretch: [0x23AB, 0x23AA, 0x23A9], HDW: [.75, .25, .889] },
-    0x23B4: { dir: FontData_js_1.H, stretch: [0x250C, 0x2212, 0x2510], HDW: exports.HDW3, min: 1 },
-    0x23B5: { dir: FontData_js_1.H, stretch: [0x2514, 0x2212, 0x2518], HDW: exports.HDW3, min: 1 },
-    0x23D0: { dir: FontData_js_1.V, sizes: [.602, 1], schar: [0, 0x2223], variants: [1, 0], stretch: [0, 0x2223], HDW: [.602, 0, .333] },
-    0x23DC: DELIM23DC,
-    0x23DD: DELIM23DD,
-    0x23DE: DELIM23DE,
-    0x23DF: DELIM23DF,
-    0x23E0: { dir: FontData_js_1.H, stretch: [0x2CA, 0x2C9, 0x2CB], HDW: [.59, -0.544, .5], min: 1 },
-    0x23E1: { dir: FontData_js_1.H, stretch: [0x2CB, 0x2C9, 0x2CA], HDW: [.59, -0.544, .5], min: 1 },
-    0x2500: DELIM2013,
-    0x2758: DELIM2223,
-    0x27E8: DELIM27E8,
-    0x27E9: DELIM27E9,
-    0x27EE: { dir: FontData_js_1.V, sizes: [.989], stretch: [0x23A7, 0x23AA, 0x23A9], HDW: [.75, .25, .889] },
-    0x27EF: { dir: FontData_js_1.V, sizes: [.989], stretch: [0x23AB, 0x23AA, 0x23AD], HDW: [.75, .25, .889] },
-    0x27F5: DELIM2190,
-    0x27F6: DELIM2192,
-    0x27F7: DELIM2194,
-    0x27F8: DELIM21D0,
-    0x27F9: DELIM21D2,
-    0x27FA: DELIM21D4,
-    0x27FB: DELIM21A4,
-    0x27FC: DELIM21A6,
-    0x27FD: DELIM2906,
-    0x27FE: DELIM2907,
-    0x2906: DELIM2906,
-    0x2907: DELIM2907,
-    0x294E: { dir: FontData_js_1.H, stretch: [0x21BC, 0x2212, 0x21C0], HDW: exports.HDW3, min: 2 },
-    0x294F: { dir: FontData_js_1.V, stretch: [0x21BE, 0x23D0, 0x21C2], HDW: exports.HDW1, min: 1.776 },
-    0x2950: { dir: FontData_js_1.H, stretch: [0x21BD, 0x2212, 0x21C1], HDW: exports.HDW3, min: 2 },
-    0x2951: { dir: FontData_js_1.V, stretch: [0x21BF, 0x23D0, 0x21C3], HDW: exports.HDW1, min: .5 },
-    0x295A: { dir: FontData_js_1.H, stretch: [0x21BC, 0x2212, 0x2223], HDW: exports.HDW3, min: 1.278 },
-    0x295B: { dir: FontData_js_1.H, stretch: [0x2223, 0x2212, 0x21C0], HDW: exports.HDW3, min: 1.278 },
-    0x295C: { dir: FontData_js_1.V, stretch: [0x21BE, 0x23D0, 0x22A5], HDW: exports.HDW1, min: 1.556 },
-    0x295D: { dir: FontData_js_1.V, stretch: [0x22A4, 0x23D0, 0x21C2], HDW: exports.HDW1, min: 1.556 },
-    0x295E: { dir: FontData_js_1.H, stretch: [0x21BD, 0x2212, 0x2223], HDW: exports.HDW3, min: 1.278 },
-    0x295F: { dir: FontData_js_1.H, stretch: [0x2223, 0x2212, 0x21C1], HDW: exports.HDW3, min: 1.278 },
-    0x2960: { dir: FontData_js_1.V, stretch: [0x21BF, 0x23D0, 0x22A5], HDW: exports.HDW1, min: 1.776 },
-    0x2961: { dir: FontData_js_1.V, stretch: [0x22A4, 0x23D0, 0x21C3], HDW: exports.HDW1, min: 1.776 },
-    0x3008: DELIM27E8,
-    0x3009: DELIM27E9,
-    0xFE37: DELIM23DE,
-    0xFE38: DELIM23DF,
-};
-//# sourceMappingURL=delimiters.js.map
-
-/***/ }),
-
-/***/ 32249:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.doubleStruck = void 0;
-exports.doubleStruck = {};
-//# sourceMappingURL=double-struck.js.map
-
-/***/ }),
-
-/***/ 45600:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.frakturBold = void 0;
-exports.frakturBold = {
-    0x21: [.689, .012, .349],
-    0x22: [.695, -0.432, .254],
-    0x26: [.696, .016, .871],
-    0x27: [.695, -0.436, .25],
-    0x28: [.737, .186, .459],
-    0x29: [.735, .187, .459],
-    0x2A: [.692, -0.449, .328],
-    0x2B: [.598, .082, .893],
-    0x2C: [.107, .191, .328],
-    0x2D: [.275, -0.236, .893],
-    0x2E: [.102, .015, .328],
-    0x2F: [.721, .182, .593],
-    0x30: [.501, .012, .593],
-    0x31: [.489, 0, .593],
-    0x32: [.491, 0, .593],
-    0x33: [.487, .193, .593],
-    0x34: [.495, .196, .593],
-    0x35: [.481, .19, .593],
-    0x36: [.704, .012, .593],
-    0x37: [.479, .197, .593],
-    0x38: [.714, .005, .593],
-    0x39: [.487, .195, .593],
-    0x3A: [.457, .012, .255],
-    0x3B: [.458, .19, .255],
-    0x3D: [.343, -0.168, .582],
-    0x3F: [.697, .014, .428],
-    0x5B: [.74, .13, .257],
-    0x5D: [.738, .132, .257],
-    0x5E: [.734, -0.452, .59],
-    0x2018: [.708, -0.411, .254],
-    0x2019: [.692, -0.394, .254],
-    0x2044: [.721, .182, .593],
-    0xE301: [.63, .027, .587],
-    0xE302: [.693, .212, .394, { ic: .014 }],
-    0xE303: [.681, .219, .387],
-    0xE304: [.473, .212, .593],
-    0xE305: [.684, .027, .393],
-    0xE308: [.679, .22, .981],
-    0xE309: [.717, .137, .727],
-};
-//# sourceMappingURL=fraktur-bold.js.map
-
-/***/ }),
-
-/***/ 59534:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.fraktur = void 0;
-exports.fraktur = {
-    0x21: [.689, .012, .296],
-    0x22: [.695, -0.432, .215],
-    0x26: [.698, .011, .738],
-    0x27: [.695, -0.436, .212],
-    0x28: [.737, .186, .389],
-    0x29: [.735, .187, .389],
-    0x2A: [.692, -0.449, .278],
-    0x2B: [.598, .082, .756],
-    0x2C: [.107, .191, .278],
-    0x2D: [.275, -0.236, .756],
-    0x2E: [.102, .015, .278],
-    0x2F: [.721, .182, .502],
-    0x30: [.492, .013, .502],
-    0x31: [.468, 0, .502],
-    0x32: [.474, 0, .502],
-    0x33: [.473, .182, .502],
-    0x34: [.476, .191, .502],
-    0x35: [.458, .184, .502],
-    0x36: [.7, .013, .502],
-    0x37: [.468, .181, .502],
-    0x38: [.705, .01, .502],
-    0x39: [.469, .182, .502],
-    0x3A: [.457, .012, .216],
-    0x3B: [.458, .189, .216],
-    0x3D: [.368, -0.132, .756],
-    0x3F: [.693, .011, .362],
-    0x5B: [.74, .13, .278],
-    0x5D: [.738, .131, .278],
-    0x5E: [.734, -0.452, .5],
-    0x2018: [.708, -0.41, .215],
-    0x2019: [.692, -0.395, .215],
-    0x2044: [.721, .182, .502],
-    0xE300: [.683, .032, .497],
-    0xE301: [.616, .03, .498],
-    0xE302: [.68, .215, .333],
-    0xE303: [.679, .224, .329],
-    0xE304: [.471, .214, .503],
-    0xE305: [.686, .02, .333],
-    0xE306: [.577, .021, .334, { ic: .013 }],
-    0xE307: [.475, .022, .501, { ic: .013 }],
-};
-//# sourceMappingURL=fraktur.js.map
-
-/***/ }),
-
-/***/ 14141:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.italic = void 0;
-exports.italic = {
-    0x21: [.716, 0, .307, { ic: .073 }],
-    0x22: [.694, -0.379, .514, { ic: .024 }],
-    0x23: [.694, .194, .818, { ic: .01 }],
-    0x25: [.75, .056, .818, { ic: .029 }],
-    0x26: [.716, .022, .767, { ic: .035 }],
-    0x27: [.694, -0.379, .307, { ic: .07 }],
-    0x28: [.75, .25, .409, { ic: .108 }],
-    0x29: [.75, .25, .409],
-    0x2A: [.75, -0.32, .511, { ic: .073 }],
-    0x2B: [.557, .057, .767],
-    0x2C: [.121, .194, .307],
-    0x2D: [.251, -0.18, .358],
-    0x2E: [.121, 0, .307],
-    0x2F: [.716, .215, .778],
-    0x30: [.665, .021, .511, { ic: .051 }],
-    0x31: [.666, 0, .511],
-    0x32: [.666, .022, .511, { ic: .04 }],
-    0x33: [.666, .022, .511, { ic: .051 }],
-    0x34: [.666, .194, .511],
-    0x35: [.666, .022, .511, { ic: .056 }],
-    0x36: [.665, .022, .511, { ic: .054 }],
-    0x37: [.666, .022, .511, { ic: .123 }],
-    0x38: [.666, .021, .511, { ic: .042 }],
-    0x39: [.666, .022, .511, { ic: .042 }],
-    0x3A: [.431, 0, .307],
-    0x3B: [.431, .194, .307],
-    0x3D: [.367, -0.133, .767],
-    0x3F: [.716, 0, .511, { ic: .04 }],
-    0x40: [.705, .011, .767, { ic: .022 }],
-    0x5B: [.75, .25, .307, { ic: .139 }],
-    0x5D: [.75, .25, .307, { ic: .052 }],
-    0x5E: [.694, -0.527, .511, { ic: .017 }],
-    0x5F: [-0.025, .062, .511, { ic: .043 }],
-    0x7E: [.318, -0.208, .511, { ic: .06 }],
-    0x131: [.441, .01, .307, { ic: .033 }],
-    0x237: [.442, .204, .332],
-    0x300: [.697, -0.5, 0],
-    0x301: [.697, -0.5, 0, { ic: .039 }],
-    0x302: [.694, -0.527, 0, { ic: .017 }],
-    0x303: [.668, -0.558, 0, { ic: .06 }],
-    0x304: [.589, -0.544, 0, { ic: .054 }],
-    0x306: [.694, -0.515, 0, { ic: .062 }],
-    0x307: [.669, -0.548, 0],
-    0x308: [.669, -0.554, 0, { ic: .045 }],
-    0x30A: [.716, -0.542, 0],
-    0x30B: [.697, -0.503, 0, { ic: .065 }],
-    0x30C: [.638, -0.502, 0, { ic: .029 }],
-    0x3DD: [.605, .085, .778],
-    0x2013: [.285, -0.248, .511, { ic: .043 }],
-    0x2014: [.285, -0.248, 1.022, { ic: .016 }],
-    0x2015: [.285, -0.248, 1.022, { ic: .016 }],
-    0x2017: [-0.025, .062, .511, { ic: .043 }],
-    0x2018: [.694, -0.379, .307, { ic: .055 }],
-    0x2019: [.694, -0.379, .307, { ic: .07 }],
-    0x201C: [.694, -0.379, .514, { ic: .092 }],
-    0x201D: [.694, -0.379, .514, { ic: .024 }],
-    0x2044: [.716, .215, .778],
-    0x210F: [.695, .013, .54, { ic: .022 }],
-    0x2206: [.716, 0, .833, { sk: .167 }],
-    0x29F8: [.716, .215, .778],
-};
-//# sourceMappingURL=italic.js.map
-
-/***/ }),
-
-/***/ 63969:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.largeop = void 0;
-exports.largeop = {
-    0x28: [1.15, .649, .597],
-    0x29: [1.15, .649, .597],
-    0x2F: [1.15, .649, .811],
-    0x5B: [1.15, .649, .472],
-    0x5C: [1.15, .649, .811],
-    0x5D: [1.15, .649, .472],
-    0x7B: [1.15, .649, .667],
-    0x7D: [1.15, .649, .667],
-    0x2C6: [.772, -0.565, 1],
-    0x2DC: [.75, -0.611, 1],
-    0x302: [.772, -0.565, 0],
-    0x303: [.75, -0.611, 0],
-    0x2016: [.602, 0, .778],
-    0x2044: [1.15, .649, .811],
-    0x2191: [.6, 0, .667],
-    0x2193: [.6, 0, .667],
-    0x21D1: [.599, 0, .778],
-    0x21D3: [.6, 0, .778],
-    0x220F: [.95, .45, 1.278],
-    0x2210: [.95, .45, 1.278],
-    0x2211: [.95, .45, 1.444],
-    0x221A: [1.15, .65, 1, { ic: .02 }],
-    0x2223: [.627, .015, .333],
-    0x2225: [.627, .015, .556],
-    0x222B: [1.36, .862, .556, { ic: .388 }],
-    0x222C: [1.36, .862, 1.084, { ic: .388 }],
-    0x222D: [1.36, .862, 1.592, { ic: .388 }],
-    0x222E: [1.36, .862, .556, { ic: .388 }],
-    0x22C0: [.95, .45, 1.111],
-    0x22C1: [.95, .45, 1.111],
-    0x22C2: [.949, .45, 1.111],
-    0x22C3: [.95, .449, 1.111],
-    0x2308: [1.15, .649, .528],
-    0x2309: [1.15, .649, .528],
-    0x230A: [1.15, .649, .528],
-    0x230B: [1.15, .649, .528],
-    0x2329: [1.15, .649, .611],
-    0x232A: [1.15, .649, .611],
-    0x23D0: [.602, 0, .667],
-    0x2758: [.627, .015, .333],
-    0x27E8: [1.15, .649, .611],
-    0x27E9: [1.15, .649, .611],
-    0x2A00: [.949, .449, 1.511],
-    0x2A01: [.949, .449, 1.511],
-    0x2A02: [.949, .449, 1.511],
-    0x2A04: [.95, .449, 1.111],
-    0x2A06: [.95, .45, 1.111],
-    0x2A0C: [1.36, .862, 2.168, { ic: .388 }],
-    0x3008: [1.15, .649, .611],
-    0x3009: [1.15, .649, .611],
-};
-//# sourceMappingURL=largeop.js.map
-
-/***/ }),
-
-/***/ 58626:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.monospace = void 0;
-exports.monospace = {
-    0x20: [0, 0, .525],
-    0x21: [.622, 0, .525],
-    0x22: [.623, -0.333, .525],
-    0x23: [.611, 0, .525],
-    0x24: [.694, .082, .525],
-    0x25: [.694, .083, .525],
-    0x26: [.622, .011, .525],
-    0x27: [.611, -0.287, .525],
-    0x28: [.694, .082, .525],
-    0x29: [.694, .082, .525],
-    0x2A: [.52, -0.09, .525],
-    0x2B: [.531, -0.081, .525],
-    0x2C: [.14, .139, .525],
-    0x2D: [.341, -0.271, .525],
-    0x2E: [.14, 0, .525],
-    0x2F: [.694, .083, .525],
-    0x3A: [.431, 0, .525],
-    0x3B: [.431, .139, .525],
-    0x3C: [.557, -0.055, .525],
-    0x3D: [.417, -0.195, .525],
-    0x3E: [.557, -0.055, .525],
-    0x3F: [.617, 0, .525],
-    0x40: [.617, .006, .525],
-    0x5B: [.694, .082, .525],
-    0x5C: [.694, .083, .525],
-    0x5D: [.694, .082, .525],
-    0x5E: [.611, -0.46, .525],
-    0x5F: [-0.025, .095, .525],
-    0x60: [.681, -0.357, .525],
-    0x7B: [.694, .083, .525],
-    0x7C: [.694, .082, .525],
-    0x7D: [.694, .083, .525],
-    0x7E: [.611, -0.466, .525],
-    0x7F: [.612, -0.519, .525],
-    0xA0: [0, 0, .525],
-    0x131: [.431, 0, .525],
-    0x237: [.431, .228, .525],
-    0x2B9: [.623, -0.334, .525],
-    0x300: [.611, -0.485, 0],
-    0x301: [.611, -0.485, 0],
-    0x302: [.611, -0.46, 0],
-    0x303: [.611, -0.466, 0],
-    0x304: [.577, -0.5, 0],
-    0x306: [.611, -0.504, 0],
-    0x308: [.612, -0.519, 0],
-    0x30A: [.619, -0.499, 0],
-    0x30C: [.577, -0.449, 0],
-    0x391: [.623, 0, .525],
-    0x392: [.611, 0, .525],
-    0x393: [.611, 0, .525],
-    0x394: [.623, 0, .525],
-    0x395: [.611, 0, .525],
-    0x396: [.611, 0, .525],
-    0x397: [.611, 0, .525],
-    0x398: [.621, .01, .525],
-    0x399: [.611, 0, .525],
-    0x39A: [.611, 0, .525],
-    0x39B: [.623, 0, .525],
-    0x39C: [.611, 0, .525],
-    0x39D: [.611, 0, .525],
-    0x39E: [.611, 0, .525],
-    0x39F: [.621, .01, .525],
-    0x3A0: [.611, 0, .525],
-    0x3A1: [.611, 0, .525],
-    0x3A3: [.611, 0, .525],
-    0x3A4: [.611, 0, .525],
-    0x3A5: [.622, 0, .525],
-    0x3A6: [.611, 0, .525],
-    0x3A7: [.611, 0, .525],
-    0x3A8: [.611, 0, .525],
-    0x3A9: [.622, 0, .525],
-    0x2017: [-0.025, .095, .525],
-    0x2032: [.623, -0.334, .525],
-    0x2033: [.623, 0, 1.05],
-    0x2034: [.623, 0, 1.575],
-    0x2044: [.694, .083, .525],
-    0x2057: [.623, 0, 2.1],
-    0x2206: [.623, 0, .525],
-};
-//# sourceMappingURL=monospace.js.map
-
-/***/ }),
-
-/***/ 25190:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.normal = void 0;
-exports.normal = {
-    0x20: [0, 0, .25],
-    0x21: [.716, 0, .278],
-    0x22: [.694, -0.379, .5],
-    0x23: [.694, .194, .833],
-    0x24: [.75, .056, .5],
-    0x25: [.75, .056, .833],
-    0x26: [.716, .022, .778],
-    0x27: [.694, -0.379, .278],
-    0x28: [.75, .25, .389],
-    0x29: [.75, .25, .389],
-    0x2A: [.75, -0.32, .5],
-    0x2B: [.583, .082, .778],
-    0x2C: [.121, .194, .278],
-    0x2D: [.252, -0.179, .333],
-    0x2E: [.12, 0, .278],
-    0x2F: [.75, .25, .5],
-    0x30: [.666, .022, .5],
-    0x31: [.666, 0, .5],
-    0x32: [.666, 0, .5],
-    0x33: [.665, .022, .5],
-    0x34: [.677, 0, .5],
-    0x35: [.666, .022, .5],
-    0x36: [.666, .022, .5],
-    0x37: [.676, .022, .5],
-    0x38: [.666, .022, .5],
-    0x39: [.666, .022, .5],
-    0x3A: [.43, 0, .278],
-    0x3B: [.43, .194, .278],
-    0x3C: [.54, .04, .778],
-    0x3D: [.583, .082, .778],
-    0x3E: [.54, .04, .778],
-    0x3F: [.705, 0, .472],
-    0x40: [.705, .011, .778],
-    0x41: [.716, 0, .75],
-    0x42: [.683, 0, .708],
-    0x43: [.705, .021, .722],
-    0x44: [.683, 0, .764],
-    0x45: [.68, 0, .681],
-    0x46: [.68, 0, .653],
-    0x47: [.705, .022, .785],
-    0x48: [.683, 0, .75],
-    0x49: [.683, 0, .361],
-    0x4A: [.683, .022, .514],
-    0x4B: [.683, 0, .778],
-    0x4C: [.683, 0, .625],
-    0x4D: [.683, 0, .917],
-    0x4E: [.683, 0, .75],
-    0x4F: [.705, .022, .778],
-    0x50: [.683, 0, .681],
-    0x51: [.705, .193, .778],
-    0x52: [.683, .022, .736],
-    0x53: [.705, .022, .556],
-    0x54: [.677, 0, .722],
-    0x55: [.683, .022, .75],
-    0x56: [.683, .022, .75],
-    0x57: [.683, .022, 1.028],
-    0x58: [.683, 0, .75],
-    0x59: [.683, 0, .75],
-    0x5A: [.683, 0, .611],
-    0x5B: [.75, .25, .278],
-    0x5C: [.75, .25, .5],
-    0x5D: [.75, .25, .278],
-    0x5E: [.694, -0.531, .5],
-    0x5F: [-0.025, .062, .5],
-    0x60: [.699, -0.505, .5],
-    0x61: [.448, .011, .5],
-    0x62: [.694, .011, .556],
-    0x63: [.448, .011, .444],
-    0x64: [.694, .011, .556],
-    0x65: [.448, .011, .444],
-    0x66: [.705, 0, .306, { ic: .066 }],
-    0x67: [.453, .206, .5],
-    0x68: [.694, 0, .556],
-    0x69: [.669, 0, .278],
-    0x6A: [.669, .205, .306],
-    0x6B: [.694, 0, .528],
-    0x6C: [.694, 0, .278],
-    0x6D: [.442, 0, .833],
-    0x6E: [.442, 0, .556],
-    0x6F: [.448, .01, .5],
-    0x70: [.442, .194, .556],
-    0x71: [.442, .194, .528],
-    0x72: [.442, 0, .392],
-    0x73: [.448, .011, .394],
-    0x74: [.615, .01, .389],
-    0x75: [.442, .011, .556],
-    0x76: [.431, .011, .528],
-    0x77: [.431, .011, .722],
-    0x78: [.431, 0, .528],
-    0x79: [.431, .204, .528],
-    0x7A: [.431, 0, .444],
-    0x7B: [.75, .25, .5],
-    0x7C: [.75, .249, .278],
-    0x7D: [.75, .25, .5],
-    0x7E: [.318, -0.215, .5],
-    0xA0: [0, 0, .25],
-    0xA3: [.714, .011, .769],
-    0xA5: [.683, 0, .75],
-    0xA8: [.669, -0.554, .5],
-    0xAC: [.356, -0.089, .667],
-    0xAE: [.709, .175, .947],
-    0xAF: [.59, -0.544, .5],
-    0xB0: [.715, -0.542, .5],
-    0xB1: [.666, 0, .778],
-    0xB4: [.699, -0.505, .5],
-    0xB7: [.31, -0.19, .278],
-    0xD7: [.491, -0.009, .778],
-    0xF0: [.749, .021, .556],
-    0xF7: [.537, .036, .778],
-    0x131: [.442, 0, .278, { sk: .0278 }],
-    0x237: [.442, .205, .306, { sk: .0833 }],
-    0x2B9: [.56, -0.043, .275],
-    0x2C6: [.694, -0.531, .5],
-    0x2C7: [.644, -0.513, .5],
-    0x2C9: [.59, -0.544, .5],
-    0x2CA: [.699, -0.505, .5],
-    0x2CB: [.699, -0.505, .5],
-    0x2D8: [.694, -0.515, .5],
-    0x2D9: [.669, -0.549, .5],
-    0x2DA: [.715, -0.542, .5],
-    0x2DC: [.668, -0.565, .5],
-    0x300: [.699, -0.505, 0],
-    0x301: [.699, -0.505, 0],
-    0x302: [.694, -0.531, 0],
-    0x303: [.668, -0.565, 0],
-    0x304: [.59, -0.544, 0],
-    0x306: [.694, -0.515, 0],
-    0x307: [.669, -0.549, 0],
-    0x308: [.669, -0.554, 0],
-    0x30A: [.715, -0.542, 0],
-    0x30B: [.701, -0.51, 0],
-    0x30C: [.644, -0.513, 0],
-    0x338: [.716, .215, 0],
-    0x391: [.716, 0, .75],
-    0x392: [.683, 0, .708],
-    0x393: [.68, 0, .625],
-    0x394: [.716, 0, .833],
-    0x395: [.68, 0, .681],
-    0x396: [.683, 0, .611],
-    0x397: [.683, 0, .75],
-    0x398: [.705, .022, .778],
-    0x399: [.683, 0, .361],
-    0x39A: [.683, 0, .778],
-    0x39B: [.716, 0, .694],
-    0x39C: [.683, 0, .917],
-    0x39D: [.683, 0, .75],
-    0x39E: [.677, 0, .667],
-    0x39F: [.705, .022, .778],
-    0x3A0: [.68, 0, .75],
-    0x3A1: [.683, 0, .681],
-    0x3A3: [.683, 0, .722],
-    0x3A4: [.677, 0, .722],
-    0x3A5: [.705, 0, .778],
-    0x3A6: [.683, 0, .722],
-    0x3A7: [.683, 0, .75],
-    0x3A8: [.683, 0, .778],
-    0x3A9: [.704, 0, .722],
-    0x2000: [0, 0, .5],
-    0x2001: [0, 0, 1],
-    0x2002: [0, 0, .5],
-    0x2003: [0, 0, 1],
-    0x2004: [0, 0, .333],
-    0x2005: [0, 0, .25],
-    0x2006: [0, 0, .167],
-    0x2009: [0, 0, .167],
-    0x200A: [0, 0, .1],
-    0x200B: [0, 0, 0],
-    0x200C: [0, 0, 0],
-    0x2013: [.285, -0.248, .5],
-    0x2014: [.285, -0.248, 1],
-    0x2015: [.285, -0.248, 1],
-    0x2016: [.75, .25, .5],
-    0x2017: [-0.025, .062, .5],
-    0x2018: [.694, -0.379, .278],
-    0x2019: [.694, -0.379, .278],
-    0x201C: [.694, -0.379, .5],
-    0x201D: [.694, -0.379, .5],
-    0x2020: [.705, .216, .444],
-    0x2021: [.705, .205, .444],
-    0x2022: [.444, -0.055, .5],
-    0x2026: [.12, 0, 1.172],
-    0x2032: [.56, -0.043, .275],
-    0x2033: [.56, 0, .55],
-    0x2034: [.56, 0, .825],
-    0x2035: [.56, -0.043, .275],
-    0x2036: [.56, 0, .55],
-    0x2037: [.56, 0, .825],
-    0x203E: [.59, -0.544, .5],
-    0x2044: [.75, .25, .5],
-    0x2057: [.56, 0, 1.1],
-    0x2060: [0, 0, 0],
-    0x2061: [0, 0, 0],
-    0x2062: [0, 0, 0],
-    0x2063: [0, 0, 0],
-    0x2064: [0, 0, 0],
-    0x20D7: [.714, -0.516, .5],
-    0x2102: [.702, .019, .722],
-    0x210B: [.717, .036, .969, { ic: .272, sk: .333 }],
-    0x210C: [.666, .133, .72],
-    0x210D: [.683, 0, .778],
-    0x210E: [.694, .011, .576, { sk: -0.0278 }],
-    0x210F: [.695, .013, .54, { ic: .022 }],
-    0x2110: [.717, .017, .809, { ic: .137, sk: .333 }],
-    0x2111: [.686, .026, .554],
-    0x2112: [.717, .017, .874, { ic: .161, sk: .306 }],
-    0x2113: [.705, .02, .417, { sk: .111 }],
-    0x2115: [.683, .02, .722],
-    0x2118: [.453, .216, .636, { sk: .111 }],
-    0x2119: [.683, 0, .611],
-    0x211A: [.701, .181, .778],
-    0x211B: [.717, .017, .85, { ic: .037, sk: .194 }],
-    0x211C: [.686, .026, .828],
-    0x211D: [.683, 0, .722],
-    0x2124: [.683, 0, .667],
-    0x2126: [.704, 0, .722],
-    0x2127: [.684, .022, .722],
-    0x2128: [.729, .139, .602],
-    0x212C: [.708, .028, .908, { ic: .02, sk: .194 }],
-    0x212D: [.685, .024, .613],
-    0x2130: [.707, .008, .562, { ic: .156, sk: .139 }],
-    0x2131: [.735, .036, .895, { ic: .095, sk: .222 }],
-    0x2132: [.695, 0, .556],
-    0x2133: [.721, .05, 1.08, { ic: .136, sk: .444 }],
-    0x2135: [.694, 0, .611],
-    0x2136: [.763, .021, .667, { ic: .02 }],
-    0x2137: [.764, .043, .444],
-    0x2138: [.764, .043, .667],
-    0x2141: [.705, .023, .639],
-    0x2190: [.511, .011, 1],
-    0x2191: [.694, .193, .5],
-    0x2192: [.511, .011, 1],
-    0x2193: [.694, .194, .5],
-    0x2194: [.511, .011, 1],
-    0x2195: [.772, .272, .5],
-    0x2196: [.72, .195, 1],
-    0x2197: [.72, .195, 1],
-    0x2198: [.695, .22, 1],
-    0x2199: [.695, .22, 1],
-    0x219A: [.437, -0.06, 1],
-    0x219B: [.437, -0.06, 1],
-    0x219E: [.417, -0.083, 1],
-    0x21A0: [.417, -0.083, 1],
-    0x21A2: [.417, -0.083, 1.111],
-    0x21A3: [.417, -0.083, 1.111],
-    0x21A6: [.511, .011, 1],
-    0x21A9: [.511, .011, 1.126],
-    0x21AA: [.511, .011, 1.126],
-    0x21AB: [.575, .041, 1],
-    0x21AC: [.575, .041, 1],
-    0x21AD: [.417, -0.083, 1.389],
-    0x21AE: [.437, -0.06, 1],
-    0x21B0: [.722, 0, .5],
-    0x21B1: [.722, 0, .5],
-    0x21B6: [.461, 0, 1],
-    0x21B7: [.46, 0, 1],
-    0x21BA: [.65, .083, .778],
-    0x21BB: [.65, .083, .778],
-    0x21BC: [.511, -0.23, 1],
-    0x21BD: [.27, .011, 1],
-    0x21BE: [.694, .194, .417],
-    0x21BF: [.694, .194, .417],
-    0x21C0: [.511, -0.23, 1],
-    0x21C1: [.27, .011, 1],
-    0x21C2: [.694, .194, .417],
-    0x21C3: [.694, .194, .417],
-    0x21C4: [.667, 0, 1],
-    0x21C6: [.667, 0, 1],
-    0x21C7: [.583, .083, 1],
-    0x21C8: [.694, .193, .833],
-    0x21C9: [.583, .083, 1],
-    0x21CA: [.694, .194, .833],
-    0x21CB: [.514, .014, 1],
-    0x21CC: [.671, .011, 1],
-    0x21CD: [.534, .035, 1],
-    0x21CE: [.534, .037, 1],
-    0x21CF: [.534, .035, 1],
-    0x21D0: [.525, .024, 1],
-    0x21D1: [.694, .194, .611],
-    0x21D2: [.525, .024, 1],
-    0x21D3: [.694, .194, .611],
-    0x21D4: [.526, .025, 1],
-    0x21D5: [.772, .272, .611],
-    0x21DA: [.611, .111, 1],
-    0x21DB: [.611, .111, 1],
-    0x21DD: [.417, -0.083, 1],
-    0x21E0: [.437, -0.064, 1.334],
-    0x21E2: [.437, -0.064, 1.334],
-    0x2200: [.694, .022, .556],
-    0x2201: [.846, .021, .5],
-    0x2202: [.715, .022, .531, { ic: .035, sk: .0833 }],
-    0x2203: [.694, 0, .556],
-    0x2204: [.716, .215, .556],
-    0x2205: [.772, .078, .5],
-    0x2206: [.716, 0, .833],
-    0x2207: [.683, .033, .833],
-    0x2208: [.54, .04, .667],
-    0x2209: [.716, .215, .667],
-    0x220B: [.54, .04, .667],
-    0x220C: [.716, .215, .667],
-    0x220D: [.44, 0, .429, { ic: .027 }],
-    0x220F: [.75, .25, .944],
-    0x2210: [.75, .25, .944],
-    0x2211: [.75, .25, 1.056],
-    0x2212: [.583, .082, .778],
-    0x2213: [.5, .166, .778],
-    0x2214: [.766, .093, .778],
-    0x2215: [.75, .25, .5],
-    0x2216: [.75, .25, .5],
-    0x2217: [.465, -0.035, .5],
-    0x2218: [.444, -0.055, .5],
-    0x2219: [.444, -0.055, .5],
-    0x221A: [.8, .2, .833, { ic: .02 }],
-    0x221D: [.442, .011, .778],
-    0x221E: [.442, .011, 1],
-    0x2220: [.694, 0, .722],
-    0x2221: [.714, .02, .722],
-    0x2222: [.551, .051, .722],
-    0x2223: [.75, .249, .278],
-    0x2224: [.75, .252, .278, { ic: .019 }],
-    0x2225: [.75, .25, .5],
-    0x2226: [.75, .25, .5, { ic: .018 }],
-    0x2227: [.598, .022, .667],
-    0x2228: [.598, .022, .667],
-    0x2229: [.598, .022, .667],
-    0x222A: [.598, .022, .667],
-    0x222B: [.716, .216, .417, { ic: .055 }],
-    0x222C: [.805, .306, .819, { ic: .138 }],
-    0x222D: [.805, .306, 1.166, { ic: .138 }],
-    0x222E: [.805, .306, .472, { ic: .138 }],
-    0x2234: [.471, .082, .667],
-    0x2235: [.471, .082, .667],
-    0x223C: [.367, -0.133, .778],
-    0x223D: [.367, -0.133, .778],
-    0x2240: [.583, .083, .278],
-    0x2241: [.467, -0.032, .778],
-    0x2242: [.463, -0.034, .778],
-    0x2243: [.464, -0.036, .778],
-    0x2244: [.716, .215, .778],
-    0x2245: [.589, -0.022, .778],
-    0x2247: [.652, .155, .778],
-    0x2248: [.483, -0.055, .778],
-    0x2249: [.716, .215, .778],
-    0x224A: [.579, .039, .778],
-    0x224D: [.484, -0.016, .778],
-    0x224E: [.492, -0.008, .778],
-    0x224F: [.492, -0.133, .778],
-    0x2250: [.67, -0.133, .778],
-    0x2251: [.609, .108, .778],
-    0x2252: [.601, .101, .778],
-    0x2253: [.601, .102, .778],
-    0x2256: [.367, -0.133, .778],
-    0x2257: [.721, -0.133, .778],
-    0x225C: [.859, -0.133, .778],
-    0x2260: [.716, .215, .778],
-    0x2261: [.464, -0.036, .778],
-    0x2262: [.716, .215, .778],
-    0x2264: [.636, .138, .778],
-    0x2265: [.636, .138, .778],
-    0x2266: [.753, .175, .778],
-    0x2267: [.753, .175, .778],
-    0x2268: [.752, .286, .778],
-    0x2269: [.752, .286, .778],
-    0x226A: [.568, .067, 1],
-    0x226B: [.567, .067, 1],
-    0x226C: [.75, .25, .5],
-    0x226D: [.716, .215, .778],
-    0x226E: [.708, .209, .778],
-    0x226F: [.708, .209, .778],
-    0x2270: [.801, .303, .778],
-    0x2271: [.801, .303, .778],
-    0x2272: [.732, .228, .778],
-    0x2273: [.732, .228, .778],
-    0x2274: [.732, .228, .778],
-    0x2275: [.732, .228, .778],
-    0x2276: [.681, .253, .778],
-    0x2277: [.681, .253, .778],
-    0x2278: [.716, .253, .778],
-    0x2279: [.716, .253, .778],
-    0x227A: [.539, .041, .778],
-    0x227B: [.539, .041, .778],
-    0x227C: [.58, .153, .778],
-    0x227D: [.58, .154, .778],
-    0x227E: [.732, .228, .778],
-    0x227F: [.732, .228, .778],
-    0x2280: [.705, .208, .778],
-    0x2281: [.705, .208, .778],
-    0x2282: [.54, .04, .778],
-    0x2283: [.54, .04, .778],
-    0x2284: [.716, .215, .778],
-    0x2285: [.716, .215, .778],
-    0x2286: [.636, .138, .778],
-    0x2287: [.636, .138, .778],
-    0x2288: [.801, .303, .778],
-    0x2289: [.801, .303, .778],
-    0x228A: [.635, .241, .778],
-    0x228B: [.635, .241, .778],
-    0x228E: [.598, .022, .667],
-    0x228F: [.539, .041, .778],
-    0x2290: [.539, .041, .778],
-    0x2291: [.636, .138, .778],
-    0x2292: [.636, .138, .778],
-    0x2293: [.598, 0, .667],
-    0x2294: [.598, 0, .667],
-    0x2295: [.583, .083, .778],
-    0x2296: [.583, .083, .778],
-    0x2297: [.583, .083, .778],
-    0x2298: [.583, .083, .778],
-    0x2299: [.583, .083, .778],
-    0x229A: [.582, .082, .778],
-    0x229B: [.582, .082, .778],
-    0x229D: [.582, .082, .778],
-    0x229E: [.689, 0, .778],
-    0x229F: [.689, 0, .778],
-    0x22A0: [.689, 0, .778],
-    0x22A1: [.689, 0, .778],
-    0x22A2: [.694, 0, .611],
-    0x22A3: [.694, 0, .611],
-    0x22A4: [.668, 0, .778],
-    0x22A5: [.668, 0, .778],
-    0x22A8: [.75, .249, .867],
-    0x22A9: [.694, 0, .722],
-    0x22AA: [.694, 0, .889],
-    0x22AC: [.695, 0, .611],
-    0x22AD: [.695, 0, .611],
-    0x22AE: [.695, 0, .722],
-    0x22AF: [.695, 0, .722],
-    0x22B2: [.539, .041, .778],
-    0x22B3: [.539, .041, .778],
-    0x22B4: [.636, .138, .778],
-    0x22B5: [.636, .138, .778],
-    0x22B8: [.408, -0.092, 1.111],
-    0x22BA: [.431, .212, .556],
-    0x22BB: [.716, 0, .611],
-    0x22BC: [.716, 0, .611],
-    0x22C0: [.75, .249, .833],
-    0x22C1: [.75, .249, .833],
-    0x22C2: [.75, .249, .833],
-    0x22C3: [.75, .249, .833],
-    0x22C4: [.488, -0.012, .5],
-    0x22C5: [.31, -0.19, .278],
-    0x22C6: [.486, -0.016, .5],
-    0x22C7: [.545, .044, .778],
-    0x22C8: [.505, .005, .9],
-    0x22C9: [.492, -0.008, .778],
-    0x22CA: [.492, -0.008, .778],
-    0x22CB: [.694, .022, .778],
-    0x22CC: [.694, .022, .778],
-    0x22CD: [.464, -0.036, .778],
-    0x22CE: [.578, .021, .76],
-    0x22CF: [.578, .022, .76],
-    0x22D0: [.54, .04, .778],
-    0x22D1: [.54, .04, .778],
-    0x22D2: [.598, .022, .667],
-    0x22D3: [.598, .022, .667],
-    0x22D4: [.736, .022, .667],
-    0x22D6: [.541, .041, .778],
-    0x22D7: [.541, .041, .778],
-    0x22D8: [.568, .067, 1.333],
-    0x22D9: [.568, .067, 1.333],
-    0x22DA: [.886, .386, .778],
-    0x22DB: [.886, .386, .778],
-    0x22DE: [.734, 0, .778],
-    0x22DF: [.734, 0, .778],
-    0x22E0: [.801, .303, .778],
-    0x22E1: [.801, .303, .778],
-    0x22E2: [.716, .215, .778],
-    0x22E3: [.716, .215, .778],
-    0x22E6: [.73, .359, .778],
-    0x22E7: [.73, .359, .778],
-    0x22E8: [.73, .359, .778],
-    0x22E9: [.73, .359, .778],
-    0x22EA: [.706, .208, .778],
-    0x22EB: [.706, .208, .778],
-    0x22EC: [.802, .303, .778],
-    0x22ED: [.801, .303, .778],
-    0x22EE: [1.3, .03, .278],
-    0x22EF: [.31, -0.19, 1.172],
-    0x22F1: [1.52, -0.1, 1.282],
-    0x2305: [.716, 0, .611],
-    0x2306: [.813, .097, .611],
-    0x2308: [.75, .25, .444],
-    0x2309: [.75, .25, .444],
-    0x230A: [.75, .25, .444],
-    0x230B: [.75, .25, .444],
-    0x231C: [.694, -0.306, .5],
-    0x231D: [.694, -0.306, .5],
-    0x231E: [.366, .022, .5],
-    0x231F: [.366, .022, .5],
-    0x2322: [.388, -0.122, 1],
-    0x2323: [.378, -0.134, 1],
-    0x2329: [.75, .25, .389],
-    0x232A: [.75, .25, .389],
-    0x23B0: [.744, .244, .412],
-    0x23B1: [.744, .244, .412],
-    0x23D0: [.602, 0, .667],
-    0x24C8: [.709, .175, .902],
-    0x250C: [.694, -0.306, .5],
-    0x2510: [.694, -0.306, .5],
-    0x2514: [.366, .022, .5],
-    0x2518: [.366, .022, .5],
-    0x2571: [.694, .195, .889],
-    0x2572: [.694, .195, .889],
-    0x25A0: [.689, 0, .778],
-    0x25A1: [.689, 0, .778],
-    0x25AA: [.689, 0, .778],
-    0x25B2: [.575, .02, .722],
-    0x25B3: [.716, 0, .889],
-    0x25B4: [.575, .02, .722],
-    0x25B5: [.716, 0, .889],
-    0x25B6: [.539, .041, .778],
-    0x25B8: [.539, .041, .778],
-    0x25B9: [.505, .005, .5],
-    0x25BC: [.576, .019, .722],
-    0x25BD: [.5, .215, .889],
-    0x25BE: [.576, .019, .722],
-    0x25BF: [.5, .215, .889],
-    0x25C0: [.539, .041, .778],
-    0x25C2: [.539, .041, .778],
-    0x25C3: [.505, .005, .5],
-    0x25CA: [.716, .132, .667],
-    0x25EF: [.715, .215, 1],
-    0x25FB: [.689, 0, .778],
-    0x25FC: [.689, 0, .778],
-    0x2605: [.694, .111, .944],
-    0x2660: [.727, .13, .778],
-    0x2661: [.716, .033, .778],
-    0x2662: [.727, .162, .778],
-    0x2663: [.726, .13, .778],
-    0x266D: [.75, .022, .389],
-    0x266E: [.734, .223, .389],
-    0x266F: [.723, .223, .389],
-    0x2713: [.706, .034, .833],
-    0x2720: [.716, .022, .833],
-    0x2758: [.75, .249, .278],
-    0x27E8: [.75, .25, .389],
-    0x27E9: [.75, .25, .389],
-    0x27EE: [.744, .244, .412],
-    0x27EF: [.744, .244, .412],
-    0x27F5: [.511, .011, 1.609],
-    0x27F6: [.511, .011, 1.638],
-    0x27F7: [.511, .011, 1.859],
-    0x27F8: [.525, .024, 1.609],
-    0x27F9: [.525, .024, 1.638],
-    0x27FA: [.525, .024, 1.858],
-    0x27FC: [.511, .011, 1.638],
-    0x29EB: [.716, .132, .667],
-    0x29F8: [.716, .215, .778],
-    0x2A00: [.75, .25, 1.111],
-    0x2A01: [.75, .25, 1.111],
-    0x2A02: [.75, .25, 1.111],
-    0x2A04: [.75, .249, .833],
-    0x2A06: [.75, .249, .833],
-    0x2A0C: [.805, .306, 1.638, { ic: .138 }],
-    0x2A2F: [.491, -0.009, .778],
-    0x2A3F: [.683, 0, .75],
-    0x2A5E: [.813, .097, .611],
-    0x2A7D: [.636, .138, .778],
-    0x2A7E: [.636, .138, .778],
-    0x2A85: [.762, .29, .778],
-    0x2A86: [.762, .29, .778],
-    0x2A87: [.635, .241, .778],
-    0x2A88: [.635, .241, .778],
-    0x2A89: [.761, .387, .778],
-    0x2A8A: [.761, .387, .778],
-    0x2A8B: [1.003, .463, .778],
-    0x2A8C: [1.003, .463, .778],
-    0x2A95: [.636, .138, .778],
-    0x2A96: [.636, .138, .778],
-    0x2AAF: [.636, .138, .778],
-    0x2AB0: [.636, .138, .778],
-    0x2AB5: [.752, .286, .778],
-    0x2AB6: [.752, .286, .778],
-    0x2AB7: [.761, .294, .778],
-    0x2AB8: [.761, .294, .778],
-    0x2AB9: [.761, .337, .778],
-    0x2ABA: [.761, .337, .778],
-    0x2AC5: [.753, .215, .778],
-    0x2AC6: [.753, .215, .778],
-    0x2ACB: [.783, .385, .778],
-    0x2ACC: [.783, .385, .778],
-    0x3008: [.75, .25, .389],
-    0x3009: [.75, .25, .389],
-    0xE006: [.43, .023, .222, { ic: .018 }],
-    0xE007: [.431, .024, .389, { ic: .018 }],
-    0xE008: [.605, .085, .778],
-    0xE009: [.434, .006, .667, { ic: .067 }],
-    0xE00C: [.752, .284, .778],
-    0xE00D: [.752, .284, .778],
-    0xE00E: [.919, .421, .778],
-    0xE00F: [.801, .303, .778],
-    0xE010: [.801, .303, .778],
-    0xE011: [.919, .421, .778],
-    0xE016: [.828, .33, .778],
-    0xE017: [.752, .332, .778],
-    0xE018: [.828, .33, .778],
-    0xE019: [.752, .333, .778],
-    0xE01A: [.634, .255, .778],
-    0xE01B: [.634, .254, .778],
-    0x1D400: [.698, 0, .869],
-    0x1D401: [.686, 0, .818],
-    0x1D402: [.697, .011, .831],
-    0x1D403: [.686, 0, .882],
-    0x1D404: [.68, 0, .756],
-    0x1D405: [.68, 0, .724],
-    0x1D406: [.697, .01, .904],
-    0x1D407: [.686, 0, .9],
-    0x1D408: [.686, 0, .436],
-    0x1D409: [.686, .011, .594],
-    0x1D40A: [.686, 0, .901],
-    0x1D40B: [.686, 0, .692],
-    0x1D40C: [.686, 0, 1.092],
-    0x1D40D: [.686, 0, .9],
-    0x1D40E: [.696, .01, .864],
-    0x1D40F: [.686, 0, .786],
-    0x1D410: [.696, .193, .864],
-    0x1D411: [.686, .011, .862],
-    0x1D412: [.697, .011, .639],
-    0x1D413: [.675, 0, .8],
-    0x1D414: [.686, .011, .885],
-    0x1D415: [.686, .007, .869],
-    0x1D416: [.686, .007, 1.189],
-    0x1D417: [.686, 0, .869],
-    0x1D418: [.686, 0, .869],
-    0x1D419: [.686, 0, .703],
-    0x1D41A: [.453, .006, .559],
-    0x1D41B: [.694, .006, .639],
-    0x1D41C: [.453, .006, .511],
-    0x1D41D: [.694, .006, .639],
-    0x1D41E: [.452, .006, .527],
-    0x1D41F: [.7, 0, .351, { ic: .101 }],
-    0x1D420: [.455, .201, .575],
-    0x1D421: [.694, 0, .639],
-    0x1D422: [.695, 0, .319],
-    0x1D423: [.695, .2, .351],
-    0x1D424: [.694, 0, .607],
-    0x1D425: [.694, 0, .319],
-    0x1D426: [.45, 0, .958],
-    0x1D427: [.45, 0, .639],
-    0x1D428: [.452, .005, .575],
-    0x1D429: [.45, .194, .639],
-    0x1D42A: [.45, .194, .607],
-    0x1D42B: [.45, 0, .474],
-    0x1D42C: [.453, .006, .454],
-    0x1D42D: [.635, .005, .447],
-    0x1D42E: [.45, .006, .639],
-    0x1D42F: [.444, 0, .607],
-    0x1D430: [.444, 0, .831],
-    0x1D431: [.444, 0, .607],
-    0x1D432: [.444, .2, .607],
-    0x1D433: [.444, 0, .511],
-    0x1D434: [.716, 0, .75, { sk: .139 }],
-    0x1D435: [.683, 0, .759, { sk: .0833 }],
-    0x1D436: [.705, .022, .715, { ic: .045, sk: .0833 }],
-    0x1D437: [.683, 0, .828, { sk: .0556 }],
-    0x1D438: [.68, 0, .738, { ic: .026, sk: .0833 }],
-    0x1D439: [.68, 0, .643, { ic: .106, sk: .0833 }],
-    0x1D43A: [.705, .022, .786, { sk: .0833 }],
-    0x1D43B: [.683, 0, .831, { ic: .057, sk: .0556 }],
-    0x1D43C: [.683, 0, .44, { ic: .064, sk: .111 }],
-    0x1D43D: [.683, .022, .555, { ic: .078, sk: .167 }],
-    0x1D43E: [.683, 0, .849, { ic: .04, sk: .0556 }],
-    0x1D43F: [.683, 0, .681, { sk: .0278 }],
-    0x1D440: [.683, 0, .97, { ic: .081, sk: .0833 }],
-    0x1D441: [.683, 0, .803, { ic: .085, sk: .0833 }],
-    0x1D442: [.704, .022, .763, { sk: .0833 }],
-    0x1D443: [.683, 0, .642, { ic: .109, sk: .0833 }],
-    0x1D444: [.704, .194, .791, { sk: .0833 }],
-    0x1D445: [.683, .021, .759, { sk: .0833 }],
-    0x1D446: [.705, .022, .613, { ic: .032, sk: .0833 }],
-    0x1D447: [.677, 0, .584, { ic: .12, sk: .0833 }],
-    0x1D448: [.683, .022, .683, { ic: .084, sk: .0278 }],
-    0x1D449: [.683, .022, .583, { ic: .186 }],
-    0x1D44A: [.683, .022, .944, { ic: .104 }],
-    0x1D44B: [.683, 0, .828, { ic: .024, sk: .0833 }],
-    0x1D44C: [.683, 0, .581, { ic: .182 }],
-    0x1D44D: [.683, 0, .683, { ic: .04, sk: .0833 }],
-    0x1D44E: [.441, .01, .529],
-    0x1D44F: [.694, .011, .429],
-    0x1D450: [.442, .011, .433, { sk: .0556 }],
-    0x1D451: [.694, .01, .52, { sk: .167 }],
-    0x1D452: [.442, .011, .466, { sk: .0556 }],
-    0x1D453: [.705, .205, .49, { ic: .06, sk: .167 }],
-    0x1D454: [.442, .205, .477, { sk: .0278 }],
-    0x1D456: [.661, .011, .345],
-    0x1D457: [.661, .204, .412],
-    0x1D458: [.694, .011, .521],
-    0x1D459: [.694, .011, .298, { sk: .0833 }],
-    0x1D45A: [.442, .011, .878],
-    0x1D45B: [.442, .011, .6],
-    0x1D45C: [.441, .011, .485, { sk: .0556 }],
-    0x1D45D: [.442, .194, .503, { sk: .0833 }],
-    0x1D45E: [.442, .194, .446, { ic: .014, sk: .0833 }],
-    0x1D45F: [.442, .011, .451, { sk: .0556 }],
-    0x1D460: [.442, .01, .469, { sk: .0556 }],
-    0x1D461: [.626, .011, .361, { sk: .0833 }],
-    0x1D462: [.442, .011, .572, { sk: .0278 }],
-    0x1D463: [.443, .011, .485, { sk: .0278 }],
-    0x1D464: [.443, .011, .716, { sk: .0833 }],
-    0x1D465: [.442, .011, .572, { sk: .0278 }],
-    0x1D466: [.442, .205, .49, { sk: .0556 }],
-    0x1D467: [.442, .011, .465, { sk: .0556 }],
-    0x1D468: [.711, 0, .869, { sk: .16 }],
-    0x1D469: [.686, 0, .866, { sk: .0958 }],
-    0x1D46A: [.703, .017, .817, { ic: .038, sk: .0958 }],
-    0x1D46B: [.686, 0, .938, { sk: .0639 }],
-    0x1D46C: [.68, 0, .81, { ic: .015, sk: .0958 }],
-    0x1D46D: [.68, 0, .689, { ic: .12, sk: .0958 }],
-    0x1D46E: [.703, .016, .887, { sk: .0958 }],
-    0x1D46F: [.686, 0, .982, { ic: .045, sk: .0639 }],
-    0x1D470: [.686, 0, .511, { ic: .062, sk: .128 }],
-    0x1D471: [.686, .017, .631, { ic: .063, sk: .192 }],
-    0x1D472: [.686, 0, .971, { ic: .032, sk: .0639 }],
-    0x1D473: [.686, 0, .756, { sk: .0319 }],
-    0x1D474: [.686, 0, 1.142, { ic: .077, sk: .0958 }],
-    0x1D475: [.686, 0, .95, { ic: .077, sk: .0958 }],
-    0x1D476: [.703, .017, .837, { sk: .0958 }],
-    0x1D477: [.686, 0, .723, { ic: .124, sk: .0958 }],
-    0x1D478: [.703, .194, .869, { sk: .0958 }],
-    0x1D479: [.686, .017, .872, { sk: .0958 }],
-    0x1D47A: [.703, .017, .693, { ic: .021, sk: .0958 }],
-    0x1D47B: [.675, 0, .637, { ic: .135, sk: .0958 }],
-    0x1D47C: [.686, .016, .8, { ic: .077, sk: .0319 }],
-    0x1D47D: [.686, .016, .678, { ic: .208 }],
-    0x1D47E: [.686, .017, 1.093, { ic: .114 }],
-    0x1D47F: [.686, 0, .947, { sk: .0958 }],
-    0x1D480: [.686, 0, .675, { ic: .201 }],
-    0x1D481: [.686, 0, .773, { ic: .032, sk: .0958 }],
-    0x1D482: [.452, .008, .633],
-    0x1D483: [.694, .008, .521],
-    0x1D484: [.451, .008, .513, { sk: .0639 }],
-    0x1D485: [.694, .008, .61, { sk: .192 }],
-    0x1D486: [.452, .008, .554, { sk: .0639 }],
-    0x1D487: [.701, .201, .568, { ic: .056, sk: .192 }],
-    0x1D488: [.452, .202, .545, { sk: .0319 }],
-    0x1D489: [.694, .008, .668, { sk: -0.0319 }],
-    0x1D48A: [.694, .008, .405],
-    0x1D48B: [.694, .202, .471],
-    0x1D48C: [.694, .008, .604],
-    0x1D48D: [.694, .008, .348, { sk: .0958 }],
-    0x1D48E: [.452, .008, 1.032],
-    0x1D48F: [.452, .008, .713],
-    0x1D490: [.452, .008, .585, { sk: .0639 }],
-    0x1D491: [.452, .194, .601, { sk: .0958 }],
-    0x1D492: [.452, .194, .542, { sk: .0958 }],
-    0x1D493: [.452, .008, .529, { sk: .0639 }],
-    0x1D494: [.451, .008, .531, { sk: .0639 }],
-    0x1D495: [.643, .007, .415, { sk: .0958 }],
-    0x1D496: [.452, .008, .681, { sk: .0319 }],
-    0x1D497: [.453, .008, .567, { sk: .0319 }],
-    0x1D498: [.453, .008, .831, { sk: .0958 }],
-    0x1D499: [.452, .008, .659, { sk: .0319 }],
-    0x1D49A: [.452, .202, .59, { sk: .0639 }],
-    0x1D49B: [.452, .008, .555, { sk: .0639 }],
-    0x1D49C: [.717, .008, .803, { ic: .213, sk: .389 }],
-    0x1D49E: [.728, .026, .666, { ic: .153, sk: .278 }],
-    0x1D49F: [.708, .031, .774, { ic: .081, sk: .111 }],
-    0x1D4A2: [.717, .037, .61, { ic: .128, sk: .25 }],
-    0x1D4A5: [.717, .314, 1.052, { ic: .081, sk: .417 }],
-    0x1D4A6: [.717, .037, .914, { ic: .29, sk: .361 }],
-    0x1D4A9: [.726, .036, .902, { ic: .306, sk: .389 }],
-    0x1D4AA: [.707, .008, .738, { ic: .067, sk: .167 }],
-    0x1D4AB: [.716, .037, 1.013, { ic: .018, sk: .222 }],
-    0x1D4AC: [.717, .017, .883, { sk: .278 }],
-    0x1D4AE: [.708, .036, .868, { ic: .148, sk: .333 }],
-    0x1D4AF: [.735, .037, .747, { ic: .249, sk: .222 }],
-    0x1D4B0: [.717, .017, .8, { ic: .16, sk: .25 }],
-    0x1D4B1: [.717, .017, .622, { ic: .228, sk: .222 }],
-    0x1D4B2: [.717, .017, .805, { ic: .221, sk: .25 }],
-    0x1D4B3: [.717, .017, .944, { ic: .187, sk: .278 }],
-    0x1D4B4: [.716, .017, .71, { ic: .249, sk: .194 }],
-    0x1D4B5: [.717, .016, .821, { ic: .211, sk: .306 }],
-    0x1D504: [.696, .026, .718],
-    0x1D505: [.691, .027, .884],
-    0x1D507: [.685, .027, .832],
-    0x1D508: [.685, .024, .663],
-    0x1D509: [.686, .153, .611],
-    0x1D50A: [.69, .026, .785],
-    0x1D50D: [.686, .139, .552],
-    0x1D50E: [.68, .027, .668, { ic: .014 }],
-    0x1D50F: [.686, .026, .666],
-    0x1D510: [.692, .027, 1.05],
-    0x1D511: [.686, .025, .832],
-    0x1D512: [.729, .027, .827],
-    0x1D513: [.692, .218, .828],
-    0x1D514: [.729, .069, .827],
-    0x1D516: [.692, .027, .829],
-    0x1D517: [.701, .027, .669],
-    0x1D518: [.697, .027, .646, { ic: .019 }],
-    0x1D519: [.686, .026, .831],
-    0x1D51A: [.686, .027, 1.046],
-    0x1D51B: [.688, .027, .719],
-    0x1D51C: [.686, .218, .833],
-    0x1D51E: [.47, .035, .5],
-    0x1D51F: [.685, .031, .513],
-    0x1D520: [.466, .029, .389],
-    0x1D521: [.609, .033, .499],
-    0x1D522: [.467, .03, .401],
-    0x1D523: [.681, .221, .326],
-    0x1D524: [.47, .209, .504],
-    0x1D525: [.688, .205, .521],
-    0x1D526: [.673, .02, .279],
-    0x1D527: [.672, .208, .281],
-    0x1D528: [.689, .025, .389],
-    0x1D529: [.685, .02, .28],
-    0x1D52A: [.475, .026, .767],
-    0x1D52B: [.475, .022, .527],
-    0x1D52C: [.48, .028, .489],
-    0x1D52D: [.541, .212, .5],
-    0x1D52E: [.479, .219, .489],
-    0x1D52F: [.474, .021, .389],
-    0x1D530: [.478, .029, .443],
-    0x1D531: [.64, .02, .333, { ic: .015 }],
-    0x1D532: [.474, .023, .517],
-    0x1D533: [.53, .028, .512],
-    0x1D534: [.532, .028, .774],
-    0x1D535: [.472, .188, .389],
-    0x1D536: [.528, .218, .499],
-    0x1D537: [.471, .214, .391],
-    0x1D538: [.701, 0, .722],
-    0x1D539: [.683, 0, .667],
-    0x1D53B: [.683, 0, .722],
-    0x1D53C: [.683, 0, .667],
-    0x1D53D: [.683, 0, .611],
-    0x1D53E: [.702, .019, .778],
-    0x1D540: [.683, 0, .389],
-    0x1D541: [.683, .077, .5],
-    0x1D542: [.683, 0, .778],
-    0x1D543: [.683, 0, .667],
-    0x1D544: [.683, 0, .944],
-    0x1D546: [.701, .019, .778],
-    0x1D54A: [.702, .012, .556],
-    0x1D54B: [.683, 0, .667],
-    0x1D54C: [.683, .019, .722],
-    0x1D54D: [.683, .02, .722],
-    0x1D54E: [.683, .019, 1],
-    0x1D54F: [.683, 0, .722],
-    0x1D550: [.683, 0, .722],
-    0x1D56C: [.686, .031, .847],
-    0x1D56D: [.684, .031, 1.044],
-    0x1D56E: [.676, .032, .723],
-    0x1D56F: [.683, .029, .982],
-    0x1D570: [.686, .029, .783],
-    0x1D571: [.684, .146, .722],
-    0x1D572: [.687, .029, .927],
-    0x1D573: [.683, .126, .851],
-    0x1D574: [.681, .025, .655],
-    0x1D575: [.68, .141, .652],
-    0x1D576: [.681, .026, .789, { ic: .017 }],
-    0x1D577: [.683, .028, .786],
-    0x1D578: [.683, .032, 1.239],
-    0x1D579: [.679, .03, .983],
-    0x1D57A: [.726, .03, .976],
-    0x1D57B: [.688, .223, .977],
-    0x1D57C: [.726, .083, .976],
-    0x1D57D: [.688, .028, .978],
-    0x1D57E: [.685, .031, .978],
-    0x1D57F: [.686, .03, .79, { ic: .012 }],
-    0x1D580: [.688, .039, .851, { ic: .02 }],
-    0x1D581: [.685, .029, .982],
-    0x1D582: [.683, .03, 1.235],
-    0x1D583: [.681, .035, .849],
-    0x1D584: [.688, .214, .984],
-    0x1D585: [.677, .148, .711],
-    0x1D586: [.472, .032, .603],
-    0x1D587: [.69, .032, .59],
-    0x1D588: [.473, .026, .464],
-    0x1D589: [.632, .028, .589],
-    0x1D58A: [.471, .027, .472],
-    0x1D58B: [.687, .222, .388],
-    0x1D58C: [.472, .208, .595],
-    0x1D58D: [.687, .207, .615],
-    0x1D58E: [.686, .025, .331],
-    0x1D58F: [.682, .203, .332],
-    0x1D590: [.682, .025, .464],
-    0x1D591: [.681, .024, .337],
-    0x1D592: [.476, .031, .921],
-    0x1D593: [.473, .028, .654],
-    0x1D594: [.482, .034, .609],
-    0x1D595: [.557, .207, .604],
-    0x1D596: [.485, .211, .596],
-    0x1D597: [.472, .026, .46],
-    0x1D598: [.479, .034, .523],
-    0x1D599: [.648, .027, .393, { ic: .014 }],
-    0x1D59A: [.472, .032, .589, { ic: .014 }],
-    0x1D59B: [.546, .027, .604],
-    0x1D59C: [.549, .032, .918],
-    0x1D59D: [.471, .188, .459],
-    0x1D59E: [.557, .221, .589],
-    0x1D59F: [.471, .214, .461],
-    0x1D5A0: [.694, 0, .667],
-    0x1D5A1: [.694, 0, .667],
-    0x1D5A2: [.705, .011, .639],
-    0x1D5A3: [.694, 0, .722],
-    0x1D5A4: [.691, 0, .597],
-    0x1D5A5: [.691, 0, .569],
-    0x1D5A6: [.704, .011, .667],
-    0x1D5A7: [.694, 0, .708],
-    0x1D5A8: [.694, 0, .278],
-    0x1D5A9: [.694, .022, .472],
-    0x1D5AA: [.694, 0, .694],
-    0x1D5AB: [.694, 0, .542],
-    0x1D5AC: [.694, 0, .875],
-    0x1D5AD: [.694, 0, .708],
-    0x1D5AE: [.715, .022, .736],
-    0x1D5AF: [.694, 0, .639],
-    0x1D5B0: [.715, .125, .736],
-    0x1D5B1: [.694, 0, .646],
-    0x1D5B2: [.716, .022, .556],
-    0x1D5B3: [.688, 0, .681],
-    0x1D5B4: [.694, .022, .688],
-    0x1D5B5: [.694, 0, .667],
-    0x1D5B6: [.694, 0, .944],
-    0x1D5B7: [.694, 0, .667],
-    0x1D5B8: [.694, 0, .667],
-    0x1D5B9: [.694, 0, .611],
-    0x1D5BA: [.46, .01, .481],
-    0x1D5BB: [.694, .011, .517],
-    0x1D5BC: [.46, .01, .444],
-    0x1D5BD: [.694, .01, .517],
-    0x1D5BE: [.461, .01, .444],
-    0x1D5BF: [.705, 0, .306, { ic: .041 }],
-    0x1D5C0: [.455, .206, .5],
-    0x1D5C1: [.694, 0, .517],
-    0x1D5C2: [.68, 0, .239],
-    0x1D5C3: [.68, .205, .267],
-    0x1D5C4: [.694, 0, .489],
-    0x1D5C5: [.694, 0, .239],
-    0x1D5C6: [.455, 0, .794],
-    0x1D5C7: [.455, 0, .517],
-    0x1D5C8: [.46, .01, .5],
-    0x1D5C9: [.455, .194, .517],
-    0x1D5CA: [.455, .194, .517],
-    0x1D5CB: [.455, 0, .342],
-    0x1D5CC: [.46, .01, .383],
-    0x1D5CD: [.571, .01, .361],
-    0x1D5CE: [.444, .01, .517],
-    0x1D5CF: [.444, 0, .461],
-    0x1D5D0: [.444, 0, .683],
-    0x1D5D1: [.444, 0, .461],
-    0x1D5D2: [.444, .204, .461],
-    0x1D5D3: [.444, 0, .435],
-    0x1D5D4: [.694, 0, .733],
-    0x1D5D5: [.694, 0, .733],
-    0x1D5D6: [.704, .011, .703],
-    0x1D5D7: [.694, 0, .794],
-    0x1D5D8: [.691, 0, .642],
-    0x1D5D9: [.691, 0, .611],
-    0x1D5DA: [.705, .011, .733],
-    0x1D5DB: [.694, 0, .794],
-    0x1D5DC: [.694, 0, .331],
-    0x1D5DD: [.694, .022, .519],
-    0x1D5DE: [.694, 0, .764],
-    0x1D5DF: [.694, 0, .581],
-    0x1D5E0: [.694, 0, .978],
-    0x1D5E1: [.694, 0, .794],
-    0x1D5E2: [.716, .022, .794],
-    0x1D5E3: [.694, 0, .703],
-    0x1D5E4: [.716, .106, .794],
-    0x1D5E5: [.694, 0, .703],
-    0x1D5E6: [.716, .022, .611],
-    0x1D5E7: [.688, 0, .733],
-    0x1D5E8: [.694, .022, .764],
-    0x1D5E9: [.694, 0, .733],
-    0x1D5EA: [.694, 0, 1.039],
-    0x1D5EB: [.694, 0, .733],
-    0x1D5EC: [.694, 0, .733],
-    0x1D5ED: [.694, 0, .672],
-    0x1D5EE: [.475, .011, .525],
-    0x1D5EF: [.694, .01, .561],
-    0x1D5F0: [.475, .011, .489],
-    0x1D5F1: [.694, .011, .561],
-    0x1D5F2: [.474, .01, .511],
-    0x1D5F3: [.705, 0, .336, { ic: .045 }],
-    0x1D5F4: [.469, .206, .55],
-    0x1D5F5: [.694, 0, .561],
-    0x1D5F6: [.695, 0, .256],
-    0x1D5F7: [.695, .205, .286],
-    0x1D5F8: [.694, 0, .531],
-    0x1D5F9: [.694, 0, .256],
-    0x1D5FA: [.469, 0, .867],
-    0x1D5FB: [.468, 0, .561],
-    0x1D5FC: [.474, .011, .55],
-    0x1D5FD: [.469, .194, .561],
-    0x1D5FE: [.469, .194, .561],
-    0x1D5FF: [.469, 0, .372],
-    0x1D600: [.474, .01, .422],
-    0x1D601: [.589, .01, .404],
-    0x1D602: [.458, .011, .561],
-    0x1D603: [.458, 0, .5],
-    0x1D604: [.458, 0, .744],
-    0x1D605: [.458, 0, .5],
-    0x1D606: [.458, .205, .5],
-    0x1D607: [.458, 0, .476],
-    0x1D608: [.694, 0, .667],
-    0x1D609: [.694, 0, .667, { ic: .029 }],
-    0x1D60A: [.705, .01, .639, { ic: .08 }],
-    0x1D60B: [.694, 0, .722, { ic: .025 }],
-    0x1D60C: [.691, 0, .597, { ic: .091 }],
-    0x1D60D: [.691, 0, .569, { ic: .104 }],
-    0x1D60E: [.705, .011, .667, { ic: .063 }],
-    0x1D60F: [.694, 0, .708, { ic: .06 }],
-    0x1D610: [.694, 0, .278, { ic: .06 }],
-    0x1D611: [.694, .022, .472, { ic: .063 }],
-    0x1D612: [.694, 0, .694, { ic: .091 }],
-    0x1D613: [.694, 0, .542],
-    0x1D614: [.694, 0, .875, { ic: .054 }],
-    0x1D615: [.694, 0, .708, { ic: .058 }],
-    0x1D616: [.716, .022, .736, { ic: .027 }],
-    0x1D617: [.694, 0, .639, { ic: .051 }],
-    0x1D618: [.716, .125, .736, { ic: .027 }],
-    0x1D619: [.694, 0, .646, { ic: .052 }],
-    0x1D61A: [.716, .022, .556, { ic: .053 }],
-    0x1D61B: [.688, 0, .681, { ic: .109 }],
-    0x1D61C: [.694, .022, .688, { ic: .059 }],
-    0x1D61D: [.694, 0, .667, { ic: .132 }],
-    0x1D61E: [.694, 0, .944, { ic: .132 }],
-    0x1D61F: [.694, 0, .667, { ic: .091 }],
-    0x1D620: [.694, 0, .667, { ic: .143 }],
-    0x1D621: [.694, 0, .611, { ic: .091 }],
-    0x1D622: [.461, .01, .481],
-    0x1D623: [.694, .011, .517, { ic: .022 }],
-    0x1D624: [.46, .011, .444, { ic: .055 }],
-    0x1D625: [.694, .01, .517, { ic: .071 }],
-    0x1D626: [.46, .011, .444, { ic: .028 }],
-    0x1D627: [.705, 0, .306, { ic: .188 }],
-    0x1D628: [.455, .206, .5, { ic: .068 }],
-    0x1D629: [.694, 0, .517],
-    0x1D62A: [.68, 0, .239, { ic: .076 }],
-    0x1D62B: [.68, .204, .267, { ic: .069 }],
-    0x1D62C: [.694, 0, .489, { ic: .054 }],
-    0x1D62D: [.694, 0, .239, { ic: .072 }],
-    0x1D62E: [.455, 0, .794],
-    0x1D62F: [.454, 0, .517],
-    0x1D630: [.461, .011, .5, { ic: .023 }],
-    0x1D631: [.455, .194, .517, { ic: .021 }],
-    0x1D632: [.455, .194, .517, { ic: .021 }],
-    0x1D633: [.455, 0, .342, { ic: .082 }],
-    0x1D634: [.461, .011, .383, { ic: .053 }],
-    0x1D635: [.571, .011, .361, { ic: .049 }],
-    0x1D636: [.444, .01, .517, { ic: .02 }],
-    0x1D637: [.444, 0, .461, { ic: .079 }],
-    0x1D638: [.444, 0, .683, { ic: .079 }],
-    0x1D639: [.444, 0, .461, { ic: .076 }],
-    0x1D63A: [.444, .205, .461, { ic: .079 }],
-    0x1D63B: [.444, 0, .435, { ic: .059 }],
-    0x1D670: [.623, 0, .525],
-    0x1D671: [.611, 0, .525],
-    0x1D672: [.622, .011, .525],
-    0x1D673: [.611, 0, .525],
-    0x1D674: [.611, 0, .525],
-    0x1D675: [.611, 0, .525],
-    0x1D676: [.622, .011, .525],
-    0x1D677: [.611, 0, .525],
-    0x1D678: [.611, 0, .525],
-    0x1D679: [.611, .011, .525],
-    0x1D67A: [.611, 0, .525],
-    0x1D67B: [.611, 0, .525],
-    0x1D67C: [.611, 0, .525],
-    0x1D67D: [.611, 0, .525],
-    0x1D67E: [.621, .01, .525],
-    0x1D67F: [.611, 0, .525],
-    0x1D680: [.621, .138, .525],
-    0x1D681: [.611, .011, .525],
-    0x1D682: [.622, .011, .525],
-    0x1D683: [.611, 0, .525],
-    0x1D684: [.611, .011, .525],
-    0x1D685: [.611, .007, .525],
-    0x1D686: [.611, .007, .525],
-    0x1D687: [.611, 0, .525],
-    0x1D688: [.611, 0, .525],
-    0x1D689: [.611, 0, .525],
-    0x1D68A: [.439, .006, .525],
-    0x1D68B: [.611, .006, .525],
-    0x1D68C: [.44, .006, .525],
-    0x1D68D: [.611, .006, .525],
-    0x1D68E: [.44, .006, .525],
-    0x1D68F: [.617, 0, .525],
-    0x1D690: [.442, .229, .525],
-    0x1D691: [.611, 0, .525],
-    0x1D692: [.612, 0, .525],
-    0x1D693: [.612, .228, .525],
-    0x1D694: [.611, 0, .525],
-    0x1D695: [.611, 0, .525],
-    0x1D696: [.436, 0, .525, { ic: .011 }],
-    0x1D697: [.436, 0, .525],
-    0x1D698: [.44, .006, .525],
-    0x1D699: [.437, .221, .525],
-    0x1D69A: [.437, .221, .525, { ic: .02 }],
-    0x1D69B: [.437, 0, .525],
-    0x1D69C: [.44, .006, .525],
-    0x1D69D: [.554, .006, .525],
-    0x1D69E: [.431, .005, .525],
-    0x1D69F: [.431, 0, .525],
-    0x1D6A0: [.431, 0, .525],
-    0x1D6A1: [.431, 0, .525],
-    0x1D6A2: [.431, .228, .525],
-    0x1D6A3: [.431, 0, .525],
-    0x1D6A8: [.698, 0, .869],
-    0x1D6A9: [.686, 0, .818],
-    0x1D6AA: [.68, 0, .692],
-    0x1D6AB: [.698, 0, .958],
-    0x1D6AC: [.68, 0, .756],
-    0x1D6AD: [.686, 0, .703],
-    0x1D6AE: [.686, 0, .9],
-    0x1D6AF: [.696, .01, .894],
-    0x1D6B0: [.686, 0, .436],
-    0x1D6B1: [.686, 0, .901],
-    0x1D6B2: [.698, 0, .806],
-    0x1D6B3: [.686, 0, 1.092],
-    0x1D6B4: [.686, 0, .9],
-    0x1D6B5: [.675, 0, .767],
-    0x1D6B6: [.696, .01, .864],
-    0x1D6B7: [.68, 0, .9],
-    0x1D6B8: [.686, 0, .786],
-    0x1D6BA: [.686, 0, .831],
-    0x1D6BB: [.675, 0, .8],
-    0x1D6BC: [.697, 0, .894],
-    0x1D6BD: [.686, 0, .831],
-    0x1D6BE: [.686, 0, .869],
-    0x1D6BF: [.686, 0, .894],
-    0x1D6C0: [.696, 0, .831],
-    0x1D6C1: [.686, .024, .958],
-    0x1D6E2: [.716, 0, .75, { sk: .139 }],
-    0x1D6E3: [.683, 0, .759, { sk: .0833 }],
-    0x1D6E4: [.68, 0, .615, { ic: .106, sk: .0833 }],
-    0x1D6E5: [.716, 0, .833, { sk: .167 }],
-    0x1D6E6: [.68, 0, .738, { ic: .026, sk: .0833 }],
-    0x1D6E7: [.683, 0, .683, { ic: .04, sk: .0833 }],
-    0x1D6E8: [.683, 0, .831, { ic: .057, sk: .0556 }],
-    0x1D6E9: [.704, .022, .763, { sk: .0833 }],
-    0x1D6EA: [.683, 0, .44, { ic: .064, sk: .111 }],
-    0x1D6EB: [.683, 0, .849, { ic: .04, sk: .0556 }],
-    0x1D6EC: [.716, 0, .694, { sk: .167 }],
-    0x1D6ED: [.683, 0, .97, { ic: .081, sk: .0833 }],
-    0x1D6EE: [.683, 0, .803, { ic: .085, sk: .0833 }],
-    0x1D6EF: [.677, 0, .742, { ic: .035, sk: .0833 }],
-    0x1D6F0: [.704, .022, .763, { sk: .0833 }],
-    0x1D6F1: [.68, 0, .831, { ic: .056, sk: .0556 }],
-    0x1D6F2: [.683, 0, .642, { ic: .109, sk: .0833 }],
-    0x1D6F4: [.683, 0, .78, { ic: .026, sk: .0833 }],
-    0x1D6F5: [.677, 0, .584, { ic: .12, sk: .0833 }],
-    0x1D6F6: [.705, 0, .583, { ic: .117, sk: .0556 }],
-    0x1D6F7: [.683, 0, .667, { sk: .0833 }],
-    0x1D6F8: [.683, 0, .828, { ic: .024, sk: .0833 }],
-    0x1D6F9: [.683, 0, .612, { ic: .08, sk: .0556 }],
-    0x1D6FA: [.704, 0, .772, { ic: .014, sk: .0833 }],
-    0x1D6FC: [.442, .011, .64, { sk: .0278 }],
-    0x1D6FD: [.705, .194, .566, { sk: .0833 }],
-    0x1D6FE: [.441, .216, .518, { ic: .025 }],
-    0x1D6FF: [.717, .01, .444, { sk: .0556 }],
-    0x1D700: [.452, .022, .466, { sk: .0833 }],
-    0x1D701: [.704, .204, .438, { ic: .033, sk: .0833 }],
-    0x1D702: [.442, .216, .497, { sk: .0556 }],
-    0x1D703: [.705, .01, .469, { sk: .0833 }],
-    0x1D704: [.442, .01, .354, { sk: .0556 }],
-    0x1D705: [.442, .011, .576],
-    0x1D706: [.694, .012, .583],
-    0x1D707: [.442, .216, .603, { sk: .0278 }],
-    0x1D708: [.442, 0, .494, { ic: .036, sk: .0278 }],
-    0x1D709: [.704, .205, .438, { sk: .111 }],
-    0x1D70A: [.441, .011, .485, { sk: .0556 }],
-    0x1D70B: [.431, .011, .57],
-    0x1D70C: [.442, .216, .517, { sk: .0833 }],
-    0x1D70D: [.442, .107, .363, { ic: .042, sk: .0833 }],
-    0x1D70E: [.431, .011, .571],
-    0x1D70F: [.431, .013, .437, { ic: .08, sk: .0278 }],
-    0x1D710: [.443, .01, .54, { sk: .0278 }],
-    0x1D711: [.442, .218, .654, { sk: .0833 }],
-    0x1D712: [.442, .204, .626, { sk: .0556 }],
-    0x1D713: [.694, .205, .651, { sk: .111 }],
-    0x1D714: [.443, .011, .622],
-    0x1D715: [.715, .022, .531, { ic: .035, sk: .0833 }],
-    0x1D716: [.431, .011, .406, { sk: .0556 }],
-    0x1D717: [.705, .011, .591, { sk: .0833 }],
-    0x1D718: [.434, .006, .667, { ic: .067 }],
-    0x1D719: [.694, .205, .596, { sk: .0833 }],
-    0x1D71A: [.442, .194, .517, { sk: .0833 }],
-    0x1D71B: [.431, .01, .828],
-    0x1D71C: [.711, 0, .869, { sk: .16 }],
-    0x1D71D: [.686, 0, .866, { sk: .0958 }],
-    0x1D71E: [.68, 0, .657, { ic: .12, sk: .0958 }],
-    0x1D71F: [.711, 0, .958, { sk: .192 }],
-    0x1D720: [.68, 0, .81, { ic: .015, sk: .0958 }],
-    0x1D721: [.686, 0, .773, { ic: .032, sk: .0958 }],
-    0x1D722: [.686, 0, .982, { ic: .045, sk: .0639 }],
-    0x1D723: [.702, .017, .867, { sk: .0958 }],
-    0x1D724: [.686, 0, .511, { ic: .062, sk: .128 }],
-    0x1D725: [.686, 0, .971, { ic: .032, sk: .0639 }],
-    0x1D726: [.711, 0, .806, { sk: .192 }],
-    0x1D727: [.686, 0, 1.142, { ic: .077, sk: .0958 }],
-    0x1D728: [.686, 0, .95, { ic: .077, sk: .0958 }],
-    0x1D729: [.675, 0, .841, { ic: .026, sk: .0958 }],
-    0x1D72A: [.703, .017, .837, { sk: .0958 }],
-    0x1D72B: [.68, 0, .982, { ic: .044, sk: .0639 }],
-    0x1D72C: [.686, 0, .723, { ic: .124, sk: .0958 }],
-    0x1D72E: [.686, 0, .885, { ic: .017, sk: .0958 }],
-    0x1D72F: [.675, 0, .637, { ic: .135, sk: .0958 }],
-    0x1D730: [.703, 0, .671, { ic: .131, sk: .0639 }],
-    0x1D731: [.686, 0, .767, { sk: .0958 }],
-    0x1D732: [.686, 0, .947, { sk: .0958 }],
-    0x1D733: [.686, 0, .714, { ic: .076, sk: .0639 }],
-    0x1D734: [.703, 0, .879, { sk: .0958 }],
-    0x1D736: [.452, .008, .761, { sk: .0319 }],
-    0x1D737: [.701, .194, .66, { sk: .0958 }],
-    0x1D738: [.451, .211, .59, { ic: .027 }],
-    0x1D739: [.725, .008, .522, { sk: .0639 }],
-    0x1D73A: [.461, .017, .529, { sk: .0958 }],
-    0x1D73B: [.711, .202, .508, { ic: .013, sk: .0958 }],
-    0x1D73C: [.452, .211, .6, { sk: .0639 }],
-    0x1D73D: [.702, .008, .562, { sk: .0958 }],
-    0x1D73E: [.452, .008, .412, { sk: .0639 }],
-    0x1D73F: [.452, .008, .668],
-    0x1D740: [.694, .013, .671],
-    0x1D741: [.452, .211, .708, { sk: .0319 }],
-    0x1D742: [.452, 0, .577, { ic: .031, sk: .0319 }],
-    0x1D743: [.711, .201, .508, { sk: .128 }],
-    0x1D744: [.452, .008, .585, { sk: .0639 }],
-    0x1D745: [.444, .008, .682],
-    0x1D746: [.451, .211, .612, { sk: .0958 }],
-    0x1D747: [.451, .105, .424, { ic: .033, sk: .0958 }],
-    0x1D748: [.444, .008, .686],
-    0x1D749: [.444, .013, .521, { ic: .089, sk: .0319 }],
-    0x1D74A: [.453, .008, .631, { sk: .0319 }],
-    0x1D74B: [.452, .216, .747, { sk: .0958 }],
-    0x1D74C: [.452, .201, .718, { sk: .0639 }],
-    0x1D74D: [.694, .202, .758, { sk: .128 }],
-    0x1D74E: [.453, .008, .718],
-    0x1D74F: [.71, .017, .628, { ic: .029, sk: .0958 }],
-    0x1D750: [.444, .007, .483, { sk: .0639 }],
-    0x1D751: [.701, .008, .692, { sk: .0958 }],
-    0x1D752: [.434, .006, .667, { ic: .067 }],
-    0x1D753: [.694, .202, .712, { sk: .0958 }],
-    0x1D754: [.451, .194, .612, { sk: .0958 }],
-    0x1D755: [.444, .008, .975],
-    0x1D756: [.694, 0, .733],
-    0x1D757: [.694, 0, .733],
-    0x1D758: [.691, 0, .581],
-    0x1D759: [.694, 0, .917],
-    0x1D75A: [.691, 0, .642],
-    0x1D75B: [.694, 0, .672],
-    0x1D75C: [.694, 0, .794],
-    0x1D75D: [.716, .022, .856],
-    0x1D75E: [.694, 0, .331],
-    0x1D75F: [.694, 0, .764],
-    0x1D760: [.694, 0, .672],
-    0x1D761: [.694, 0, .978],
-    0x1D762: [.694, 0, .794],
-    0x1D763: [.688, 0, .733],
-    0x1D764: [.716, .022, .794],
-    0x1D765: [.691, 0, .794],
-    0x1D766: [.694, 0, .703],
-    0x1D768: [.694, 0, .794],
-    0x1D769: [.688, 0, .733],
-    0x1D76A: [.715, 0, .856],
-    0x1D76B: [.694, 0, .794],
-    0x1D76C: [.694, 0, .733],
-    0x1D76D: [.694, 0, .856],
-    0x1D76E: [.716, 0, .794],
-    0x1D7CE: [.654, .01, .575],
-    0x1D7CF: [.655, 0, .575],
-    0x1D7D0: [.654, 0, .575],
-    0x1D7D1: [.655, .011, .575],
-    0x1D7D2: [.656, 0, .575],
-    0x1D7D3: [.655, .011, .575],
-    0x1D7D4: [.655, .011, .575],
-    0x1D7D5: [.676, .011, .575],
-    0x1D7D6: [.654, .011, .575],
-    0x1D7D7: [.654, .011, .575],
-    0x1D7E2: [.678, .022, .5],
-    0x1D7E3: [.678, 0, .5],
-    0x1D7E4: [.677, 0, .5],
-    0x1D7E5: [.678, .022, .5],
-    0x1D7E6: [.656, 0, .5],
-    0x1D7E7: [.656, .021, .5],
-    0x1D7E8: [.677, .022, .5],
-    0x1D7E9: [.656, .011, .5],
-    0x1D7EA: [.678, .022, .5],
-    0x1D7EB: [.677, .022, .5],
-    0x1D7EC: [.715, .022, .55],
-    0x1D7ED: [.716, 0, .55],
-    0x1D7EE: [.716, 0, .55],
-    0x1D7EF: [.716, .022, .55],
-    0x1D7F0: [.694, 0, .55],
-    0x1D7F1: [.694, .022, .55],
-    0x1D7F2: [.716, .022, .55],
-    0x1D7F3: [.695, .011, .55],
-    0x1D7F4: [.715, .022, .55],
-    0x1D7F5: [.716, .022, .55],
-    0x1D7F6: [.621, .01, .525],
-    0x1D7F7: [.622, 0, .525],
-    0x1D7F8: [.622, 0, .525],
-    0x1D7F9: [.622, .011, .525],
-    0x1D7FA: [.624, 0, .525],
-    0x1D7FB: [.611, .01, .525],
-    0x1D7FC: [.622, .011, .525],
-    0x1D7FD: [.627, .01, .525],
-    0x1D7FE: [.621, .01, .525],
-    0x1D7FF: [.622, .011, .525],
-};
-//# sourceMappingURL=normal.js.map
-
-/***/ }),
-
-/***/ 47033:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.sansSerifBoldItalic = void 0;
-exports.sansSerifBoldItalic = {
-    0x131: [.458, 0, .256],
-    0x237: [.458, .205, .286],
-};
-//# sourceMappingURL=sans-serif-bold-italic.js.map
-
-/***/ }),
-
-/***/ 94872:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.sansSerifBold = void 0;
-exports.sansSerifBold = {
-    0x21: [.694, 0, .367],
-    0x22: [.694, -0.442, .558],
-    0x23: [.694, .193, .917],
-    0x24: [.75, .056, .55],
-    0x25: [.75, .056, 1.029],
-    0x26: [.716, .022, .831],
-    0x27: [.694, -0.442, .306],
-    0x28: [.75, .249, .428],
-    0x29: [.75, .25, .428],
-    0x2A: [.75, -0.293, .55],
-    0x2B: [.617, .116, .856],
-    0x2C: [.146, .106, .306],
-    0x2D: [.273, -0.186, .367],
-    0x2E: [.146, 0, .306],
-    0x2F: [.75, .249, .55],
-    0x3A: [.458, 0, .306],
-    0x3B: [.458, .106, .306],
-    0x3D: [.407, -0.094, .856],
-    0x3F: [.705, 0, .519],
-    0x40: [.704, .011, .733],
-    0x5B: [.75, .25, .343],
-    0x5D: [.75, .25, .343],
-    0x5E: [.694, -0.537, .55],
-    0x5F: [-0.023, .11, .55],
-    0x7E: [.344, -0.198, .55],
-    0x131: [.458, 0, .256],
-    0x237: [.458, .205, .286],
-    0x300: [.694, -0.537, 0],
-    0x301: [.694, -0.537, 0],
-    0x302: [.694, -0.537, 0],
-    0x303: [.694, -0.548, 0],
-    0x304: [.66, -0.56, 0],
-    0x306: [.694, -0.552, 0],
-    0x307: [.695, -0.596, 0],
-    0x308: [.695, -0.595, 0],
-    0x30A: [.694, -0.538, 0],
-    0x30B: [.694, -0.537, 0],
-    0x30C: [.657, -0.5, 0],
-    0x2013: [.327, -0.24, .55],
-    0x2014: [.327, -0.24, 1.1],
-    0x2015: [.327, -0.24, 1.1],
-    0x2017: [-0.023, .11, .55],
-    0x2018: [.694, -0.443, .306],
-    0x2019: [.694, -0.442, .306],
-    0x201C: [.694, -0.443, .558],
-    0x201D: [.694, -0.442, .558],
-    0x2044: [.75, .249, .55],
-    0x2206: [.694, 0, .917],
-};
-//# sourceMappingURL=sans-serif-bold.js.map
-
-/***/ }),
-
-/***/ 9255:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.sansSerifItalic = void 0;
-exports.sansSerifItalic = {
-    0x21: [.694, 0, .319, { ic: .036 }],
-    0x22: [.694, -0.471, .5],
-    0x23: [.694, .194, .833, { ic: .018 }],
-    0x24: [.75, .056, .5, { ic: .065 }],
-    0x25: [.75, .056, .833],
-    0x26: [.716, .022, .758],
-    0x27: [.694, -0.471, .278, { ic: .057 }],
-    0x28: [.75, .25, .389, { ic: .102 }],
-    0x29: [.75, .25, .389],
-    0x2A: [.75, -0.306, .5, { ic: .068 }],
-    0x2B: [.583, .083, .778],
-    0x2C: [.098, .125, .278],
-    0x2D: [.259, -0.186, .333],
-    0x2E: [.098, 0, .278],
-    0x2F: [.75, .25, .5, { ic: .1 }],
-    0x30: [.678, .022, .5, { ic: .049 }],
-    0x31: [.678, 0, .5],
-    0x32: [.678, 0, .5, { ic: .051 }],
-    0x33: [.678, .022, .5, { ic: .044 }],
-    0x34: [.656, 0, .5, { ic: .021 }],
-    0x35: [.656, .022, .5, { ic: .055 }],
-    0x36: [.678, .022, .5, { ic: .048 }],
-    0x37: [.656, .011, .5, { ic: .096 }],
-    0x38: [.678, .022, .5, { ic: .054 }],
-    0x39: [.677, .022, .5, { ic: .045 }],
-    0x3A: [.444, 0, .278],
-    0x3B: [.444, .125, .278],
-    0x3D: [.37, -0.13, .778, { ic: .018 }],
-    0x3F: [.704, 0, .472, { ic: .064 }],
-    0x40: [.705, .01, .667, { ic: .04 }],
-    0x5B: [.75, .25, .289, { ic: .136 }],
-    0x5D: [.75, .25, .289, { ic: .064 }],
-    0x5E: [.694, -0.527, .5, { ic: .033 }],
-    0x5F: [-0.038, .114, .5, { ic: .065 }],
-    0x7E: [.327, -0.193, .5, { ic: .06 }],
-    0x131: [.444, 0, .239, { ic: .019 }],
-    0x237: [.444, .204, .267, { ic: .019 }],
-    0x300: [.694, -0.527, 0],
-    0x301: [.694, -0.527, 0, { ic: .063 }],
-    0x302: [.694, -0.527, 0, { ic: .033 }],
-    0x303: [.677, -0.543, 0, { ic: .06 }],
-    0x304: [.631, -0.552, 0, { ic: .064 }],
-    0x306: [.694, -0.508, 0, { ic: .073 }],
-    0x307: [.68, -0.576, 0],
-    0x308: [.68, -0.582, 0, { ic: .04 }],
-    0x30A: [.693, -0.527, 0],
-    0x30B: [.694, -0.527, 0, { ic: .063 }],
-    0x30C: [.654, -0.487, 0, { ic: .06 }],
-    0x391: [.694, 0, .667],
-    0x392: [.694, 0, .667, { ic: .029 }],
-    0x393: [.691, 0, .542, { ic: .104 }],
-    0x394: [.694, 0, .833],
-    0x395: [.691, 0, .597, { ic: .091 }],
-    0x396: [.694, 0, .611, { ic: .091 }],
-    0x397: [.694, 0, .708, { ic: .06 }],
-    0x398: [.715, .022, .778, { ic: .026 }],
-    0x399: [.694, 0, .278, { ic: .06 }],
-    0x39A: [.694, 0, .694, { ic: .091 }],
-    0x39B: [.694, 0, .611],
-    0x39C: [.694, 0, .875, { ic: .054 }],
-    0x39D: [.694, 0, .708, { ic: .058 }],
-    0x39E: [.688, 0, .667, { ic: .098 }],
-    0x39F: [.716, .022, .736, { ic: .027 }],
-    0x3A0: [.691, 0, .708, { ic: .06 }],
-    0x3A1: [.694, 0, .639, { ic: .051 }],
-    0x3A3: [.694, 0, .722, { ic: .091 }],
-    0x3A4: [.688, 0, .681, { ic: .109 }],
-    0x3A5: [.716, 0, .778, { ic: .065 }],
-    0x3A6: [.694, 0, .722, { ic: .021 }],
-    0x3A7: [.694, 0, .667, { ic: .091 }],
-    0x3A8: [.694, 0, .778, { ic: .076 }],
-    0x3A9: [.716, 0, .722, { ic: .047 }],
-    0x2013: [.312, -0.236, .5, { ic: .065 }],
-    0x2014: [.312, -0.236, 1, { ic: .065 }],
-    0x2015: [.312, -0.236, 1, { ic: .065 }],
-    0x2017: [-0.038, .114, .5, { ic: .065 }],
-    0x2018: [.694, -0.471, .278, { ic: .058 }],
-    0x2019: [.694, -0.471, .278, { ic: .057 }],
-    0x201C: [.694, -0.471, .5, { ic: .114 }],
-    0x201D: [.694, -0.471, .5],
-    0x2044: [.75, .25, .5, { ic: .1 }],
-    0x2206: [.694, 0, .833],
-};
-//# sourceMappingURL=sans-serif-italic.js.map
-
-/***/ }),
-
-/***/ 83366:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.sansSerif = void 0;
-exports.sansSerif = {
-    0x21: [.694, 0, .319],
-    0x22: [.694, -0.471, .5],
-    0x23: [.694, .194, .833],
-    0x24: [.75, .056, .5],
-    0x25: [.75, .056, .833],
-    0x26: [.716, .022, .758],
-    0x27: [.694, -0.471, .278],
-    0x28: [.75, .25, .389],
-    0x29: [.75, .25, .389],
-    0x2A: [.75, -0.306, .5],
-    0x2B: [.583, .082, .778],
-    0x2C: [.098, .125, .278],
-    0x2D: [.259, -0.186, .333],
-    0x2E: [.098, 0, .278],
-    0x2F: [.75, .25, .5],
-    0x3A: [.444, 0, .278],
-    0x3B: [.444, .125, .278],
-    0x3D: [.37, -0.13, .778],
-    0x3F: [.704, 0, .472],
-    0x40: [.704, .011, .667],
-    0x5B: [.75, .25, .289],
-    0x5D: [.75, .25, .289],
-    0x5E: [.694, -0.527, .5],
-    0x5F: [-0.038, .114, .5],
-    0x7E: [.327, -0.193, .5],
-    0x131: [.444, 0, .239],
-    0x237: [.444, .205, .267],
-    0x300: [.694, -0.527, 0],
-    0x301: [.694, -0.527, 0],
-    0x302: [.694, -0.527, 0],
-    0x303: [.677, -0.543, 0],
-    0x304: [.631, -0.552, 0],
-    0x306: [.694, -0.508, 0],
-    0x307: [.68, -0.576, 0],
-    0x308: [.68, -0.582, 0],
-    0x30A: [.694, -0.527, 0],
-    0x30B: [.694, -0.527, 0],
-    0x30C: [.654, -0.487, 0],
-    0x391: [.694, 0, .667],
-    0x392: [.694, 0, .667],
-    0x393: [.691, 0, .542],
-    0x394: [.694, 0, .833],
-    0x395: [.691, 0, .597],
-    0x396: [.694, 0, .611],
-    0x397: [.694, 0, .708],
-    0x398: [.716, .021, .778],
-    0x399: [.694, 0, .278],
-    0x39A: [.694, 0, .694],
-    0x39B: [.694, 0, .611],
-    0x39C: [.694, 0, .875],
-    0x39D: [.694, 0, .708],
-    0x39E: [.688, 0, .667],
-    0x39F: [.715, .022, .736],
-    0x3A0: [.691, 0, .708],
-    0x3A1: [.694, 0, .639],
-    0x3A3: [.694, 0, .722],
-    0x3A4: [.688, 0, .681],
-    0x3A5: [.716, 0, .778],
-    0x3A6: [.694, 0, .722],
-    0x3A7: [.694, 0, .667],
-    0x3A8: [.694, 0, .778],
-    0x3A9: [.716, 0, .722],
-    0x2013: [.312, -0.236, .5],
-    0x2014: [.312, -0.236, 1],
-    0x2015: [.312, -0.236, 1],
-    0x2017: [-0.038, .114, .5],
-    0x2018: [.694, -0.471, .278],
-    0x2019: [.694, -0.471, .278],
-    0x201C: [.694, -0.471, .5],
-    0x201D: [.694, -0.471, .5],
-    0x2044: [.75, .25, .5],
-    0x2206: [.694, 0, .833],
-};
-//# sourceMappingURL=sans-serif.js.map
-
-/***/ }),
-
-/***/ 21616:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.scriptBold = void 0;
-exports.scriptBold = {};
-//# sourceMappingURL=script-bold.js.map
-
-/***/ }),
-
-/***/ 24062:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.script = void 0;
-exports.script = {};
-//# sourceMappingURL=script.js.map
-
-/***/ }),
-
-/***/ 22578:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.smallop = void 0;
-exports.smallop = {
-    0x28: [.85, .349, .458],
-    0x29: [.85, .349, .458],
-    0x2F: [.85, .349, .578],
-    0x5B: [.85, .349, .417],
-    0x5C: [.85, .349, .578],
-    0x5D: [.85, .349, .417],
-    0x7B: [.85, .349, .583],
-    0x7D: [.85, .349, .583],
-    0x2C6: [.744, -0.551, .556],
-    0x2DC: [.722, -0.597, .556],
-    0x302: [.744, -0.551, 0],
-    0x303: [.722, -0.597, 0],
-    0x2016: [.602, 0, .778],
-    0x2044: [.85, .349, .578],
-    0x2191: [.6, 0, .667],
-    0x2193: [.6, 0, .667],
-    0x21D1: [.599, 0, .778],
-    0x21D3: [.6, 0, .778],
-    0x220F: [.75, .25, .944],
-    0x2210: [.75, .25, .944],
-    0x2211: [.75, .25, 1.056],
-    0x221A: [.85, .35, 1, { ic: .02 }],
-    0x2223: [.627, .015, .333],
-    0x2225: [.627, .015, .556],
-    0x222B: [.805, .306, .472, { ic: .138 }],
-    0x222C: [.805, .306, .819, { ic: .138 }],
-    0x222D: [.805, .306, 1.166, { ic: .138 }],
-    0x222E: [.805, .306, .472, { ic: .138 }],
-    0x22C0: [.75, .249, .833],
-    0x22C1: [.75, .249, .833],
-    0x22C2: [.75, .249, .833],
-    0x22C3: [.75, .249, .833],
-    0x2308: [.85, .349, .472],
-    0x2309: [.85, .349, .472],
-    0x230A: [.85, .349, .472],
-    0x230B: [.85, .349, .472],
-    0x2329: [.85, .35, .472],
-    0x232A: [.85, .35, .472],
-    0x23D0: [.602, 0, .667],
-    0x2758: [.627, .015, .333],
-    0x27E8: [.85, .35, .472],
-    0x27E9: [.85, .35, .472],
-    0x2A00: [.75, .25, 1.111],
-    0x2A01: [.75, .25, 1.111],
-    0x2A02: [.75, .25, 1.111],
-    0x2A04: [.75, .249, .833],
-    0x2A06: [.75, .249, .833],
-    0x2A0C: [.805, .306, 1.638, { ic: .138 }],
-    0x3008: [.85, .35, .472],
-    0x3009: [.85, .35, .472],
-};
-//# sourceMappingURL=smallop.js.map
-
-/***/ }),
-
-/***/ 70286:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texCalligraphicBold = void 0;
-exports.texCalligraphicBold = {
-    0x41: [.751, .049, .921, { ic: .068, sk: .224 }],
-    0x42: [.705, .017, .748, { sk: .16 }],
-    0x43: [.703, .02, .613, { sk: .16 }],
-    0x44: [.686, 0, .892, { sk: .0958 }],
-    0x45: [.703, .016, .607, { ic: .02, sk: .128 }],
-    0x46: [.686, .03, .814, { ic: .116, sk: .128 }],
-    0x47: [.703, .113, .682, { sk: .128 }],
-    0x48: [.686, .048, .987, { sk: .128 }],
-    0x49: [.686, 0, .642, { ic: .104, sk: .0319 }],
-    0x4A: [.686, .114, .779, { ic: .158, sk: .192 }],
-    0x4B: [.703, .017, .871, { sk: .0639 }],
-    0x4C: [.703, .017, .788, { sk: .16 }],
-    0x4D: [.703, .049, 1.378, { sk: .16 }],
-    0x4E: [.84, .049, .937, { ic: .168, sk: .0958 }],
-    0x4F: [.703, .017, .906, { sk: .128 }],
-    0x50: [.686, .067, .81, { ic: .036, sk: .0958 }],
-    0x51: [.703, .146, .939, { sk: .128 }],
-    0x52: [.686, .017, .99, { sk: .0958 }],
-    0x53: [.703, .016, .696, { ic: .025, sk: .16 }],
-    0x54: [.72, .069, .644, { ic: .303, sk: .0319 }],
-    0x55: [.686, .024, .715, { ic: .056, sk: .0958 }],
-    0x56: [.686, .077, .737, { ic: .037, sk: .0319 }],
-    0x57: [.686, .077, 1.169, { ic: .037, sk: .0958 }],
-    0x58: [.686, 0, .817, { ic: .089, sk: .16 }],
-    0x59: [.686, .164, .759, { ic: .038, sk: .0958 }],
-    0x5A: [.686, 0, .818, { ic: .035, sk: .16 }],
-    0x131: [.452, .008, .394, { sk: .0319 }],
-    0x237: [.451, .201, .439, { sk: .0958 }],
-};
-//# sourceMappingURL=tex-calligraphic-bold.js.map
-
-/***/ }),
-
-/***/ 57552:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texCalligraphic = void 0;
-exports.texCalligraphic = {
-    0x41: [.728, .05, .798, { ic: .021, sk: .194 }],
-    0x42: [.705, .022, .657, { sk: .139 }],
-    0x43: [.705, .025, .527, { sk: .139 }],
-    0x44: [.683, 0, .771, { sk: .0833 }],
-    0x45: [.705, .022, .528, { ic: .036, sk: .111 }],
-    0x46: [.683, .032, .719, { ic: .11, sk: .111 }],
-    0x47: [.704, .119, .595, { sk: .111 }],
-    0x48: [.683, .048, .845, { sk: .111 }],
-    0x49: [.683, 0, .545, { ic: .097, sk: .0278 }],
-    0x4A: [.683, .119, .678, { ic: .161, sk: .167 }],
-    0x4B: [.705, .022, .762, { sk: .0556 }],
-    0x4C: [.705, .022, .69, { sk: .139 }],
-    0x4D: [.705, .05, 1.201, { sk: .139 }],
-    0x4E: [.789, .05, .82, { ic: .159, sk: .0833 }],
-    0x4F: [.705, .022, .796, { sk: .111 }],
-    0x50: [.683, .057, .696, { ic: .037, sk: .0833 }],
-    0x51: [.705, .131, .817, { sk: .111 }],
-    0x52: [.682, .022, .848, { sk: .0833 }],
-    0x53: [.705, .022, .606, { ic: .036, sk: .139 }],
-    0x54: [.717, .068, .545, { ic: .288, sk: .0278 }],
-    0x55: [.683, .028, .626, { ic: .061, sk: .0833 }],
-    0x56: [.683, .052, .613, { ic: .045, sk: .0278 }],
-    0x57: [.683, .053, .988, { ic: .046, sk: .0833 }],
-    0x58: [.683, 0, .713, { ic: .094, sk: .139 }],
-    0x59: [.683, .143, .668, { ic: .046, sk: .0833 }],
-    0x5A: [.683, 0, .725, { ic: .042, sk: .139 }],
-};
-//# sourceMappingURL=tex-calligraphic.js.map
-
-/***/ }),
-
-/***/ 24398:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texMathit = void 0;
-exports.texMathit = {
-    0x41: [.716, 0, .743],
-    0x42: [.683, 0, .704],
-    0x43: [.705, .021, .716],
-    0x44: [.683, 0, .755],
-    0x45: [.68, 0, .678],
-    0x46: [.68, 0, .653],
-    0x47: [.705, .022, .774],
-    0x48: [.683, 0, .743],
-    0x49: [.683, 0, .386],
-    0x4A: [.683, .021, .525],
-    0x4B: [.683, 0, .769],
-    0x4C: [.683, 0, .627],
-    0x4D: [.683, 0, .897],
-    0x4E: [.683, 0, .743],
-    0x4F: [.704, .022, .767],
-    0x50: [.683, 0, .678],
-    0x51: [.704, .194, .767],
-    0x52: [.683, .022, .729],
-    0x53: [.705, .022, .562],
-    0x54: [.677, 0, .716],
-    0x55: [.683, .022, .743],
-    0x56: [.683, .022, .743],
-    0x57: [.683, .022, .999],
-    0x58: [.683, 0, .743],
-    0x59: [.683, 0, .743],
-    0x5A: [.683, 0, .613],
-    0x61: [.442, .011, .511],
-    0x62: [.694, .011, .46],
-    0x63: [.441, .01, .46],
-    0x64: [.694, .011, .511],
-    0x65: [.442, .01, .46],
-    0x66: [.705, .204, .307],
-    0x67: [.442, .205, .46],
-    0x68: [.694, .011, .511],
-    0x69: [.656, .01, .307],
-    0x6A: [.656, .204, .307],
-    0x6B: [.694, .011, .46],
-    0x6C: [.694, .011, .256],
-    0x6D: [.442, .011, .818],
-    0x6E: [.442, .011, .562],
-    0x6F: [.442, .011, .511],
-    0x70: [.442, .194, .511],
-    0x71: [.442, .194, .46],
-    0x72: [.442, .011, .422],
-    0x73: [.442, .011, .409],
-    0x74: [.626, .011, .332],
-    0x75: [.441, .011, .537],
-    0x76: [.443, .01, .46],
-    0x77: [.443, .011, .664],
-    0x78: [.442, .011, .464],
-    0x79: [.441, .205, .486],
-    0x7A: [.442, .011, .409],
-};
-//# sourceMappingURL=tex-mathit.js.map
-
-/***/ }),
-
-/***/ 20628:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texOldstyleBold = void 0;
-exports.texOldstyleBold = {
-    0x30: [.46, .017, .575],
-    0x31: [.461, 0, .575],
-    0x32: [.46, 0, .575],
-    0x33: [.461, .211, .575],
-    0x34: [.469, .194, .575],
-    0x35: [.461, .211, .575],
-    0x36: [.66, .017, .575],
-    0x37: [.476, .211, .575],
-    0x38: [.661, .017, .575],
-    0x39: [.461, .21, .575],
-    0x41: [.751, .049, .921, { ic: .068, sk: .224 }],
-    0x42: [.705, .017, .748, { sk: .16 }],
-    0x43: [.703, .02, .613, { sk: .16 }],
-    0x44: [.686, 0, .892, { sk: .0958 }],
-    0x45: [.703, .016, .607, { ic: .02, sk: .128 }],
-    0x46: [.686, .03, .814, { ic: .116, sk: .128 }],
-    0x47: [.703, .113, .682, { sk: .128 }],
-    0x48: [.686, .048, .987, { sk: .128 }],
-    0x49: [.686, 0, .642, { ic: .104, sk: .0319 }],
-    0x4A: [.686, .114, .779, { ic: .158, sk: .192 }],
-    0x4B: [.703, .017, .871, { sk: .0639 }],
-    0x4C: [.703, .017, .788, { sk: .16 }],
-    0x4D: [.703, .049, 1.378, { sk: .16 }],
-    0x4E: [.84, .049, .937, { ic: .168, sk: .0958 }],
-    0x4F: [.703, .017, .906, { sk: .128 }],
-    0x50: [.686, .067, .81, { ic: .036, sk: .0958 }],
-    0x51: [.703, .146, .939, { sk: .128 }],
-    0x52: [.686, .017, .99, { sk: .0958 }],
-    0x53: [.703, .016, .696, { ic: .025, sk: .16 }],
-    0x54: [.72, .069, .644, { ic: .303, sk: .0319 }],
-    0x55: [.686, .024, .715, { ic: .056, sk: .0958 }],
-    0x56: [.686, .077, .737, { ic: .037, sk: .0319 }],
-    0x57: [.686, .077, 1.169, { ic: .037, sk: .0958 }],
-    0x58: [.686, 0, .817, { ic: .089, sk: .16 }],
-    0x59: [.686, .164, .759, { ic: .038, sk: .0958 }],
-    0x5A: [.686, 0, .818, { ic: .035, sk: .16 }],
-};
-//# sourceMappingURL=tex-oldstyle-bold.js.map
-
-/***/ }),
-
-/***/ 41855:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texOldstyle = void 0;
-exports.texOldstyle = {
-    0x30: [.452, .022, .5],
-    0x31: [.453, 0, .5],
-    0x32: [.453, 0, .5],
-    0x33: [.452, .216, .5],
-    0x34: [.464, .194, .5],
-    0x35: [.453, .216, .5],
-    0x36: [.665, .022, .5],
-    0x37: [.463, .216, .5],
-    0x38: [.666, .021, .5],
-    0x39: [.453, .216, .5],
-    0x41: [.728, .05, .798, { ic: .021, sk: .194 }],
-    0x42: [.705, .022, .657, { sk: .139 }],
-    0x43: [.705, .025, .527, { sk: .139 }],
-    0x44: [.683, 0, .771, { sk: .0833 }],
-    0x45: [.705, .022, .528, { ic: .036, sk: .111 }],
-    0x46: [.683, .032, .719, { ic: .11, sk: .111 }],
-    0x47: [.704, .119, .595, { sk: .111 }],
-    0x48: [.683, .048, .845, { sk: .111 }],
-    0x49: [.683, 0, .545, { ic: .097, sk: .0278 }],
-    0x4A: [.683, .119, .678, { ic: .161, sk: .167 }],
-    0x4B: [.705, .022, .762, { sk: .0556 }],
-    0x4C: [.705, .022, .69, { sk: .139 }],
-    0x4D: [.705, .05, 1.201, { sk: .139 }],
-    0x4E: [.789, .05, .82, { ic: .159, sk: .0833 }],
-    0x4F: [.705, .022, .796, { sk: .111 }],
-    0x50: [.683, .057, .696, { ic: .037, sk: .0833 }],
-    0x51: [.705, .131, .817, { sk: .111 }],
-    0x52: [.682, .022, .848, { sk: .0833 }],
-    0x53: [.705, .022, .606, { ic: .036, sk: .139 }],
-    0x54: [.717, .068, .545, { ic: .288, sk: .0278 }],
-    0x55: [.683, .028, .626, { ic: .061, sk: .0833 }],
-    0x56: [.683, .052, .613, { ic: .045, sk: .0278 }],
-    0x57: [.683, .053, .988, { ic: .046, sk: .0833 }],
-    0x58: [.683, 0, .713, { ic: .094, sk: .139 }],
-    0x59: [.683, .143, .668, { ic: .046, sk: .0833 }],
-    0x5A: [.683, 0, .725, { ic: .042, sk: .139 }],
-};
-//# sourceMappingURL=tex-oldstyle.js.map
-
-/***/ }),
-
-/***/ 75431:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texSize3 = void 0;
-exports.texSize3 = {
-    0x28: [1.45, .949, .736],
-    0x29: [1.45, .949, .736],
-    0x2F: [1.45, .949, 1.044],
-    0x5B: [1.45, .949, .528],
-    0x5C: [1.45, .949, 1.044],
-    0x5D: [1.45, .949, .528],
-    0x7B: [1.45, .949, .75],
-    0x7D: [1.45, .949, .75],
-    0x2C6: [.772, -0.564, 1.444],
-    0x2DC: [.749, -0.61, 1.444],
-    0x302: [.772, -0.564, 0],
-    0x303: [.749, -0.61, 0],
-    0x2044: [1.45, .949, 1.044],
-    0x221A: [1.45, .95, 1, { ic: .02 }],
-    0x2308: [1.45, .949, .583],
-    0x2309: [1.45, .949, .583],
-    0x230A: [1.45, .949, .583],
-    0x230B: [1.45, .949, .583],
-    0x2329: [1.45, .95, .75],
-    0x232A: [1.45, .949, .75],
-    0x27E8: [1.45, .95, .75],
-    0x27E9: [1.45, .949, .75],
-    0x3008: [1.45, .95, .75],
-    0x3009: [1.45, .949, .75],
-};
-//# sourceMappingURL=tex-size3.js.map
-
-/***/ }),
-
-/***/ 98278:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texSize4 = void 0;
-exports.texSize4 = {
-    0x28: [1.75, 1.249, .792],
-    0x29: [1.75, 1.249, .792],
-    0x2F: [1.75, 1.249, 1.278],
-    0x5B: [1.75, 1.249, .583],
-    0x5C: [1.75, 1.249, 1.278],
-    0x5D: [1.75, 1.249, .583],
-    0x7B: [1.75, 1.249, .806],
-    0x7D: [1.75, 1.249, .806],
-    0x2C6: [.845, -0.561, 1.889, { ic: .013 }],
-    0x2DC: [.823, -0.583, 1.889],
-    0x302: [.845, -0.561, 0, { ic: .013 }],
-    0x303: [.823, -0.583, 0],
-    0x2044: [1.75, 1.249, 1.278],
-    0x221A: [1.75, 1.25, 1, { ic: .02 }],
-    0x2308: [1.75, 1.249, .639],
-    0x2309: [1.75, 1.249, .639],
-    0x230A: [1.75, 1.249, .639],
-    0x230B: [1.75, 1.249, .639],
-    0x2329: [1.75, 1.248, .806],
-    0x232A: [1.75, 1.248, .806],
-    0x239B: [1.154, .655, .875],
-    0x239C: [.61, .01, .875],
-    0x239D: [1.165, .644, .875],
-    0x239E: [1.154, .655, .875],
-    0x239F: [.61, .01, .875],
-    0x23A0: [1.165, .644, .875],
-    0x23A1: [1.154, .645, .667],
-    0x23A2: [.602, 0, .667],
-    0x23A3: [1.155, .644, .667],
-    0x23A4: [1.154, .645, .667],
-    0x23A5: [.602, 0, .667],
-    0x23A6: [1.155, .644, .667],
-    0x23A7: [.899, .01, .889],
-    0x23A8: [1.16, .66, .889],
-    0x23A9: [.01, .899, .889],
-    0x23AA: [.29, .015, .889],
-    0x23AB: [.899, .01, .889],
-    0x23AC: [1.16, .66, .889],
-    0x23AD: [.01, .899, .889],
-    0x23B7: [.935, .885, 1.056],
-    0x27E8: [1.75, 1.248, .806],
-    0x27E9: [1.75, 1.248, .806],
-    0x3008: [1.75, 1.248, .806],
-    0x3009: [1.75, 1.248, .806],
-    0xE000: [.625, .014, 1.056],
-    0xE001: [.605, .014, 1.056, { ic: .02 }],
-    0xE150: [.12, .213, .45, { ic: .01 }],
-    0xE151: [.12, .213, .45, { ic: .024 }],
-    0xE152: [.333, 0, .45, { ic: .01 }],
-    0xE153: [.333, 0, .45, { ic: .024 }],
-    0xE154: [.32, .2, .4, { ic: .01 }],
-    0xE155: [.333, 0, .9, { ic: .01 }],
-    0xE156: [.12, .213, .9, { ic: .01 }],
-};
-//# sourceMappingURL=tex-size4.js.map
-
-/***/ }),
-
-/***/ 90456:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.texVariant = void 0;
-exports.texVariant = {
-    0x2C6: [.845, -0.561, 2.333, { ic: .013 }],
-    0x2DC: [.899, -0.628, 2.333],
-    0x302: [.845, -0.561, 0, { ic: .013 }],
-    0x303: [.899, -0.628, 0],
-    0x3F0: [.434, .006, .667, { ic: .067 }],
-    0x210F: [.695, .013, .54, { ic: .022 }],
-    0x2190: [.437, -0.064, .5],
-    0x2192: [.437, -0.064, .5],
-    0x21CC: [.514, .014, 1],
-    0x2204: [.86, .166, .556],
-    0x2205: [.587, 0, .778],
-    0x2212: [.27, -0.23, .5],
-    0x2216: [.43, .023, .778],
-    0x221D: [.472, -0.028, .778],
-    0x2223: [.43, .023, .222],
-    0x2224: [.43, .023, .222, { ic: .018 }],
-    0x2225: [.431, .023, .389],
-    0x2226: [.431, .024, .389, { ic: .018 }],
-    0x223C: [.365, -0.132, .778],
-    0x2248: [.481, -0.05, .778],
-    0x2268: [.752, .284, .778],
-    0x2269: [.752, .284, .778],
-    0x2270: [.919, .421, .778],
-    0x2271: [.919, .421, .778],
-    0x2288: [.828, .33, .778],
-    0x2289: [.828, .33, .778],
-    0x228A: [.634, .255, .778],
-    0x228B: [.634, .254, .778],
-    0x22A8: [.694, 0, .611],
-    0x22C5: [.189, 0, .278],
-    0x2322: [.378, -0.122, .778],
-    0x2323: [.378, -0.143, .778],
-    0x25B3: [.575, .02, .722],
-    0x25BD: [.576, .019, .722],
-    0x2A87: [.801, .303, .778],
-    0x2A88: [.801, .303, .778],
-    0x2ACB: [.752, .332, .778],
-    0x2ACC: [.752, .333, .778],
-};
-//# sourceMappingURL=tex-variant.js.map
-
-/***/ }),
-
-/***/ 86810:
-/***/ ((__unused_webpack_module, exports) => {
-
-
-Object.defineProperty(exports, "__esModule", ({ value: true }));
-exports.px = exports.emRounded = exports.em = exports.percent = exports.length2em = exports.MATHSPACE = exports.RELUNITS = exports.UNITS = exports.BIGDIMEN = void 0;
-exports.BIGDIMEN = 1000000;
-exports.UNITS = {
-    px: 1,
-    'in': 96,
-    cm: 96 / 2.54,
-    mm: 96 / 25.4
-};
-exports.RELUNITS = {
-    em: 1,
-    ex: .431,
-    pt: 1 / 10,
-    pc: 12 / 10,
-    mu: 1 / 18
-};
-exports.MATHSPACE = {
-    veryverythinmathspace: 1 / 18,
-    verythinmathspace: 2 / 18,
-    thinmathspace: 3 / 18,
-    mediummathspace: 4 / 18,
-    thickmathspace: 5 / 18,
-    verythickmathspace: 6 / 18,
-    veryverythickmathspace: 7 / 18,
-    negativeveryverythinmathspace: -1 / 18,
-    negativeverythinmathspace: -2 / 18,
-    negativethinmathspace: -3 / 18,
-    negativemediummathspace: -4 / 18,
-    negativethickmathspace: -5 / 18,
-    negativeverythickmathspace: -6 / 18,
-    negativeveryverythickmathspace: -7 / 18,
-    thin: .04,
-    medium: .06,
-    thick: .1,
-    normal: 1,
-    big: 2,
-    small: 1 / Math.sqrt(2),
-    infinity: exports.BIGDIMEN
-};
-function length2em(length, size, scale, em) {
-    if (size === void 0) { size = 0; }
-    if (scale === void 0) { scale = 1; }
-    if (em === void 0) { em = 16; }
-    if (typeof length !== 'string') {
-        length = String(length);
+          })(Base)),
+          (_a.NAME = 'TeX'),
+          (_a.defaultVariants = __spreadArray(
+            __spreadArray([], __read(Base.defaultVariants), false),
+            [
+              ['-smallop', 'normal'],
+              ['-largeop', 'normal'],
+              ['-size3', 'normal'],
+              ['-size4', 'normal'],
+              ['-tex-calligraphic', 'italic'],
+              ['-tex-bold-calligraphic', 'bold-italic'],
+              ['-tex-oldstyle', 'normal'],
+              ['-tex-bold-oldstyle', 'bold'],
+              ['-tex-mathit', 'italic'],
+              ['-tex-variant', 'normal']
+            ],
+            false
+          )),
+          (_a.defaultCssFonts = __assign(__assign({}, Base.defaultCssFonts), {
+            '-smallop': ['serif', false, false],
+            '-largeop': ['serif', false, false],
+            '-size3': ['serif', false, false],
+            '-size4': ['serif', false, false],
+            '-tex-calligraphic': ['cursive', true, false],
+            '-tex-bold-calligraphic': ['cursive', true, true],
+            '-tex-oldstyle': ['serif', false, false],
+            '-tex-bold-oldstyle': ['serif', false, true],
+            '-tex-mathit': ['serif', true, false]
+          })),
+          (_a.defaultSizeVariants = [
+            'normal',
+            '-smallop',
+            '-largeop',
+            '-size3',
+            '-size4',
+            '-tex-variant'
+          ]),
+          (_a.defaultStretchVariants = ['-size4']),
+          _a
+        );
+      }
+      exports.CommonTeXFontMixin = CommonTeXFontMixin;
+      //# sourceMappingURL=tex.js.map
+
+      /***/
+    },
+
+    /***/ 51091: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.boldItalic = void 0;
+      exports.boldItalic = {
+        0x2f: [0.711, 0.21, 0.894],
+        0x131: [0.452, 0.008, 0.394, { sk: 0.0319 }],
+        0x237: [0.451, 0.201, 0.439, { sk: 0.0958 }],
+        0x2044: [0.711, 0.21, 0.894],
+        0x2206: [0.711, 0, 0.958, { sk: 0.192 }],
+        0x29f8: [0.711, 0.21, 0.894]
+      };
+      //# sourceMappingURL=bold-italic.js.map
+
+      /***/
+    },
+
+    /***/ 95746: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.bold = void 0;
+      exports.bold = {
+        0x21: [0.705, 0, 0.35],
+        0x22: [0.694, -0.329, 0.603],
+        0x23: [0.694, 0.193, 0.958],
+        0x24: [0.75, 0.056, 0.575],
+        0x25: [0.75, 0.056, 0.958],
+        0x26: [0.705, 0.011, 0.894],
+        0x27: [0.694, -0.329, 0.319],
+        0x28: [0.75, 0.249, 0.447],
+        0x29: [0.75, 0.249, 0.447],
+        0x2a: [0.75, -0.306, 0.575],
+        0x2b: [0.633, 0.131, 0.894],
+        0x2c: [0.171, 0.194, 0.319],
+        0x2d: [0.278, -0.166, 0.383],
+        0x2e: [0.171, 0, 0.319],
+        0x2f: [0.75, 0.25, 0.575],
+        0x3a: [0.444, 0, 0.319],
+        0x3b: [0.444, 0.194, 0.319],
+        0x3c: [0.587, 0.085, 0.894],
+        0x3d: [0.393, -0.109, 0.894],
+        0x3e: [0.587, 0.085, 0.894],
+        0x3f: [0.7, 0, 0.543],
+        0x40: [0.699, 0.006, 0.894],
+        0x5b: [0.75, 0.25, 0.319],
+        0x5c: [0.75, 0.25, 0.575],
+        0x5d: [0.75, 0.25, 0.319],
+        0x5e: [0.694, -0.52, 0.575],
+        0x5f: [-0.01, 0.061, 0.575],
+        0x60: [0.706, -0.503, 0.575],
+        0x7b: [0.75, 0.25, 0.575],
+        0x7c: [0.75, 0.249, 0.319],
+        0x7d: [0.75, 0.25, 0.575],
+        0x7e: [0.344, -0.202, 0.575],
+        0xa8: [0.695, -0.535, 0.575],
+        0xac: [0.371, -0.061, 0.767],
+        0xaf: [0.607, -0.54, 0.575],
+        0xb0: [0.702, -0.536, 0.575],
+        0xb1: [0.728, 0.035, 0.894],
+        0xb4: [0.706, -0.503, 0.575],
+        0xb7: [0.336, -0.166, 0.319],
+        0xd7: [0.53, 0.028, 0.894],
+        0xf7: [0.597, 0.096, 0.894],
+        0x131: [0.442, 0, 0.278, { sk: 0.0278 }],
+        0x237: [0.442, 0.205, 0.306, { sk: 0.0833 }],
+        0x2b9: [0.563, -0.033, 0.344],
+        0x2c6: [0.694, -0.52, 0.575],
+        0x2c7: [0.66, -0.515, 0.575],
+        0x2c9: [0.607, -0.54, 0.575],
+        0x2ca: [0.706, -0.503, 0.575],
+        0x2cb: [0.706, -0.503, 0.575],
+        0x2d8: [0.694, -0.5, 0.575],
+        0x2d9: [0.695, -0.525, 0.575],
+        0x2da: [0.702, -0.536, 0.575],
+        0x2dc: [0.694, -0.552, 0.575],
+        0x300: [0.706, -0.503, 0],
+        0x301: [0.706, -0.503, 0],
+        0x302: [0.694, -0.52, 0],
+        0x303: [0.694, -0.552, 0],
+        0x304: [0.607, -0.54, 0],
+        0x306: [0.694, -0.5, 0],
+        0x307: [0.695, -0.525, 0],
+        0x308: [0.695, -0.535, 0],
+        0x30a: [0.702, -0.536, 0],
+        0x30b: [0.714, -0.511, 0],
+        0x30c: [0.66, -0.515, 0],
+        0x338: [0.711, 0.21, 0],
+        0x2002: [0, 0, 0.5],
+        0x2003: [0, 0, 0.999],
+        0x2004: [0, 0, 0.333],
+        0x2005: [0, 0, 0.25],
+        0x2006: [0, 0, 0.167],
+        0x2009: [0, 0, 0.167],
+        0x200a: [0, 0, 0.083],
+        0x2013: [0.3, -0.249, 0.575],
+        0x2014: [0.3, -0.249, 1.15],
+        0x2015: [0.3, -0.249, 1.15],
+        0x2016: [0.75, 0.248, 0.575],
+        0x2017: [-0.01, 0.061, 0.575],
+        0x2018: [0.694, -0.329, 0.319],
+        0x2019: [0.694, -0.329, 0.319],
+        0x201c: [0.694, -0.329, 0.603],
+        0x201d: [0.694, -0.329, 0.603],
+        0x2020: [0.702, 0.211, 0.511],
+        0x2021: [0.702, 0.202, 0.511],
+        0x2022: [0.474, -0.028, 0.575],
+        0x2026: [0.171, 0, 1.295],
+        0x2032: [0.563, -0.033, 0.344],
+        0x2033: [0.563, 0, 0.688],
+        0x2034: [0.563, 0, 1.032],
+        0x203e: [0.607, -0.54, 0.575],
+        0x2044: [0.75, 0.25, 0.575],
+        0x2057: [0.563, 0, 1.376],
+        0x20d7: [0.723, -0.513, 0.575],
+        0x210f: [0.694, 0.008, 0.668, { sk: -0.0319 }],
+        0x2113: [0.702, 0.019, 0.474, { sk: 0.128 }],
+        0x2118: [0.461, 0.21, 0.74],
+        0x2135: [0.694, 0, 0.703],
+        0x2190: [0.518, 0.017, 1.15],
+        0x2191: [0.694, 0.193, 0.575],
+        0x2192: [0.518, 0.017, 1.15],
+        0x2193: [0.694, 0.194, 0.575],
+        0x2194: [0.518, 0.017, 1.15],
+        0x2195: [0.767, 0.267, 0.575],
+        0x2196: [0.724, 0.194, 1.15],
+        0x2197: [0.724, 0.193, 1.15],
+        0x2198: [0.694, 0.224, 1.15],
+        0x2199: [0.694, 0.224, 1.15],
+        0x219a: [0.711, 0.21, 1.15],
+        0x219b: [0.711, 0.21, 1.15],
+        0x21a6: [0.518, 0.017, 1.15],
+        0x21a9: [0.518, 0.017, 1.282],
+        0x21aa: [0.518, 0.017, 1.282],
+        0x21ae: [0.711, 0.21, 1.15],
+        0x21bc: [0.518, -0.22, 1.15],
+        0x21bd: [0.281, 0.017, 1.15],
+        0x21c0: [0.518, -0.22, 1.15],
+        0x21c1: [0.281, 0.017, 1.15],
+        0x21cc: [0.718, 0.017, 1.15],
+        0x21cd: [0.711, 0.21, 1.15],
+        0x21ce: [0.711, 0.21, 1.15],
+        0x21cf: [0.711, 0.21, 1.15],
+        0x21d0: [0.547, 0.046, 1.15],
+        0x21d1: [0.694, 0.193, 0.703],
+        0x21d2: [0.547, 0.046, 1.15],
+        0x21d3: [0.694, 0.194, 0.703],
+        0x21d4: [0.547, 0.046, 1.15],
+        0x21d5: [0.767, 0.267, 0.703],
+        0x2200: [0.694, 0.016, 0.639],
+        0x2203: [0.694, 0, 0.639],
+        0x2204: [0.711, 0.21, 0.639],
+        0x2205: [0.767, 0.073, 0.575],
+        0x2206: [0.698, 0, 0.958],
+        0x2208: [0.587, 0.086, 0.767],
+        0x2209: [0.711, 0.21, 0.767],
+        0x220b: [0.587, 0.086, 0.767],
+        0x220c: [0.711, 0.21, 0.767],
+        0x2212: [0.281, -0.221, 0.894],
+        0x2213: [0.537, 0.227, 0.894],
+        0x2215: [0.75, 0.25, 0.575],
+        0x2216: [0.75, 0.25, 0.575],
+        0x2217: [0.472, -0.028, 0.575],
+        0x2218: [0.474, -0.028, 0.575],
+        0x2219: [0.474, -0.028, 0.575],
+        0x221a: [0.82, 0.18, 0.958, { ic: 0.03 }],
+        0x221d: [0.451, 0.008, 0.894],
+        0x221e: [0.452, 0.008, 1.15],
+        0x2220: [0.714, 0, 0.722],
+        0x2223: [0.75, 0.249, 0.319],
+        0x2224: [0.75, 0.249, 0.319],
+        0x2225: [0.75, 0.248, 0.575],
+        0x2226: [0.75, 0.248, 0.575],
+        0x2227: [0.604, 0.017, 0.767],
+        0x2228: [0.604, 0.016, 0.767],
+        0x2229: [0.603, 0.016, 0.767],
+        0x222a: [0.604, 0.016, 0.767],
+        0x222b: [0.711, 0.211, 0.569, { ic: 0.063 }],
+        0x223c: [0.391, -0.109, 0.894],
+        0x2240: [0.583, 0.082, 0.319],
+        0x2241: [0.711, 0.21, 0.894],
+        0x2243: [0.502, 0, 0.894],
+        0x2244: [0.711, 0.21, 0.894],
+        0x2245: [0.638, 0.027, 0.894],
+        0x2247: [0.711, 0.21, 0.894],
+        0x2248: [0.524, -0.032, 0.894],
+        0x2249: [0.711, 0.21, 0.894],
+        0x224d: [0.533, 0.032, 0.894],
+        0x2250: [0.721, -0.109, 0.894],
+        0x2260: [0.711, 0.21, 0.894],
+        0x2261: [0.505, 0, 0.894],
+        0x2262: [0.711, 0.21, 0.894],
+        0x2264: [0.697, 0.199, 0.894],
+        0x2265: [0.697, 0.199, 0.894],
+        0x226a: [0.617, 0.116, 1.15],
+        0x226b: [0.618, 0.116, 1.15],
+        0x226d: [0.711, 0.21, 0.894],
+        0x226e: [0.711, 0.21, 0.894],
+        0x226f: [0.711, 0.21, 0.894],
+        0x2270: [0.711, 0.21, 0.894],
+        0x2271: [0.711, 0.21, 0.894],
+        0x227a: [0.585, 0.086, 0.894],
+        0x227b: [0.586, 0.086, 0.894],
+        0x2280: [0.711, 0.21, 0.894],
+        0x2281: [0.711, 0.21, 0.894],
+        0x2282: [0.587, 0.085, 0.894],
+        0x2283: [0.587, 0.086, 0.894],
+        0x2284: [0.711, 0.21, 0.894],
+        0x2285: [0.711, 0.21, 0.894],
+        0x2286: [0.697, 0.199, 0.894],
+        0x2287: [0.697, 0.199, 0.894],
+        0x2288: [0.711, 0.21, 0.894],
+        0x2289: [0.711, 0.21, 0.894],
+        0x228e: [0.604, 0.016, 0.767],
+        0x2291: [0.697, 0.199, 0.894],
+        0x2292: [0.697, 0.199, 0.894],
+        0x2293: [0.604, 0, 0.767],
+        0x2294: [0.604, 0, 0.767],
+        0x2295: [0.632, 0.132, 0.894],
+        0x2296: [0.632, 0.132, 0.894],
+        0x2297: [0.632, 0.132, 0.894],
+        0x2298: [0.632, 0.132, 0.894],
+        0x2299: [0.632, 0.132, 0.894],
+        0x22a2: [0.693, 0, 0.703],
+        0x22a3: [0.693, 0, 0.703],
+        0x22a4: [0.694, 0, 0.894],
+        0x22a5: [0.693, 0, 0.894],
+        0x22a8: [0.75, 0.249, 0.974],
+        0x22ac: [0.711, 0.21, 0.703],
+        0x22ad: [0.75, 0.249, 0.974],
+        0x22c4: [0.523, 0.021, 0.575],
+        0x22c5: [0.336, -0.166, 0.319],
+        0x22c6: [0.502, 0, 0.575],
+        0x22c8: [0.54, 0.039, 1],
+        0x22e2: [0.711, 0.21, 0.894],
+        0x22e3: [0.711, 0.21, 0.894],
+        0x22ee: [0.951, 0.029, 0.319],
+        0x22ef: [0.336, -0.166, 1.295],
+        0x22f1: [0.871, -0.101, 1.323],
+        0x2308: [0.75, 0.248, 0.511],
+        0x2309: [0.75, 0.248, 0.511],
+        0x230a: [0.749, 0.248, 0.511],
+        0x230b: [0.749, 0.248, 0.511],
+        0x2322: [0.405, -0.108, 1.15],
+        0x2323: [0.392, -0.126, 1.15],
+        0x2329: [0.75, 0.249, 0.447],
+        0x232a: [0.75, 0.249, 0.447],
+        0x25b3: [0.711, 0, 1.022],
+        0x25b5: [0.711, 0, 1.022],
+        0x25b9: [0.54, 0.039, 0.575],
+        0x25bd: [0.5, 0.21, 1.022],
+        0x25bf: [0.5, 0.21, 1.022],
+        0x25c3: [0.539, 0.038, 0.575],
+        0x25ef: [0.711, 0.211, 1.15],
+        0x2660: [0.719, 0.129, 0.894],
+        0x2661: [0.711, 0.024, 0.894],
+        0x2662: [0.719, 0.154, 0.894],
+        0x2663: [0.719, 0.129, 0.894],
+        0x266d: [0.75, 0.017, 0.447],
+        0x266e: [0.741, 0.223, 0.447],
+        0x266f: [0.724, 0.224, 0.447],
+        0x2758: [0.75, 0.249, 0.319],
+        0x27e8: [0.75, 0.249, 0.447],
+        0x27e9: [0.75, 0.249, 0.447],
+        0x27f5: [0.518, 0.017, 1.805],
+        0x27f6: [0.518, 0.017, 1.833],
+        0x27f7: [0.518, 0.017, 2.126],
+        0x27f8: [0.547, 0.046, 1.868],
+        0x27f9: [0.547, 0.046, 1.87],
+        0x27fa: [0.547, 0.046, 2.126],
+        0x27fc: [0.518, 0.017, 1.833],
+        0x29f8: [0.711, 0.21, 0.894],
+        0x2a2f: [0.53, 0.028, 0.894],
+        0x2a3f: [0.686, 0, 0.9],
+        0x2aaf: [0.696, 0.199, 0.894],
+        0x2ab0: [0.697, 0.199, 0.894],
+        0x3008: [0.75, 0.249, 0.447],
+        0x3009: [0.75, 0.249, 0.447]
+      };
+      //# sourceMappingURL=bold.js.map
+
+      /***/
+    },
+
+    /***/ 6987: /***/ (
+      __unused_webpack_module,
+      exports,
+      __webpack_require__
+    ) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.delimiters =
+        exports.VSIZES =
+        exports.HDW3 =
+        exports.HDW2 =
+        exports.HDW1 =
+          void 0;
+      var FontData_js_1 = __webpack_require__(30861);
+      exports.HDW1 = [0.75, 0.25, 0.875];
+      exports.HDW2 = [0.85, 0.349, 0.667];
+      exports.HDW3 = [0.583, 0.082, 0.5];
+      exports.VSIZES = [1, 1.2, 1.8, 2.4, 3];
+      var DELIM2F = { c: 0x2f, dir: FontData_js_1.V, sizes: exports.VSIZES };
+      var DELIMAF = {
+        c: 0xaf,
+        dir: FontData_js_1.H,
+        sizes: [0.5],
+        stretch: [0, 0xaf],
+        HDW: [0.59, -0.544, 0.5]
+      };
+      var DELIM2C6 = {
+        c: 0x2c6,
+        dir: FontData_js_1.H,
+        sizes: [0.5, 0.556, 1, 1.444, 1.889]
+      };
+      var DELIM2DC = {
+        c: 0x2dc,
+        dir: FontData_js_1.H,
+        sizes: [0.5, 0.556, 1, 1.444, 1.889]
+      };
+      var DELIM2013 = {
+        c: 0x2013,
+        dir: FontData_js_1.H,
+        sizes: [0.5],
+        stretch: [0, 0x2013],
+        HDW: [0.285, -0.248, 0.5]
+      };
+      var DELIM2190 = {
+        c: 0x2190,
+        dir: FontData_js_1.H,
+        sizes: [1],
+        stretch: [0x2190, 0x2212],
+        HDW: exports.HDW3
+      };
+      var DELIM2192 = {
+        c: 0x2192,
+        dir: FontData_js_1.H,
+        sizes: [1],
+        stretch: [0, 0x2212, 0x2192],
+        HDW: exports.HDW3
+      };
+      var DELIM2194 = {
+        c: 0x2194,
+        dir: FontData_js_1.H,
+        sizes: [1],
+        stretch: [0x2190, 0x2212, 0x2192],
+        HDW: exports.HDW3
+      };
+      var DELIM21A4 = {
+        c: 0x21a4,
+        dir: FontData_js_1.H,
+        stretch: [0x2190, 0x2212, 0x2223],
+        HDW: exports.HDW3,
+        min: 1.278
+      };
+      var DELIM21A6 = {
+        c: 0x21a6,
+        dir: FontData_js_1.H,
+        sizes: [1],
+        stretch: [0x2223, 0x2212, 0x2192],
+        HDW: exports.HDW3
+      };
+      var DELIM21D0 = {
+        c: 0x21d0,
+        dir: FontData_js_1.H,
+        sizes: [1],
+        stretch: [0x21d0, 0x3d],
+        HDW: exports.HDW3
+      };
+      var DELIM21D2 = {
+        c: 0x21d2,
+        dir: FontData_js_1.H,
+        sizes: [1],
+        stretch: [0, 0x3d, 0x21d2],
+        HDW: exports.HDW3
+      };
+      var DELIM21D4 = {
+        c: 0x21d4,
+        dir: FontData_js_1.H,
+        sizes: [1],
+        stretch: [0x21d0, 0x3d, 0x21d2],
+        HDW: exports.HDW3
+      };
+      var DELIM2212 = {
+        c: 0x2212,
+        dir: FontData_js_1.H,
+        sizes: [0.778],
+        stretch: [0, 0x2212],
+        HDW: exports.HDW3
+      };
+      var DELIM2223 = {
+        c: 0x2223,
+        dir: FontData_js_1.V,
+        sizes: [1],
+        stretch: [0, 0x2223],
+        HDW: [0.627, 0.015, 0.333]
+      };
+      var DELIM23DC = {
+        c: 0x23dc,
+        dir: FontData_js_1.H,
+        sizes: [0.778, 1],
+        schar: [0x2322, 0x2322],
+        variants: [5, 0],
+        stretch: [0xe150, 0xe154, 0xe151],
+        HDW: [0.32, 0.2, 0.5]
+      };
+      var DELIM23DD = {
+        c: 0x23dd,
+        dir: FontData_js_1.H,
+        sizes: [0.778, 1],
+        schar: [0x2323, 0x2323],
+        variants: [5, 0],
+        stretch: [0xe152, 0xe154, 0xe153],
+        HDW: [0.32, 0.2, 0.5]
+      };
+      var DELIM23DE = {
+        c: 0x23de,
+        dir: FontData_js_1.H,
+        stretch: [0xe150, 0xe154, 0xe151, 0xe155],
+        HDW: [0.32, 0.2, 0.5],
+        min: 1.8
+      };
+      var DELIM23DF = {
+        c: 0x23df,
+        dir: FontData_js_1.H,
+        stretch: [0xe152, 0xe154, 0xe153, 0xe156],
+        HDW: [0.32, 0.2, 0.5],
+        min: 1.8
+      };
+      var DELIM27E8 = {
+        c: 0x27e8,
+        dir: FontData_js_1.V,
+        sizes: exports.VSIZES
+      };
+      var DELIM27E9 = {
+        c: 0x27e9,
+        dir: FontData_js_1.V,
+        sizes: exports.VSIZES
+      };
+      var DELIM2906 = {
+        c: 0x2906,
+        dir: FontData_js_1.H,
+        stretch: [0x21d0, 0x3d, 0x2223],
+        HDW: exports.HDW3,
+        min: 1.278
+      };
+      var DELIM2907 = {
+        c: 0x2907,
+        dir: FontData_js_1.H,
+        stretch: [0x22a8, 0x3d, 0x21d2],
+        HDW: exports.HDW3,
+        min: 1.278
+      };
+      exports.delimiters = {
+        0x28: {
+          dir: FontData_js_1.V,
+          sizes: exports.VSIZES,
+          stretch: [0x239b, 0x239c, 0x239d],
+          HDW: [0.85, 0.349, 0.875]
+        },
+        0x29: {
+          dir: FontData_js_1.V,
+          sizes: exports.VSIZES,
+          stretch: [0x239e, 0x239f, 0x23a0],
+          HDW: [0.85, 0.349, 0.875]
+        },
+        0x2d: DELIM2212,
+        0x2f: DELIM2F,
+        0x3d: {
+          dir: FontData_js_1.H,
+          sizes: [0.778],
+          stretch: [0, 0x3d],
+          HDW: exports.HDW3
+        },
+        0x5b: {
+          dir: FontData_js_1.V,
+          sizes: exports.VSIZES,
+          stretch: [0x23a1, 0x23a2, 0x23a3],
+          HDW: exports.HDW2
+        },
+        0x5c: { dir: FontData_js_1.V, sizes: exports.VSIZES },
+        0x5d: {
+          dir: FontData_js_1.V,
+          sizes: exports.VSIZES,
+          stretch: [0x23a4, 0x23a5, 0x23a6],
+          HDW: exports.HDW2
+        },
+        0x5e: DELIM2C6,
+        0x5f: DELIM2013,
+        0x7b: {
+          dir: FontData_js_1.V,
+          sizes: exports.VSIZES,
+          stretch: [0x23a7, 0x23aa, 0x23a9, 0x23a8],
+          HDW: [0.85, 0.349, 0.889]
+        },
+        0x7c: {
+          dir: FontData_js_1.V,
+          sizes: [1],
+          stretch: [0, 0x2223],
+          HDW: [0.75, 0.25, 0.333]
+        },
+        0x7d: {
+          dir: FontData_js_1.V,
+          sizes: exports.VSIZES,
+          stretch: [0x23ab, 0x23aa, 0x23ad, 0x23ac],
+          HDW: [0.85, 0.349, 0.889]
+        },
+        0x7e: DELIM2DC,
+        0xaf: DELIMAF,
+        0x2c6: DELIM2C6,
+        0x2c9: DELIMAF,
+        0x2dc: DELIM2DC,
+        0x302: DELIM2C6,
+        0x303: DELIM2DC,
+        0x332: DELIM2013,
+        0x2013: DELIM2013,
+        0x2014: DELIM2013,
+        0x2015: DELIM2013,
+        0x2016: {
+          dir: FontData_js_1.V,
+          sizes: [0.602, 1],
+          schar: [0, 0x2225],
+          variants: [1, 0],
+          stretch: [0, 0x2225],
+          HDW: [0.602, 0, 0.556]
+        },
+        0x2017: DELIM2013,
+        0x203e: DELIMAF,
+        0x20d7: DELIM2192,
+        0x2190: DELIM2190,
+        0x2191: {
+          dir: FontData_js_1.V,
+          sizes: [0.888],
+          stretch: [0x2191, 0x23d0],
+          HDW: [0.6, 0, 0.667]
+        },
+        0x2192: DELIM2192,
+        0x2193: {
+          dir: FontData_js_1.V,
+          sizes: [0.888],
+          stretch: [0, 0x23d0, 0x2193],
+          HDW: [0.6, 0, 0.667]
+        },
+        0x2194: DELIM2194,
+        0x2195: {
+          dir: FontData_js_1.V,
+          sizes: [1.044],
+          stretch: [0x2191, 0x23d0, 0x2193],
+          HDW: exports.HDW1
+        },
+        0x219e: {
+          dir: FontData_js_1.H,
+          sizes: [1],
+          stretch: [0x219e, 0x2212],
+          HDW: exports.HDW3
+        },
+        0x21a0: {
+          dir: FontData_js_1.H,
+          sizes: [1],
+          stretch: [0, 0x2212, 0x21a0],
+          HDW: exports.HDW3
+        },
+        0x21a4: DELIM21A4,
+        0x21a5: {
+          dir: FontData_js_1.V,
+          stretch: [0x2191, 0x23d0, 0x22a5],
+          HDW: exports.HDW1,
+          min: 1.555
+        },
+        0x21a6: DELIM21A6,
+        0x21a7: {
+          dir: FontData_js_1.V,
+          stretch: [0x22a4, 0x23d0, 0x2193],
+          HDW: exports.HDW1,
+          min: 1.555
+        },
+        0x21b0: {
+          dir: FontData_js_1.V,
+          sizes: [0.722],
+          stretch: [0x21b0, 0x23d0],
+          HDW: exports.HDW1
+        },
+        0x21b1: {
+          dir: FontData_js_1.V,
+          sizes: [0.722],
+          stretch: [0x21b1, 0x23d0],
+          HDW: exports.HDW1
+        },
+        0x21bc: {
+          dir: FontData_js_1.H,
+          sizes: [1],
+          stretch: [0x21bc, 0x2212],
+          HDW: exports.HDW3
+        },
+        0x21bd: {
+          dir: FontData_js_1.H,
+          sizes: [1],
+          stretch: [0x21bd, 0x2212],
+          HDW: exports.HDW3
+        },
+        0x21be: {
+          dir: FontData_js_1.V,
+          sizes: [0.888],
+          stretch: [0x21be, 0x23d0],
+          HDW: exports.HDW1
+        },
+        0x21bf: {
+          dir: FontData_js_1.V,
+          sizes: [0.888],
+          stretch: [0x21bf, 0x23d0],
+          HDW: exports.HDW1
+        },
+        0x21c0: {
+          dir: FontData_js_1.H,
+          sizes: [1],
+          stretch: [0, 0x2212, 0x21c0],
+          HDW: exports.HDW3
+        },
+        0x21c1: {
+          dir: FontData_js_1.H,
+          sizes: [1],
+          stretch: [0, 0x2212, 0x21c1],
+          HDW: exports.HDW3
+        },
+        0x21c2: {
+          dir: FontData_js_1.V,
+          sizes: [0.888],
+          stretch: [0, 0x23d0, 0x21c2],
+          HDW: exports.HDW1
+        },
+        0x21c3: {
+          dir: FontData_js_1.V,
+          sizes: [0.888],
+          stretch: [0, 0x23d0, 0x21c3],
+          HDW: exports.HDW1
+        },
+        0x21d0: DELIM21D0,
+        0x21d1: {
+          dir: FontData_js_1.V,
+          sizes: [0.888],
+          stretch: [0x21d1, 0x2016],
+          HDW: [0.599, 0, 0.778]
+        },
+        0x21d2: DELIM21D2,
+        0x21d3: {
+          dir: FontData_js_1.V,
+          sizes: [0.888],
+          stretch: [0, 0x2016, 0x21d3],
+          HDW: [0.6, 0, 0.778]
+        },
+        0x21d4: DELIM21D4,
+        0x21d5: {
+          dir: FontData_js_1.V,
+          sizes: [1.044],
+          stretch: [0x21d1, 0x2016, 0x21d3],
+          HDW: [0.75, 0.25, 0.778]
+        },
+        0x21da: {
+          dir: FontData_js_1.H,
+          sizes: [1],
+          stretch: [0x21da, 0x2261],
+          HDW: [0.464, -0.036, 0.5]
+        },
+        0x21db: {
+          dir: FontData_js_1.H,
+          sizes: [1],
+          stretch: [0, 0x2261, 0x21db],
+          HDW: [0.464, -0.036, 0.5]
+        },
+        0x2212: DELIM2212,
+        0x2215: DELIM2F,
+        0x221a: {
+          dir: FontData_js_1.V,
+          sizes: exports.VSIZES,
+          stretch: [0xe001, 0xe000, 0x23b7],
+          fullExt: [0.65, 2.3],
+          HDW: [0.85, 0.35, 1.056]
+        },
+        0x2223: DELIM2223,
+        0x2225: {
+          dir: FontData_js_1.V,
+          sizes: [1],
+          stretch: [0, 0x2225],
+          HDW: [0.627, 0.015, 0.556]
+        },
+        0x2308: {
+          dir: FontData_js_1.V,
+          sizes: exports.VSIZES,
+          stretch: [0x23a1, 0x23a2],
+          HDW: exports.HDW2
+        },
+        0x2309: {
+          dir: FontData_js_1.V,
+          sizes: exports.VSIZES,
+          stretch: [0x23a4, 0x23a5],
+          HDW: exports.HDW2
+        },
+        0x230a: {
+          dir: FontData_js_1.V,
+          sizes: exports.VSIZES,
+          stretch: [0, 0x23a2, 0x23a3],
+          HDW: exports.HDW2
+        },
+        0x230b: {
+          dir: FontData_js_1.V,
+          sizes: exports.VSIZES,
+          stretch: [0, 0x23a5, 0x23a6],
+          HDW: exports.HDW2
+        },
+        0x2312: DELIM23DC,
+        0x2322: DELIM23DC,
+        0x2323: DELIM23DD,
+        0x2329: DELIM27E8,
+        0x232a: DELIM27E9,
+        0x23aa: {
+          dir: FontData_js_1.V,
+          sizes: [0.32],
+          stretch: [0x23aa, 0x23aa, 0x23aa],
+          HDW: [0.29, 0.015, 0.889]
+        },
+        0x23af: DELIM2013,
+        0x23b0: {
+          dir: FontData_js_1.V,
+          sizes: [0.989],
+          stretch: [0x23a7, 0x23aa, 0x23ad],
+          HDW: [0.75, 0.25, 0.889]
+        },
+        0x23b1: {
+          dir: FontData_js_1.V,
+          sizes: [0.989],
+          stretch: [0x23ab, 0x23aa, 0x23a9],
+          HDW: [0.75, 0.25, 0.889]
+        },
+        0x23b4: {
+          dir: FontData_js_1.H,
+          stretch: [0x250c, 0x2212, 0x2510],
+          HDW: exports.HDW3,
+          min: 1
+        },
+        0x23b5: {
+          dir: FontData_js_1.H,
+          stretch: [0x2514, 0x2212, 0x2518],
+          HDW: exports.HDW3,
+          min: 1
+        },
+        0x23d0: {
+          dir: FontData_js_1.V,
+          sizes: [0.602, 1],
+          schar: [0, 0x2223],
+          variants: [1, 0],
+          stretch: [0, 0x2223],
+          HDW: [0.602, 0, 0.333]
+        },
+        0x23dc: DELIM23DC,
+        0x23dd: DELIM23DD,
+        0x23de: DELIM23DE,
+        0x23df: DELIM23DF,
+        0x23e0: {
+          dir: FontData_js_1.H,
+          stretch: [0x2ca, 0x2c9, 0x2cb],
+          HDW: [0.59, -0.544, 0.5],
+          min: 1
+        },
+        0x23e1: {
+          dir: FontData_js_1.H,
+          stretch: [0x2cb, 0x2c9, 0x2ca],
+          HDW: [0.59, -0.544, 0.5],
+          min: 1
+        },
+        0x2500: DELIM2013,
+        0x2758: DELIM2223,
+        0x27e8: DELIM27E8,
+        0x27e9: DELIM27E9,
+        0x27ee: {
+          dir: FontData_js_1.V,
+          sizes: [0.989],
+          stretch: [0x23a7, 0x23aa, 0x23a9],
+          HDW: [0.75, 0.25, 0.889]
+        },
+        0x27ef: {
+          dir: FontData_js_1.V,
+          sizes: [0.989],
+          stretch: [0x23ab, 0x23aa, 0x23ad],
+          HDW: [0.75, 0.25, 0.889]
+        },
+        0x27f5: DELIM2190,
+        0x27f6: DELIM2192,
+        0x27f7: DELIM2194,
+        0x27f8: DELIM21D0,
+        0x27f9: DELIM21D2,
+        0x27fa: DELIM21D4,
+        0x27fb: DELIM21A4,
+        0x27fc: DELIM21A6,
+        0x27fd: DELIM2906,
+        0x27fe: DELIM2907,
+        0x2906: DELIM2906,
+        0x2907: DELIM2907,
+        0x294e: {
+          dir: FontData_js_1.H,
+          stretch: [0x21bc, 0x2212, 0x21c0],
+          HDW: exports.HDW3,
+          min: 2
+        },
+        0x294f: {
+          dir: FontData_js_1.V,
+          stretch: [0x21be, 0x23d0, 0x21c2],
+          HDW: exports.HDW1,
+          min: 1.776
+        },
+        0x2950: {
+          dir: FontData_js_1.H,
+          stretch: [0x21bd, 0x2212, 0x21c1],
+          HDW: exports.HDW3,
+          min: 2
+        },
+        0x2951: {
+          dir: FontData_js_1.V,
+          stretch: [0x21bf, 0x23d0, 0x21c3],
+          HDW: exports.HDW1,
+          min: 0.5
+        },
+        0x295a: {
+          dir: FontData_js_1.H,
+          stretch: [0x21bc, 0x2212, 0x2223],
+          HDW: exports.HDW3,
+          min: 1.278
+        },
+        0x295b: {
+          dir: FontData_js_1.H,
+          stretch: [0x2223, 0x2212, 0x21c0],
+          HDW: exports.HDW3,
+          min: 1.278
+        },
+        0x295c: {
+          dir: FontData_js_1.V,
+          stretch: [0x21be, 0x23d0, 0x22a5],
+          HDW: exports.HDW1,
+          min: 1.556
+        },
+        0x295d: {
+          dir: FontData_js_1.V,
+          stretch: [0x22a4, 0x23d0, 0x21c2],
+          HDW: exports.HDW1,
+          min: 1.556
+        },
+        0x295e: {
+          dir: FontData_js_1.H,
+          stretch: [0x21bd, 0x2212, 0x2223],
+          HDW: exports.HDW3,
+          min: 1.278
+        },
+        0x295f: {
+          dir: FontData_js_1.H,
+          stretch: [0x2223, 0x2212, 0x21c1],
+          HDW: exports.HDW3,
+          min: 1.278
+        },
+        0x2960: {
+          dir: FontData_js_1.V,
+          stretch: [0x21bf, 0x23d0, 0x22a5],
+          HDW: exports.HDW1,
+          min: 1.776
+        },
+        0x2961: {
+          dir: FontData_js_1.V,
+          stretch: [0x22a4, 0x23d0, 0x21c3],
+          HDW: exports.HDW1,
+          min: 1.776
+        },
+        0x3008: DELIM27E8,
+        0x3009: DELIM27E9,
+        0xfe37: DELIM23DE,
+        0xfe38: DELIM23DF
+      };
+      //# sourceMappingURL=delimiters.js.map
+
+      /***/
+    },
+
+    /***/ 32249: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.doubleStruck = void 0;
+      exports.doubleStruck = {};
+      //# sourceMappingURL=double-struck.js.map
+
+      /***/
+    },
+
+    /***/ 45600: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.frakturBold = void 0;
+      exports.frakturBold = {
+        0x21: [0.689, 0.012, 0.349],
+        0x22: [0.695, -0.432, 0.254],
+        0x26: [0.696, 0.016, 0.871],
+        0x27: [0.695, -0.436, 0.25],
+        0x28: [0.737, 0.186, 0.459],
+        0x29: [0.735, 0.187, 0.459],
+        0x2a: [0.692, -0.449, 0.328],
+        0x2b: [0.598, 0.082, 0.893],
+        0x2c: [0.107, 0.191, 0.328],
+        0x2d: [0.275, -0.236, 0.893],
+        0x2e: [0.102, 0.015, 0.328],
+        0x2f: [0.721, 0.182, 0.593],
+        0x30: [0.501, 0.012, 0.593],
+        0x31: [0.489, 0, 0.593],
+        0x32: [0.491, 0, 0.593],
+        0x33: [0.487, 0.193, 0.593],
+        0x34: [0.495, 0.196, 0.593],
+        0x35: [0.481, 0.19, 0.593],
+        0x36: [0.704, 0.012, 0.593],
+        0x37: [0.479, 0.197, 0.593],
+        0x38: [0.714, 0.005, 0.593],
+        0x39: [0.487, 0.195, 0.593],
+        0x3a: [0.457, 0.012, 0.255],
+        0x3b: [0.458, 0.19, 0.255],
+        0x3d: [0.343, -0.168, 0.582],
+        0x3f: [0.697, 0.014, 0.428],
+        0x5b: [0.74, 0.13, 0.257],
+        0x5d: [0.738, 0.132, 0.257],
+        0x5e: [0.734, -0.452, 0.59],
+        0x2018: [0.708, -0.411, 0.254],
+        0x2019: [0.692, -0.394, 0.254],
+        0x2044: [0.721, 0.182, 0.593],
+        0xe301: [0.63, 0.027, 0.587],
+        0xe302: [0.693, 0.212, 0.394, { ic: 0.014 }],
+        0xe303: [0.681, 0.219, 0.387],
+        0xe304: [0.473, 0.212, 0.593],
+        0xe305: [0.684, 0.027, 0.393],
+        0xe308: [0.679, 0.22, 0.981],
+        0xe309: [0.717, 0.137, 0.727]
+      };
+      //# sourceMappingURL=fraktur-bold.js.map
+
+      /***/
+    },
+
+    /***/ 59534: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.fraktur = void 0;
+      exports.fraktur = {
+        0x21: [0.689, 0.012, 0.296],
+        0x22: [0.695, -0.432, 0.215],
+        0x26: [0.698, 0.011, 0.738],
+        0x27: [0.695, -0.436, 0.212],
+        0x28: [0.737, 0.186, 0.389],
+        0x29: [0.735, 0.187, 0.389],
+        0x2a: [0.692, -0.449, 0.278],
+        0x2b: [0.598, 0.082, 0.756],
+        0x2c: [0.107, 0.191, 0.278],
+        0x2d: [0.275, -0.236, 0.756],
+        0x2e: [0.102, 0.015, 0.278],
+        0x2f: [0.721, 0.182, 0.502],
+        0x30: [0.492, 0.013, 0.502],
+        0x31: [0.468, 0, 0.502],
+        0x32: [0.474, 0, 0.502],
+        0x33: [0.473, 0.182, 0.502],
+        0x34: [0.476, 0.191, 0.502],
+        0x35: [0.458, 0.184, 0.502],
+        0x36: [0.7, 0.013, 0.502],
+        0x37: [0.468, 0.181, 0.502],
+        0x38: [0.705, 0.01, 0.502],
+        0x39: [0.469, 0.182, 0.502],
+        0x3a: [0.457, 0.012, 0.216],
+        0x3b: [0.458, 0.189, 0.216],
+        0x3d: [0.368, -0.132, 0.756],
+        0x3f: [0.693, 0.011, 0.362],
+        0x5b: [0.74, 0.13, 0.278],
+        0x5d: [0.738, 0.131, 0.278],
+        0x5e: [0.734, -0.452, 0.5],
+        0x2018: [0.708, -0.41, 0.215],
+        0x2019: [0.692, -0.395, 0.215],
+        0x2044: [0.721, 0.182, 0.502],
+        0xe300: [0.683, 0.032, 0.497],
+        0xe301: [0.616, 0.03, 0.498],
+        0xe302: [0.68, 0.215, 0.333],
+        0xe303: [0.679, 0.224, 0.329],
+        0xe304: [0.471, 0.214, 0.503],
+        0xe305: [0.686, 0.02, 0.333],
+        0xe306: [0.577, 0.021, 0.334, { ic: 0.013 }],
+        0xe307: [0.475, 0.022, 0.501, { ic: 0.013 }]
+      };
+      //# sourceMappingURL=fraktur.js.map
+
+      /***/
+    },
+
+    /***/ 14141: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.italic = void 0;
+      exports.italic = {
+        0x21: [0.716, 0, 0.307, { ic: 0.073 }],
+        0x22: [0.694, -0.379, 0.514, { ic: 0.024 }],
+        0x23: [0.694, 0.194, 0.818, { ic: 0.01 }],
+        0x25: [0.75, 0.056, 0.818, { ic: 0.029 }],
+        0x26: [0.716, 0.022, 0.767, { ic: 0.035 }],
+        0x27: [0.694, -0.379, 0.307, { ic: 0.07 }],
+        0x28: [0.75, 0.25, 0.409, { ic: 0.108 }],
+        0x29: [0.75, 0.25, 0.409],
+        0x2a: [0.75, -0.32, 0.511, { ic: 0.073 }],
+        0x2b: [0.557, 0.057, 0.767],
+        0x2c: [0.121, 0.194, 0.307],
+        0x2d: [0.251, -0.18, 0.358],
+        0x2e: [0.121, 0, 0.307],
+        0x2f: [0.716, 0.215, 0.778],
+        0x30: [0.665, 0.021, 0.511, { ic: 0.051 }],
+        0x31: [0.666, 0, 0.511],
+        0x32: [0.666, 0.022, 0.511, { ic: 0.04 }],
+        0x33: [0.666, 0.022, 0.511, { ic: 0.051 }],
+        0x34: [0.666, 0.194, 0.511],
+        0x35: [0.666, 0.022, 0.511, { ic: 0.056 }],
+        0x36: [0.665, 0.022, 0.511, { ic: 0.054 }],
+        0x37: [0.666, 0.022, 0.511, { ic: 0.123 }],
+        0x38: [0.666, 0.021, 0.511, { ic: 0.042 }],
+        0x39: [0.666, 0.022, 0.511, { ic: 0.042 }],
+        0x3a: [0.431, 0, 0.307],
+        0x3b: [0.431, 0.194, 0.307],
+        0x3d: [0.367, -0.133, 0.767],
+        0x3f: [0.716, 0, 0.511, { ic: 0.04 }],
+        0x40: [0.705, 0.011, 0.767, { ic: 0.022 }],
+        0x5b: [0.75, 0.25, 0.307, { ic: 0.139 }],
+        0x5d: [0.75, 0.25, 0.307, { ic: 0.052 }],
+        0x5e: [0.694, -0.527, 0.511, { ic: 0.017 }],
+        0x5f: [-0.025, 0.062, 0.511, { ic: 0.043 }],
+        0x7e: [0.318, -0.208, 0.511, { ic: 0.06 }],
+        0x131: [0.441, 0.01, 0.307, { ic: 0.033 }],
+        0x237: [0.442, 0.204, 0.332],
+        0x300: [0.697, -0.5, 0],
+        0x301: [0.697, -0.5, 0, { ic: 0.039 }],
+        0x302: [0.694, -0.527, 0, { ic: 0.017 }],
+        0x303: [0.668, -0.558, 0, { ic: 0.06 }],
+        0x304: [0.589, -0.544, 0, { ic: 0.054 }],
+        0x306: [0.694, -0.515, 0, { ic: 0.062 }],
+        0x307: [0.669, -0.548, 0],
+        0x308: [0.669, -0.554, 0, { ic: 0.045 }],
+        0x30a: [0.716, -0.542, 0],
+        0x30b: [0.697, -0.503, 0, { ic: 0.065 }],
+        0x30c: [0.638, -0.502, 0, { ic: 0.029 }],
+        0x3dd: [0.605, 0.085, 0.778],
+        0x2013: [0.285, -0.248, 0.511, { ic: 0.043 }],
+        0x2014: [0.285, -0.248, 1.022, { ic: 0.016 }],
+        0x2015: [0.285, -0.248, 1.022, { ic: 0.016 }],
+        0x2017: [-0.025, 0.062, 0.511, { ic: 0.043 }],
+        0x2018: [0.694, -0.379, 0.307, { ic: 0.055 }],
+        0x2019: [0.694, -0.379, 0.307, { ic: 0.07 }],
+        0x201c: [0.694, -0.379, 0.514, { ic: 0.092 }],
+        0x201d: [0.694, -0.379, 0.514, { ic: 0.024 }],
+        0x2044: [0.716, 0.215, 0.778],
+        0x210f: [0.695, 0.013, 0.54, { ic: 0.022 }],
+        0x2206: [0.716, 0, 0.833, { sk: 0.167 }],
+        0x29f8: [0.716, 0.215, 0.778]
+      };
+      //# sourceMappingURL=italic.js.map
+
+      /***/
+    },
+
+    /***/ 63969: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.largeop = void 0;
+      exports.largeop = {
+        0x28: [1.15, 0.649, 0.597],
+        0x29: [1.15, 0.649, 0.597],
+        0x2f: [1.15, 0.649, 0.811],
+        0x5b: [1.15, 0.649, 0.472],
+        0x5c: [1.15, 0.649, 0.811],
+        0x5d: [1.15, 0.649, 0.472],
+        0x7b: [1.15, 0.649, 0.667],
+        0x7d: [1.15, 0.649, 0.667],
+        0x2c6: [0.772, -0.565, 1],
+        0x2dc: [0.75, -0.611, 1],
+        0x302: [0.772, -0.565, 0],
+        0x303: [0.75, -0.611, 0],
+        0x2016: [0.602, 0, 0.778],
+        0x2044: [1.15, 0.649, 0.811],
+        0x2191: [0.6, 0, 0.667],
+        0x2193: [0.6, 0, 0.667],
+        0x21d1: [0.599, 0, 0.778],
+        0x21d3: [0.6, 0, 0.778],
+        0x220f: [0.95, 0.45, 1.278],
+        0x2210: [0.95, 0.45, 1.278],
+        0x2211: [0.95, 0.45, 1.444],
+        0x221a: [1.15, 0.65, 1, { ic: 0.02 }],
+        0x2223: [0.627, 0.015, 0.333],
+        0x2225: [0.627, 0.015, 0.556],
+        0x222b: [1.36, 0.862, 0.556, { ic: 0.388 }],
+        0x222c: [1.36, 0.862, 1.084, { ic: 0.388 }],
+        0x222d: [1.36, 0.862, 1.592, { ic: 0.388 }],
+        0x222e: [1.36, 0.862, 0.556, { ic: 0.388 }],
+        0x22c0: [0.95, 0.45, 1.111],
+        0x22c1: [0.95, 0.45, 1.111],
+        0x22c2: [0.949, 0.45, 1.111],
+        0x22c3: [0.95, 0.449, 1.111],
+        0x2308: [1.15, 0.649, 0.528],
+        0x2309: [1.15, 0.649, 0.528],
+        0x230a: [1.15, 0.649, 0.528],
+        0x230b: [1.15, 0.649, 0.528],
+        0x2329: [1.15, 0.649, 0.611],
+        0x232a: [1.15, 0.649, 0.611],
+        0x23d0: [0.602, 0, 0.667],
+        0x2758: [0.627, 0.015, 0.333],
+        0x27e8: [1.15, 0.649, 0.611],
+        0x27e9: [1.15, 0.649, 0.611],
+        0x2a00: [0.949, 0.449, 1.511],
+        0x2a01: [0.949, 0.449, 1.511],
+        0x2a02: [0.949, 0.449, 1.511],
+        0x2a04: [0.95, 0.449, 1.111],
+        0x2a06: [0.95, 0.45, 1.111],
+        0x2a0c: [1.36, 0.862, 2.168, { ic: 0.388 }],
+        0x3008: [1.15, 0.649, 0.611],
+        0x3009: [1.15, 0.649, 0.611]
+      };
+      //# sourceMappingURL=largeop.js.map
+
+      /***/
+    },
+
+    /***/ 58626: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.monospace = void 0;
+      exports.monospace = {
+        0x20: [0, 0, 0.525],
+        0x21: [0.622, 0, 0.525],
+        0x22: [0.623, -0.333, 0.525],
+        0x23: [0.611, 0, 0.525],
+        0x24: [0.694, 0.082, 0.525],
+        0x25: [0.694, 0.083, 0.525],
+        0x26: [0.622, 0.011, 0.525],
+        0x27: [0.611, -0.287, 0.525],
+        0x28: [0.694, 0.082, 0.525],
+        0x29: [0.694, 0.082, 0.525],
+        0x2a: [0.52, -0.09, 0.525],
+        0x2b: [0.531, -0.081, 0.525],
+        0x2c: [0.14, 0.139, 0.525],
+        0x2d: [0.341, -0.271, 0.525],
+        0x2e: [0.14, 0, 0.525],
+        0x2f: [0.694, 0.083, 0.525],
+        0x3a: [0.431, 0, 0.525],
+        0x3b: [0.431, 0.139, 0.525],
+        0x3c: [0.557, -0.055, 0.525],
+        0x3d: [0.417, -0.195, 0.525],
+        0x3e: [0.557, -0.055, 0.525],
+        0x3f: [0.617, 0, 0.525],
+        0x40: [0.617, 0.006, 0.525],
+        0x5b: [0.694, 0.082, 0.525],
+        0x5c: [0.694, 0.083, 0.525],
+        0x5d: [0.694, 0.082, 0.525],
+        0x5e: [0.611, -0.46, 0.525],
+        0x5f: [-0.025, 0.095, 0.525],
+        0x60: [0.681, -0.357, 0.525],
+        0x7b: [0.694, 0.083, 0.525],
+        0x7c: [0.694, 0.082, 0.525],
+        0x7d: [0.694, 0.083, 0.525],
+        0x7e: [0.611, -0.466, 0.525],
+        0x7f: [0.612, -0.519, 0.525],
+        0xa0: [0, 0, 0.525],
+        0x131: [0.431, 0, 0.525],
+        0x237: [0.431, 0.228, 0.525],
+        0x2b9: [0.623, -0.334, 0.525],
+        0x300: [0.611, -0.485, 0],
+        0x301: [0.611, -0.485, 0],
+        0x302: [0.611, -0.46, 0],
+        0x303: [0.611, -0.466, 0],
+        0x304: [0.577, -0.5, 0],
+        0x306: [0.611, -0.504, 0],
+        0x308: [0.612, -0.519, 0],
+        0x30a: [0.619, -0.499, 0],
+        0x30c: [0.577, -0.449, 0],
+        0x391: [0.623, 0, 0.525],
+        0x392: [0.611, 0, 0.525],
+        0x393: [0.611, 0, 0.525],
+        0x394: [0.623, 0, 0.525],
+        0x395: [0.611, 0, 0.525],
+        0x396: [0.611, 0, 0.525],
+        0x397: [0.611, 0, 0.525],
+        0x398: [0.621, 0.01, 0.525],
+        0x399: [0.611, 0, 0.525],
+        0x39a: [0.611, 0, 0.525],
+        0x39b: [0.623, 0, 0.525],
+        0x39c: [0.611, 0, 0.525],
+        0x39d: [0.611, 0, 0.525],
+        0x39e: [0.611, 0, 0.525],
+        0x39f: [0.621, 0.01, 0.525],
+        0x3a0: [0.611, 0, 0.525],
+        0x3a1: [0.611, 0, 0.525],
+        0x3a3: [0.611, 0, 0.525],
+        0x3a4: [0.611, 0, 0.525],
+        0x3a5: [0.622, 0, 0.525],
+        0x3a6: [0.611, 0, 0.525],
+        0x3a7: [0.611, 0, 0.525],
+        0x3a8: [0.611, 0, 0.525],
+        0x3a9: [0.622, 0, 0.525],
+        0x2017: [-0.025, 0.095, 0.525],
+        0x2032: [0.623, -0.334, 0.525],
+        0x2033: [0.623, 0, 1.05],
+        0x2034: [0.623, 0, 1.575],
+        0x2044: [0.694, 0.083, 0.525],
+        0x2057: [0.623, 0, 2.1],
+        0x2206: [0.623, 0, 0.525]
+      };
+      //# sourceMappingURL=monospace.js.map
+
+      /***/
+    },
+
+    /***/ 25190: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.normal = void 0;
+      exports.normal = {
+        0x20: [0, 0, 0.25],
+        0x21: [0.716, 0, 0.278],
+        0x22: [0.694, -0.379, 0.5],
+        0x23: [0.694, 0.194, 0.833],
+        0x24: [0.75, 0.056, 0.5],
+        0x25: [0.75, 0.056, 0.833],
+        0x26: [0.716, 0.022, 0.778],
+        0x27: [0.694, -0.379, 0.278],
+        0x28: [0.75, 0.25, 0.389],
+        0x29: [0.75, 0.25, 0.389],
+        0x2a: [0.75, -0.32, 0.5],
+        0x2b: [0.583, 0.082, 0.778],
+        0x2c: [0.121, 0.194, 0.278],
+        0x2d: [0.252, -0.179, 0.333],
+        0x2e: [0.12, 0, 0.278],
+        0x2f: [0.75, 0.25, 0.5],
+        0x30: [0.666, 0.022, 0.5],
+        0x31: [0.666, 0, 0.5],
+        0x32: [0.666, 0, 0.5],
+        0x33: [0.665, 0.022, 0.5],
+        0x34: [0.677, 0, 0.5],
+        0x35: [0.666, 0.022, 0.5],
+        0x36: [0.666, 0.022, 0.5],
+        0x37: [0.676, 0.022, 0.5],
+        0x38: [0.666, 0.022, 0.5],
+        0x39: [0.666, 0.022, 0.5],
+        0x3a: [0.43, 0, 0.278],
+        0x3b: [0.43, 0.194, 0.278],
+        0x3c: [0.54, 0.04, 0.778],
+        0x3d: [0.583, 0.082, 0.778],
+        0x3e: [0.54, 0.04, 0.778],
+        0x3f: [0.705, 0, 0.472],
+        0x40: [0.705, 0.011, 0.778],
+        0x41: [0.716, 0, 0.75],
+        0x42: [0.683, 0, 0.708],
+        0x43: [0.705, 0.021, 0.722],
+        0x44: [0.683, 0, 0.764],
+        0x45: [0.68, 0, 0.681],
+        0x46: [0.68, 0, 0.653],
+        0x47: [0.705, 0.022, 0.785],
+        0x48: [0.683, 0, 0.75],
+        0x49: [0.683, 0, 0.361],
+        0x4a: [0.683, 0.022, 0.514],
+        0x4b: [0.683, 0, 0.778],
+        0x4c: [0.683, 0, 0.625],
+        0x4d: [0.683, 0, 0.917],
+        0x4e: [0.683, 0, 0.75],
+        0x4f: [0.705, 0.022, 0.778],
+        0x50: [0.683, 0, 0.681],
+        0x51: [0.705, 0.193, 0.778],
+        0x52: [0.683, 0.022, 0.736],
+        0x53: [0.705, 0.022, 0.556],
+        0x54: [0.677, 0, 0.722],
+        0x55: [0.683, 0.022, 0.75],
+        0x56: [0.683, 0.022, 0.75],
+        0x57: [0.683, 0.022, 1.028],
+        0x58: [0.683, 0, 0.75],
+        0x59: [0.683, 0, 0.75],
+        0x5a: [0.683, 0, 0.611],
+        0x5b: [0.75, 0.25, 0.278],
+        0x5c: [0.75, 0.25, 0.5],
+        0x5d: [0.75, 0.25, 0.278],
+        0x5e: [0.694, -0.531, 0.5],
+        0x5f: [-0.025, 0.062, 0.5],
+        0x60: [0.699, -0.505, 0.5],
+        0x61: [0.448, 0.011, 0.5],
+        0x62: [0.694, 0.011, 0.556],
+        0x63: [0.448, 0.011, 0.444],
+        0x64: [0.694, 0.011, 0.556],
+        0x65: [0.448, 0.011, 0.444],
+        0x66: [0.705, 0, 0.306, { ic: 0.066 }],
+        0x67: [0.453, 0.206, 0.5],
+        0x68: [0.694, 0, 0.556],
+        0x69: [0.669, 0, 0.278],
+        0x6a: [0.669, 0.205, 0.306],
+        0x6b: [0.694, 0, 0.528],
+        0x6c: [0.694, 0, 0.278],
+        0x6d: [0.442, 0, 0.833],
+        0x6e: [0.442, 0, 0.556],
+        0x6f: [0.448, 0.01, 0.5],
+        0x70: [0.442, 0.194, 0.556],
+        0x71: [0.442, 0.194, 0.528],
+        0x72: [0.442, 0, 0.392],
+        0x73: [0.448, 0.011, 0.394],
+        0x74: [0.615, 0.01, 0.389],
+        0x75: [0.442, 0.011, 0.556],
+        0x76: [0.431, 0.011, 0.528],
+        0x77: [0.431, 0.011, 0.722],
+        0x78: [0.431, 0, 0.528],
+        0x79: [0.431, 0.204, 0.528],
+        0x7a: [0.431, 0, 0.444],
+        0x7b: [0.75, 0.25, 0.5],
+        0x7c: [0.75, 0.249, 0.278],
+        0x7d: [0.75, 0.25, 0.5],
+        0x7e: [0.318, -0.215, 0.5],
+        0xa0: [0, 0, 0.25],
+        0xa3: [0.714, 0.011, 0.769],
+        0xa5: [0.683, 0, 0.75],
+        0xa8: [0.669, -0.554, 0.5],
+        0xac: [0.356, -0.089, 0.667],
+        0xae: [0.709, 0.175, 0.947],
+        0xaf: [0.59, -0.544, 0.5],
+        0xb0: [0.715, -0.542, 0.5],
+        0xb1: [0.666, 0, 0.778],
+        0xb4: [0.699, -0.505, 0.5],
+        0xb7: [0.31, -0.19, 0.278],
+        0xd7: [0.491, -0.009, 0.778],
+        0xf0: [0.749, 0.021, 0.556],
+        0xf7: [0.537, 0.036, 0.778],
+        0x131: [0.442, 0, 0.278, { sk: 0.0278 }],
+        0x237: [0.442, 0.205, 0.306, { sk: 0.0833 }],
+        0x2b9: [0.56, -0.043, 0.275],
+        0x2c6: [0.694, -0.531, 0.5],
+        0x2c7: [0.644, -0.513, 0.5],
+        0x2c9: [0.59, -0.544, 0.5],
+        0x2ca: [0.699, -0.505, 0.5],
+        0x2cb: [0.699, -0.505, 0.5],
+        0x2d8: [0.694, -0.515, 0.5],
+        0x2d9: [0.669, -0.549, 0.5],
+        0x2da: [0.715, -0.542, 0.5],
+        0x2dc: [0.668, -0.565, 0.5],
+        0x300: [0.699, -0.505, 0],
+        0x301: [0.699, -0.505, 0],
+        0x302: [0.694, -0.531, 0],
+        0x303: [0.668, -0.565, 0],
+        0x304: [0.59, -0.544, 0],
+        0x306: [0.694, -0.515, 0],
+        0x307: [0.669, -0.549, 0],
+        0x308: [0.669, -0.554, 0],
+        0x30a: [0.715, -0.542, 0],
+        0x30b: [0.701, -0.51, 0],
+        0x30c: [0.644, -0.513, 0],
+        0x338: [0.716, 0.215, 0],
+        0x391: [0.716, 0, 0.75],
+        0x392: [0.683, 0, 0.708],
+        0x393: [0.68, 0, 0.625],
+        0x394: [0.716, 0, 0.833],
+        0x395: [0.68, 0, 0.681],
+        0x396: [0.683, 0, 0.611],
+        0x397: [0.683, 0, 0.75],
+        0x398: [0.705, 0.022, 0.778],
+        0x399: [0.683, 0, 0.361],
+        0x39a: [0.683, 0, 0.778],
+        0x39b: [0.716, 0, 0.694],
+        0x39c: [0.683, 0, 0.917],
+        0x39d: [0.683, 0, 0.75],
+        0x39e: [0.677, 0, 0.667],
+        0x39f: [0.705, 0.022, 0.778],
+        0x3a0: [0.68, 0, 0.75],
+        0x3a1: [0.683, 0, 0.681],
+        0x3a3: [0.683, 0, 0.722],
+        0x3a4: [0.677, 0, 0.722],
+        0x3a5: [0.705, 0, 0.778],
+        0x3a6: [0.683, 0, 0.722],
+        0x3a7: [0.683, 0, 0.75],
+        0x3a8: [0.683, 0, 0.778],
+        0x3a9: [0.704, 0, 0.722],
+        0x2000: [0, 0, 0.5],
+        0x2001: [0, 0, 1],
+        0x2002: [0, 0, 0.5],
+        0x2003: [0, 0, 1],
+        0x2004: [0, 0, 0.333],
+        0x2005: [0, 0, 0.25],
+        0x2006: [0, 0, 0.167],
+        0x2009: [0, 0, 0.167],
+        0x200a: [0, 0, 0.1],
+        0x200b: [0, 0, 0],
+        0x200c: [0, 0, 0],
+        0x2013: [0.285, -0.248, 0.5],
+        0x2014: [0.285, -0.248, 1],
+        0x2015: [0.285, -0.248, 1],
+        0x2016: [0.75, 0.25, 0.5],
+        0x2017: [-0.025, 0.062, 0.5],
+        0x2018: [0.694, -0.379, 0.278],
+        0x2019: [0.694, -0.379, 0.278],
+        0x201c: [0.694, -0.379, 0.5],
+        0x201d: [0.694, -0.379, 0.5],
+        0x2020: [0.705, 0.216, 0.444],
+        0x2021: [0.705, 0.205, 0.444],
+        0x2022: [0.444, -0.055, 0.5],
+        0x2026: [0.12, 0, 1.172],
+        0x2032: [0.56, -0.043, 0.275],
+        0x2033: [0.56, 0, 0.55],
+        0x2034: [0.56, 0, 0.825],
+        0x2035: [0.56, -0.043, 0.275],
+        0x2036: [0.56, 0, 0.55],
+        0x2037: [0.56, 0, 0.825],
+        0x203e: [0.59, -0.544, 0.5],
+        0x2044: [0.75, 0.25, 0.5],
+        0x2057: [0.56, 0, 1.1],
+        0x2060: [0, 0, 0],
+        0x2061: [0, 0, 0],
+        0x2062: [0, 0, 0],
+        0x2063: [0, 0, 0],
+        0x2064: [0, 0, 0],
+        0x20d7: [0.714, -0.516, 0.5],
+        0x2102: [0.702, 0.019, 0.722],
+        0x210b: [0.717, 0.036, 0.969, { ic: 0.272, sk: 0.333 }],
+        0x210c: [0.666, 0.133, 0.72],
+        0x210d: [0.683, 0, 0.778],
+        0x210e: [0.694, 0.011, 0.576, { sk: -0.0278 }],
+        0x210f: [0.695, 0.013, 0.54, { ic: 0.022 }],
+        0x2110: [0.717, 0.017, 0.809, { ic: 0.137, sk: 0.333 }],
+        0x2111: [0.686, 0.026, 0.554],
+        0x2112: [0.717, 0.017, 0.874, { ic: 0.161, sk: 0.306 }],
+        0x2113: [0.705, 0.02, 0.417, { sk: 0.111 }],
+        0x2115: [0.683, 0.02, 0.722],
+        0x2118: [0.453, 0.216, 0.636, { sk: 0.111 }],
+        0x2119: [0.683, 0, 0.611],
+        0x211a: [0.701, 0.181, 0.778],
+        0x211b: [0.717, 0.017, 0.85, { ic: 0.037, sk: 0.194 }],
+        0x211c: [0.686, 0.026, 0.828],
+        0x211d: [0.683, 0, 0.722],
+        0x2124: [0.683, 0, 0.667],
+        0x2126: [0.704, 0, 0.722],
+        0x2127: [0.684, 0.022, 0.722],
+        0x2128: [0.729, 0.139, 0.602],
+        0x212c: [0.708, 0.028, 0.908, { ic: 0.02, sk: 0.194 }],
+        0x212d: [0.685, 0.024, 0.613],
+        0x2130: [0.707, 0.008, 0.562, { ic: 0.156, sk: 0.139 }],
+        0x2131: [0.735, 0.036, 0.895, { ic: 0.095, sk: 0.222 }],
+        0x2132: [0.695, 0, 0.556],
+        0x2133: [0.721, 0.05, 1.08, { ic: 0.136, sk: 0.444 }],
+        0x2135: [0.694, 0, 0.611],
+        0x2136: [0.763, 0.021, 0.667, { ic: 0.02 }],
+        0x2137: [0.764, 0.043, 0.444],
+        0x2138: [0.764, 0.043, 0.667],
+        0x2141: [0.705, 0.023, 0.639],
+        0x2190: [0.511, 0.011, 1],
+        0x2191: [0.694, 0.193, 0.5],
+        0x2192: [0.511, 0.011, 1],
+        0x2193: [0.694, 0.194, 0.5],
+        0x2194: [0.511, 0.011, 1],
+        0x2195: [0.772, 0.272, 0.5],
+        0x2196: [0.72, 0.195, 1],
+        0x2197: [0.72, 0.195, 1],
+        0x2198: [0.695, 0.22, 1],
+        0x2199: [0.695, 0.22, 1],
+        0x219a: [0.437, -0.06, 1],
+        0x219b: [0.437, -0.06, 1],
+        0x219e: [0.417, -0.083, 1],
+        0x21a0: [0.417, -0.083, 1],
+        0x21a2: [0.417, -0.083, 1.111],
+        0x21a3: [0.417, -0.083, 1.111],
+        0x21a6: [0.511, 0.011, 1],
+        0x21a9: [0.511, 0.011, 1.126],
+        0x21aa: [0.511, 0.011, 1.126],
+        0x21ab: [0.575, 0.041, 1],
+        0x21ac: [0.575, 0.041, 1],
+        0x21ad: [0.417, -0.083, 1.389],
+        0x21ae: [0.437, -0.06, 1],
+        0x21b0: [0.722, 0, 0.5],
+        0x21b1: [0.722, 0, 0.5],
+        0x21b6: [0.461, 0, 1],
+        0x21b7: [0.46, 0, 1],
+        0x21ba: [0.65, 0.083, 0.778],
+        0x21bb: [0.65, 0.083, 0.778],
+        0x21bc: [0.511, -0.23, 1],
+        0x21bd: [0.27, 0.011, 1],
+        0x21be: [0.694, 0.194, 0.417],
+        0x21bf: [0.694, 0.194, 0.417],
+        0x21c0: [0.511, -0.23, 1],
+        0x21c1: [0.27, 0.011, 1],
+        0x21c2: [0.694, 0.194, 0.417],
+        0x21c3: [0.694, 0.194, 0.417],
+        0x21c4: [0.667, 0, 1],
+        0x21c6: [0.667, 0, 1],
+        0x21c7: [0.583, 0.083, 1],
+        0x21c8: [0.694, 0.193, 0.833],
+        0x21c9: [0.583, 0.083, 1],
+        0x21ca: [0.694, 0.194, 0.833],
+        0x21cb: [0.514, 0.014, 1],
+        0x21cc: [0.671, 0.011, 1],
+        0x21cd: [0.534, 0.035, 1],
+        0x21ce: [0.534, 0.037, 1],
+        0x21cf: [0.534, 0.035, 1],
+        0x21d0: [0.525, 0.024, 1],
+        0x21d1: [0.694, 0.194, 0.611],
+        0x21d2: [0.525, 0.024, 1],
+        0x21d3: [0.694, 0.194, 0.611],
+        0x21d4: [0.526, 0.025, 1],
+        0x21d5: [0.772, 0.272, 0.611],
+        0x21da: [0.611, 0.111, 1],
+        0x21db: [0.611, 0.111, 1],
+        0x21dd: [0.417, -0.083, 1],
+        0x21e0: [0.437, -0.064, 1.334],
+        0x21e2: [0.437, -0.064, 1.334],
+        0x2200: [0.694, 0.022, 0.556],
+        0x2201: [0.846, 0.021, 0.5],
+        0x2202: [0.715, 0.022, 0.531, { ic: 0.035, sk: 0.0833 }],
+        0x2203: [0.694, 0, 0.556],
+        0x2204: [0.716, 0.215, 0.556],
+        0x2205: [0.772, 0.078, 0.5],
+        0x2206: [0.716, 0, 0.833],
+        0x2207: [0.683, 0.033, 0.833],
+        0x2208: [0.54, 0.04, 0.667],
+        0x2209: [0.716, 0.215, 0.667],
+        0x220b: [0.54, 0.04, 0.667],
+        0x220c: [0.716, 0.215, 0.667],
+        0x220d: [0.44, 0, 0.429, { ic: 0.027 }],
+        0x220f: [0.75, 0.25, 0.944],
+        0x2210: [0.75, 0.25, 0.944],
+        0x2211: [0.75, 0.25, 1.056],
+        0x2212: [0.583, 0.082, 0.778],
+        0x2213: [0.5, 0.166, 0.778],
+        0x2214: [0.766, 0.093, 0.778],
+        0x2215: [0.75, 0.25, 0.5],
+        0x2216: [0.75, 0.25, 0.5],
+        0x2217: [0.465, -0.035, 0.5],
+        0x2218: [0.444, -0.055, 0.5],
+        0x2219: [0.444, -0.055, 0.5],
+        0x221a: [0.8, 0.2, 0.833, { ic: 0.02 }],
+        0x221d: [0.442, 0.011, 0.778],
+        0x221e: [0.442, 0.011, 1],
+        0x2220: [0.694, 0, 0.722],
+        0x2221: [0.714, 0.02, 0.722],
+        0x2222: [0.551, 0.051, 0.722],
+        0x2223: [0.75, 0.249, 0.278],
+        0x2224: [0.75, 0.252, 0.278, { ic: 0.019 }],
+        0x2225: [0.75, 0.25, 0.5],
+        0x2226: [0.75, 0.25, 0.5, { ic: 0.018 }],
+        0x2227: [0.598, 0.022, 0.667],
+        0x2228: [0.598, 0.022, 0.667],
+        0x2229: [0.598, 0.022, 0.667],
+        0x222a: [0.598, 0.022, 0.667],
+        0x222b: [0.716, 0.216, 0.417, { ic: 0.055 }],
+        0x222c: [0.805, 0.306, 0.819, { ic: 0.138 }],
+        0x222d: [0.805, 0.306, 1.166, { ic: 0.138 }],
+        0x222e: [0.805, 0.306, 0.472, { ic: 0.138 }],
+        0x2234: [0.471, 0.082, 0.667],
+        0x2235: [0.471, 0.082, 0.667],
+        0x223c: [0.367, -0.133, 0.778],
+        0x223d: [0.367, -0.133, 0.778],
+        0x2240: [0.583, 0.083, 0.278],
+        0x2241: [0.467, -0.032, 0.778],
+        0x2242: [0.463, -0.034, 0.778],
+        0x2243: [0.464, -0.036, 0.778],
+        0x2244: [0.716, 0.215, 0.778],
+        0x2245: [0.589, -0.022, 0.778],
+        0x2247: [0.652, 0.155, 0.778],
+        0x2248: [0.483, -0.055, 0.778],
+        0x2249: [0.716, 0.215, 0.778],
+        0x224a: [0.579, 0.039, 0.778],
+        0x224d: [0.484, -0.016, 0.778],
+        0x224e: [0.492, -0.008, 0.778],
+        0x224f: [0.492, -0.133, 0.778],
+        0x2250: [0.67, -0.133, 0.778],
+        0x2251: [0.609, 0.108, 0.778],
+        0x2252: [0.601, 0.101, 0.778],
+        0x2253: [0.601, 0.102, 0.778],
+        0x2256: [0.367, -0.133, 0.778],
+        0x2257: [0.721, -0.133, 0.778],
+        0x225c: [0.859, -0.133, 0.778],
+        0x2260: [0.716, 0.215, 0.778],
+        0x2261: [0.464, -0.036, 0.778],
+        0x2262: [0.716, 0.215, 0.778],
+        0x2264: [0.636, 0.138, 0.778],
+        0x2265: [0.636, 0.138, 0.778],
+        0x2266: [0.753, 0.175, 0.778],
+        0x2267: [0.753, 0.175, 0.778],
+        0x2268: [0.752, 0.286, 0.778],
+        0x2269: [0.752, 0.286, 0.778],
+        0x226a: [0.568, 0.067, 1],
+        0x226b: [0.567, 0.067, 1],
+        0x226c: [0.75, 0.25, 0.5],
+        0x226d: [0.716, 0.215, 0.778],
+        0x226e: [0.708, 0.209, 0.778],
+        0x226f: [0.708, 0.209, 0.778],
+        0x2270: [0.801, 0.303, 0.778],
+        0x2271: [0.801, 0.303, 0.778],
+        0x2272: [0.732, 0.228, 0.778],
+        0x2273: [0.732, 0.228, 0.778],
+        0x2274: [0.732, 0.228, 0.778],
+        0x2275: [0.732, 0.228, 0.778],
+        0x2276: [0.681, 0.253, 0.778],
+        0x2277: [0.681, 0.253, 0.778],
+        0x2278: [0.716, 0.253, 0.778],
+        0x2279: [0.716, 0.253, 0.778],
+        0x227a: [0.539, 0.041, 0.778],
+        0x227b: [0.539, 0.041, 0.778],
+        0x227c: [0.58, 0.153, 0.778],
+        0x227d: [0.58, 0.154, 0.778],
+        0x227e: [0.732, 0.228, 0.778],
+        0x227f: [0.732, 0.228, 0.778],
+        0x2280: [0.705, 0.208, 0.778],
+        0x2281: [0.705, 0.208, 0.778],
+        0x2282: [0.54, 0.04, 0.778],
+        0x2283: [0.54, 0.04, 0.778],
+        0x2284: [0.716, 0.215, 0.778],
+        0x2285: [0.716, 0.215, 0.778],
+        0x2286: [0.636, 0.138, 0.778],
+        0x2287: [0.636, 0.138, 0.778],
+        0x2288: [0.801, 0.303, 0.778],
+        0x2289: [0.801, 0.303, 0.778],
+        0x228a: [0.635, 0.241, 0.778],
+        0x228b: [0.635, 0.241, 0.778],
+        0x228e: [0.598, 0.022, 0.667],
+        0x228f: [0.539, 0.041, 0.778],
+        0x2290: [0.539, 0.041, 0.778],
+        0x2291: [0.636, 0.138, 0.778],
+        0x2292: [0.636, 0.138, 0.778],
+        0x2293: [0.598, 0, 0.667],
+        0x2294: [0.598, 0, 0.667],
+        0x2295: [0.583, 0.083, 0.778],
+        0x2296: [0.583, 0.083, 0.778],
+        0x2297: [0.583, 0.083, 0.778],
+        0x2298: [0.583, 0.083, 0.778],
+        0x2299: [0.583, 0.083, 0.778],
+        0x229a: [0.582, 0.082, 0.778],
+        0x229b: [0.582, 0.082, 0.778],
+        0x229d: [0.582, 0.082, 0.778],
+        0x229e: [0.689, 0, 0.778],
+        0x229f: [0.689, 0, 0.778],
+        0x22a0: [0.689, 0, 0.778],
+        0x22a1: [0.689, 0, 0.778],
+        0x22a2: [0.694, 0, 0.611],
+        0x22a3: [0.694, 0, 0.611],
+        0x22a4: [0.668, 0, 0.778],
+        0x22a5: [0.668, 0, 0.778],
+        0x22a8: [0.75, 0.249, 0.867],
+        0x22a9: [0.694, 0, 0.722],
+        0x22aa: [0.694, 0, 0.889],
+        0x22ac: [0.695, 0, 0.611],
+        0x22ad: [0.695, 0, 0.611],
+        0x22ae: [0.695, 0, 0.722],
+        0x22af: [0.695, 0, 0.722],
+        0x22b2: [0.539, 0.041, 0.778],
+        0x22b3: [0.539, 0.041, 0.778],
+        0x22b4: [0.636, 0.138, 0.778],
+        0x22b5: [0.636, 0.138, 0.778],
+        0x22b8: [0.408, -0.092, 1.111],
+        0x22ba: [0.431, 0.212, 0.556],
+        0x22bb: [0.716, 0, 0.611],
+        0x22bc: [0.716, 0, 0.611],
+        0x22c0: [0.75, 0.249, 0.833],
+        0x22c1: [0.75, 0.249, 0.833],
+        0x22c2: [0.75, 0.249, 0.833],
+        0x22c3: [0.75, 0.249, 0.833],
+        0x22c4: [0.488, -0.012, 0.5],
+        0x22c5: [0.31, -0.19, 0.278],
+        0x22c6: [0.486, -0.016, 0.5],
+        0x22c7: [0.545, 0.044, 0.778],
+        0x22c8: [0.505, 0.005, 0.9],
+        0x22c9: [0.492, -0.008, 0.778],
+        0x22ca: [0.492, -0.008, 0.778],
+        0x22cb: [0.694, 0.022, 0.778],
+        0x22cc: [0.694, 0.022, 0.778],
+        0x22cd: [0.464, -0.036, 0.778],
+        0x22ce: [0.578, 0.021, 0.76],
+        0x22cf: [0.578, 0.022, 0.76],
+        0x22d0: [0.54, 0.04, 0.778],
+        0x22d1: [0.54, 0.04, 0.778],
+        0x22d2: [0.598, 0.022, 0.667],
+        0x22d3: [0.598, 0.022, 0.667],
+        0x22d4: [0.736, 0.022, 0.667],
+        0x22d6: [0.541, 0.041, 0.778],
+        0x22d7: [0.541, 0.041, 0.778],
+        0x22d8: [0.568, 0.067, 1.333],
+        0x22d9: [0.568, 0.067, 1.333],
+        0x22da: [0.886, 0.386, 0.778],
+        0x22db: [0.886, 0.386, 0.778],
+        0x22de: [0.734, 0, 0.778],
+        0x22df: [0.734, 0, 0.778],
+        0x22e0: [0.801, 0.303, 0.778],
+        0x22e1: [0.801, 0.303, 0.778],
+        0x22e2: [0.716, 0.215, 0.778],
+        0x22e3: [0.716, 0.215, 0.778],
+        0x22e6: [0.73, 0.359, 0.778],
+        0x22e7: [0.73, 0.359, 0.778],
+        0x22e8: [0.73, 0.359, 0.778],
+        0x22e9: [0.73, 0.359, 0.778],
+        0x22ea: [0.706, 0.208, 0.778],
+        0x22eb: [0.706, 0.208, 0.778],
+        0x22ec: [0.802, 0.303, 0.778],
+        0x22ed: [0.801, 0.303, 0.778],
+        0x22ee: [1.3, 0.03, 0.278],
+        0x22ef: [0.31, -0.19, 1.172],
+        0x22f1: [1.52, -0.1, 1.282],
+        0x2305: [0.716, 0, 0.611],
+        0x2306: [0.813, 0.097, 0.611],
+        0x2308: [0.75, 0.25, 0.444],
+        0x2309: [0.75, 0.25, 0.444],
+        0x230a: [0.75, 0.25, 0.444],
+        0x230b: [0.75, 0.25, 0.444],
+        0x231c: [0.694, -0.306, 0.5],
+        0x231d: [0.694, -0.306, 0.5],
+        0x231e: [0.366, 0.022, 0.5],
+        0x231f: [0.366, 0.022, 0.5],
+        0x2322: [0.388, -0.122, 1],
+        0x2323: [0.378, -0.134, 1],
+        0x2329: [0.75, 0.25, 0.389],
+        0x232a: [0.75, 0.25, 0.389],
+        0x23b0: [0.744, 0.244, 0.412],
+        0x23b1: [0.744, 0.244, 0.412],
+        0x23d0: [0.602, 0, 0.667],
+        0x24c8: [0.709, 0.175, 0.902],
+        0x250c: [0.694, -0.306, 0.5],
+        0x2510: [0.694, -0.306, 0.5],
+        0x2514: [0.366, 0.022, 0.5],
+        0x2518: [0.366, 0.022, 0.5],
+        0x2571: [0.694, 0.195, 0.889],
+        0x2572: [0.694, 0.195, 0.889],
+        0x25a0: [0.689, 0, 0.778],
+        0x25a1: [0.689, 0, 0.778],
+        0x25aa: [0.689, 0, 0.778],
+        0x25b2: [0.575, 0.02, 0.722],
+        0x25b3: [0.716, 0, 0.889],
+        0x25b4: [0.575, 0.02, 0.722],
+        0x25b5: [0.716, 0, 0.889],
+        0x25b6: [0.539, 0.041, 0.778],
+        0x25b8: [0.539, 0.041, 0.778],
+        0x25b9: [0.505, 0.005, 0.5],
+        0x25bc: [0.576, 0.019, 0.722],
+        0x25bd: [0.5, 0.215, 0.889],
+        0x25be: [0.576, 0.019, 0.722],
+        0x25bf: [0.5, 0.215, 0.889],
+        0x25c0: [0.539, 0.041, 0.778],
+        0x25c2: [0.539, 0.041, 0.778],
+        0x25c3: [0.505, 0.005, 0.5],
+        0x25ca: [0.716, 0.132, 0.667],
+        0x25ef: [0.715, 0.215, 1],
+        0x25fb: [0.689, 0, 0.778],
+        0x25fc: [0.689, 0, 0.778],
+        0x2605: [0.694, 0.111, 0.944],
+        0x2660: [0.727, 0.13, 0.778],
+        0x2661: [0.716, 0.033, 0.778],
+        0x2662: [0.727, 0.162, 0.778],
+        0x2663: [0.726, 0.13, 0.778],
+        0x266d: [0.75, 0.022, 0.389],
+        0x266e: [0.734, 0.223, 0.389],
+        0x266f: [0.723, 0.223, 0.389],
+        0x2713: [0.706, 0.034, 0.833],
+        0x2720: [0.716, 0.022, 0.833],
+        0x2758: [0.75, 0.249, 0.278],
+        0x27e8: [0.75, 0.25, 0.389],
+        0x27e9: [0.75, 0.25, 0.389],
+        0x27ee: [0.744, 0.244, 0.412],
+        0x27ef: [0.744, 0.244, 0.412],
+        0x27f5: [0.511, 0.011, 1.609],
+        0x27f6: [0.511, 0.011, 1.638],
+        0x27f7: [0.511, 0.011, 1.859],
+        0x27f8: [0.525, 0.024, 1.609],
+        0x27f9: [0.525, 0.024, 1.638],
+        0x27fa: [0.525, 0.024, 1.858],
+        0x27fc: [0.511, 0.011, 1.638],
+        0x29eb: [0.716, 0.132, 0.667],
+        0x29f8: [0.716, 0.215, 0.778],
+        0x2a00: [0.75, 0.25, 1.111],
+        0x2a01: [0.75, 0.25, 1.111],
+        0x2a02: [0.75, 0.25, 1.111],
+        0x2a04: [0.75, 0.249, 0.833],
+        0x2a06: [0.75, 0.249, 0.833],
+        0x2a0c: [0.805, 0.306, 1.638, { ic: 0.138 }],
+        0x2a2f: [0.491, -0.009, 0.778],
+        0x2a3f: [0.683, 0, 0.75],
+        0x2a5e: [0.813, 0.097, 0.611],
+        0x2a7d: [0.636, 0.138, 0.778],
+        0x2a7e: [0.636, 0.138, 0.778],
+        0x2a85: [0.762, 0.29, 0.778],
+        0x2a86: [0.762, 0.29, 0.778],
+        0x2a87: [0.635, 0.241, 0.778],
+        0x2a88: [0.635, 0.241, 0.778],
+        0x2a89: [0.761, 0.387, 0.778],
+        0x2a8a: [0.761, 0.387, 0.778],
+        0x2a8b: [1.003, 0.463, 0.778],
+        0x2a8c: [1.003, 0.463, 0.778],
+        0x2a95: [0.636, 0.138, 0.778],
+        0x2a96: [0.636, 0.138, 0.778],
+        0x2aaf: [0.636, 0.138, 0.778],
+        0x2ab0: [0.636, 0.138, 0.778],
+        0x2ab5: [0.752, 0.286, 0.778],
+        0x2ab6: [0.752, 0.286, 0.778],
+        0x2ab7: [0.761, 0.294, 0.778],
+        0x2ab8: [0.761, 0.294, 0.778],
+        0x2ab9: [0.761, 0.337, 0.778],
+        0x2aba: [0.761, 0.337, 0.778],
+        0x2ac5: [0.753, 0.215, 0.778],
+        0x2ac6: [0.753, 0.215, 0.778],
+        0x2acb: [0.783, 0.385, 0.778],
+        0x2acc: [0.783, 0.385, 0.778],
+        0x3008: [0.75, 0.25, 0.389],
+        0x3009: [0.75, 0.25, 0.389],
+        0xe006: [0.43, 0.023, 0.222, { ic: 0.018 }],
+        0xe007: [0.431, 0.024, 0.389, { ic: 0.018 }],
+        0xe008: [0.605, 0.085, 0.778],
+        0xe009: [0.434, 0.006, 0.667, { ic: 0.067 }],
+        0xe00c: [0.752, 0.284, 0.778],
+        0xe00d: [0.752, 0.284, 0.778],
+        0xe00e: [0.919, 0.421, 0.778],
+        0xe00f: [0.801, 0.303, 0.778],
+        0xe010: [0.801, 0.303, 0.778],
+        0xe011: [0.919, 0.421, 0.778],
+        0xe016: [0.828, 0.33, 0.778],
+        0xe017: [0.752, 0.332, 0.778],
+        0xe018: [0.828, 0.33, 0.778],
+        0xe019: [0.752, 0.333, 0.778],
+        0xe01a: [0.634, 0.255, 0.778],
+        0xe01b: [0.634, 0.254, 0.778],
+        0x1d400: [0.698, 0, 0.869],
+        0x1d401: [0.686, 0, 0.818],
+        0x1d402: [0.697, 0.011, 0.831],
+        0x1d403: [0.686, 0, 0.882],
+        0x1d404: [0.68, 0, 0.756],
+        0x1d405: [0.68, 0, 0.724],
+        0x1d406: [0.697, 0.01, 0.904],
+        0x1d407: [0.686, 0, 0.9],
+        0x1d408: [0.686, 0, 0.436],
+        0x1d409: [0.686, 0.011, 0.594],
+        0x1d40a: [0.686, 0, 0.901],
+        0x1d40b: [0.686, 0, 0.692],
+        0x1d40c: [0.686, 0, 1.092],
+        0x1d40d: [0.686, 0, 0.9],
+        0x1d40e: [0.696, 0.01, 0.864],
+        0x1d40f: [0.686, 0, 0.786],
+        0x1d410: [0.696, 0.193, 0.864],
+        0x1d411: [0.686, 0.011, 0.862],
+        0x1d412: [0.697, 0.011, 0.639],
+        0x1d413: [0.675, 0, 0.8],
+        0x1d414: [0.686, 0.011, 0.885],
+        0x1d415: [0.686, 0.007, 0.869],
+        0x1d416: [0.686, 0.007, 1.189],
+        0x1d417: [0.686, 0, 0.869],
+        0x1d418: [0.686, 0, 0.869],
+        0x1d419: [0.686, 0, 0.703],
+        0x1d41a: [0.453, 0.006, 0.559],
+        0x1d41b: [0.694, 0.006, 0.639],
+        0x1d41c: [0.453, 0.006, 0.511],
+        0x1d41d: [0.694, 0.006, 0.639],
+        0x1d41e: [0.452, 0.006, 0.527],
+        0x1d41f: [0.7, 0, 0.351, { ic: 0.101 }],
+        0x1d420: [0.455, 0.201, 0.575],
+        0x1d421: [0.694, 0, 0.639],
+        0x1d422: [0.695, 0, 0.319],
+        0x1d423: [0.695, 0.2, 0.351],
+        0x1d424: [0.694, 0, 0.607],
+        0x1d425: [0.694, 0, 0.319],
+        0x1d426: [0.45, 0, 0.958],
+        0x1d427: [0.45, 0, 0.639],
+        0x1d428: [0.452, 0.005, 0.575],
+        0x1d429: [0.45, 0.194, 0.639],
+        0x1d42a: [0.45, 0.194, 0.607],
+        0x1d42b: [0.45, 0, 0.474],
+        0x1d42c: [0.453, 0.006, 0.454],
+        0x1d42d: [0.635, 0.005, 0.447],
+        0x1d42e: [0.45, 0.006, 0.639],
+        0x1d42f: [0.444, 0, 0.607],
+        0x1d430: [0.444, 0, 0.831],
+        0x1d431: [0.444, 0, 0.607],
+        0x1d432: [0.444, 0.2, 0.607],
+        0x1d433: [0.444, 0, 0.511],
+        0x1d434: [0.716, 0, 0.75, { sk: 0.139 }],
+        0x1d435: [0.683, 0, 0.759, { sk: 0.0833 }],
+        0x1d436: [0.705, 0.022, 0.715, { ic: 0.045, sk: 0.0833 }],
+        0x1d437: [0.683, 0, 0.828, { sk: 0.0556 }],
+        0x1d438: [0.68, 0, 0.738, { ic: 0.026, sk: 0.0833 }],
+        0x1d439: [0.68, 0, 0.643, { ic: 0.106, sk: 0.0833 }],
+        0x1d43a: [0.705, 0.022, 0.786, { sk: 0.0833 }],
+        0x1d43b: [0.683, 0, 0.831, { ic: 0.057, sk: 0.0556 }],
+        0x1d43c: [0.683, 0, 0.44, { ic: 0.064, sk: 0.111 }],
+        0x1d43d: [0.683, 0.022, 0.555, { ic: 0.078, sk: 0.167 }],
+        0x1d43e: [0.683, 0, 0.849, { ic: 0.04, sk: 0.0556 }],
+        0x1d43f: [0.683, 0, 0.681, { sk: 0.0278 }],
+        0x1d440: [0.683, 0, 0.97, { ic: 0.081, sk: 0.0833 }],
+        0x1d441: [0.683, 0, 0.803, { ic: 0.085, sk: 0.0833 }],
+        0x1d442: [0.704, 0.022, 0.763, { sk: 0.0833 }],
+        0x1d443: [0.683, 0, 0.642, { ic: 0.109, sk: 0.0833 }],
+        0x1d444: [0.704, 0.194, 0.791, { sk: 0.0833 }],
+        0x1d445: [0.683, 0.021, 0.759, { sk: 0.0833 }],
+        0x1d446: [0.705, 0.022, 0.613, { ic: 0.032, sk: 0.0833 }],
+        0x1d447: [0.677, 0, 0.584, { ic: 0.12, sk: 0.0833 }],
+        0x1d448: [0.683, 0.022, 0.683, { ic: 0.084, sk: 0.0278 }],
+        0x1d449: [0.683, 0.022, 0.583, { ic: 0.186 }],
+        0x1d44a: [0.683, 0.022, 0.944, { ic: 0.104 }],
+        0x1d44b: [0.683, 0, 0.828, { ic: 0.024, sk: 0.0833 }],
+        0x1d44c: [0.683, 0, 0.581, { ic: 0.182 }],
+        0x1d44d: [0.683, 0, 0.683, { ic: 0.04, sk: 0.0833 }],
+        0x1d44e: [0.441, 0.01, 0.529],
+        0x1d44f: [0.694, 0.011, 0.429],
+        0x1d450: [0.442, 0.011, 0.433, { sk: 0.0556 }],
+        0x1d451: [0.694, 0.01, 0.52, { sk: 0.167 }],
+        0x1d452: [0.442, 0.011, 0.466, { sk: 0.0556 }],
+        0x1d453: [0.705, 0.205, 0.49, { ic: 0.06, sk: 0.167 }],
+        0x1d454: [0.442, 0.205, 0.477, { sk: 0.0278 }],
+        0x1d456: [0.661, 0.011, 0.345],
+        0x1d457: [0.661, 0.204, 0.412],
+        0x1d458: [0.694, 0.011, 0.521],
+        0x1d459: [0.694, 0.011, 0.298, { sk: 0.0833 }],
+        0x1d45a: [0.442, 0.011, 0.878],
+        0x1d45b: [0.442, 0.011, 0.6],
+        0x1d45c: [0.441, 0.011, 0.485, { sk: 0.0556 }],
+        0x1d45d: [0.442, 0.194, 0.503, { sk: 0.0833 }],
+        0x1d45e: [0.442, 0.194, 0.446, { ic: 0.014, sk: 0.0833 }],
+        0x1d45f: [0.442, 0.011, 0.451, { sk: 0.0556 }],
+        0x1d460: [0.442, 0.01, 0.469, { sk: 0.0556 }],
+        0x1d461: [0.626, 0.011, 0.361, { sk: 0.0833 }],
+        0x1d462: [0.442, 0.011, 0.572, { sk: 0.0278 }],
+        0x1d463: [0.443, 0.011, 0.485, { sk: 0.0278 }],
+        0x1d464: [0.443, 0.011, 0.716, { sk: 0.0833 }],
+        0x1d465: [0.442, 0.011, 0.572, { sk: 0.0278 }],
+        0x1d466: [0.442, 0.205, 0.49, { sk: 0.0556 }],
+        0x1d467: [0.442, 0.011, 0.465, { sk: 0.0556 }],
+        0x1d468: [0.711, 0, 0.869, { sk: 0.16 }],
+        0x1d469: [0.686, 0, 0.866, { sk: 0.0958 }],
+        0x1d46a: [0.703, 0.017, 0.817, { ic: 0.038, sk: 0.0958 }],
+        0x1d46b: [0.686, 0, 0.938, { sk: 0.0639 }],
+        0x1d46c: [0.68, 0, 0.81, { ic: 0.015, sk: 0.0958 }],
+        0x1d46d: [0.68, 0, 0.689, { ic: 0.12, sk: 0.0958 }],
+        0x1d46e: [0.703, 0.016, 0.887, { sk: 0.0958 }],
+        0x1d46f: [0.686, 0, 0.982, { ic: 0.045, sk: 0.0639 }],
+        0x1d470: [0.686, 0, 0.511, { ic: 0.062, sk: 0.128 }],
+        0x1d471: [0.686, 0.017, 0.631, { ic: 0.063, sk: 0.192 }],
+        0x1d472: [0.686, 0, 0.971, { ic: 0.032, sk: 0.0639 }],
+        0x1d473: [0.686, 0, 0.756, { sk: 0.0319 }],
+        0x1d474: [0.686, 0, 1.142, { ic: 0.077, sk: 0.0958 }],
+        0x1d475: [0.686, 0, 0.95, { ic: 0.077, sk: 0.0958 }],
+        0x1d476: [0.703, 0.017, 0.837, { sk: 0.0958 }],
+        0x1d477: [0.686, 0, 0.723, { ic: 0.124, sk: 0.0958 }],
+        0x1d478: [0.703, 0.194, 0.869, { sk: 0.0958 }],
+        0x1d479: [0.686, 0.017, 0.872, { sk: 0.0958 }],
+        0x1d47a: [0.703, 0.017, 0.693, { ic: 0.021, sk: 0.0958 }],
+        0x1d47b: [0.675, 0, 0.637, { ic: 0.135, sk: 0.0958 }],
+        0x1d47c: [0.686, 0.016, 0.8, { ic: 0.077, sk: 0.0319 }],
+        0x1d47d: [0.686, 0.016, 0.678, { ic: 0.208 }],
+        0x1d47e: [0.686, 0.017, 1.093, { ic: 0.114 }],
+        0x1d47f: [0.686, 0, 0.947, { sk: 0.0958 }],
+        0x1d480: [0.686, 0, 0.675, { ic: 0.201 }],
+        0x1d481: [0.686, 0, 0.773, { ic: 0.032, sk: 0.0958 }],
+        0x1d482: [0.452, 0.008, 0.633],
+        0x1d483: [0.694, 0.008, 0.521],
+        0x1d484: [0.451, 0.008, 0.513, { sk: 0.0639 }],
+        0x1d485: [0.694, 0.008, 0.61, { sk: 0.192 }],
+        0x1d486: [0.452, 0.008, 0.554, { sk: 0.0639 }],
+        0x1d487: [0.701, 0.201, 0.568, { ic: 0.056, sk: 0.192 }],
+        0x1d488: [0.452, 0.202, 0.545, { sk: 0.0319 }],
+        0x1d489: [0.694, 0.008, 0.668, { sk: -0.0319 }],
+        0x1d48a: [0.694, 0.008, 0.405],
+        0x1d48b: [0.694, 0.202, 0.471],
+        0x1d48c: [0.694, 0.008, 0.604],
+        0x1d48d: [0.694, 0.008, 0.348, { sk: 0.0958 }],
+        0x1d48e: [0.452, 0.008, 1.032],
+        0x1d48f: [0.452, 0.008, 0.713],
+        0x1d490: [0.452, 0.008, 0.585, { sk: 0.0639 }],
+        0x1d491: [0.452, 0.194, 0.601, { sk: 0.0958 }],
+        0x1d492: [0.452, 0.194, 0.542, { sk: 0.0958 }],
+        0x1d493: [0.452, 0.008, 0.529, { sk: 0.0639 }],
+        0x1d494: [0.451, 0.008, 0.531, { sk: 0.0639 }],
+        0x1d495: [0.643, 0.007, 0.415, { sk: 0.0958 }],
+        0x1d496: [0.452, 0.008, 0.681, { sk: 0.0319 }],
+        0x1d497: [0.453, 0.008, 0.567, { sk: 0.0319 }],
+        0x1d498: [0.453, 0.008, 0.831, { sk: 0.0958 }],
+        0x1d499: [0.452, 0.008, 0.659, { sk: 0.0319 }],
+        0x1d49a: [0.452, 0.202, 0.59, { sk: 0.0639 }],
+        0x1d49b: [0.452, 0.008, 0.555, { sk: 0.0639 }],
+        0x1d49c: [0.717, 0.008, 0.803, { ic: 0.213, sk: 0.389 }],
+        0x1d49e: [0.728, 0.026, 0.666, { ic: 0.153, sk: 0.278 }],
+        0x1d49f: [0.708, 0.031, 0.774, { ic: 0.081, sk: 0.111 }],
+        0x1d4a2: [0.717, 0.037, 0.61, { ic: 0.128, sk: 0.25 }],
+        0x1d4a5: [0.717, 0.314, 1.052, { ic: 0.081, sk: 0.417 }],
+        0x1d4a6: [0.717, 0.037, 0.914, { ic: 0.29, sk: 0.361 }],
+        0x1d4a9: [0.726, 0.036, 0.902, { ic: 0.306, sk: 0.389 }],
+        0x1d4aa: [0.707, 0.008, 0.738, { ic: 0.067, sk: 0.167 }],
+        0x1d4ab: [0.716, 0.037, 1.013, { ic: 0.018, sk: 0.222 }],
+        0x1d4ac: [0.717, 0.017, 0.883, { sk: 0.278 }],
+        0x1d4ae: [0.708, 0.036, 0.868, { ic: 0.148, sk: 0.333 }],
+        0x1d4af: [0.735, 0.037, 0.747, { ic: 0.249, sk: 0.222 }],
+        0x1d4b0: [0.717, 0.017, 0.8, { ic: 0.16, sk: 0.25 }],
+        0x1d4b1: [0.717, 0.017, 0.622, { ic: 0.228, sk: 0.222 }],
+        0x1d4b2: [0.717, 0.017, 0.805, { ic: 0.221, sk: 0.25 }],
+        0x1d4b3: [0.717, 0.017, 0.944, { ic: 0.187, sk: 0.278 }],
+        0x1d4b4: [0.716, 0.017, 0.71, { ic: 0.249, sk: 0.194 }],
+        0x1d4b5: [0.717, 0.016, 0.821, { ic: 0.211, sk: 0.306 }],
+        0x1d504: [0.696, 0.026, 0.718],
+        0x1d505: [0.691, 0.027, 0.884],
+        0x1d507: [0.685, 0.027, 0.832],
+        0x1d508: [0.685, 0.024, 0.663],
+        0x1d509: [0.686, 0.153, 0.611],
+        0x1d50a: [0.69, 0.026, 0.785],
+        0x1d50d: [0.686, 0.139, 0.552],
+        0x1d50e: [0.68, 0.027, 0.668, { ic: 0.014 }],
+        0x1d50f: [0.686, 0.026, 0.666],
+        0x1d510: [0.692, 0.027, 1.05],
+        0x1d511: [0.686, 0.025, 0.832],
+        0x1d512: [0.729, 0.027, 0.827],
+        0x1d513: [0.692, 0.218, 0.828],
+        0x1d514: [0.729, 0.069, 0.827],
+        0x1d516: [0.692, 0.027, 0.829],
+        0x1d517: [0.701, 0.027, 0.669],
+        0x1d518: [0.697, 0.027, 0.646, { ic: 0.019 }],
+        0x1d519: [0.686, 0.026, 0.831],
+        0x1d51a: [0.686, 0.027, 1.046],
+        0x1d51b: [0.688, 0.027, 0.719],
+        0x1d51c: [0.686, 0.218, 0.833],
+        0x1d51e: [0.47, 0.035, 0.5],
+        0x1d51f: [0.685, 0.031, 0.513],
+        0x1d520: [0.466, 0.029, 0.389],
+        0x1d521: [0.609, 0.033, 0.499],
+        0x1d522: [0.467, 0.03, 0.401],
+        0x1d523: [0.681, 0.221, 0.326],
+        0x1d524: [0.47, 0.209, 0.504],
+        0x1d525: [0.688, 0.205, 0.521],
+        0x1d526: [0.673, 0.02, 0.279],
+        0x1d527: [0.672, 0.208, 0.281],
+        0x1d528: [0.689, 0.025, 0.389],
+        0x1d529: [0.685, 0.02, 0.28],
+        0x1d52a: [0.475, 0.026, 0.767],
+        0x1d52b: [0.475, 0.022, 0.527],
+        0x1d52c: [0.48, 0.028, 0.489],
+        0x1d52d: [0.541, 0.212, 0.5],
+        0x1d52e: [0.479, 0.219, 0.489],
+        0x1d52f: [0.474, 0.021, 0.389],
+        0x1d530: [0.478, 0.029, 0.443],
+        0x1d531: [0.64, 0.02, 0.333, { ic: 0.015 }],
+        0x1d532: [0.474, 0.023, 0.517],
+        0x1d533: [0.53, 0.028, 0.512],
+        0x1d534: [0.532, 0.028, 0.774],
+        0x1d535: [0.472, 0.188, 0.389],
+        0x1d536: [0.528, 0.218, 0.499],
+        0x1d537: [0.471, 0.214, 0.391],
+        0x1d538: [0.701, 0, 0.722],
+        0x1d539: [0.683, 0, 0.667],
+        0x1d53b: [0.683, 0, 0.722],
+        0x1d53c: [0.683, 0, 0.667],
+        0x1d53d: [0.683, 0, 0.611],
+        0x1d53e: [0.702, 0.019, 0.778],
+        0x1d540: [0.683, 0, 0.389],
+        0x1d541: [0.683, 0.077, 0.5],
+        0x1d542: [0.683, 0, 0.778],
+        0x1d543: [0.683, 0, 0.667],
+        0x1d544: [0.683, 0, 0.944],
+        0x1d546: [0.701, 0.019, 0.778],
+        0x1d54a: [0.702, 0.012, 0.556],
+        0x1d54b: [0.683, 0, 0.667],
+        0x1d54c: [0.683, 0.019, 0.722],
+        0x1d54d: [0.683, 0.02, 0.722],
+        0x1d54e: [0.683, 0.019, 1],
+        0x1d54f: [0.683, 0, 0.722],
+        0x1d550: [0.683, 0, 0.722],
+        0x1d56c: [0.686, 0.031, 0.847],
+        0x1d56d: [0.684, 0.031, 1.044],
+        0x1d56e: [0.676, 0.032, 0.723],
+        0x1d56f: [0.683, 0.029, 0.982],
+        0x1d570: [0.686, 0.029, 0.783],
+        0x1d571: [0.684, 0.146, 0.722],
+        0x1d572: [0.687, 0.029, 0.927],
+        0x1d573: [0.683, 0.126, 0.851],
+        0x1d574: [0.681, 0.025, 0.655],
+        0x1d575: [0.68, 0.141, 0.652],
+        0x1d576: [0.681, 0.026, 0.789, { ic: 0.017 }],
+        0x1d577: [0.683, 0.028, 0.786],
+        0x1d578: [0.683, 0.032, 1.239],
+        0x1d579: [0.679, 0.03, 0.983],
+        0x1d57a: [0.726, 0.03, 0.976],
+        0x1d57b: [0.688, 0.223, 0.977],
+        0x1d57c: [0.726, 0.083, 0.976],
+        0x1d57d: [0.688, 0.028, 0.978],
+        0x1d57e: [0.685, 0.031, 0.978],
+        0x1d57f: [0.686, 0.03, 0.79, { ic: 0.012 }],
+        0x1d580: [0.688, 0.039, 0.851, { ic: 0.02 }],
+        0x1d581: [0.685, 0.029, 0.982],
+        0x1d582: [0.683, 0.03, 1.235],
+        0x1d583: [0.681, 0.035, 0.849],
+        0x1d584: [0.688, 0.214, 0.984],
+        0x1d585: [0.677, 0.148, 0.711],
+        0x1d586: [0.472, 0.032, 0.603],
+        0x1d587: [0.69, 0.032, 0.59],
+        0x1d588: [0.473, 0.026, 0.464],
+        0x1d589: [0.632, 0.028, 0.589],
+        0x1d58a: [0.471, 0.027, 0.472],
+        0x1d58b: [0.687, 0.222, 0.388],
+        0x1d58c: [0.472, 0.208, 0.595],
+        0x1d58d: [0.687, 0.207, 0.615],
+        0x1d58e: [0.686, 0.025, 0.331],
+        0x1d58f: [0.682, 0.203, 0.332],
+        0x1d590: [0.682, 0.025, 0.464],
+        0x1d591: [0.681, 0.024, 0.337],
+        0x1d592: [0.476, 0.031, 0.921],
+        0x1d593: [0.473, 0.028, 0.654],
+        0x1d594: [0.482, 0.034, 0.609],
+        0x1d595: [0.557, 0.207, 0.604],
+        0x1d596: [0.485, 0.211, 0.596],
+        0x1d597: [0.472, 0.026, 0.46],
+        0x1d598: [0.479, 0.034, 0.523],
+        0x1d599: [0.648, 0.027, 0.393, { ic: 0.014 }],
+        0x1d59a: [0.472, 0.032, 0.589, { ic: 0.014 }],
+        0x1d59b: [0.546, 0.027, 0.604],
+        0x1d59c: [0.549, 0.032, 0.918],
+        0x1d59d: [0.471, 0.188, 0.459],
+        0x1d59e: [0.557, 0.221, 0.589],
+        0x1d59f: [0.471, 0.214, 0.461],
+        0x1d5a0: [0.694, 0, 0.667],
+        0x1d5a1: [0.694, 0, 0.667],
+        0x1d5a2: [0.705, 0.011, 0.639],
+        0x1d5a3: [0.694, 0, 0.722],
+        0x1d5a4: [0.691, 0, 0.597],
+        0x1d5a5: [0.691, 0, 0.569],
+        0x1d5a6: [0.704, 0.011, 0.667],
+        0x1d5a7: [0.694, 0, 0.708],
+        0x1d5a8: [0.694, 0, 0.278],
+        0x1d5a9: [0.694, 0.022, 0.472],
+        0x1d5aa: [0.694, 0, 0.694],
+        0x1d5ab: [0.694, 0, 0.542],
+        0x1d5ac: [0.694, 0, 0.875],
+        0x1d5ad: [0.694, 0, 0.708],
+        0x1d5ae: [0.715, 0.022, 0.736],
+        0x1d5af: [0.694, 0, 0.639],
+        0x1d5b0: [0.715, 0.125, 0.736],
+        0x1d5b1: [0.694, 0, 0.646],
+        0x1d5b2: [0.716, 0.022, 0.556],
+        0x1d5b3: [0.688, 0, 0.681],
+        0x1d5b4: [0.694, 0.022, 0.688],
+        0x1d5b5: [0.694, 0, 0.667],
+        0x1d5b6: [0.694, 0, 0.944],
+        0x1d5b7: [0.694, 0, 0.667],
+        0x1d5b8: [0.694, 0, 0.667],
+        0x1d5b9: [0.694, 0, 0.611],
+        0x1d5ba: [0.46, 0.01, 0.481],
+        0x1d5bb: [0.694, 0.011, 0.517],
+        0x1d5bc: [0.46, 0.01, 0.444],
+        0x1d5bd: [0.694, 0.01, 0.517],
+        0x1d5be: [0.461, 0.01, 0.444],
+        0x1d5bf: [0.705, 0, 0.306, { ic: 0.041 }],
+        0x1d5c0: [0.455, 0.206, 0.5],
+        0x1d5c1: [0.694, 0, 0.517],
+        0x1d5c2: [0.68, 0, 0.239],
+        0x1d5c3: [0.68, 0.205, 0.267],
+        0x1d5c4: [0.694, 0, 0.489],
+        0x1d5c5: [0.694, 0, 0.239],
+        0x1d5c6: [0.455, 0, 0.794],
+        0x1d5c7: [0.455, 0, 0.517],
+        0x1d5c8: [0.46, 0.01, 0.5],
+        0x1d5c9: [0.455, 0.194, 0.517],
+        0x1d5ca: [0.455, 0.194, 0.517],
+        0x1d5cb: [0.455, 0, 0.342],
+        0x1d5cc: [0.46, 0.01, 0.383],
+        0x1d5cd: [0.571, 0.01, 0.361],
+        0x1d5ce: [0.444, 0.01, 0.517],
+        0x1d5cf: [0.444, 0, 0.461],
+        0x1d5d0: [0.444, 0, 0.683],
+        0x1d5d1: [0.444, 0, 0.461],
+        0x1d5d2: [0.444, 0.204, 0.461],
+        0x1d5d3: [0.444, 0, 0.435],
+        0x1d5d4: [0.694, 0, 0.733],
+        0x1d5d5: [0.694, 0, 0.733],
+        0x1d5d6: [0.704, 0.011, 0.703],
+        0x1d5d7: [0.694, 0, 0.794],
+        0x1d5d8: [0.691, 0, 0.642],
+        0x1d5d9: [0.691, 0, 0.611],
+        0x1d5da: [0.705, 0.011, 0.733],
+        0x1d5db: [0.694, 0, 0.794],
+        0x1d5dc: [0.694, 0, 0.331],
+        0x1d5dd: [0.694, 0.022, 0.519],
+        0x1d5de: [0.694, 0, 0.764],
+        0x1d5df: [0.694, 0, 0.581],
+        0x1d5e0: [0.694, 0, 0.978],
+        0x1d5e1: [0.694, 0, 0.794],
+        0x1d5e2: [0.716, 0.022, 0.794],
+        0x1d5e3: [0.694, 0, 0.703],
+        0x1d5e4: [0.716, 0.106, 0.794],
+        0x1d5e5: [0.694, 0, 0.703],
+        0x1d5e6: [0.716, 0.022, 0.611],
+        0x1d5e7: [0.688, 0, 0.733],
+        0x1d5e8: [0.694, 0.022, 0.764],
+        0x1d5e9: [0.694, 0, 0.733],
+        0x1d5ea: [0.694, 0, 1.039],
+        0x1d5eb: [0.694, 0, 0.733],
+        0x1d5ec: [0.694, 0, 0.733],
+        0x1d5ed: [0.694, 0, 0.672],
+        0x1d5ee: [0.475, 0.011, 0.525],
+        0x1d5ef: [0.694, 0.01, 0.561],
+        0x1d5f0: [0.475, 0.011, 0.489],
+        0x1d5f1: [0.694, 0.011, 0.561],
+        0x1d5f2: [0.474, 0.01, 0.511],
+        0x1d5f3: [0.705, 0, 0.336, { ic: 0.045 }],
+        0x1d5f4: [0.469, 0.206, 0.55],
+        0x1d5f5: [0.694, 0, 0.561],
+        0x1d5f6: [0.695, 0, 0.256],
+        0x1d5f7: [0.695, 0.205, 0.286],
+        0x1d5f8: [0.694, 0, 0.531],
+        0x1d5f9: [0.694, 0, 0.256],
+        0x1d5fa: [0.469, 0, 0.867],
+        0x1d5fb: [0.468, 0, 0.561],
+        0x1d5fc: [0.474, 0.011, 0.55],
+        0x1d5fd: [0.469, 0.194, 0.561],
+        0x1d5fe: [0.469, 0.194, 0.561],
+        0x1d5ff: [0.469, 0, 0.372],
+        0x1d600: [0.474, 0.01, 0.422],
+        0x1d601: [0.589, 0.01, 0.404],
+        0x1d602: [0.458, 0.011, 0.561],
+        0x1d603: [0.458, 0, 0.5],
+        0x1d604: [0.458, 0, 0.744],
+        0x1d605: [0.458, 0, 0.5],
+        0x1d606: [0.458, 0.205, 0.5],
+        0x1d607: [0.458, 0, 0.476],
+        0x1d608: [0.694, 0, 0.667],
+        0x1d609: [0.694, 0, 0.667, { ic: 0.029 }],
+        0x1d60a: [0.705, 0.01, 0.639, { ic: 0.08 }],
+        0x1d60b: [0.694, 0, 0.722, { ic: 0.025 }],
+        0x1d60c: [0.691, 0, 0.597, { ic: 0.091 }],
+        0x1d60d: [0.691, 0, 0.569, { ic: 0.104 }],
+        0x1d60e: [0.705, 0.011, 0.667, { ic: 0.063 }],
+        0x1d60f: [0.694, 0, 0.708, { ic: 0.06 }],
+        0x1d610: [0.694, 0, 0.278, { ic: 0.06 }],
+        0x1d611: [0.694, 0.022, 0.472, { ic: 0.063 }],
+        0x1d612: [0.694, 0, 0.694, { ic: 0.091 }],
+        0x1d613: [0.694, 0, 0.542],
+        0x1d614: [0.694, 0, 0.875, { ic: 0.054 }],
+        0x1d615: [0.694, 0, 0.708, { ic: 0.058 }],
+        0x1d616: [0.716, 0.022, 0.736, { ic: 0.027 }],
+        0x1d617: [0.694, 0, 0.639, { ic: 0.051 }],
+        0x1d618: [0.716, 0.125, 0.736, { ic: 0.027 }],
+        0x1d619: [0.694, 0, 0.646, { ic: 0.052 }],
+        0x1d61a: [0.716, 0.022, 0.556, { ic: 0.053 }],
+        0x1d61b: [0.688, 0, 0.681, { ic: 0.109 }],
+        0x1d61c: [0.694, 0.022, 0.688, { ic: 0.059 }],
+        0x1d61d: [0.694, 0, 0.667, { ic: 0.132 }],
+        0x1d61e: [0.694, 0, 0.944, { ic: 0.132 }],
+        0x1d61f: [0.694, 0, 0.667, { ic: 0.091 }],
+        0x1d620: [0.694, 0, 0.667, { ic: 0.143 }],
+        0x1d621: [0.694, 0, 0.611, { ic: 0.091 }],
+        0x1d622: [0.461, 0.01, 0.481],
+        0x1d623: [0.694, 0.011, 0.517, { ic: 0.022 }],
+        0x1d624: [0.46, 0.011, 0.444, { ic: 0.055 }],
+        0x1d625: [0.694, 0.01, 0.517, { ic: 0.071 }],
+        0x1d626: [0.46, 0.011, 0.444, { ic: 0.028 }],
+        0x1d627: [0.705, 0, 0.306, { ic: 0.188 }],
+        0x1d628: [0.455, 0.206, 0.5, { ic: 0.068 }],
+        0x1d629: [0.694, 0, 0.517],
+        0x1d62a: [0.68, 0, 0.239, { ic: 0.076 }],
+        0x1d62b: [0.68, 0.204, 0.267, { ic: 0.069 }],
+        0x1d62c: [0.694, 0, 0.489, { ic: 0.054 }],
+        0x1d62d: [0.694, 0, 0.239, { ic: 0.072 }],
+        0x1d62e: [0.455, 0, 0.794],
+        0x1d62f: [0.454, 0, 0.517],
+        0x1d630: [0.461, 0.011, 0.5, { ic: 0.023 }],
+        0x1d631: [0.455, 0.194, 0.517, { ic: 0.021 }],
+        0x1d632: [0.455, 0.194, 0.517, { ic: 0.021 }],
+        0x1d633: [0.455, 0, 0.342, { ic: 0.082 }],
+        0x1d634: [0.461, 0.011, 0.383, { ic: 0.053 }],
+        0x1d635: [0.571, 0.011, 0.361, { ic: 0.049 }],
+        0x1d636: [0.444, 0.01, 0.517, { ic: 0.02 }],
+        0x1d637: [0.444, 0, 0.461, { ic: 0.079 }],
+        0x1d638: [0.444, 0, 0.683, { ic: 0.079 }],
+        0x1d639: [0.444, 0, 0.461, { ic: 0.076 }],
+        0x1d63a: [0.444, 0.205, 0.461, { ic: 0.079 }],
+        0x1d63b: [0.444, 0, 0.435, { ic: 0.059 }],
+        0x1d670: [0.623, 0, 0.525],
+        0x1d671: [0.611, 0, 0.525],
+        0x1d672: [0.622, 0.011, 0.525],
+        0x1d673: [0.611, 0, 0.525],
+        0x1d674: [0.611, 0, 0.525],
+        0x1d675: [0.611, 0, 0.525],
+        0x1d676: [0.622, 0.011, 0.525],
+        0x1d677: [0.611, 0, 0.525],
+        0x1d678: [0.611, 0, 0.525],
+        0x1d679: [0.611, 0.011, 0.525],
+        0x1d67a: [0.611, 0, 0.525],
+        0x1d67b: [0.611, 0, 0.525],
+        0x1d67c: [0.611, 0, 0.525],
+        0x1d67d: [0.611, 0, 0.525],
+        0x1d67e: [0.621, 0.01, 0.525],
+        0x1d67f: [0.611, 0, 0.525],
+        0x1d680: [0.621, 0.138, 0.525],
+        0x1d681: [0.611, 0.011, 0.525],
+        0x1d682: [0.622, 0.011, 0.525],
+        0x1d683: [0.611, 0, 0.525],
+        0x1d684: [0.611, 0.011, 0.525],
+        0x1d685: [0.611, 0.007, 0.525],
+        0x1d686: [0.611, 0.007, 0.525],
+        0x1d687: [0.611, 0, 0.525],
+        0x1d688: [0.611, 0, 0.525],
+        0x1d689: [0.611, 0, 0.525],
+        0x1d68a: [0.439, 0.006, 0.525],
+        0x1d68b: [0.611, 0.006, 0.525],
+        0x1d68c: [0.44, 0.006, 0.525],
+        0x1d68d: [0.611, 0.006, 0.525],
+        0x1d68e: [0.44, 0.006, 0.525],
+        0x1d68f: [0.617, 0, 0.525],
+        0x1d690: [0.442, 0.229, 0.525],
+        0x1d691: [0.611, 0, 0.525],
+        0x1d692: [0.612, 0, 0.525],
+        0x1d693: [0.612, 0.228, 0.525],
+        0x1d694: [0.611, 0, 0.525],
+        0x1d695: [0.611, 0, 0.525],
+        0x1d696: [0.436, 0, 0.525, { ic: 0.011 }],
+        0x1d697: [0.436, 0, 0.525],
+        0x1d698: [0.44, 0.006, 0.525],
+        0x1d699: [0.437, 0.221, 0.525],
+        0x1d69a: [0.437, 0.221, 0.525, { ic: 0.02 }],
+        0x1d69b: [0.437, 0, 0.525],
+        0x1d69c: [0.44, 0.006, 0.525],
+        0x1d69d: [0.554, 0.006, 0.525],
+        0x1d69e: [0.431, 0.005, 0.525],
+        0x1d69f: [0.431, 0, 0.525],
+        0x1d6a0: [0.431, 0, 0.525],
+        0x1d6a1: [0.431, 0, 0.525],
+        0x1d6a2: [0.431, 0.228, 0.525],
+        0x1d6a3: [0.431, 0, 0.525],
+        0x1d6a8: [0.698, 0, 0.869],
+        0x1d6a9: [0.686, 0, 0.818],
+        0x1d6aa: [0.68, 0, 0.692],
+        0x1d6ab: [0.698, 0, 0.958],
+        0x1d6ac: [0.68, 0, 0.756],
+        0x1d6ad: [0.686, 0, 0.703],
+        0x1d6ae: [0.686, 0, 0.9],
+        0x1d6af: [0.696, 0.01, 0.894],
+        0x1d6b0: [0.686, 0, 0.436],
+        0x1d6b1: [0.686, 0, 0.901],
+        0x1d6b2: [0.698, 0, 0.806],
+        0x1d6b3: [0.686, 0, 1.092],
+        0x1d6b4: [0.686, 0, 0.9],
+        0x1d6b5: [0.675, 0, 0.767],
+        0x1d6b6: [0.696, 0.01, 0.864],
+        0x1d6b7: [0.68, 0, 0.9],
+        0x1d6b8: [0.686, 0, 0.786],
+        0x1d6ba: [0.686, 0, 0.831],
+        0x1d6bb: [0.675, 0, 0.8],
+        0x1d6bc: [0.697, 0, 0.894],
+        0x1d6bd: [0.686, 0, 0.831],
+        0x1d6be: [0.686, 0, 0.869],
+        0x1d6bf: [0.686, 0, 0.894],
+        0x1d6c0: [0.696, 0, 0.831],
+        0x1d6c1: [0.686, 0.024, 0.958],
+        0x1d6e2: [0.716, 0, 0.75, { sk: 0.139 }],
+        0x1d6e3: [0.683, 0, 0.759, { sk: 0.0833 }],
+        0x1d6e4: [0.68, 0, 0.615, { ic: 0.106, sk: 0.0833 }],
+        0x1d6e5: [0.716, 0, 0.833, { sk: 0.167 }],
+        0x1d6e6: [0.68, 0, 0.738, { ic: 0.026, sk: 0.0833 }],
+        0x1d6e7: [0.683, 0, 0.683, { ic: 0.04, sk: 0.0833 }],
+        0x1d6e8: [0.683, 0, 0.831, { ic: 0.057, sk: 0.0556 }],
+        0x1d6e9: [0.704, 0.022, 0.763, { sk: 0.0833 }],
+        0x1d6ea: [0.683, 0, 0.44, { ic: 0.064, sk: 0.111 }],
+        0x1d6eb: [0.683, 0, 0.849, { ic: 0.04, sk: 0.0556 }],
+        0x1d6ec: [0.716, 0, 0.694, { sk: 0.167 }],
+        0x1d6ed: [0.683, 0, 0.97, { ic: 0.081, sk: 0.0833 }],
+        0x1d6ee: [0.683, 0, 0.803, { ic: 0.085, sk: 0.0833 }],
+        0x1d6ef: [0.677, 0, 0.742, { ic: 0.035, sk: 0.0833 }],
+        0x1d6f0: [0.704, 0.022, 0.763, { sk: 0.0833 }],
+        0x1d6f1: [0.68, 0, 0.831, { ic: 0.056, sk: 0.0556 }],
+        0x1d6f2: [0.683, 0, 0.642, { ic: 0.109, sk: 0.0833 }],
+        0x1d6f4: [0.683, 0, 0.78, { ic: 0.026, sk: 0.0833 }],
+        0x1d6f5: [0.677, 0, 0.584, { ic: 0.12, sk: 0.0833 }],
+        0x1d6f6: [0.705, 0, 0.583, { ic: 0.117, sk: 0.0556 }],
+        0x1d6f7: [0.683, 0, 0.667, { sk: 0.0833 }],
+        0x1d6f8: [0.683, 0, 0.828, { ic: 0.024, sk: 0.0833 }],
+        0x1d6f9: [0.683, 0, 0.612, { ic: 0.08, sk: 0.0556 }],
+        0x1d6fa: [0.704, 0, 0.772, { ic: 0.014, sk: 0.0833 }],
+        0x1d6fc: [0.442, 0.011, 0.64, { sk: 0.0278 }],
+        0x1d6fd: [0.705, 0.194, 0.566, { sk: 0.0833 }],
+        0x1d6fe: [0.441, 0.216, 0.518, { ic: 0.025 }],
+        0x1d6ff: [0.717, 0.01, 0.444, { sk: 0.0556 }],
+        0x1d700: [0.452, 0.022, 0.466, { sk: 0.0833 }],
+        0x1d701: [0.704, 0.204, 0.438, { ic: 0.033, sk: 0.0833 }],
+        0x1d702: [0.442, 0.216, 0.497, { sk: 0.0556 }],
+        0x1d703: [0.705, 0.01, 0.469, { sk: 0.0833 }],
+        0x1d704: [0.442, 0.01, 0.354, { sk: 0.0556 }],
+        0x1d705: [0.442, 0.011, 0.576],
+        0x1d706: [0.694, 0.012, 0.583],
+        0x1d707: [0.442, 0.216, 0.603, { sk: 0.0278 }],
+        0x1d708: [0.442, 0, 0.494, { ic: 0.036, sk: 0.0278 }],
+        0x1d709: [0.704, 0.205, 0.438, { sk: 0.111 }],
+        0x1d70a: [0.441, 0.011, 0.485, { sk: 0.0556 }],
+        0x1d70b: [0.431, 0.011, 0.57],
+        0x1d70c: [0.442, 0.216, 0.517, { sk: 0.0833 }],
+        0x1d70d: [0.442, 0.107, 0.363, { ic: 0.042, sk: 0.0833 }],
+        0x1d70e: [0.431, 0.011, 0.571],
+        0x1d70f: [0.431, 0.013, 0.437, { ic: 0.08, sk: 0.0278 }],
+        0x1d710: [0.443, 0.01, 0.54, { sk: 0.0278 }],
+        0x1d711: [0.442, 0.218, 0.654, { sk: 0.0833 }],
+        0x1d712: [0.442, 0.204, 0.626, { sk: 0.0556 }],
+        0x1d713: [0.694, 0.205, 0.651, { sk: 0.111 }],
+        0x1d714: [0.443, 0.011, 0.622],
+        0x1d715: [0.715, 0.022, 0.531, { ic: 0.035, sk: 0.0833 }],
+        0x1d716: [0.431, 0.011, 0.406, { sk: 0.0556 }],
+        0x1d717: [0.705, 0.011, 0.591, { sk: 0.0833 }],
+        0x1d718: [0.434, 0.006, 0.667, { ic: 0.067 }],
+        0x1d719: [0.694, 0.205, 0.596, { sk: 0.0833 }],
+        0x1d71a: [0.442, 0.194, 0.517, { sk: 0.0833 }],
+        0x1d71b: [0.431, 0.01, 0.828],
+        0x1d71c: [0.711, 0, 0.869, { sk: 0.16 }],
+        0x1d71d: [0.686, 0, 0.866, { sk: 0.0958 }],
+        0x1d71e: [0.68, 0, 0.657, { ic: 0.12, sk: 0.0958 }],
+        0x1d71f: [0.711, 0, 0.958, { sk: 0.192 }],
+        0x1d720: [0.68, 0, 0.81, { ic: 0.015, sk: 0.0958 }],
+        0x1d721: [0.686, 0, 0.773, { ic: 0.032, sk: 0.0958 }],
+        0x1d722: [0.686, 0, 0.982, { ic: 0.045, sk: 0.0639 }],
+        0x1d723: [0.702, 0.017, 0.867, { sk: 0.0958 }],
+        0x1d724: [0.686, 0, 0.511, { ic: 0.062, sk: 0.128 }],
+        0x1d725: [0.686, 0, 0.971, { ic: 0.032, sk: 0.0639 }],
+        0x1d726: [0.711, 0, 0.806, { sk: 0.192 }],
+        0x1d727: [0.686, 0, 1.142, { ic: 0.077, sk: 0.0958 }],
+        0x1d728: [0.686, 0, 0.95, { ic: 0.077, sk: 0.0958 }],
+        0x1d729: [0.675, 0, 0.841, { ic: 0.026, sk: 0.0958 }],
+        0x1d72a: [0.703, 0.017, 0.837, { sk: 0.0958 }],
+        0x1d72b: [0.68, 0, 0.982, { ic: 0.044, sk: 0.0639 }],
+        0x1d72c: [0.686, 0, 0.723, { ic: 0.124, sk: 0.0958 }],
+        0x1d72e: [0.686, 0, 0.885, { ic: 0.017, sk: 0.0958 }],
+        0x1d72f: [0.675, 0, 0.637, { ic: 0.135, sk: 0.0958 }],
+        0x1d730: [0.703, 0, 0.671, { ic: 0.131, sk: 0.0639 }],
+        0x1d731: [0.686, 0, 0.767, { sk: 0.0958 }],
+        0x1d732: [0.686, 0, 0.947, { sk: 0.0958 }],
+        0x1d733: [0.686, 0, 0.714, { ic: 0.076, sk: 0.0639 }],
+        0x1d734: [0.703, 0, 0.879, { sk: 0.0958 }],
+        0x1d736: [0.452, 0.008, 0.761, { sk: 0.0319 }],
+        0x1d737: [0.701, 0.194, 0.66, { sk: 0.0958 }],
+        0x1d738: [0.451, 0.211, 0.59, { ic: 0.027 }],
+        0x1d739: [0.725, 0.008, 0.522, { sk: 0.0639 }],
+        0x1d73a: [0.461, 0.017, 0.529, { sk: 0.0958 }],
+        0x1d73b: [0.711, 0.202, 0.508, { ic: 0.013, sk: 0.0958 }],
+        0x1d73c: [0.452, 0.211, 0.6, { sk: 0.0639 }],
+        0x1d73d: [0.702, 0.008, 0.562, { sk: 0.0958 }],
+        0x1d73e: [0.452, 0.008, 0.412, { sk: 0.0639 }],
+        0x1d73f: [0.452, 0.008, 0.668],
+        0x1d740: [0.694, 0.013, 0.671],
+        0x1d741: [0.452, 0.211, 0.708, { sk: 0.0319 }],
+        0x1d742: [0.452, 0, 0.577, { ic: 0.031, sk: 0.0319 }],
+        0x1d743: [0.711, 0.201, 0.508, { sk: 0.128 }],
+        0x1d744: [0.452, 0.008, 0.585, { sk: 0.0639 }],
+        0x1d745: [0.444, 0.008, 0.682],
+        0x1d746: [0.451, 0.211, 0.612, { sk: 0.0958 }],
+        0x1d747: [0.451, 0.105, 0.424, { ic: 0.033, sk: 0.0958 }],
+        0x1d748: [0.444, 0.008, 0.686],
+        0x1d749: [0.444, 0.013, 0.521, { ic: 0.089, sk: 0.0319 }],
+        0x1d74a: [0.453, 0.008, 0.631, { sk: 0.0319 }],
+        0x1d74b: [0.452, 0.216, 0.747, { sk: 0.0958 }],
+        0x1d74c: [0.452, 0.201, 0.718, { sk: 0.0639 }],
+        0x1d74d: [0.694, 0.202, 0.758, { sk: 0.128 }],
+        0x1d74e: [0.453, 0.008, 0.718],
+        0x1d74f: [0.71, 0.017, 0.628, { ic: 0.029, sk: 0.0958 }],
+        0x1d750: [0.444, 0.007, 0.483, { sk: 0.0639 }],
+        0x1d751: [0.701, 0.008, 0.692, { sk: 0.0958 }],
+        0x1d752: [0.434, 0.006, 0.667, { ic: 0.067 }],
+        0x1d753: [0.694, 0.202, 0.712, { sk: 0.0958 }],
+        0x1d754: [0.451, 0.194, 0.612, { sk: 0.0958 }],
+        0x1d755: [0.444, 0.008, 0.975],
+        0x1d756: [0.694, 0, 0.733],
+        0x1d757: [0.694, 0, 0.733],
+        0x1d758: [0.691, 0, 0.581],
+        0x1d759: [0.694, 0, 0.917],
+        0x1d75a: [0.691, 0, 0.642],
+        0x1d75b: [0.694, 0, 0.672],
+        0x1d75c: [0.694, 0, 0.794],
+        0x1d75d: [0.716, 0.022, 0.856],
+        0x1d75e: [0.694, 0, 0.331],
+        0x1d75f: [0.694, 0, 0.764],
+        0x1d760: [0.694, 0, 0.672],
+        0x1d761: [0.694, 0, 0.978],
+        0x1d762: [0.694, 0, 0.794],
+        0x1d763: [0.688, 0, 0.733],
+        0x1d764: [0.716, 0.022, 0.794],
+        0x1d765: [0.691, 0, 0.794],
+        0x1d766: [0.694, 0, 0.703],
+        0x1d768: [0.694, 0, 0.794],
+        0x1d769: [0.688, 0, 0.733],
+        0x1d76a: [0.715, 0, 0.856],
+        0x1d76b: [0.694, 0, 0.794],
+        0x1d76c: [0.694, 0, 0.733],
+        0x1d76d: [0.694, 0, 0.856],
+        0x1d76e: [0.716, 0, 0.794],
+        0x1d7ce: [0.654, 0.01, 0.575],
+        0x1d7cf: [0.655, 0, 0.575],
+        0x1d7d0: [0.654, 0, 0.575],
+        0x1d7d1: [0.655, 0.011, 0.575],
+        0x1d7d2: [0.656, 0, 0.575],
+        0x1d7d3: [0.655, 0.011, 0.575],
+        0x1d7d4: [0.655, 0.011, 0.575],
+        0x1d7d5: [0.676, 0.011, 0.575],
+        0x1d7d6: [0.654, 0.011, 0.575],
+        0x1d7d7: [0.654, 0.011, 0.575],
+        0x1d7e2: [0.678, 0.022, 0.5],
+        0x1d7e3: [0.678, 0, 0.5],
+        0x1d7e4: [0.677, 0, 0.5],
+        0x1d7e5: [0.678, 0.022, 0.5],
+        0x1d7e6: [0.656, 0, 0.5],
+        0x1d7e7: [0.656, 0.021, 0.5],
+        0x1d7e8: [0.677, 0.022, 0.5],
+        0x1d7e9: [0.656, 0.011, 0.5],
+        0x1d7ea: [0.678, 0.022, 0.5],
+        0x1d7eb: [0.677, 0.022, 0.5],
+        0x1d7ec: [0.715, 0.022, 0.55],
+        0x1d7ed: [0.716, 0, 0.55],
+        0x1d7ee: [0.716, 0, 0.55],
+        0x1d7ef: [0.716, 0.022, 0.55],
+        0x1d7f0: [0.694, 0, 0.55],
+        0x1d7f1: [0.694, 0.022, 0.55],
+        0x1d7f2: [0.716, 0.022, 0.55],
+        0x1d7f3: [0.695, 0.011, 0.55],
+        0x1d7f4: [0.715, 0.022, 0.55],
+        0x1d7f5: [0.716, 0.022, 0.55],
+        0x1d7f6: [0.621, 0.01, 0.525],
+        0x1d7f7: [0.622, 0, 0.525],
+        0x1d7f8: [0.622, 0, 0.525],
+        0x1d7f9: [0.622, 0.011, 0.525],
+        0x1d7fa: [0.624, 0, 0.525],
+        0x1d7fb: [0.611, 0.01, 0.525],
+        0x1d7fc: [0.622, 0.011, 0.525],
+        0x1d7fd: [0.627, 0.01, 0.525],
+        0x1d7fe: [0.621, 0.01, 0.525],
+        0x1d7ff: [0.622, 0.011, 0.525]
+      };
+      //# sourceMappingURL=normal.js.map
+
+      /***/
+    },
+
+    /***/ 47033: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.sansSerifBoldItalic = void 0;
+      exports.sansSerifBoldItalic = {
+        0x131: [0.458, 0, 0.256],
+        0x237: [0.458, 0.205, 0.286]
+      };
+      //# sourceMappingURL=sans-serif-bold-italic.js.map
+
+      /***/
+    },
+
+    /***/ 94872: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.sansSerifBold = void 0;
+      exports.sansSerifBold = {
+        0x21: [0.694, 0, 0.367],
+        0x22: [0.694, -0.442, 0.558],
+        0x23: [0.694, 0.193, 0.917],
+        0x24: [0.75, 0.056, 0.55],
+        0x25: [0.75, 0.056, 1.029],
+        0x26: [0.716, 0.022, 0.831],
+        0x27: [0.694, -0.442, 0.306],
+        0x28: [0.75, 0.249, 0.428],
+        0x29: [0.75, 0.25, 0.428],
+        0x2a: [0.75, -0.293, 0.55],
+        0x2b: [0.617, 0.116, 0.856],
+        0x2c: [0.146, 0.106, 0.306],
+        0x2d: [0.273, -0.186, 0.367],
+        0x2e: [0.146, 0, 0.306],
+        0x2f: [0.75, 0.249, 0.55],
+        0x3a: [0.458, 0, 0.306],
+        0x3b: [0.458, 0.106, 0.306],
+        0x3d: [0.407, -0.094, 0.856],
+        0x3f: [0.705, 0, 0.519],
+        0x40: [0.704, 0.011, 0.733],
+        0x5b: [0.75, 0.25, 0.343],
+        0x5d: [0.75, 0.25, 0.343],
+        0x5e: [0.694, -0.537, 0.55],
+        0x5f: [-0.023, 0.11, 0.55],
+        0x7e: [0.344, -0.198, 0.55],
+        0x131: [0.458, 0, 0.256],
+        0x237: [0.458, 0.205, 0.286],
+        0x300: [0.694, -0.537, 0],
+        0x301: [0.694, -0.537, 0],
+        0x302: [0.694, -0.537, 0],
+        0x303: [0.694, -0.548, 0],
+        0x304: [0.66, -0.56, 0],
+        0x306: [0.694, -0.552, 0],
+        0x307: [0.695, -0.596, 0],
+        0x308: [0.695, -0.595, 0],
+        0x30a: [0.694, -0.538, 0],
+        0x30b: [0.694, -0.537, 0],
+        0x30c: [0.657, -0.5, 0],
+        0x2013: [0.327, -0.24, 0.55],
+        0x2014: [0.327, -0.24, 1.1],
+        0x2015: [0.327, -0.24, 1.1],
+        0x2017: [-0.023, 0.11, 0.55],
+        0x2018: [0.694, -0.443, 0.306],
+        0x2019: [0.694, -0.442, 0.306],
+        0x201c: [0.694, -0.443, 0.558],
+        0x201d: [0.694, -0.442, 0.558],
+        0x2044: [0.75, 0.249, 0.55],
+        0x2206: [0.694, 0, 0.917]
+      };
+      //# sourceMappingURL=sans-serif-bold.js.map
+
+      /***/
+    },
+
+    /***/ 9255: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.sansSerifItalic = void 0;
+      exports.sansSerifItalic = {
+        0x21: [0.694, 0, 0.319, { ic: 0.036 }],
+        0x22: [0.694, -0.471, 0.5],
+        0x23: [0.694, 0.194, 0.833, { ic: 0.018 }],
+        0x24: [0.75, 0.056, 0.5, { ic: 0.065 }],
+        0x25: [0.75, 0.056, 0.833],
+        0x26: [0.716, 0.022, 0.758],
+        0x27: [0.694, -0.471, 0.278, { ic: 0.057 }],
+        0x28: [0.75, 0.25, 0.389, { ic: 0.102 }],
+        0x29: [0.75, 0.25, 0.389],
+        0x2a: [0.75, -0.306, 0.5, { ic: 0.068 }],
+        0x2b: [0.583, 0.083, 0.778],
+        0x2c: [0.098, 0.125, 0.278],
+        0x2d: [0.259, -0.186, 0.333],
+        0x2e: [0.098, 0, 0.278],
+        0x2f: [0.75, 0.25, 0.5, { ic: 0.1 }],
+        0x30: [0.678, 0.022, 0.5, { ic: 0.049 }],
+        0x31: [0.678, 0, 0.5],
+        0x32: [0.678, 0, 0.5, { ic: 0.051 }],
+        0x33: [0.678, 0.022, 0.5, { ic: 0.044 }],
+        0x34: [0.656, 0, 0.5, { ic: 0.021 }],
+        0x35: [0.656, 0.022, 0.5, { ic: 0.055 }],
+        0x36: [0.678, 0.022, 0.5, { ic: 0.048 }],
+        0x37: [0.656, 0.011, 0.5, { ic: 0.096 }],
+        0x38: [0.678, 0.022, 0.5, { ic: 0.054 }],
+        0x39: [0.677, 0.022, 0.5, { ic: 0.045 }],
+        0x3a: [0.444, 0, 0.278],
+        0x3b: [0.444, 0.125, 0.278],
+        0x3d: [0.37, -0.13, 0.778, { ic: 0.018 }],
+        0x3f: [0.704, 0, 0.472, { ic: 0.064 }],
+        0x40: [0.705, 0.01, 0.667, { ic: 0.04 }],
+        0x5b: [0.75, 0.25, 0.289, { ic: 0.136 }],
+        0x5d: [0.75, 0.25, 0.289, { ic: 0.064 }],
+        0x5e: [0.694, -0.527, 0.5, { ic: 0.033 }],
+        0x5f: [-0.038, 0.114, 0.5, { ic: 0.065 }],
+        0x7e: [0.327, -0.193, 0.5, { ic: 0.06 }],
+        0x131: [0.444, 0, 0.239, { ic: 0.019 }],
+        0x237: [0.444, 0.204, 0.267, { ic: 0.019 }],
+        0x300: [0.694, -0.527, 0],
+        0x301: [0.694, -0.527, 0, { ic: 0.063 }],
+        0x302: [0.694, -0.527, 0, { ic: 0.033 }],
+        0x303: [0.677, -0.543, 0, { ic: 0.06 }],
+        0x304: [0.631, -0.552, 0, { ic: 0.064 }],
+        0x306: [0.694, -0.508, 0, { ic: 0.073 }],
+        0x307: [0.68, -0.576, 0],
+        0x308: [0.68, -0.582, 0, { ic: 0.04 }],
+        0x30a: [0.693, -0.527, 0],
+        0x30b: [0.694, -0.527, 0, { ic: 0.063 }],
+        0x30c: [0.654, -0.487, 0, { ic: 0.06 }],
+        0x391: [0.694, 0, 0.667],
+        0x392: [0.694, 0, 0.667, { ic: 0.029 }],
+        0x393: [0.691, 0, 0.542, { ic: 0.104 }],
+        0x394: [0.694, 0, 0.833],
+        0x395: [0.691, 0, 0.597, { ic: 0.091 }],
+        0x396: [0.694, 0, 0.611, { ic: 0.091 }],
+        0x397: [0.694, 0, 0.708, { ic: 0.06 }],
+        0x398: [0.715, 0.022, 0.778, { ic: 0.026 }],
+        0x399: [0.694, 0, 0.278, { ic: 0.06 }],
+        0x39a: [0.694, 0, 0.694, { ic: 0.091 }],
+        0x39b: [0.694, 0, 0.611],
+        0x39c: [0.694, 0, 0.875, { ic: 0.054 }],
+        0x39d: [0.694, 0, 0.708, { ic: 0.058 }],
+        0x39e: [0.688, 0, 0.667, { ic: 0.098 }],
+        0x39f: [0.716, 0.022, 0.736, { ic: 0.027 }],
+        0x3a0: [0.691, 0, 0.708, { ic: 0.06 }],
+        0x3a1: [0.694, 0, 0.639, { ic: 0.051 }],
+        0x3a3: [0.694, 0, 0.722, { ic: 0.091 }],
+        0x3a4: [0.688, 0, 0.681, { ic: 0.109 }],
+        0x3a5: [0.716, 0, 0.778, { ic: 0.065 }],
+        0x3a6: [0.694, 0, 0.722, { ic: 0.021 }],
+        0x3a7: [0.694, 0, 0.667, { ic: 0.091 }],
+        0x3a8: [0.694, 0, 0.778, { ic: 0.076 }],
+        0x3a9: [0.716, 0, 0.722, { ic: 0.047 }],
+        0x2013: [0.312, -0.236, 0.5, { ic: 0.065 }],
+        0x2014: [0.312, -0.236, 1, { ic: 0.065 }],
+        0x2015: [0.312, -0.236, 1, { ic: 0.065 }],
+        0x2017: [-0.038, 0.114, 0.5, { ic: 0.065 }],
+        0x2018: [0.694, -0.471, 0.278, { ic: 0.058 }],
+        0x2019: [0.694, -0.471, 0.278, { ic: 0.057 }],
+        0x201c: [0.694, -0.471, 0.5, { ic: 0.114 }],
+        0x201d: [0.694, -0.471, 0.5],
+        0x2044: [0.75, 0.25, 0.5, { ic: 0.1 }],
+        0x2206: [0.694, 0, 0.833]
+      };
+      //# sourceMappingURL=sans-serif-italic.js.map
+
+      /***/
+    },
+
+    /***/ 83366: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.sansSerif = void 0;
+      exports.sansSerif = {
+        0x21: [0.694, 0, 0.319],
+        0x22: [0.694, -0.471, 0.5],
+        0x23: [0.694, 0.194, 0.833],
+        0x24: [0.75, 0.056, 0.5],
+        0x25: [0.75, 0.056, 0.833],
+        0x26: [0.716, 0.022, 0.758],
+        0x27: [0.694, -0.471, 0.278],
+        0x28: [0.75, 0.25, 0.389],
+        0x29: [0.75, 0.25, 0.389],
+        0x2a: [0.75, -0.306, 0.5],
+        0x2b: [0.583, 0.082, 0.778],
+        0x2c: [0.098, 0.125, 0.278],
+        0x2d: [0.259, -0.186, 0.333],
+        0x2e: [0.098, 0, 0.278],
+        0x2f: [0.75, 0.25, 0.5],
+        0x3a: [0.444, 0, 0.278],
+        0x3b: [0.444, 0.125, 0.278],
+        0x3d: [0.37, -0.13, 0.778],
+        0x3f: [0.704, 0, 0.472],
+        0x40: [0.704, 0.011, 0.667],
+        0x5b: [0.75, 0.25, 0.289],
+        0x5d: [0.75, 0.25, 0.289],
+        0x5e: [0.694, -0.527, 0.5],
+        0x5f: [-0.038, 0.114, 0.5],
+        0x7e: [0.327, -0.193, 0.5],
+        0x131: [0.444, 0, 0.239],
+        0x237: [0.444, 0.205, 0.267],
+        0x300: [0.694, -0.527, 0],
+        0x301: [0.694, -0.527, 0],
+        0x302: [0.694, -0.527, 0],
+        0x303: [0.677, -0.543, 0],
+        0x304: [0.631, -0.552, 0],
+        0x306: [0.694, -0.508, 0],
+        0x307: [0.68, -0.576, 0],
+        0x308: [0.68, -0.582, 0],
+        0x30a: [0.694, -0.527, 0],
+        0x30b: [0.694, -0.527, 0],
+        0x30c: [0.654, -0.487, 0],
+        0x391: [0.694, 0, 0.667],
+        0x392: [0.694, 0, 0.667],
+        0x393: [0.691, 0, 0.542],
+        0x394: [0.694, 0, 0.833],
+        0x395: [0.691, 0, 0.597],
+        0x396: [0.694, 0, 0.611],
+        0x397: [0.694, 0, 0.708],
+        0x398: [0.716, 0.021, 0.778],
+        0x399: [0.694, 0, 0.278],
+        0x39a: [0.694, 0, 0.694],
+        0x39b: [0.694, 0, 0.611],
+        0x39c: [0.694, 0, 0.875],
+        0x39d: [0.694, 0, 0.708],
+        0x39e: [0.688, 0, 0.667],
+        0x39f: [0.715, 0.022, 0.736],
+        0x3a0: [0.691, 0, 0.708],
+        0x3a1: [0.694, 0, 0.639],
+        0x3a3: [0.694, 0, 0.722],
+        0x3a4: [0.688, 0, 0.681],
+        0x3a5: [0.716, 0, 0.778],
+        0x3a6: [0.694, 0, 0.722],
+        0x3a7: [0.694, 0, 0.667],
+        0x3a8: [0.694, 0, 0.778],
+        0x3a9: [0.716, 0, 0.722],
+        0x2013: [0.312, -0.236, 0.5],
+        0x2014: [0.312, -0.236, 1],
+        0x2015: [0.312, -0.236, 1],
+        0x2017: [-0.038, 0.114, 0.5],
+        0x2018: [0.694, -0.471, 0.278],
+        0x2019: [0.694, -0.471, 0.278],
+        0x201c: [0.694, -0.471, 0.5],
+        0x201d: [0.694, -0.471, 0.5],
+        0x2044: [0.75, 0.25, 0.5],
+        0x2206: [0.694, 0, 0.833]
+      };
+      //# sourceMappingURL=sans-serif.js.map
+
+      /***/
+    },
+
+    /***/ 21616: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.scriptBold = void 0;
+      exports.scriptBold = {};
+      //# sourceMappingURL=script-bold.js.map
+
+      /***/
+    },
+
+    /***/ 24062: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.script = void 0;
+      exports.script = {};
+      //# sourceMappingURL=script.js.map
+
+      /***/
+    },
+
+    /***/ 22578: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.smallop = void 0;
+      exports.smallop = {
+        0x28: [0.85, 0.349, 0.458],
+        0x29: [0.85, 0.349, 0.458],
+        0x2f: [0.85, 0.349, 0.578],
+        0x5b: [0.85, 0.349, 0.417],
+        0x5c: [0.85, 0.349, 0.578],
+        0x5d: [0.85, 0.349, 0.417],
+        0x7b: [0.85, 0.349, 0.583],
+        0x7d: [0.85, 0.349, 0.583],
+        0x2c6: [0.744, -0.551, 0.556],
+        0x2dc: [0.722, -0.597, 0.556],
+        0x302: [0.744, -0.551, 0],
+        0x303: [0.722, -0.597, 0],
+        0x2016: [0.602, 0, 0.778],
+        0x2044: [0.85, 0.349, 0.578],
+        0x2191: [0.6, 0, 0.667],
+        0x2193: [0.6, 0, 0.667],
+        0x21d1: [0.599, 0, 0.778],
+        0x21d3: [0.6, 0, 0.778],
+        0x220f: [0.75, 0.25, 0.944],
+        0x2210: [0.75, 0.25, 0.944],
+        0x2211: [0.75, 0.25, 1.056],
+        0x221a: [0.85, 0.35, 1, { ic: 0.02 }],
+        0x2223: [0.627, 0.015, 0.333],
+        0x2225: [0.627, 0.015, 0.556],
+        0x222b: [0.805, 0.306, 0.472, { ic: 0.138 }],
+        0x222c: [0.805, 0.306, 0.819, { ic: 0.138 }],
+        0x222d: [0.805, 0.306, 1.166, { ic: 0.138 }],
+        0x222e: [0.805, 0.306, 0.472, { ic: 0.138 }],
+        0x22c0: [0.75, 0.249, 0.833],
+        0x22c1: [0.75, 0.249, 0.833],
+        0x22c2: [0.75, 0.249, 0.833],
+        0x22c3: [0.75, 0.249, 0.833],
+        0x2308: [0.85, 0.349, 0.472],
+        0x2309: [0.85, 0.349, 0.472],
+        0x230a: [0.85, 0.349, 0.472],
+        0x230b: [0.85, 0.349, 0.472],
+        0x2329: [0.85, 0.35, 0.472],
+        0x232a: [0.85, 0.35, 0.472],
+        0x23d0: [0.602, 0, 0.667],
+        0x2758: [0.627, 0.015, 0.333],
+        0x27e8: [0.85, 0.35, 0.472],
+        0x27e9: [0.85, 0.35, 0.472],
+        0x2a00: [0.75, 0.25, 1.111],
+        0x2a01: [0.75, 0.25, 1.111],
+        0x2a02: [0.75, 0.25, 1.111],
+        0x2a04: [0.75, 0.249, 0.833],
+        0x2a06: [0.75, 0.249, 0.833],
+        0x2a0c: [0.805, 0.306, 1.638, { ic: 0.138 }],
+        0x3008: [0.85, 0.35, 0.472],
+        0x3009: [0.85, 0.35, 0.472]
+      };
+      //# sourceMappingURL=smallop.js.map
+
+      /***/
+    },
+
+    /***/ 70286: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texCalligraphicBold = void 0;
+      exports.texCalligraphicBold = {
+        0x41: [0.751, 0.049, 0.921, { ic: 0.068, sk: 0.224 }],
+        0x42: [0.705, 0.017, 0.748, { sk: 0.16 }],
+        0x43: [0.703, 0.02, 0.613, { sk: 0.16 }],
+        0x44: [0.686, 0, 0.892, { sk: 0.0958 }],
+        0x45: [0.703, 0.016, 0.607, { ic: 0.02, sk: 0.128 }],
+        0x46: [0.686, 0.03, 0.814, { ic: 0.116, sk: 0.128 }],
+        0x47: [0.703, 0.113, 0.682, { sk: 0.128 }],
+        0x48: [0.686, 0.048, 0.987, { sk: 0.128 }],
+        0x49: [0.686, 0, 0.642, { ic: 0.104, sk: 0.0319 }],
+        0x4a: [0.686, 0.114, 0.779, { ic: 0.158, sk: 0.192 }],
+        0x4b: [0.703, 0.017, 0.871, { sk: 0.0639 }],
+        0x4c: [0.703, 0.017, 0.788, { sk: 0.16 }],
+        0x4d: [0.703, 0.049, 1.378, { sk: 0.16 }],
+        0x4e: [0.84, 0.049, 0.937, { ic: 0.168, sk: 0.0958 }],
+        0x4f: [0.703, 0.017, 0.906, { sk: 0.128 }],
+        0x50: [0.686, 0.067, 0.81, { ic: 0.036, sk: 0.0958 }],
+        0x51: [0.703, 0.146, 0.939, { sk: 0.128 }],
+        0x52: [0.686, 0.017, 0.99, { sk: 0.0958 }],
+        0x53: [0.703, 0.016, 0.696, { ic: 0.025, sk: 0.16 }],
+        0x54: [0.72, 0.069, 0.644, { ic: 0.303, sk: 0.0319 }],
+        0x55: [0.686, 0.024, 0.715, { ic: 0.056, sk: 0.0958 }],
+        0x56: [0.686, 0.077, 0.737, { ic: 0.037, sk: 0.0319 }],
+        0x57: [0.686, 0.077, 1.169, { ic: 0.037, sk: 0.0958 }],
+        0x58: [0.686, 0, 0.817, { ic: 0.089, sk: 0.16 }],
+        0x59: [0.686, 0.164, 0.759, { ic: 0.038, sk: 0.0958 }],
+        0x5a: [0.686, 0, 0.818, { ic: 0.035, sk: 0.16 }],
+        0x131: [0.452, 0.008, 0.394, { sk: 0.0319 }],
+        0x237: [0.451, 0.201, 0.439, { sk: 0.0958 }]
+      };
+      //# sourceMappingURL=tex-calligraphic-bold.js.map
+
+      /***/
+    },
+
+    /***/ 57552: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texCalligraphic = void 0;
+      exports.texCalligraphic = {
+        0x41: [0.728, 0.05, 0.798, { ic: 0.021, sk: 0.194 }],
+        0x42: [0.705, 0.022, 0.657, { sk: 0.139 }],
+        0x43: [0.705, 0.025, 0.527, { sk: 0.139 }],
+        0x44: [0.683, 0, 0.771, { sk: 0.0833 }],
+        0x45: [0.705, 0.022, 0.528, { ic: 0.036, sk: 0.111 }],
+        0x46: [0.683, 0.032, 0.719, { ic: 0.11, sk: 0.111 }],
+        0x47: [0.704, 0.119, 0.595, { sk: 0.111 }],
+        0x48: [0.683, 0.048, 0.845, { sk: 0.111 }],
+        0x49: [0.683, 0, 0.545, { ic: 0.097, sk: 0.0278 }],
+        0x4a: [0.683, 0.119, 0.678, { ic: 0.161, sk: 0.167 }],
+        0x4b: [0.705, 0.022, 0.762, { sk: 0.0556 }],
+        0x4c: [0.705, 0.022, 0.69, { sk: 0.139 }],
+        0x4d: [0.705, 0.05, 1.201, { sk: 0.139 }],
+        0x4e: [0.789, 0.05, 0.82, { ic: 0.159, sk: 0.0833 }],
+        0x4f: [0.705, 0.022, 0.796, { sk: 0.111 }],
+        0x50: [0.683, 0.057, 0.696, { ic: 0.037, sk: 0.0833 }],
+        0x51: [0.705, 0.131, 0.817, { sk: 0.111 }],
+        0x52: [0.682, 0.022, 0.848, { sk: 0.0833 }],
+        0x53: [0.705, 0.022, 0.606, { ic: 0.036, sk: 0.139 }],
+        0x54: [0.717, 0.068, 0.545, { ic: 0.288, sk: 0.0278 }],
+        0x55: [0.683, 0.028, 0.626, { ic: 0.061, sk: 0.0833 }],
+        0x56: [0.683, 0.052, 0.613, { ic: 0.045, sk: 0.0278 }],
+        0x57: [0.683, 0.053, 0.988, { ic: 0.046, sk: 0.0833 }],
+        0x58: [0.683, 0, 0.713, { ic: 0.094, sk: 0.139 }],
+        0x59: [0.683, 0.143, 0.668, { ic: 0.046, sk: 0.0833 }],
+        0x5a: [0.683, 0, 0.725, { ic: 0.042, sk: 0.139 }]
+      };
+      //# sourceMappingURL=tex-calligraphic.js.map
+
+      /***/
+    },
+
+    /***/ 24398: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texMathit = void 0;
+      exports.texMathit = {
+        0x41: [0.716, 0, 0.743],
+        0x42: [0.683, 0, 0.704],
+        0x43: [0.705, 0.021, 0.716],
+        0x44: [0.683, 0, 0.755],
+        0x45: [0.68, 0, 0.678],
+        0x46: [0.68, 0, 0.653],
+        0x47: [0.705, 0.022, 0.774],
+        0x48: [0.683, 0, 0.743],
+        0x49: [0.683, 0, 0.386],
+        0x4a: [0.683, 0.021, 0.525],
+        0x4b: [0.683, 0, 0.769],
+        0x4c: [0.683, 0, 0.627],
+        0x4d: [0.683, 0, 0.897],
+        0x4e: [0.683, 0, 0.743],
+        0x4f: [0.704, 0.022, 0.767],
+        0x50: [0.683, 0, 0.678],
+        0x51: [0.704, 0.194, 0.767],
+        0x52: [0.683, 0.022, 0.729],
+        0x53: [0.705, 0.022, 0.562],
+        0x54: [0.677, 0, 0.716],
+        0x55: [0.683, 0.022, 0.743],
+        0x56: [0.683, 0.022, 0.743],
+        0x57: [0.683, 0.022, 0.999],
+        0x58: [0.683, 0, 0.743],
+        0x59: [0.683, 0, 0.743],
+        0x5a: [0.683, 0, 0.613],
+        0x61: [0.442, 0.011, 0.511],
+        0x62: [0.694, 0.011, 0.46],
+        0x63: [0.441, 0.01, 0.46],
+        0x64: [0.694, 0.011, 0.511],
+        0x65: [0.442, 0.01, 0.46],
+        0x66: [0.705, 0.204, 0.307],
+        0x67: [0.442, 0.205, 0.46],
+        0x68: [0.694, 0.011, 0.511],
+        0x69: [0.656, 0.01, 0.307],
+        0x6a: [0.656, 0.204, 0.307],
+        0x6b: [0.694, 0.011, 0.46],
+        0x6c: [0.694, 0.011, 0.256],
+        0x6d: [0.442, 0.011, 0.818],
+        0x6e: [0.442, 0.011, 0.562],
+        0x6f: [0.442, 0.011, 0.511],
+        0x70: [0.442, 0.194, 0.511],
+        0x71: [0.442, 0.194, 0.46],
+        0x72: [0.442, 0.011, 0.422],
+        0x73: [0.442, 0.011, 0.409],
+        0x74: [0.626, 0.011, 0.332],
+        0x75: [0.441, 0.011, 0.537],
+        0x76: [0.443, 0.01, 0.46],
+        0x77: [0.443, 0.011, 0.664],
+        0x78: [0.442, 0.011, 0.464],
+        0x79: [0.441, 0.205, 0.486],
+        0x7a: [0.442, 0.011, 0.409]
+      };
+      //# sourceMappingURL=tex-mathit.js.map
+
+      /***/
+    },
+
+    /***/ 20628: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texOldstyleBold = void 0;
+      exports.texOldstyleBold = {
+        0x30: [0.46, 0.017, 0.575],
+        0x31: [0.461, 0, 0.575],
+        0x32: [0.46, 0, 0.575],
+        0x33: [0.461, 0.211, 0.575],
+        0x34: [0.469, 0.194, 0.575],
+        0x35: [0.461, 0.211, 0.575],
+        0x36: [0.66, 0.017, 0.575],
+        0x37: [0.476, 0.211, 0.575],
+        0x38: [0.661, 0.017, 0.575],
+        0x39: [0.461, 0.21, 0.575],
+        0x41: [0.751, 0.049, 0.921, { ic: 0.068, sk: 0.224 }],
+        0x42: [0.705, 0.017, 0.748, { sk: 0.16 }],
+        0x43: [0.703, 0.02, 0.613, { sk: 0.16 }],
+        0x44: [0.686, 0, 0.892, { sk: 0.0958 }],
+        0x45: [0.703, 0.016, 0.607, { ic: 0.02, sk: 0.128 }],
+        0x46: [0.686, 0.03, 0.814, { ic: 0.116, sk: 0.128 }],
+        0x47: [0.703, 0.113, 0.682, { sk: 0.128 }],
+        0x48: [0.686, 0.048, 0.987, { sk: 0.128 }],
+        0x49: [0.686, 0, 0.642, { ic: 0.104, sk: 0.0319 }],
+        0x4a: [0.686, 0.114, 0.779, { ic: 0.158, sk: 0.192 }],
+        0x4b: [0.703, 0.017, 0.871, { sk: 0.0639 }],
+        0x4c: [0.703, 0.017, 0.788, { sk: 0.16 }],
+        0x4d: [0.703, 0.049, 1.378, { sk: 0.16 }],
+        0x4e: [0.84, 0.049, 0.937, { ic: 0.168, sk: 0.0958 }],
+        0x4f: [0.703, 0.017, 0.906, { sk: 0.128 }],
+        0x50: [0.686, 0.067, 0.81, { ic: 0.036, sk: 0.0958 }],
+        0x51: [0.703, 0.146, 0.939, { sk: 0.128 }],
+        0x52: [0.686, 0.017, 0.99, { sk: 0.0958 }],
+        0x53: [0.703, 0.016, 0.696, { ic: 0.025, sk: 0.16 }],
+        0x54: [0.72, 0.069, 0.644, { ic: 0.303, sk: 0.0319 }],
+        0x55: [0.686, 0.024, 0.715, { ic: 0.056, sk: 0.0958 }],
+        0x56: [0.686, 0.077, 0.737, { ic: 0.037, sk: 0.0319 }],
+        0x57: [0.686, 0.077, 1.169, { ic: 0.037, sk: 0.0958 }],
+        0x58: [0.686, 0, 0.817, { ic: 0.089, sk: 0.16 }],
+        0x59: [0.686, 0.164, 0.759, { ic: 0.038, sk: 0.0958 }],
+        0x5a: [0.686, 0, 0.818, { ic: 0.035, sk: 0.16 }]
+      };
+      //# sourceMappingURL=tex-oldstyle-bold.js.map
+
+      /***/
+    },
+
+    /***/ 41855: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texOldstyle = void 0;
+      exports.texOldstyle = {
+        0x30: [0.452, 0.022, 0.5],
+        0x31: [0.453, 0, 0.5],
+        0x32: [0.453, 0, 0.5],
+        0x33: [0.452, 0.216, 0.5],
+        0x34: [0.464, 0.194, 0.5],
+        0x35: [0.453, 0.216, 0.5],
+        0x36: [0.665, 0.022, 0.5],
+        0x37: [0.463, 0.216, 0.5],
+        0x38: [0.666, 0.021, 0.5],
+        0x39: [0.453, 0.216, 0.5],
+        0x41: [0.728, 0.05, 0.798, { ic: 0.021, sk: 0.194 }],
+        0x42: [0.705, 0.022, 0.657, { sk: 0.139 }],
+        0x43: [0.705, 0.025, 0.527, { sk: 0.139 }],
+        0x44: [0.683, 0, 0.771, { sk: 0.0833 }],
+        0x45: [0.705, 0.022, 0.528, { ic: 0.036, sk: 0.111 }],
+        0x46: [0.683, 0.032, 0.719, { ic: 0.11, sk: 0.111 }],
+        0x47: [0.704, 0.119, 0.595, { sk: 0.111 }],
+        0x48: [0.683, 0.048, 0.845, { sk: 0.111 }],
+        0x49: [0.683, 0, 0.545, { ic: 0.097, sk: 0.0278 }],
+        0x4a: [0.683, 0.119, 0.678, { ic: 0.161, sk: 0.167 }],
+        0x4b: [0.705, 0.022, 0.762, { sk: 0.0556 }],
+        0x4c: [0.705, 0.022, 0.69, { sk: 0.139 }],
+        0x4d: [0.705, 0.05, 1.201, { sk: 0.139 }],
+        0x4e: [0.789, 0.05, 0.82, { ic: 0.159, sk: 0.0833 }],
+        0x4f: [0.705, 0.022, 0.796, { sk: 0.111 }],
+        0x50: [0.683, 0.057, 0.696, { ic: 0.037, sk: 0.0833 }],
+        0x51: [0.705, 0.131, 0.817, { sk: 0.111 }],
+        0x52: [0.682, 0.022, 0.848, { sk: 0.0833 }],
+        0x53: [0.705, 0.022, 0.606, { ic: 0.036, sk: 0.139 }],
+        0x54: [0.717, 0.068, 0.545, { ic: 0.288, sk: 0.0278 }],
+        0x55: [0.683, 0.028, 0.626, { ic: 0.061, sk: 0.0833 }],
+        0x56: [0.683, 0.052, 0.613, { ic: 0.045, sk: 0.0278 }],
+        0x57: [0.683, 0.053, 0.988, { ic: 0.046, sk: 0.0833 }],
+        0x58: [0.683, 0, 0.713, { ic: 0.094, sk: 0.139 }],
+        0x59: [0.683, 0.143, 0.668, { ic: 0.046, sk: 0.0833 }],
+        0x5a: [0.683, 0, 0.725, { ic: 0.042, sk: 0.139 }]
+      };
+      //# sourceMappingURL=tex-oldstyle.js.map
+
+      /***/
+    },
+
+    /***/ 75431: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texSize3 = void 0;
+      exports.texSize3 = {
+        0x28: [1.45, 0.949, 0.736],
+        0x29: [1.45, 0.949, 0.736],
+        0x2f: [1.45, 0.949, 1.044],
+        0x5b: [1.45, 0.949, 0.528],
+        0x5c: [1.45, 0.949, 1.044],
+        0x5d: [1.45, 0.949, 0.528],
+        0x7b: [1.45, 0.949, 0.75],
+        0x7d: [1.45, 0.949, 0.75],
+        0x2c6: [0.772, -0.564, 1.444],
+        0x2dc: [0.749, -0.61, 1.444],
+        0x302: [0.772, -0.564, 0],
+        0x303: [0.749, -0.61, 0],
+        0x2044: [1.45, 0.949, 1.044],
+        0x221a: [1.45, 0.95, 1, { ic: 0.02 }],
+        0x2308: [1.45, 0.949, 0.583],
+        0x2309: [1.45, 0.949, 0.583],
+        0x230a: [1.45, 0.949, 0.583],
+        0x230b: [1.45, 0.949, 0.583],
+        0x2329: [1.45, 0.95, 0.75],
+        0x232a: [1.45, 0.949, 0.75],
+        0x27e8: [1.45, 0.95, 0.75],
+        0x27e9: [1.45, 0.949, 0.75],
+        0x3008: [1.45, 0.95, 0.75],
+        0x3009: [1.45, 0.949, 0.75]
+      };
+      //# sourceMappingURL=tex-size3.js.map
+
+      /***/
+    },
+
+    /***/ 98278: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texSize4 = void 0;
+      exports.texSize4 = {
+        0x28: [1.75, 1.249, 0.792],
+        0x29: [1.75, 1.249, 0.792],
+        0x2f: [1.75, 1.249, 1.278],
+        0x5b: [1.75, 1.249, 0.583],
+        0x5c: [1.75, 1.249, 1.278],
+        0x5d: [1.75, 1.249, 0.583],
+        0x7b: [1.75, 1.249, 0.806],
+        0x7d: [1.75, 1.249, 0.806],
+        0x2c6: [0.845, -0.561, 1.889, { ic: 0.013 }],
+        0x2dc: [0.823, -0.583, 1.889],
+        0x302: [0.845, -0.561, 0, { ic: 0.013 }],
+        0x303: [0.823, -0.583, 0],
+        0x2044: [1.75, 1.249, 1.278],
+        0x221a: [1.75, 1.25, 1, { ic: 0.02 }],
+        0x2308: [1.75, 1.249, 0.639],
+        0x2309: [1.75, 1.249, 0.639],
+        0x230a: [1.75, 1.249, 0.639],
+        0x230b: [1.75, 1.249, 0.639],
+        0x2329: [1.75, 1.248, 0.806],
+        0x232a: [1.75, 1.248, 0.806],
+        0x239b: [1.154, 0.655, 0.875],
+        0x239c: [0.61, 0.01, 0.875],
+        0x239d: [1.165, 0.644, 0.875],
+        0x239e: [1.154, 0.655, 0.875],
+        0x239f: [0.61, 0.01, 0.875],
+        0x23a0: [1.165, 0.644, 0.875],
+        0x23a1: [1.154, 0.645, 0.667],
+        0x23a2: [0.602, 0, 0.667],
+        0x23a3: [1.155, 0.644, 0.667],
+        0x23a4: [1.154, 0.645, 0.667],
+        0x23a5: [0.602, 0, 0.667],
+        0x23a6: [1.155, 0.644, 0.667],
+        0x23a7: [0.899, 0.01, 0.889],
+        0x23a8: [1.16, 0.66, 0.889],
+        0x23a9: [0.01, 0.899, 0.889],
+        0x23aa: [0.29, 0.015, 0.889],
+        0x23ab: [0.899, 0.01, 0.889],
+        0x23ac: [1.16, 0.66, 0.889],
+        0x23ad: [0.01, 0.899, 0.889],
+        0x23b7: [0.935, 0.885, 1.056],
+        0x27e8: [1.75, 1.248, 0.806],
+        0x27e9: [1.75, 1.248, 0.806],
+        0x3008: [1.75, 1.248, 0.806],
+        0x3009: [1.75, 1.248, 0.806],
+        0xe000: [0.625, 0.014, 1.056],
+        0xe001: [0.605, 0.014, 1.056, { ic: 0.02 }],
+        0xe150: [0.12, 0.213, 0.45, { ic: 0.01 }],
+        0xe151: [0.12, 0.213, 0.45, { ic: 0.024 }],
+        0xe152: [0.333, 0, 0.45, { ic: 0.01 }],
+        0xe153: [0.333, 0, 0.45, { ic: 0.024 }],
+        0xe154: [0.32, 0.2, 0.4, { ic: 0.01 }],
+        0xe155: [0.333, 0, 0.9, { ic: 0.01 }],
+        0xe156: [0.12, 0.213, 0.9, { ic: 0.01 }]
+      };
+      //# sourceMappingURL=tex-size4.js.map
+
+      /***/
+    },
+
+    /***/ 90456: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.texVariant = void 0;
+      exports.texVariant = {
+        0x2c6: [0.845, -0.561, 2.333, { ic: 0.013 }],
+        0x2dc: [0.899, -0.628, 2.333],
+        0x302: [0.845, -0.561, 0, { ic: 0.013 }],
+        0x303: [0.899, -0.628, 0],
+        0x3f0: [0.434, 0.006, 0.667, { ic: 0.067 }],
+        0x210f: [0.695, 0.013, 0.54, { ic: 0.022 }],
+        0x2190: [0.437, -0.064, 0.5],
+        0x2192: [0.437, -0.064, 0.5],
+        0x21cc: [0.514, 0.014, 1],
+        0x2204: [0.86, 0.166, 0.556],
+        0x2205: [0.587, 0, 0.778],
+        0x2212: [0.27, -0.23, 0.5],
+        0x2216: [0.43, 0.023, 0.778],
+        0x221d: [0.472, -0.028, 0.778],
+        0x2223: [0.43, 0.023, 0.222],
+        0x2224: [0.43, 0.023, 0.222, { ic: 0.018 }],
+        0x2225: [0.431, 0.023, 0.389],
+        0x2226: [0.431, 0.024, 0.389, { ic: 0.018 }],
+        0x223c: [0.365, -0.132, 0.778],
+        0x2248: [0.481, -0.05, 0.778],
+        0x2268: [0.752, 0.284, 0.778],
+        0x2269: [0.752, 0.284, 0.778],
+        0x2270: [0.919, 0.421, 0.778],
+        0x2271: [0.919, 0.421, 0.778],
+        0x2288: [0.828, 0.33, 0.778],
+        0x2289: [0.828, 0.33, 0.778],
+        0x228a: [0.634, 0.255, 0.778],
+        0x228b: [0.634, 0.254, 0.778],
+        0x22a8: [0.694, 0, 0.611],
+        0x22c5: [0.189, 0, 0.278],
+        0x2322: [0.378, -0.122, 0.778],
+        0x2323: [0.378, -0.143, 0.778],
+        0x25b3: [0.575, 0.02, 0.722],
+        0x25bd: [0.576, 0.019, 0.722],
+        0x2a87: [0.801, 0.303, 0.778],
+        0x2a88: [0.801, 0.303, 0.778],
+        0x2acb: [0.752, 0.332, 0.778],
+        0x2acc: [0.752, 0.333, 0.778]
+      };
+      //# sourceMappingURL=tex-variant.js.map
+
+      /***/
+    },
+
+    /***/ 86810: /***/ (__unused_webpack_module, exports) => {
+      Object.defineProperty(exports, '__esModule', { value: true });
+      exports.px =
+        exports.emRounded =
+        exports.em =
+        exports.percent =
+        exports.length2em =
+        exports.MATHSPACE =
+        exports.RELUNITS =
+        exports.UNITS =
+        exports.BIGDIMEN =
+          void 0;
+      exports.BIGDIMEN = 1000000;
+      exports.UNITS = {
+        px: 1,
+        in: 96,
+        cm: 96 / 2.54,
+        mm: 96 / 25.4
+      };
+      exports.RELUNITS = {
+        em: 1,
+        ex: 0.431,
+        pt: 1 / 10,
+        pc: 12 / 10,
+        mu: 1 / 18
+      };
+      exports.MATHSPACE = {
+        veryverythinmathspace: 1 / 18,
+        verythinmathspace: 2 / 18,
+        thinmathspace: 3 / 18,
+        mediummathspace: 4 / 18,
+        thickmathspace: 5 / 18,
+        verythickmathspace: 6 / 18,
+        veryverythickmathspace: 7 / 18,
+        negativeveryverythinmathspace: -1 / 18,
+        negativeverythinmathspace: -2 / 18,
+        negativethinmathspace: -3 / 18,
+        negativemediummathspace: -4 / 18,
+        negativethickmathspace: -5 / 18,
+        negativeverythickmathspace: -6 / 18,
+        negativeveryverythickmathspace: -7 / 18,
+        thin: 0.04,
+        medium: 0.06,
+        thick: 0.1,
+        normal: 1,
+        big: 2,
+        small: 1 / Math.sqrt(2),
+        infinity: exports.BIGDIMEN
+      };
+      function length2em(length, size, scale, em) {
+        if (size === void 0) {
+          size = 0;
+        }
+        if (scale === void 0) {
+          scale = 1;
+        }
+        if (em === void 0) {
+          em = 16;
+        }
+        if (typeof length !== 'string') {
+          length = String(length);
+        }
+        if (length === '' || length == null) {
+          return size;
+        }
+        if (exports.MATHSPACE[length]) {
+          return exports.MATHSPACE[length];
+        }
+        var match = length.match(
+          /^\s*([-+]?(?:\.\d+|\d+(?:\.\d*)?))?(pt|em|ex|mu|px|pc|in|mm|cm|%)?/
+        );
+        if (!match) {
+          return size;
+        }
+        var m = parseFloat(match[1] || '1'),
+          unit = match[2];
+        if (exports.UNITS.hasOwnProperty(unit)) {
+          return (m * exports.UNITS[unit]) / em / scale;
+        }
+        if (exports.RELUNITS.hasOwnProperty(unit)) {
+          return m * exports.RELUNITS[unit];
+        }
+        if (unit === '%') {
+          return (m / 100) * size;
+        }
+        return m * size;
+      }
+      exports.length2em = length2em;
+      function percent(m) {
+        return (100 * m).toFixed(1).replace(/\.?0+$/, '') + '%';
+      }
+      exports.percent = percent;
+      function em(m) {
+        if (Math.abs(m) < 0.001) return '0';
+        return m.toFixed(3).replace(/\.?0+$/, '') + 'em';
+      }
+      exports.em = em;
+      function emRounded(m, em) {
+        if (em === void 0) {
+          em = 16;
+        }
+        m = (Math.round(m * em) + 0.05) / em;
+        if (Math.abs(m) < 0.001) return '0em';
+        return m.toFixed(3).replace(/\.?0+$/, '') + 'em';
+      }
+      exports.emRounded = emRounded;
+      function px(m, M, em) {
+        if (M === void 0) {
+          M = -exports.BIGDIMEN;
+        }
+        if (em === void 0) {
+          em = 16;
+        }
+        m *= em;
+        if (M && m < M) m = M;
+        if (Math.abs(m) < 0.1) return '0';
+        return m.toFixed(1).replace(/\.0$/, '') + 'px';
+      }
+      exports.px = px;
+      //# sourceMappingURL=lengths.js.map
+
+      /***/
     }
-    if (length === '' || length == null) {
-        return size;
-    }
-    if (exports.MATHSPACE[length]) {
-        return exports.MATHSPACE[length];
-    }
-    var match = length.match(/^\s*([-+]?(?:\.\d+|\d+(?:\.\d*)?))?(pt|em|ex|mu|px|pc|in|mm|cm|%)?/);
-    if (!match) {
-        return size;
-    }
-    var m = parseFloat(match[1] || '1'), unit = match[2];
-    if (exports.UNITS.hasOwnProperty(unit)) {
-        return m * exports.UNITS[unit] / em / scale;
-    }
-    if (exports.RELUNITS.hasOwnProperty(unit)) {
-        return m * exports.RELUNITS[unit];
-    }
-    if (unit === '%') {
-        return m / 100 * size;
-    }
-    return m * size;
-}
-exports.length2em = length2em;
-function percent(m) {
-    return (100 * m).toFixed(1).replace(/\.?0+$/, '') + '%';
-}
-exports.percent = percent;
-function em(m) {
-    if (Math.abs(m) < .001)
-        return '0';
-    return (m.toFixed(3).replace(/\.?0+$/, '')) + 'em';
-}
-exports.em = em;
-function emRounded(m, em) {
-    if (em === void 0) { em = 16; }
-    m = (Math.round(m * em) + .05) / em;
-    if (Math.abs(m) < .001)
-        return '0em';
-    return m.toFixed(3).replace(/\.?0+$/, '') + 'em';
-}
-exports.emRounded = emRounded;
-function px(m, M, em) {
-    if (M === void 0) { M = -exports.BIGDIMEN; }
-    if (em === void 0) { em = 16; }
-    m *= em;
-    if (M && m < M)
-        m = M;
-    if (Math.abs(m) < .1)
-        return '0';
-    return m.toFixed(1).replace(/\.0$/, '') + 'px';
-}
-exports.px = px;
-//# sourceMappingURL=lengths.js.map
-
-/***/ })
-
-}]);
+  }
+]);
 //# sourceMappingURL=1673.a3f02b9a01a86e0d0041.js.map?v=a3f02b9a01a86e0d0041

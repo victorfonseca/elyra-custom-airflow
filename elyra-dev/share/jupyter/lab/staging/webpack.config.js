@@ -137,7 +137,7 @@ function ignored(checkedPath) {
 
   // Limit the watched files to those in our local linked package dirs.
   let ignore = true;
-  Object.keys(watched).some(name => {
+  Object.keys(watched).some((name) => {
     const rootPath = watched[name];
     const contained = checkedPath.indexOf(rootPath + path.sep) !== -1;
     if (checkedPath !== rootPath && !contained) {

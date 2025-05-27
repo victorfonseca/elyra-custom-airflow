@@ -116,10 +116,7 @@
           "name": "@elyra/script-debugger-extension",
           "library": {
             "type": "var",
-            "name": [
-              "_JUPYTERLAB",
-              "@elyra/script-debugger-extension"
-            ]
+            "name": ["_JUPYTERLAB", "@elyra/script-debugger-extension"]
           },
           "filename": "remoteEntry.[contenthash].js",
           "exposes": {

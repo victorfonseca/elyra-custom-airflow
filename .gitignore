@@ -96,3 +96,8 @@ node_modules
 .yarn/install-state.gz
 
 labextensions/**/labextension/*
+
+# Generated staging files - exclude from prettier
+elyra-dev/
+**/staging/
+**/lab/staging/

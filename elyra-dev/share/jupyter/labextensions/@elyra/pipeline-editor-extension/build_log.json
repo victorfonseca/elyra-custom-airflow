@@ -116,10 +116,7 @@
           "name": "@elyra/pipeline-editor-extension",
           "library": {
             "type": "var",
-            "name": [
-              "_JUPYTERLAB",
-              "@elyra/pipeline-editor-extension"
-            ]
+            "name": ["_JUPYTERLAB", "@elyra/pipeline-editor-extension"]
           },
           "filename": "remoteEntry.[contenthash].js",
           "exposes": {

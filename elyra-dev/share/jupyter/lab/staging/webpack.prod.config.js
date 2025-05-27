@@ -21,7 +21,7 @@ config[0] = merge(config[0], {
   },
   plugins: [
     new WPPlugin.JSONLicenseWebpackPlugin({
-      excludedPackageTest: packageName =>
+      excludedPackageTest: (packageName) =>
         packageName === '@jupyterlab/application-top'
     })
   ]

@@ -116,10 +116,7 @@
           "name": "@elyra/metadata-extension",
           "library": {
             "type": "var",
-            "name": [
-              "_JUPYTERLAB",
-              "@elyra/metadata-extension"
-            ]
+            "name": ["_JUPYTERLAB", "@elyra/metadata-extension"]
           },
           "filename": "remoteEntry.[contenthash].js",
           "exposes": {

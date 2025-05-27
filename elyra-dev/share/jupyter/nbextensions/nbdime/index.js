@@ -3,14 +3,14 @@
 define(['base/js/namespace', 'jquery', 'base/js/utils'], function (
   Jupyter,
   $,
-  utils,
+  utils
 ) {
   'use strict';
 
   // params are updated on config load
   var params = {
     add_checkpoints_toolbar_button: true,
-    add_git_toolbar_button: true,
+    add_git_toolbar_button: true
   };
 
   // Custom util functions:
@@ -72,7 +72,7 @@ define(['base/js/namespace', 'jquery', 'base/js/utils'], function (
       path_join(Jupyter.notebook.base_url, 'nbdime', 'api', 'isgit');
     var request = {
       data: JSON.stringify({ path: path }),
-      method: 'POST',
+      method: 'POST'
     };
     return utils.promising_ajax(url, request);
   };
@@ -83,7 +83,7 @@ define(['base/js/namespace', 'jquery', 'base/js/utils'], function (
   var setActionEnabledState = function (action, enabled) {
     $("button[data-jupyter-action='" + action + "']").attr(
       'disabled',
-      !enabled,
+      !enabled
     );
   };
 
@@ -116,25 +116,25 @@ define(['base/js/namespace', 'jquery', 'base/js/utils'], function (
       {
         icon: 'fa-clock-o',
         help: 'Display nbdiff from checkpoint to currently saved version',
-        handler: nbCheckpointDiffView,
+        handler: nbCheckpointDiffView
       },
       'diff-notebook-checkpoint',
-      prefix,
+      prefix
     );
 
     // Register for checkpoint events
     if (!serverMissing) {
       Jupyter.notebook.events.on(
         'checkpoints_listed.Notebook',
-        onCheckpointsList,
+        onCheckpointsList
       );
       Jupyter.notebook.events.on(
         'checkpoint_created.Notebook',
-        onCheckpointAdded,
+        onCheckpointAdded
       );
       Jupyter.notebook.events.on(
         'checkpoint_deleted.Notebook',
-        triggerCheckpointTest,
+        triggerCheckpointTest
       );
     }
 
@@ -147,10 +147,10 @@ define(['base/js/namespace', 'jquery', 'base/js/utils'], function (
         {
           icon: 'fa-git',
           help: 'Display nbdiff from git HEAD to currently saved version',
-          handler: nbGitDiffView,
+          handler: nbGitDiffView
         },
         'diff-notebook-git',
-        prefix,
+        prefix
       );
     }
 
@@ -161,16 +161,16 @@ define(['base/js/namespace', 'jquery', 'base/js/utils'], function (
           checkpointAction,
           {
             action: gitAction,
-            label: 'nbdiff',
-          },
+            label: 'nbdiff'
+          }
         ]);
       } else {
         // Add only git button, with label on it
         var btn_group = Jupyter.toolbar.add_buttons_group([
           {
             action: gitAction,
-            label: 'nbdiff',
-          },
+            label: 'nbdiff'
+          }
         ]);
       }
 
@@ -185,8 +185,8 @@ define(['base/js/namespace', 'jquery', 'base/js/utils'], function (
       var btn_group = Jupyter.toolbar.add_buttons_group([
         {
           action: checkpointAction,
-          label: 'nbdiff',
-        },
+          label: 'nbdiff'
+        }
       ]);
     }
 
@@ -200,20 +200,20 @@ define(['base/js/namespace', 'jquery', 'base/js/utils'], function (
       checkpointAction,
       serverMissing
         ? serverMissingMsg
-        : Jupyter.actions.get(checkpointAction).help,
+        : Jupyter.actions.get(checkpointAction).help
     );
   };
 
   var load_ipython_extension = function () {
     var promise = isGit(Jupyter.notebook.notebook_path);
     promise.then(
-      data => {
+      (data) => {
         register(data['is_git']);
       },
-      error => {
+      (error) => {
         // Assume that we don't have git
         register(false, error);
-      },
+      }
     );
 
     // Update params:
@@ -221,6 +221,6 @@ define(['base/js/namespace', 'jquery', 'base/js/utils'], function (
   };
 
   return {
-    load_ipython_extension: load_ipython_extension,
+    load_ipython_extension: load_ipython_extension
   };
 });

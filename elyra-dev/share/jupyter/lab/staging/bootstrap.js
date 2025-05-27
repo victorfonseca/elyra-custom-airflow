@@ -76,7 +76,7 @@ void (async function bootstrap() {
   // dependencies are initialized.
   let labExtensionUrl = getOption('fullLabextensionsUrl');
   const extensions = await Promise.allSettled(
-    extension_data.map(async data => {
+    extension_data.map(async (data) => {
       await loadComponent(
         `${labExtensionUrl}/${data.name}/${data.load}`,
         data.name
@@ -84,7 +84,7 @@ void (async function bootstrap() {
     })
   );
 
-  extensions.forEach(p => {
+  extensions.forEach((p) => {
     if (p.status === 'rejected') {
       // There was an error loading the component
       console.error(p.reason);

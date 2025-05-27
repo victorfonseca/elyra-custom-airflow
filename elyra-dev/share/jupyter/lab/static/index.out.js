@@ -15,8 +15,10 @@ async function createModule(scope, module) {
     const instance = factory();
     instance.__scope__ = scope;
     return instance;
-  } catch(e) {
-    console.warn(`Failed to create module: package: ${scope}; module: ${module}`);
+  } catch (e) {
+    console.warn(
+      `Failed to create module: package: ${scope}; module: ${module}`
+    );
     throw e;
   }
 }
@@ -25,36 +27,35 @@ async function createModule(scope, module) {
  * The main entry point for the application.
  */
 export async function main() {
+  // Handle a browser test.
+  // Set up error handling prior to loading extensions.
+  var browserTest = PageConfig.getOption('browserTest');
+  if (browserTest.toLowerCase() === 'true') {
+    var el = document.createElement('div');
+    el.id = 'browserTest';
+    document.body.appendChild(el);
+    el.textContent = '[]';
+    el.style.display = 'none';
+    var errors = [];
+    var reported = false;
+    var timeout = 25000;
 
-   // Handle a browser test.
-   // Set up error handling prior to loading extensions.
-   var browserTest = PageConfig.getOption('browserTest');
-   if (browserTest.toLowerCase() === 'true') {
-     var el = document.createElement('div');
-     el.id = 'browserTest';
-     document.body.appendChild(el);
-     el.textContent = '[]';
-     el.style.display = 'none';
-     var errors = [];
-     var reported = false;
-     var timeout = 25000;
+    var report = function () {
+      if (reported) {
+        return;
+      }
+      reported = true;
+      el.className = 'completed';
+    };
 
-     var report = function() {
-       if (reported) {
-         return;
-       }
-       reported = true;
-       el.className = 'completed';
-     }
-
-     window.onerror = function(msg, url, line, col, error) {
-       errors.push(String(error));
-       el.textContent = JSON.stringify(errors)
-     };
-     console.error = function(message) {
-       errors.push(String(message));
-       el.textContent = JSON.stringify(errors)
-     };
+    window.onerror = function (msg, url, line, col, error) {
+      errors.push(String(error));
+      el.textContent = JSON.stringify(errors);
+    };
+    console.error = function (message) {
+      errors.push(String(message));
+      el.textContent = JSON.stringify(errors);
+    };
   }
 
   var pluginRegistry = new PluginRegistry();
@@ -64,41 +65,47 @@ export async function main() {
   var ignorePlugins = [];
   var register = [];
 
-
   const federatedExtensionPromises = [];
   const federatedMimeExtensionPromises = [];
   const federatedStylePromises = [];
 
   // Start initializing the federated extensions
-  const extensions = JSON.parse(
-    PageConfig.getOption('federated_extensions')
-  );
+  const extensions = JSON.parse(PageConfig.getOption('federated_extensions'));
 
   // Keep a mapping of renamed plugin ids to ensure user configs don't break.
   // The mapping is defined in the main index.js for JupyterLab, since it may not be relevant for
   // other lab-based applications (they may not use the same set of plugins).
   const renamedPluginIds = {
-    '@jupyterlab/application:mimedocument': '@jupyterlab/application-extension:mimedocument',
-    '@jupyterlab/help-extension:licenses': '@jupyterlab/apputils-extension:licenses-plugin',
-    '@jupyterlab/lsp:ILSPCodeExtractorsManager': '@jupyterlab/lsp-extension:code-extractor-manager',
-    '@jupyterlab/translation:translator': '@jupyterlab/translation-extension:translator',
-    '@jupyterlab/workspaces:commands': '@jupyterlab/workspaces-extension:commands'
+    '@jupyterlab/application:mimedocument':
+      '@jupyterlab/application-extension:mimedocument',
+    '@jupyterlab/help-extension:licenses':
+      '@jupyterlab/apputils-extension:licenses-plugin',
+    '@jupyterlab/lsp:ILSPCodeExtractorsManager':
+      '@jupyterlab/lsp-extension:code-extractor-manager',
+    '@jupyterlab/translation:translator':
+      '@jupyterlab/translation-extension:translator',
+    '@jupyterlab/workspaces:commands':
+      '@jupyterlab/workspaces-extension:commands'
   };
 
   // Transparently handle the case of renamed plugins, so current configs don't break.
   // And emit a warning in the dev tools console to notify about the rename so
   // users can update their config.
-  const disabledExtensions = PageConfig.Extension.disabled.map(id => {
+  const disabledExtensions = PageConfig.Extension.disabled.map((id) => {
     if (renamedPluginIds[id]) {
-      console.warn(`Plugin ${id} has been renamed to ${renamedPluginIds[id]}. Consider updating your config to use the new name.`);
+      console.warn(
+        `Plugin ${id} has been renamed to ${renamedPluginIds[id]}. Consider updating your config to use the new name.`
+      );
       return renamedPluginIds[id];
     }
     return id;
   });
 
-  const deferredExtensions = PageConfig.Extension.deferred.map(id => {
+  const deferredExtensions = PageConfig.Extension.deferred.map((id) => {
     if (renamedPluginIds[id]) {
-      console.warn(`Plugin id ${id} has been renamed to ${renamedPluginIds[id]}. Consider updating your config to use the new name.`);
+      console.warn(
+        `Plugin id ${id} has been renamed to ${renamedPluginIds[id]}. Consider updating your config to use the new name.`
+      );
       return renamedPluginIds[id];
     }
     return id;
@@ -112,8 +119,10 @@ export async function main() {
     if (separatorIndex !== -1) {
       extName = id.slice(0, separatorIndex);
     }
-    return disabledExtensions.some(val => val === id || (extName && val === extName));
-  }
+    return disabledExtensions.some(
+      (val) => val === id || (extName && val === extName)
+    );
+  };
 
   // This is basically a copy of PageConfig.Extension.isDeferred to
   // take into account the case of renamed plugins.
@@ -123,19 +132,23 @@ export async function main() {
     if (separatorIndex !== -1) {
       extName = id.slice(0, separatorIndex);
     }
-    return deferredExtensions.some(val => val === id || (extName && val === extName));
-  }
+    return deferredExtensions.some(
+      (val) => val === id || (extName && val === extName)
+    );
+  };
 
   const queuedFederated = [];
 
-  extensions.forEach(data => {
+  extensions.forEach((data) => {
     if (data.extension) {
       queuedFederated.push(data.name);
       federatedExtensionPromises.push(createModule(data.name, data.extension));
     }
     if (data.mimeExtension) {
       queuedFederated.push(data.name);
-      federatedMimeExtensionPromises.push(createModule(data.name, data.mimeExtension));
+      federatedMimeExtensionPromises.push(
+        createModule(data.name, data.mimeExtension)
+      );
     }
 
     if (data.style && !isPluginDisabled(data.name)) {
@@ -252,9 +265,11 @@ export async function main() {
   }
 
   // Add the federated mime extensions.
-  const federatedMimeExtensions = await Promise.allSettled(federatedMimeExtensionPromises);
-  federatedMimeExtensions.forEach(p => {
-    if (p.status === "fulfilled") {
+  const federatedMimeExtensions = await Promise.allSettled(
+    federatedMimeExtensionPromises
+  );
+  federatedMimeExtensions.forEach((p) => {
+    if (p.status === 'fulfilled') {
       for (let plugin of activePlugins(p.value)) {
         mimeExtensions.push(plugin);
       }
@@ -682,7 +697,9 @@ export async function main() {
       console.error(e);
     }
   }
-  if (!queuedFederated.includes('@jupyterlab/theme-dark-high-contrast-extension')) {
+  if (
+    !queuedFederated.includes('@jupyterlab/theme-dark-high-contrast-extension')
+  ) {
     try {
       let ext = require('@jupyterlab/theme-dark-high-contrast-extension');
       ext.__scope__ = '@jupyterlab/theme-dark-high-contrast-extension';
@@ -761,9 +778,11 @@ export async function main() {
   }
 
   // Add the federated extensions.
-  const federatedExtensions = await Promise.allSettled(federatedExtensionPromises);
-  federatedExtensions.forEach(p => {
-    if (p.status === "fulfilled") {
+  const federatedExtensions = await Promise.allSettled(
+    federatedExtensionPromises
+  );
+  federatedExtensions.forEach((p) => {
+    if (p.status === 'fulfilled') {
       for (let plugin of activePlugins(p.value)) {
         register.push(plugin);
       }
@@ -773,9 +792,11 @@ export async function main() {
   });
 
   // Load all federated component styles and log errors for any that do not
-  (await Promise.allSettled(federatedStylePromises)).filter(({status}) => status === "rejected").forEach(({reason}) => {
-    console.error(reason);
-  });
+  (await Promise.allSettled(federatedStylePromises))
+    .filter(({ status }) => status === 'rejected')
+    .forEach(({ reason }) => {
+      console.error(reason);
+    });
 
   // 2. Register the plugins
   pluginRegistry.registerPlugins(register);
@@ -783,8 +804,10 @@ export async function main() {
   // 3. Get and resolve the service manager and connection status plugins
   const IConnectionStatus = require('@jupyterlab/services').IConnectionStatus;
   const IServiceManager = require('@jupyterlab/services').IServiceManager;
-  const connectionStatus = await pluginRegistry.resolveOptionalService(IConnectionStatus);
-  const serviceManager = await pluginRegistry.resolveRequiredService(IServiceManager);
+  const connectionStatus =
+    await pluginRegistry.resolveOptionalService(IConnectionStatus);
+  const serviceManager =
+    await pluginRegistry.resolveRequiredService(IServiceManager);
 
   const lab = new JupyterLab({
     pluginRegistry,
@@ -793,13 +816,15 @@ export async function main() {
     connectionStatus,
     disabled: {
       matches: disabled,
-      patterns: disabledExtensions
-        .map(function (val) { return val.raw; })
+      patterns: disabledExtensions.map(function (val) {
+        return val.raw;
+      })
     },
     deferred: {
       matches: deferred,
-      patterns: deferredExtensions
-        .map(function (val) { return val.raw; })
+      patterns: deferredExtensions.map(function (val) {
+        return val.raw;
+      })
     },
     availablePlugins: allPlugins
   });
@@ -808,8 +833,10 @@ export async function main() {
   lab.start({ ignorePlugins, bubblingKeydown: true });
 
   // Expose global app instance when in dev mode or when toggled explicitly.
-  var exposeAppInBrowser = (PageConfig.getOption('exposeAppInBrowser') || '').toLowerCase() === 'true';
-  var devMode = (PageConfig.getOption('devMode') || '').toLowerCase() === 'true';
+  var exposeAppInBrowser =
+    (PageConfig.getOption('exposeAppInBrowser') || '').toLowerCase() === 'true';
+  var devMode =
+    (PageConfig.getOption('devMode') || '').toLowerCase() === 'true';
 
   if (exposeAppInBrowser || devMode) {
     window.jupyterapp = lab;
@@ -818,10 +845,16 @@ export async function main() {
   // Handle a browser test.
   if (browserTest.toLowerCase() === 'true') {
     lab.restored
-      .then(function() { report(errors); })
-      .catch(function(reason) { report([`RestoreError: ${reason.message}`]); });
+      .then(function () {
+        report(errors);
+      })
+      .catch(function (reason) {
+        report([`RestoreError: ${reason.message}`]);
+      });
 
     // Handle failures to restore after the timeout has elapsed.
-    window.setTimeout(function() { report(errors); }, timeout);
+    window.setTimeout(function () {
+      report(errors);
+    }, timeout);
   }
 }

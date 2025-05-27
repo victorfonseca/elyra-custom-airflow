@@ -116,10 +116,7 @@
           "name": "@elyra/services",
           "library": {
             "type": "var",
-            "name": [
-              "_JUPYTERLAB",
-              "@elyra/services"
-            ]
+            "name": ["_JUPYTERLAB", "@elyra/services"]
           },
           "filename": "remoteEntry.[contenthash].js",
           "exposes": {

@@ -116,10 +116,7 @@
           "name": "@elyra/scala-editor-extension",
           "library": {
             "type": "var",
-            "name": [
-              "_JUPYTERLAB",
-              "@elyra/scala-editor-extension"
-            ]
+            "name": ["_JUPYTERLAB", "@elyra/scala-editor-extension"]
           },
           "filename": "remoteEntry.[contenthash].js",
           "exposes": {
