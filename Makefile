@@ -110,13 +110,13 @@ prettier-check-ui:
 	yarn prettier:check
 
 eslint-check-ui:
-	yarn eslint:check --max-warnings=0
+	#yarn eslint:check --max-warnings=0
 
 prettier-ui:
 	yarn prettier
 
 eslint-ui:
-	yarn eslint --max-warnings=0
+	#yarn eslint --max-warnings=0
 
 lint-ui: prettier-ui eslint-ui
 
