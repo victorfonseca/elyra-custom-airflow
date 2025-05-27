@@ -130,12 +130,7 @@ export class Launcher extends JupyterlabLauncher {
 
     const categories: React.ReactElement<string>[] = [];
 
-    const knownCategories = [
-      this._translator.__('Notebook'),
-      this._translator.__('Console'),
-      ELYRA_CATEGORY,
-      this._translator.__('Other')
-    ];
+    const knownCategories = [ELYRA_CATEGORY];
 
     // Assemble the final ordered list of categories
     // based on knownCategories.

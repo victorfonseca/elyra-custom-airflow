@@ -79,7 +79,7 @@
     "extension": true,
     "outputDir": "../../labextensions/elyra_r_editor_extension/labextension",
     "_build": {
-      "load": "static/remoteEntry.3cb2a7054b984d491e13.js",
+      "load": "static/remoteEntry.4faaff7ef8e76c961a34.js",
       "extension": "./extension",
       "style": "./style"
     }

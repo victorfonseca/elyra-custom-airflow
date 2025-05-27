@@ -1,4 +1,4 @@
-#!/Users/victorfonseca/keyward/elyra-official/elyra-dev/bin/python
+#!/Users/victorfonseca/keyward/elyra-official/elyra-dev/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

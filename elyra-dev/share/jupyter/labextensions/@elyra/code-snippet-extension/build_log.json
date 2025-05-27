@@ -116,7 +116,10 @@
           "name": "@elyra/code-snippet-extension",
           "library": {
             "type": "var",
-            "name": ["_JUPYTERLAB", "@elyra/code-snippet-extension"]
+            "name": [
+              "_JUPYTERLAB",
+              "@elyra/code-snippet-extension"
+            ]
           },
           "filename": "remoteEntry.[contenthash].js",
           "exposes": {

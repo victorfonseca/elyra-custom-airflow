@@ -116,7 +116,10 @@
           "name": "@elyra/theme-extension",
           "library": {
             "type": "var",
-            "name": ["_JUPYTERLAB", "@elyra/theme-extension"]
+            "name": [
+              "_JUPYTERLAB",
+              "@elyra/theme-extension"
+            ]
           },
           "filename": "remoteEntry.[contenthash].js",
           "exposes": {

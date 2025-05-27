@@ -109,7 +109,7 @@
     "schemaDir": "schema",
     "outputDir": "../../labextensions/elyra_pipeline_editor_extension/labextension",
     "_build": {
-      "load": "static/remoteEntry.4c5cf119de45f584e2a0.js",
+      "load": "static/remoteEntry.dc0132b487f8eb20dc53.js",
       "extension": "./extension",
       "style": "./style"
     }

@@ -116,7 +116,10 @@
           "name": "@elyra/script-editor",
           "library": {
             "type": "var",
-            "name": ["_JUPYTERLAB", "@elyra/script-editor"]
+            "name": [
+              "_JUPYTERLAB",
+              "@elyra/script-editor"
+            ]
           },
           "filename": "remoteEntry.[contenthash].js",
           "exposes": {

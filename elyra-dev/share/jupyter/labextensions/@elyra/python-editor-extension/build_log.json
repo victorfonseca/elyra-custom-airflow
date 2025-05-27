@@ -116,7 +116,10 @@
           "name": "@elyra/python-editor-extension",
           "library": {
             "type": "var",
-            "name": ["_JUPYTERLAB", "@elyra/python-editor-extension"]
+            "name": [
+              "_JUPYTERLAB",
+              "@elyra/python-editor-extension"
+            ]
           },
           "filename": "remoteEntry.[contenthash].js",
           "exposes": {

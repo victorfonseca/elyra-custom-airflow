@@ -79,7 +79,7 @@
     "extension": false,
     "outputDir": "../../labextensions/elyra_metadata_common/labextension",
     "_build": {
-      "load": "static/remoteEntry.ce574886ee07d19e4eb3.js",
+      "load": "static/remoteEntry.1448151d783061f118dc.js",
       "style": "./style"
     }
   }
