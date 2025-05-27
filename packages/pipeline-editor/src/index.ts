@@ -258,6 +258,15 @@ const extension: JupyterFrontEndPlugin<void> = {
               const contextMenuPrefix = commandArgs.isContextMenu ? 'New ' : '';
               return `${contextMenuPrefix}Generic ${PIPELINE_EDITOR}`;
             }
+            // For the caption (tooltip)
+            if (commandArgs.runtimeType?.id === 'APACHE_AIRFLOW') {
+              return `Key Ward HUB ${PIPELINE_EDITOR}`;
+            }
+
+            // For the iconLabel (hover text)
+            if (commandArgs.runtimeType?.id === 'APACHE_AIRFLOW') {
+              return `Key Ward HUB ${PIPELINE_EDITOR}`;
+            }
             if (commandArgs.isMenu) {
               return `${commandArgs.runtimeType?.display_name} ${PIPELINE_EDITOR}`;
             }
