@@ -17,7 +17,6 @@
 import { LabIcon } from '@jupyterlab/ui-components';
 
 import clearPipelineSvg from '../style/icons/clear-pipeline.svg';
-import elyraSvg from '../style/icons/codait-piebrainlogo-jupyter-color.svg';
 import codeSnippetSvg from '../style/icons/code-snippet.svg';
 import containerSvg from '../style/icons/container.svg';
 import dragDropSvg from '../style/icons/dragdrop.svg';
@@ -25,6 +24,7 @@ import errorIconSvg from '../style/icons/error.svg';
 import exportPipelineSvg from '../style/icons/export-pipeline.svg';
 import helpIconSvg from '../style/icons/help.svg';
 import importSvg from '../style/icons/import.svg';
+import elyraSvg from '../style/icons/keyward.svg';
 import pipelineComponentSvg from '../style/icons/pipeline-components.svg';
 import pipelineSvg from '../style/icons/pipeline-flow.svg';
 import rIconSvg from '../style/icons/r-logo.svg';

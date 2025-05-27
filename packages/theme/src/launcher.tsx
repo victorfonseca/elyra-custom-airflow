@@ -133,12 +133,37 @@ export class Launcher extends JupyterlabLauncher {
     const knownCategories = [ELYRA_CATEGORY];
 
     // Assemble the final ordered list of categories
-    // based on knownCategories.
     each(knownCategories, (category) => {
       React.Children.forEach(launcherCategories, (cat) => {
         if (cat.key === category) {
           if (cat.key === ELYRA_CATEGORY) {
+            // First replace the icon
             cat = this.replaceCategoryIcon(cat, elyraIcon);
+
+            // Then replace the category title text
+            const children = React.Children.map(cat.props.children, (child) => {
+              if (child.props.className === 'jp-Launcher-sectionHeader') {
+                const grandchildren = React.Children.map(
+                  child.props.children,
+                  (grandchild) => {
+                    if (
+                      grandchild.props.className === 'jp-Launcher-sectionTitle'
+                    ) {
+                      // Replace "Elyra" with "Key Ward HUB" in the title
+                      return React.cloneElement(
+                        grandchild,
+                        grandchild.props,
+                        'Key Ward HUB'
+                      );
+                    }
+                    return grandchild;
+                  }
+                );
+                return React.cloneElement(child, child.props, grandchildren);
+              }
+              return child;
+            });
+            cat = React.cloneElement(cat, cat.props, children);
           }
           categories.push(cat);
         }
