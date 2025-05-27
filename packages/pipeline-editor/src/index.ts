@@ -342,12 +342,14 @@ const extension: JupyterFrontEndPlugin<void> = {
           });
 
           for (const t of resolvedTypes) {
-            launcher.add({
-              command: openPipelineEditorCommand,
-              category: 'Elyra',
-              args: { runtimeType: t as unknown as ReadonlyJSONValue },
-              rank: t.id === 'LOCAL' ? 1 : 2
-            });
+            if (t.id !== 'LOCAL') {
+              launcher.add({
+                command: openPipelineEditorCommand,
+                category: 'Elyra',
+                args: { runtimeType: t as unknown as ReadonlyJSONValue },
+                rank: 2
+              });
+            }
 
             fileMenuItems.push({
               command: openPipelineEditorCommand,
