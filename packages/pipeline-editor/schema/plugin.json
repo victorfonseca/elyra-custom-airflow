@@ -1,8 +1,8 @@
 {
   "jupyter.lab.setting-icon": "elyra:pipeline",
-  "jupyter.lab.setting-icon-label": "Elyra Pipeline Editor",
-  "title": "Elyra Pipeline Editor",
-  "description": "Elyra Pipeline Editor Configuration.",
+  "jupyter.lab.setting-icon-label": "Keyward HUB Pipeline Editor",
+  "title": "Keyward HUB Pipeline Editor",
+  "description": "Keyward HUB Pipeline Editor Configuration.",
   "properties": {
     "doubleClickToOpenProperties": {
       "title": "Double-click on pipeline node opens properties.",
