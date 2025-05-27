@@ -79,7 +79,7 @@
     "extension": true,
     "outputDir": "../../labextensions/elyra_scala_editor_extension/labextension",
     "_build": {
-      "load": "static/remoteEntry.f67781b73bfe82416753.js",
+      "load": "static/remoteEntry.76f312a9ecc7d9618d89.js",
       "extension": "./extension",
       "style": "./style"
     }
