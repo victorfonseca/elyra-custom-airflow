@@ -15,8 +15,7 @@
 #
 
 #Elyra Dev
-.elyra-dev
-
+elyra-dev/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
