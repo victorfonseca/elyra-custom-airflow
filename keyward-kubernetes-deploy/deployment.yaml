@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elyra
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: elyra
+  template:
+    metadata:
+      labels:
+        app: elyra
+    spec:
+      containers:
+      - name: elyra
+        image: ghcr.io/victorfonseca/elyra:keyward-elyra
+        ports:
+        - containerPort: 8888

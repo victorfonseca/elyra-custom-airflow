@@ -28,8 +28,12 @@ ARG ELYRA_EXTRAS=[kfp-tekton,kfp-examples,gitlab]
 
 COPY requirements.txt ${ELYRA_PACKAGE} ./
 
+# Stay as root for all installations
 USER root
-RUN chown jovyan:users ./requirements.txt ./"${ELYRA_PACKAGE}"
+
+# Install jupyter_server and notebook
+RUN pip install jupyter_server notebook==6.4.12
+
 # Install build dependencies for native extensions
 RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
@@ -38,16 +42,20 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-USER jovyan
 
-RUN ls -al /home/jovyan
+# Change ownership of files to jovyan
+RUN chown jovyan:users ./requirements.txt ./"${ELYRA_PACKAGE}"
 
-# Install Elyra
+# Install Elyra (as root to avoid permission issues)
 RUN python3 -m pip install --quiet --no-cache-dir "$ELYRA_PACKAGE""$ELYRA_EXTRAS" && rm "$ELYRA_PACKAGE"
 
 # Install custom requirements
 RUN python3 -m pip install -r requirements.txt && rm requirements.txt
+
 # Copy Elyra entrypoint
 COPY --chmod=0755 --chown=root:root start-elyra.sh /usr/local/bin/start-elyra.sh
+
+# Switch back to jovyan user for runtime
+USER jovyan
 
 CMD ["/usr/local/bin/start-elyra.sh"]

@@ -1,0 +1,25 @@
+hub:
+  config:
+    Authenticator:
+      class_name: GitHubOAuthenticator
+    GitHubOAuthenticator:
+      client_id: client_id
+      client_secret: client_secret
+      oauth_callback_url: http://localhost:8080/hub/oauth_callback
+      allowed_users:
+        - YOU_GITHUB_ACCOUNT
+  extraConfig:
+    auth: |
+      c.Authenticator.admin_users = {'YOU_GITHUB_ACCOUNT'}
+
+singleuser:
+  image:
+    name: elyra/elyra
+    tag: keyward-elyra
+  extraEnv:
+    JUPYTERHUB_SINGLEUSER_APP: "jupyter_server.serverapp.ServerApp"
+    JUPYTER_SERVER_ROOT_DIR: "/home/jovyan"
+  cmd: ["jupyter-labhub"]
+  memory:
+    limit: 2G
+    guarantee: 1G
