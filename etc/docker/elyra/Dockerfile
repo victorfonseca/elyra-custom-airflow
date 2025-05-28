@@ -30,6 +30,14 @@ COPY requirements.txt ${ELYRA_PACKAGE} ./
 
 USER root
 RUN chown jovyan:users ./requirements.txt ./"${ELYRA_PACKAGE}"
+# Install build dependencies for native extensions
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    g++ \
+    build-essential \
+    python3-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 USER jovyan
 
 RUN ls -al /home/jovyan
@@ -39,15 +47,6 @@ RUN python3 -m pip install --quiet --no-cache-dir "$ELYRA_PACKAGE""$ELYRA_EXTRAS
 
 # Install custom requirements
 RUN python3 -m pip install -r requirements.txt && rm requirements.txt
-
-# Install component examples catalogs
-#  - this wail fail if the 'kfp-examples' pip extra is not installed
-RUN elyra-metadata create component-catalogs \
-    --schema_name=elyra-kfp-examples-catalog  \
-    --display_name="Kubeflow Pipelines examples" \
-    --runtime_type=KUBEFLOW_PIPELINES \
-    --categories="['examples']"
-
 # Copy Elyra entrypoint
 COPY --chmod=0755 --chown=root:root start-elyra.sh /usr/local/bin/start-elyra.sh
 

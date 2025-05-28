@@ -213,3 +213,13 @@ git merge upstream/main
 yarn install --legacy-peer-deps
 make clean install-dev
 ```
+
+## Docker Build and Test
+
+To build the Elyra Docker image and test it locally, run:
+
+```bash
+make elyra-image TAG=keyward-elyra
+
+docker run -it -p 8888:8888 elyra/elyra:keyward-elyra
+```
